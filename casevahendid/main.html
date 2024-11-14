@@ -1,0 +1,177 @@
+<!--Mis on case vahendid-->
+<!--Mille jaoks neid kasutatakse-->
+<!-- Kuidas jaotatakse case vahendeid
+        -uppercase lehe link
+        -lowercase lehe link-->
+<!--Milliseid vahendeid saab kasutada Koskmudel arendusmudeli elutsüklis-->
+<!--Milliseid vahendeid olen ise juba kasutanud-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CASE-vahendid</title>
+
+</head>
+
+<body>
+    <h1>Mis on case vahendid <a
+            href="https://eopearhiiv.edu.ee/e-kursused/eucip/arendus/131_casevahendite_kasutuseesmrgid_ja_klassifikatsioon.html">(1)</a>
+    </h1>
+
+    <p>CASE (Computer Aided Software Engineering) vahendid on tarkvaraprogrammid, mis toetavad tarkvara arendus- ja
+        haldusprotsessi. Need vahendid aitavad automatiseerida, hallata ja lihtsustada erinevaid arendusprotsessi
+        etappe, sealhulgas nõuete analüüsi, arendustöö ajakava koostamist ja mudelite loomist.</p>
+
+    <h2>Mille jaoks neid kasutatakse <a
+            href="https://eopearhiiv.edu.ee/e-kursused/eucip/arendus/132_casevahendid_elutskli_erinevatel_etappidel.html">(2)</a>
+    </h2>
+
+    <p>
+    <ul>
+        <li>
+            projektijuhtimine:
+            <ul>
+                <li>projektiplaani koostamine ja jälgimine</li>
+                <li>ressursside haldus</li>
+            </ul>
+        </li>
+        <li>nõuete kogumine ja analüüs:
+            <ul>
+                <li> info kogumine: küsitluslehtede analüüs</li>
+                <li> talitlusprotsesside (äriprotsesside) modelleerimine </li>
+                <li> prototüüpimine, so piiratud funktsionaalsusega lahenduse loomine ja kasutajatelt selle põhjal
+                    tagasiside saamine</li>
+                <li> nõuete haldus: nõuete dokumenteerimine, viitamine, nõuete varustamine atribuutidega (nõude selgus,
+                    nõude
+                    allikad, jm), nõuete prioritiseerimine, nõuete versioonihaldus (seotuna muudatuse taotleja ja
+                    muutuse
+                    põhjendusega) jne</li>
+                <li>nõuete kogumist ja analüüsi toetav töövahend peaks võimaldama meeskonnatööd, sh võimaldama mitmel
+                    kasutajal
+                    samaaegset nõuete muutmist, võimaldama määrata erinevatele kasutajarollidele (projektijuht,
+                    analüütik,
+                    arhitekt,
+                    kasutaja) erinevaid õigusi</li>
+                <li> andmemudeli ja sõnastiku koostamine, vältides nii mitmetimõistetavusi ja andmete
+                    kvaliteediprobleeme (sh
+                    dubleerimist)</li>
+                <li>olemasolevast, dokumenteerimata koodist, automaatselt dokumentatsiooni genereerimine</li>
+            </ul>
+        </li>
+        <li>arhitektuurse disaini väljatöötamine:</li>
+        <ul>
+            <li>võimaldama visualiseerida arhitektuurset lahendust, toetama valitud metoodikat ja ülesmärkimisviisi, st
+                skeemide
+                koostamise „keelt", nt UMLi</li>
+            <li> kirjeldada tarkvara komponente ja nendevahelisi seoseid, liideseid</li>
+            <li> versioonihaldust, arhitektuuriotsuste seostamist nõuetega ja muudatustaotlustega</li>
+        </ul>
+        <li> programmikoodi loomine, testimine:
+            <ul>
+                <li>koodi, sh ekraanivormide, raportite, automaatne genereerimine arhitektuurse disaini alusel</li>
+                <li>silur (debugger) koodi samm-sammuliseks käivitamiseks ja testimiseks</li>
+                <li> testide läbiviimine, sh testide kirjeldamine, käivitamine, tulemuste analüüs ja dokumenteerimine
+                </li>
+                <li> koodi kommenteerimine ja dokumenteerimine</li>
+                <li> koodi versioonihaldus</li>
+            </ul>
+        </li>
+        <li> toote konfiguratsioonihaldus:
+            <ul>
+                <li> koodi versioonihaldus.</li>
+            </ul>
+        </li>
+    </ul>
+    </p>
+
+    CASE-vahendeid võib nende konkreetse otstarbe järgi klassifitseerida mitmel viisil. Süsteemiarenduse elutsüklit
+    toetavad CASE-vahendid jaotatakse näiteks kahte kategooriasse: <a
+        href="https://eopearhiiv.edu.ee/e-kursused/eucip/arendus/131_casevahendite_kasutuseesmrgid_ja_klassifikatsioon.html">(1)</a>
+    <ul>
+        <li> <a href="uppercase.html">„Ülemise taseme" CASE-vahendid</a> (upper CASE tools) toetavad analüüsi ja
+            projekteerimist. Peamiselt on nad kasutusel
+            kasutajanõuete analüüsimisel ja dokumenteerimisel. Nad on ennekõike mõeldud visualiseerimiseks, erinevate
+            skeemide
+            koostamiseks ja ka dokumentatsiooni genereerimiseks. nad toetavad traditsiooniliste diagrammikeelte
+            kasutamist
+            (olem-seos diagrammid, andmemudelid, UML-skeemid, jne).</li>
+        <li>
+            <a href="lowercase.html">„Alumise taseme" CASE vahendid</a> (lower CASE tools) keskenduvad teostusele, kus
+            mudelitest saab tegelik tarkvaratoode.
+            Nad toetavad andmebaasi struktuuri genereerimist, koodi genereerimist, testide läbiviimist, koodi
+            versioonihaldust,
+            konfiguratsioonihaldust, pöördprojekteerimist jms.
+        </li>
+    </ul>
+    <h2>CASE-vahendid spiraalmudeli etappides <a href="https://www.softwaretestingmentor.com/spiral-model/">(3)</a></h2>
+
+    <ul>
+        <li>Planeerimine:
+            <ul>
+                <li>Nõuete kogumise tööriistad: Näiteks JIRA või Confluence, mis aitavad dokumenteerida ja hallata
+                    projekti nõudeid.</li>
+                <li>Ajakava koostamise tööriistad: Microsoft Project või Asana, et planeerida projekti ajakava ja
+                    ressursid.</li>
+            </ul>
+        </li>
+        <li>Riskianalüüs:
+            <ul>
+                <li>Riskihalduse tööriistad: RiskWatch või RiskyProject, mis aitavad tuvastada, hinnata ja jälgida
+                    projekti riske.</li>
+                <li>Prototüüpimise tööriistad: Axure või Balsamiq, mis võimaldavad luua prototüüpe ja visualiseerida
+                    lahendusi enne arenduse alustamist.</li>
+            </ul>
+        </li>
+        <li>Inseneritöö:
+            <ul>
+                <li>Arendustööriistad: IDE-d nagu Visual Studio või Eclipse, mis toetavad koodi kirjutamist ja
+                    testimist.</li>
+                <li>Testimisvahendid: Selenium või JUnit, mis aitavad automatiseerida testimisprotsesse ja tagada
+                    tarkvara kvaliteet.</li>
+            </ul>
+        </li>
+        <li>Hindamine:
+            <ul>
+                <li>Tagasiside kogumise tööriistad: SurveyMonkey või Google Forms, et saada klientidelt tagasisidet
+                    arendatud
+                    prototüüpide kohta.</li>
+                <li>Analüüsivahendid: Google Analytics või Mixpanel, et jälgida tarkvara kasutamist ja koguda andmeid
+                    kasutajate
+                    käitumise kohta.</li>
+            </ul>
+        </li>
+    </ul>
+    <h2>Milliseid vahendeid olen ise juba kasutanud</h2>
+    <ul>
+        <li><a href="https://code.visualstudio.com/">Visual studio code</a></li>
+        <li><a href="https://www.jetbrains.com/idea/">Intellij IDEA</a></li>
+        <li>Notepad++</li>
+        <li>Microsoft PowerPoint</li>
+        <li><a href="https://www.canva.com/">Canva</a></li>
+        <li>Adobe Illustrator</li>
+        <li>Asana</li>
+        <li>Google Forms</li>
+    </ul>
+
+    <br>
+    <br>
+    Kasutatud kirjandus:
+    <br>
+    (1) <a
+        href="https://eopearhiiv.edu.ee/e-kursused/eucip/arendus/131_casevahendite_kasutuseesmrgid_ja_klassifikatsioon.html">https://eopearhiiv.edu.ee/e-kursused/eucip/arendus/131_casevahendite_kasutuseesmrgid_ja_klassifikatsioon.html</a>
+    <br> (2) <a
+        href="https://eopearhiiv.edu.ee/e-kursused/eucip/arendus/132_casevahendid_elutskli_erinevatel_etappidel.html">https://eopearhiiv.edu.ee/e-kursused/eucip/arendus/132_casevahendid_elutskli_erinevatel_etappidel.html</a>
+    <br> (3) <a
+        href="https://www.softwaretestingmentor.com/spiral-model/">https://www.softwaretestingmentor.com/spiral-model/</a>
+    <br>
+
+    <br>
+    <a href="javascript:window.history.back();">Tagasi</a>
+    <br>
+    <br>
+
+</body>
+
+</html>
