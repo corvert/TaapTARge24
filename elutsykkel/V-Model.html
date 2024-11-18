@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-Model</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <p>
+    <h1>V-mudel</h1>
+    V-mudel on tarkvara arendamise elutsükli (SDLC) mudel, mida nimetatakse ka Verifikatsiooni ja Valideerimise mudeliks. See on rangelt struktureeritud mudel, kus iga faasi täitmine toimub järjestikku – uus faas algab alles siis, kui eelmine on lõpetatud. V-mudel ühendab arenduse ja testimise tegevused omavahel paralleelselt, järgides V-kujulist ülesehitust, kus verifikatsioonifaasi tegevused on vasakul ja valideerimisfaasi omad paremal küljel, ühendatuna koodi kirjutamise faasiga.
+    <br>
+    <h3>V-mudeli faasid</h3>
+    <h4>Verifikatsioonifaasi (arenduse) etapid:</h4>
+    <ol type="1">
+        <li>Nõuete analüüs: Kliendi vajaduste ja süsteemi nõuete kogumine. Selles faasis koostatakse ka aktsepteerimistestid hilisemaks kasutamiseks.</li>
+        <li>Süsteemi disain: Valmistatakse süsteemi täielik tehniline ja riistvaraline disain.</li>
+        <li>Arhitektuuri disain: Määratletakse, kuidas tarkvara sisemiselt ja väliselt komponente ühendab. Seda nimetatakse ka kõrgtasemel disainiks (HLD).</li>
+        <li>Moodulite disain: Iga süsteemi mooduli detailne disain (madalatase disain ehk LLD) ning moodulite vahelise sobivuse testide loomine.</li>
+        <li>Koodifaasi: Eelmistes faasides loodud disaini ja spetsifikatsioonide põhjal tehakse koodiarendus.</li>
+
+    </ol>
+    <h3>
+        Valideerimisfaasi (testimise) etapid:
+    </h3>
+    <ol type="1">
+        <li>Üksuse testimine: Mooduli disainifaasis loodud testid kontrollivad iga mooduli tehnilist täpsust.</li>
+        <li>Integratsiooni testimine: Kontrollitakse, kas erinevad moodulid töötavad koos. Testid põhinevad arhitektuuri disainifaasil.</li>
+        <li>Süsteemi testimine: Testitakse süsteemi terviklikku funktsionaalsust ja jõudlust vastavalt süsteemi disainis määratletule.</li>
+        <li>Aktsepteerimistestimine: Nõuete analüüsis loodud testidega kontrollitakse, kas süsteem vastab kliendi nõudmistele ja töötab reaalses kasutuskeskkonnas.</li>
+    </ol>
+   
+ 
+    <br>
+    <br>
+    <img src="../pildid/v-model.jpg" alt="V-mudel" style="width:650px; height:360px">
+    </p>
+    <br>
+    <table>
+        <tr>
+            <th>Eelised</th>
+            <th>Puudused</th>
+        </tr>
+        <tr>
+            <td>
+                <ul>
+              <li>See on lihtne ja hõlpsasti kasutatav mudel.</li>
+              <li>Testide planeerimist, testimist ja kavandamist saab teha isegi enne kodeerimist.</li>
+              <li>See on väga distsiplineeritud mudel, milles arendamine ja testimine toimub etappide kaupa.</li>
+<li>Defektid tuvastatakse esialgses etapis ise.</li>
+<li>Selle abil saab hõlpsasti lõpule viia väikese ja keskmise ulatusega arendusi.</li>
+                </ul>
+            </td>
+
+            <td>
+                <ul>
+             
+                    <li>See mudel ei sobi ühegi keeruka projekti jaoks.</li>
+                    <li>Jääb nii suur risk kui ka ebakindlus.</li>
+                    <li>See ei ole sobiv mudel käimasoleva projekti jaoks.</li>
+                    <li>See mudel ei sobi üldse projektile, mis on ebaselge ja mille nõudeid on muudetud.</li>
+                  
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <a href="https://www.geeksforgeeks.org/top-8-software-development-models-used-in-industry/#2-vmodel">Kasutatud kirjandus</a>
+    <br>
+    <br>
+    <button onclick="javascript:window.history.back();">Tagasi</button>    <br>
+    <br>
+    <br>
+    <br>
+</body>
+
+</html>
