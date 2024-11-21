@@ -1,10 +1,5 @@
 body {
   background-color: lightblue;
-<<<<<<< HEAD
- 
-  
-=======
->>>>>>> b302b627390cab8639358c8cc6e22f638a1bfec8
 }
 
 h1 {
@@ -41,11 +36,7 @@ th,
 td {
   border: 1px solid black;
   border-radius: 10px;
-<<<<<<< HEAD
   padding: 5px;
-=======
->>>>>>> b302b627390cab8639358c8cc6e22f638a1bfec8
-
 }
 
 img {
@@ -84,7 +75,6 @@ button {
 button:hover {
   background-color: #04AA6D;
   color: white;
-<<<<<<< HEAD
 }
 
 .floating {
@@ -109,6 +99,4 @@ nav {
   width: 20%;
   height: 300px; /* only for demonstration, should be removed */
  
-=======
->>>>>>> b302b627390cab8639358c8cc6e22f638a1bfec8
 }
