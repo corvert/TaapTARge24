@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin kalkulaator</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="icon.png" type="image/png">
+
+
+</head>
+
+<body>
+
+    <h1>Bitcoin Kalkulaator</h1>
+    <h2> Ülevaade</h2>
+    Bitcoin Kalkulaator on rakendus, mis võimaldab kasutajal arvutada Bitcoin'i (BTC) väärtust erinevates valuutades,
+    kasutades reaalajas andmeid CoinDesk API-st. Rakendus toetab järgmisi valuutasid:
+    <ul>
+        <li> EUR (euro)</li>
+        <li> USD (USA dollar)</li>
+        <li> EEK (Eesti kroon, ümberarvestus euro alusel)</li>
+        <li> GBP (Suurbritannia nael)</li>
+        <li> JPY (Jaapani jeen)</li>
+    </ul>
+    Kasutaja saab sisestada BTC koguse ja soovitud valuuta, mille väärtus arvutatakse automaatselt.
+
+    <h2>Nõuded</h2>
+    <ul>
+        <li> Internetiühendus reaalajas andmete toomiseks CoinDesk API-st.</li>
+    </ul>
+
+    <h2>Paigaldamine</h2>
+    <ol type="1">
+        <li>Lae alla lähtekood või valmisrakenduse failid.</li>
+        <li> Ava lahendus Visual Studio's ja veendu, et kõik vajalikud sõltuvused on olemas.</li>
+
+    </ol>
+    <h2>Kasutamine</h2>
+    <ol type="1">
+        <li> Ava rakendus.</li>
+        <li> Sisesta:</li>
+        <ul>
+            <li> Valuuta (nt EUR, USD, EEK, GBP, JPY).</li>
+            <li> BTC kogus, mida soovid teisendada.</li>
+        </ul>
+        <li> Vajuta nuppu Arvuta, et näha tulemust.</li>
+        <li> Tulemus kuvatakse ekraanil ja salvestatakse automaatselt faili WriteLines.txt, mis asub kaustas Dokumendid.
+        </li>
+    </ol>
+    <h3>Näited</h3>
+    <ul>
+        <li> 1 BTC = 34,000 EUR</li>
+        <li> 0.5 BTC = 17,000 USD</li>
+    </ul>
+    <h2>Funktsioonid</h2>
+    <ul>
+        <li> Reaalajas kursid: Kasutab CoinDesk API-t, et tuua kõige uuemad BTC kursid.</li>
+        <li> Faili salvestamine: Iga arvutus salvestatakse automaatselt faili, et tulemused oleks hiljem kättesaadavad.
+        </li>
+        <li> Erinevad valuutad: Toetab mitmeid valuutasid, sealhulgas ajaloolist Eesti krooni.</li>
+    </ul>
+    <h2>Rakenduse arendus</h2>
+    <h3> Failid</h3>
+    <ul>
+        <li> <i>Form1.cs:</i> Rakenduse põhilogika ja kasutajaliidese funktsionaalsus.</li>
+        <li> <i>BitcoinRates.cs</i>: Andmestruktuurid API vastuse deserialiseerimiseks.</li>
+    </ul>
+    <h3>Funktsioonid</h3>
+    <ul>
+        <li> <i> getRates():</i> Hangib CoinDesk API-st BTC kursid JSON-vormingus.</li>
+        <li>  Valuutade ümberarvestus: Toetab erinevaid arvutusvalemeid vastavalt kasutaja sisendile.</li>
+    </ul>
+    <h2> Probleemid ja nende lahendused</h2>
+    <h3> Tüüpilised vead:</h3>
+    <ol>
+        <li>Viga API päringu tegemisel: Kontrolli, kas internetiühendus on korras.</li>
+        <li> Vale sisend BTC koguse või valuuta puhul: Rakendus kuvab veateate, kui sisestus ei ole korrektne.</li>
+    </ol>
+
+    <br>
+    <a href="Bitcoin_Calculator.docx">Nõuete dokument </a>
+    <br>
+    <a href="bitcoin.drawio.html">Flowchart</a>
+    <br>
+    <a href="https://github.com/corvert/BitcoinCalculator" target="_blank">Github repo</a>
+
+    <br>
+    <br>
+    <button onclick="javascript:window.history.back();" class="floating">Tagasi</button> <br>
+    <br>
+    <br>
+
+</body>
+<footer>Orvet Priimägi - TARge24</footer>
+</body>
+
+</html>
