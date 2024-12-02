@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +8,90 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="icon" href="../pildid/icon.jpeg" type="image/x-icon">
 </head>
+
 <body>
+    <h1>Entiteedi Suhete Diagrammid (ERD) <sup><a href="https://www.lucidchart.com/pages/er-diagrams" target="_blank"
+                style="font-size: 15px;">(1)</a></sup></h1>
+
+    <h2>Mis on ERD diagrammid?</h2>
+    <p>Olemisuhete diagrammid (ERD) ehk ER-mudelid näitavad andmebaaside loogilist struktuuri ja toovad esile
+        konkreetsete mõistete või olemite (st objektid, inimesed, kohad jne) omavahelised seosed antud teemavaldkonnas.
+        Neid diagramme kasutatakse tavaliselt äriprotsesside demonstreerimiseks ja need on paljude rakenduste lahutamatu
+        osa.</p>
 
 
-    
+    <h2>ERD diagrammide kasutusalad</h2>
+    <ul>
+        <li>Andmebaasi kujundamine: ERD-d kasutatakse peamiselt relatsiooniliste andmebaaside modelleerimiseks,
+            määratledes osalevad entiteedid ja nende suhted.</li>
+        <li>Andmebaasi tõrkeotsing: Need aitavad analüüsida olemasolevaid andmebaase, et tuvastada ja lahendada loogika
+            või rakenduse probleeme.</li>
+        <li>Ärinformatsiooni süsteemid: ERD-d sujuvdavad protsesse, selgitades välja, kuidas entiteedid omavahel
+            suhtlevad äritöövoogudes.</li>
+    </ul>
+
+    <h2>ER mudelis kasutatavad sümbolid <sup><a href="https://www.geeksforgeeks.org/introduction-of-er-model/"
+                target="_blank" style="font-size: 15px;">(2)</a></sup></h2>
+    ER mudelit kasutatakse süsteemi loogilise vaate modelleerimiseks andmeperspektiivist, mis koosneb järgmistest
+    sümbolitest:
+    <ul>
+        <li>Ristkülikud: ristkülikud tähistavad üksusi ER-mudelis.</li>
+        <li>Ovaal: ovaalid esindavad ER-mudeli atribuute.</li>
+        <li>Romb: romb esindavad üksuste vahelisi suhteid.</li>
+        <li>Joon: jooned tähistavad olemite ja olemikomplektide atribuute, millel on muud suhtetüübid.</li>
+        <li>Topeltovaal: topeltovaalod esindavad mitme väärtusega atribuute.</li>
+        <li>Topeltristkülik: topeltristkülik tähistab nõrka olemit.</li>
+        <img src="er-symbolid.png" alt="ERD sümbolid">
+    </ul>
+
+    <h2 style="text-align: center;">ERD ühenduselemendid</h2>
+    <table>
+        <tr>
+            <th>Nimetus</th>
+            <th>Pilt</th>
+        </tr>
+        <tr>
+            <td>One-to-Many suhe</td>
+            <td><img src="one-to-many.png" alt="One-to-Many" style="height: 60px; width: 200px;"></td>
+
+        <tr>
+            <td>One-to-One suhe</td>
+            <td><img src="one-to-one.png" alt="One-to-One" style="height: 60px; width: 200px;"></td>
+        </tr>
+        <tr>
+            <td>Kohustulik suhe</td>
+            <td><img src="mandatory.png" alt="Mandatory" style="height: 60px; width: 200px;"></td>
+        </tr>
+        <tr>
+            <td>Vabatahlik suhe</td>
+            <td><img src="optional.png" alt="Optional" style="height: 60px; width: 200px;"></td>
+        </tr>
+        <tr>
+            <td>Many-to-Many suhe</td>
+            <td><img src="many-to-many.png" alt="Many-to-Many" style="height: 60px; width: 200px;"></td>
+        </tr>
+
+    </table>
+    <h2>Võtmed <sup><a href="https://et.wikipedia.org/wiki/Andmebaas" target="_blank"
+                style="font-size: 15px;"></a>(3)</sup></h2>
+    <ul>
+        <li>Primaarvõti ehk esmasvõti (Primary Key): on kandidaatvõti, mis on valitud relatsiooni kirjeid unikaalselt
+            identifitseerima</li>
+        <li>Välisvõti (Foreign Key): Atribuut, mis loob lingi kahe tabeli vahel.</li>
+        <li>Liitvõti (Composite Key): kui võti sisaldab mitu atribuuti, siis nimetatakse seda liitvõtmeks</li>
+        <li>Lihtvõti (Key): Üldine mõisted mis tahes atribuudile, mis suudab unikaalselt tuvastada entiteedi.</li>
+
+    </ul>
     <br>
     Kasutatud kirjandus:
     <br>
-    (1) <a href="https://drawio-app.com/flowcharts/">https://drawio-app.com/flowcharts/</a>
+    (1) <a href="https://www.lucidchart.com/pages/er-diagrams"
+        target="_blank">https://www.lucidchart.com/pages/er-diagrams/</a>
     <br>
-    (2) <a
-        href="https://www.tud.ttu.ee/im/Vladimir.Viies/materials/YLDINEkaust/Helena_materjalid/objektid/objekt01/osa06.html">https://www.tud.ttu.ee/im/Vladimir.Viies/materials/YLDINEkaust/Helena_materjalid/objektid/objekt01/osa06.html</a>
+    (2) <a href="https://www.geeksforgeeks.org/introduction-of-er-model/"
+        target="_blank">https://www.geeksforgeeks.org/introduction-of-er-model/</a>
+    <br>
+    (3) <a href="https://et.wikipedia.org/wiki/Andmebaas" target="_blank">https://et.wikipedia.org/wiki/Andmebaas</a>
     <br>
     <br>
     <button onclick="javascript:window.history.back();" class="floating">Tagasi</button> <br>
@@ -27,6 +101,7 @@
 <footer>
     Orvet Priimägi - TARge24
 </footer>
-    
+
 </body>
+
 </html>
