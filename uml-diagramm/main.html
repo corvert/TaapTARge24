@@ -10,138 +10,169 @@
 </head>
 
 <body>
+    <header>
+        <h1> UML-diagrammidest ja nende kasutusest </h1>
+    </header>
+    <div class="row">
+        <div class="column left"></div>
+        <div class="column middle">
 
-    <h1> UML-diagrammidest ja nende kasutusest </h1>
-    <table style="border: 0cm;">
-        <td><a href="flowchart.html">Flowchart</a></td>
-        <td><a href="erd.html">ERD diagramm</a></td>
-    </table>
+            <table style="border: 0cm;">
+                <td><a href="flowchart.html">Flowchart</a></td>
+                <td><a href="erd.html">ERD diagramm</a></td>
+            </table>
 
-    <p>Unified Modeling Language (UML) on graafiline keel süsteemide ja tarkvara visualiseerimiseks, olles eriti kasulik
-        dokumenteerimisel, planeerimisel, optimeerimisel ja arendamisel. UML-diagrammid jagunevad
-        struktuuridiagrammideks (näitavad süsteemi staatilisi seoseid) ja käitumisdiagrammideks (näitavad
-        süsteemi dünaamilist toimimist). </p>
+            <p>Unified Modeling Language (UML) on graafiline keel süsteemide ja tarkvara visualiseerimiseks, olles eriti
+                kasulik
+                dokumenteerimisel, planeerimisel, optimeerimisel ja arendamisel. UML-diagrammid jagunevad
+                struktuuridiagrammideks (näitavad süsteemi staatilisi seoseid) ja käitumisdiagrammideks (näitavad
+                süsteemi dünaamilist toimimist). </p>
 
-    <h2>Peamised UML-diagrammid <sup><a
+            <h2>Peamised UML-diagrammid <sup><a
+                        href="https://www.tud.ttu.ee/im/Vladimir.Viies/materials/YLDINEkaust/Helena_materjalid/objektid/objekt01/osa07.html"
+                        target="_blank" style="font-size: 15px;">(1)</a> </sup></h2>
+            <p>
+            <ol>
+                <li><a href="https://drawio-app.com/blog/uml-use-case-diagrams-with-draw-io/"
+                        target="_blank">Kasutuslooskeem
+                        (Use case
+                        diagram)</a></li>
+                Kasutuslooskeeme kasutatakse süsteemi moodustavate tähtsaimate elementide ja protsesside määramiseks.
+                Primaarelemente nimetatakse "aktoriteks" ning protsesse "kasutuslugudeks". Kasutuslooskeem näitab,
+                millised
+                aktorid suhtlevad iga kasutususlooga.
+
+                <li><a href="https://drawio-app.com/blog/uml-class-diagrams-in-draw-io/" target="_blank">Klassiskeem
+                        (Class
+                        diagram):</a></li>
+                Klassiskeemi kasutatakse süsteemidisaini täpsustamiseks ja kasutuslooskeemi täiendamiseks. See jagab
+                kasutuslooskeemil määratud aktorid omavahel seotud klassideks. Klassidevahelised suhted võivad olla "on"
+                või
+                "omab" tüüpi. Klassid pakuvad funktsionaalsust klassi meetodite kaudu ning neil on atribuute, mis
+                kirjeldavad
+                klassi omadusi ja määratlevad selle üheselt.
+
+                <li>Objektiskeem (Object diagram):</li>
+                Objektskeem on teatud tüüpi klassiskeem. Objekt esitab klassi olekut teatud ajahetkel süsteemi töö
+                käigus.
+                Objektiskeem esitab süsteemi erinevate klasside olekuid ning nendevahelisi relatsioone või
+                assotsiatsioone
+                teatud ajahetkel.
+
+                <li><a href="https://drawio-app.com/blog/uml-state-diagrams-with-draw-io/" target="_blank">Olekuskeem
+                        (State
+                        Diagram):</a></li>
+                Olekuskeem kujutab süsteemi objektide erinevaid olekuid nende elutsükli jooksul. See näitab, kuidas
+                objektid
+                muudavad oma olekut vastavalt süsteemis toimuvatele sündmustele, ning kirjeldab üleminekuid algolekust
+                lõppolekusse süsteemi mõjutavate sündmuste alusel.
+
+                <li><a href="https://drawio-app.com/blog/create-uml-activity-diagrams-in-draw-io/"
+                        target="_blank">Tegevusskeem
+                        (Activity
+                        diagram):</a></li>
+                Protsesside kulgemist süsteemis kirjeldatakse tegevusskeemi abil. Sarnaselt olekuskeemile koosneb ka
+                tegevusskeem toimingutest, tegevustest, üleminekutest, alg- ja lõppolekust ning tõkisetingimustest
+
+                <li><a href="https://drawio-app.com/blog/create-uml-sequence-diagrams-in-draw-io/"
+                        target="_blank">Jadaskeem
+                        (Sequence
+                        diagram):</a> </li>
+                Jadaskeem esitab süsteemi objektide
+                omavahelist suhtlemist. Jadaskeemi oluliseks omaduseks on selle ajaline järjestus.
+                S.o. esitatakse samm-sammult täpne objektide vaheline interaktsioon. Erinevad
+                objektid jadaskeemil suhtlevad omavahel "sõnumite" edastamise kaudu.
+
+                <li><a href="https://drawio-app.com/blog/uml-communication-diagrams/" target="_blank">Koostööskeem
+                        (Collaboration diagram):</a></li>
+                Koostööskeem grupeerib erinevate objektide vahelise interaktsiooni. Interaktsioonid esitatakse
+                nummerdatuna, mis
+                lubab jälgida nende toimumise järjekorda. Koostööskeem lubab kindlaks teha kõikvõimalikud
+                interaktsioonid mis
+                igat objekti teistega seovad.
+
+                <li>Komponentskeem (Component diagram):</li>
+                Komponentskeemi abil kujutatakse kõrgtaseme osi, millest süsteem koosneb. See skeem esitab millised
+                komponendid
+                süsteemi moodustavad ning kuidas nad omavahel seotud on. Levitusskeem (Deployment diagram):
+                levitusskeemi abil
+                kujutatakse rakenduse käitusaegeseid elemente.
+
+                <li><a href="https://drawio-app.com/blog/uml-interaction-overview-diagrams-in-draw-io/"
+                        target="_blank">Interaktsioonide
+                        ülevaate diagrammid:</a></li>
+                Need UML-diagrammid on kombinatsioon tegevusskeemist ja järjestusskeemidest, kus iga üksiktegevus on
+                paigutatud
+                oma raamidesse, nii on lihtsam programmeerida.
+
+                <li><a href="https://drawio-app.com/blog/uml-communication-diagrams/" target="_blank">Side diagramm</a>
+                </li>
+                Varem nimetati neid koostöödiagrammideks. Need on sarnased juhtumidiagrammidele, kirjeldades edastatavat
+                teavet.
+                Objektidevahelise suhtluse visualiseerimiseks kasutatakse aga sagedamini järjestusskeeme, kuna need on
+                selgemad
+                ja rikkalikuma tähistusega.
+
+            </ol>
+            </p>
+
+            <h2>Täpsemad UML-diagrammid suuremate süsteemide jaoks <sup><a
+                        href="https://drawio-app.com/blog/uml-diagrams/" target="_blank"
+                        style="font-size: 15px;">(2)</a></sup></h2>
+            <ol>
+                <li>Ajastus diarammid - jälgivad objektide käitumist aja jooksul.</li>
+                <li>Objektidiagrammid - näitavad klassidiagrammide praktilist rakendust.</li>
+                <li>Komponentide diagrammid - kirjeldavad keeruliste süsteemide komponente ja liideseid.</li>
+                <li>Paigaldus diagrammid - näitavad tarkvara juurutamist mitmes süsteemis.</li>
+                <li>Pakendi diagrammid - illustreerivad süsteemi sõltuvusi suurte koodibaaside korral.</li>
+                <li>Komposiitstruktuuri diagrammid - esindavad klasside sisemist struktuuri.</li>
+                <li>Profiilidiagrammid - laiendavad UML-i kasutamiseks spetsiifilistes domeenides (nt tervishoid).</li>
+            </ol>
+
+            <h2>Näided <sup><a href="https://drawio-app.com/examples/" style="font-size: 15px;"
+                        target="_blank">(3)</a></sup>
+            </h2>
+            <ol>
+                <li><a href="https://drawio-app.com/bpmn/" target="_blank">BPMN ja BPMN 2.0</a></li>
+                <li><a href="https://drawio-app.com/erd/" target="_blank">ERD</a></li>
+                <li><a href="https://drawio-app.com/flowcharts/" target="_blank">Flowchart</a></li>
+                <li><a href="https://drawio-app.com/mind-maps/" target="_blank">Mind map</a></li>
+                <li><a href="https://drawio-app.com/network-diagrams/" target="_blank">Network diagrams</a></li>
+                <li><a href="https://drawio-app.com/org-charts/" target="_blank">Org charts</a></li>
+                <li><a href="https://drawio-app.com/sequence-diagrams/" target="_blank">Sequence diagrams</a></li>
+
+
+
+            </ol>
+            <br>
+            Kasutatud kirjandus:
+
+            <br>
+            (1) <a
                 href="https://www.tud.ttu.ee/im/Vladimir.Viies/materials/YLDINEkaust/Helena_materjalid/objektid/objekt01/osa07.html"
-                target="_blank" style="font-size: 15px;">(1)</a> </sup></h2>
-    <p>
-    <ol>
-        <li><a href="https://drawio-app.com/blog/uml-use-case-diagrams-with-draw-io/" target="_blank">Kasutuslooskeem
-                (Use case
-                diagram)</a></li>
-        Kasutuslooskeeme kasutatakse süsteemi moodustavate tähtsaimate elementide ja protsesside määramiseks.
-        Primaarelemente nimetatakse "aktoriteks" ning protsesse "kasutuslugudeks". Kasutuslooskeem näitab, millised
-        aktorid suhtlevad iga kasutususlooga.
+                target="_blank">https://www.tud.ttu.ee/im/Vladimir.Viies/materials/YLDINEkaust/Helena_materjalid/objektid/objekt01/osa07.html</a>
+            <br>
+            (2) <a href="https://drawio-app.com/blog/uml-diagrams/"
+                target="_blank">https://drawio-app.com/blog/uml-diagrams/</a>
+            <br>
+            (3) <a href="https://drawio-app.com/examples/">https://drawio-app.com/examples/</a>
 
-        <li><a href="https://drawio-app.com/blog/uml-class-diagrams-in-draw-io/" target="_blank">Klassiskeem (Class
-                diagram):</a></li>
-        Klassiskeemi kasutatakse süsteemidisaini täpsustamiseks ja kasutuslooskeemi täiendamiseks. See jagab
-        kasutuslooskeemil määratud aktorid omavahel seotud klassideks. Klassidevahelised suhted võivad olla "on" või
-        "omab" tüüpi. Klassid pakuvad funktsionaalsust klassi meetodite kaudu ning neil on atribuute, mis kirjeldavad
-        klassi omadusi ja määratlevad selle üheselt.
+            <br>
 
-        <li>Objektiskeem (Object diagram):</li>
-        Objektskeem on teatud tüüpi klassiskeem. Objekt esitab klassi olekut teatud ajahetkel süsteemi töö käigus.
-        Objektiskeem esitab süsteemi erinevate klasside olekuid ning nendevahelisi relatsioone või assotsiatsioone
-        teatud ajahetkel.
+            <br>
+            <button onclick="javascript:window.history.back();" class="floating">Tagasi</button> <br>
 
-        <li><a href="https://drawio-app.com/blog/uml-state-diagrams-with-draw-io/" target="_blank">Olekuskeem (State
-                Diagram):</a></li>
-        Olekuskeem kujutab süsteemi objektide erinevaid olekuid nende elutsükli jooksul. See näitab, kuidas objektid
-        muudavad oma olekut vastavalt süsteemis toimuvatele sündmustele, ning kirjeldab üleminekuid algolekust
-        lõppolekusse süsteemi mõjutavate sündmuste alusel.
+            <br>
+            <br>
+            <br>
+        </div>
+        <div class="column right">
 
-        <li><a href="https://drawio-app.com/blog/create-uml-activity-diagrams-in-draw-io/" target="_blank">Tegevusskeem
-                (Activity
-                diagram):</a></li>
-        Protsesside kulgemist süsteemis kirjeldatakse tegevusskeemi abil. Sarnaselt olekuskeemile koosneb ka
-        tegevusskeem toimingutest, tegevustest, üleminekutest, alg- ja lõppolekust ning tõkisetingimustest
-
-        <li><a href="https://drawio-app.com/blog/create-uml-sequence-diagrams-in-draw-io/" target="_blank">Jadaskeem
-                (Sequence
-                diagram):</a> </li>
-        Jadaskeem esitab süsteemi objektide
-        omavahelist suhtlemist. Jadaskeemi oluliseks omaduseks on selle ajaline järjestus.
-        S.o. esitatakse samm-sammult täpne objektide vaheline interaktsioon. Erinevad
-        objektid jadaskeemil suhtlevad omavahel "sõnumite" edastamise kaudu.
-
-        <li><a href="https://drawio-app.com/blog/uml-communication-diagrams/" target="_blank">Koostööskeem
-                (Collaboration diagram):</a></li>
-        Koostööskeem grupeerib erinevate objektide vahelise interaktsiooni. Interaktsioonid esitatakse nummerdatuna, mis
-        lubab jälgida nende toimumise järjekorda. Koostööskeem lubab kindlaks teha kõikvõimalikud interaktsioonid mis
-        igat objekti teistega seovad.
-
-        <li>Komponentskeem (Component diagram):</li>
-        Komponentskeemi abil kujutatakse kõrgtaseme osi, millest süsteem koosneb. See skeem esitab millised komponendid
-        süsteemi moodustavad ning kuidas nad omavahel seotud on. Levitusskeem (Deployment diagram): levitusskeemi abil
-        kujutatakse rakenduse käitusaegeseid elemente.
-
-        <li><a href="https://drawio-app.com/blog/uml-interaction-overview-diagrams-in-draw-io/"
-                target="_blank">Interaktsioonide
-                ülevaate diagrammid:</a></li>
-        Need UML-diagrammid on kombinatsioon tegevusskeemist ja järjestusskeemidest, kus iga üksiktegevus on paigutatud
-        oma raamidesse, nii on lihtsam programmeerida.
-
-        <li><a href="https://drawio-app.com/blog/uml-communication-diagrams/" target="_blank">Side diagramm</a></li>
-        Varem nimetati neid koostöödiagrammideks. Need on sarnased juhtumidiagrammidele, kirjeldades edastatavat teavet.
-        Objektidevahelise suhtluse visualiseerimiseks kasutatakse aga sagedamini järjestusskeeme, kuna need on selgemad
-        ja rikkalikuma tähistusega.
-
-    </ol>
-    </p>
-
-    <h2>Täpsemad UML-diagrammid suuremate süsteemide jaoks <sup><a href="https://drawio-app.com/blog/uml-diagrams/"
-                target="_blank" style="font-size: 15px;">(2)</a></sup></h2>
-    <ol>
-        <li>Ajastus diarammid - jälgivad objektide käitumist aja jooksul.</li>
-        <li>Objektidiagrammid - näitavad klassidiagrammide praktilist rakendust.</li>
-        <li>Komponentide diagrammid - kirjeldavad keeruliste süsteemide komponente ja liideseid.</li>
-        <li>Paigaldus diagrammid - näitavad tarkvara juurutamist mitmes süsteemis.</li>
-        <li>Pakendi diagrammid - illustreerivad süsteemi sõltuvusi suurte koodibaaside korral.</li>
-        <li>Komposiitstruktuuri diagrammid - esindavad klasside sisemist struktuuri.</li>
-        <li>Profiilidiagrammid - laiendavad UML-i kasutamiseks spetsiifilistes domeenides (nt tervishoid).</li>
-    </ol>
-
-    <h2>Näided <sup><a href="https://drawio-app.com/examples/" style="font-size: 15px;" target="_blank">(3)</a></sup>
-    </h2>
-    <ol>
-        <li><a href="https://drawio-app.com/bpmn/" target="_blank">BPMN ja BPMN 2.0</a></li>
-        <li><a href="https://drawio-app.com/erd/" target="_blank">ERD</a></li>
-        <li><a href="https://drawio-app.com/flowcharts/" target="_blank">Flowchart</a></li>
-        <li><a href="https://drawio-app.com/mind-maps/" target="_blank">Mind map</a></li>
-        <li><a href="https://drawio-app.com/network-diagrams/" target="_blank">Network diagrams</a></li>
-        <li><a href="https://drawio-app.com/org-charts/" target="_blank">Org charts</a></li>
-        <li><a href="https://drawio-app.com/sequence-diagrams/" target="_blank">Sequence diagrams</a></li>
-
-
-
-    </ol>
-    <br>
-    Kasutatud kirjandus:
-
-    <br>
-    (1) <a
-        href="https://www.tud.ttu.ee/im/Vladimir.Viies/materials/YLDINEkaust/Helena_materjalid/objektid/objekt01/osa07.html"
-        target="_blank">https://www.tud.ttu.ee/im/Vladimir.Viies/materials/YLDINEkaust/Helena_materjalid/objektid/objekt01/osa07.html</a>
-    <br>
-    (2) <a href="https://drawio-app.com/blog/uml-diagrams/"
-        target="_blank">https://drawio-app.com/blog/uml-diagrams/</a>
-    <br>
-    (3) <a href="https://drawio-app.com/examples/">https://drawio-app.com/examples/</a>
-
-    <br>
-
-    <br>
-    <button onclick="javascript:window.history.back();" class="floating">Tagasi</button> <br>
-
-    <br>
-    <br>
-    <br>
-</body>
-<footer>
-    Orvet Priimägi - TARge24
-</footer>
+        </div>
+    </div>
+    <footer>
+        Orvet Priimägi - TARge24
+    </footer>
 
 </body>
 

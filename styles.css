@@ -3,7 +3,7 @@ body {
 }
 
 h1 {
-  color: rgb(206, 39, 39);
+  color: rgb(13, 238, 107);
   text-align: center;
 }
 
@@ -56,7 +56,7 @@ button {
   background-color: #04AA6D; /* Green */
   border: none;
   color: white;
-  padding: 16px 32px;
+  padding: 10px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -84,12 +84,23 @@ button:hover {
   z-index: 9999;
 }
 
+header {
+  background-color: #5248ac;
+  padding: 5px;
+  text-align: center;
+  color: white;
+  border-radius: 25px;
+}
+
 
 footer {
   background-color: #5248ac;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
-  color: white;
+  color:  rgb(13, 238, 107);
+  border-radius: 25px;
+  
+
 }
 
 
@@ -99,4 +110,39 @@ nav {
   width: 20%;
   height: 300px; /* only for demonstration, should be removed */
  
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+  
+}
+
+.left {
+  width: 10%;
+  border-radius: 25px;
+}
+.right {
+  width: 10%;
+  border-radius: 25px;
+  
+}
+
+.middle {
+  width: 75%;
+  border-radius: 25px;
+  background-color: rgb(128, 176, 194);
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
