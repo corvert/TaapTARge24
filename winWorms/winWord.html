@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows Forms</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../pildid/icon.jpeg" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <h1>Windows Forms Rakendus - Kategooriate ja Toodete Halduse Süsteem</h1>
+    </header>
+    <div class="row">
+        <div class="column left"></div>
+        <div class="column middle">
+
+            <h2>Ülevaade</h2>
+            See projekt on Windows Forms rakendus, mis võimaldab hallata kategooriaid ja nendele vastavaid tooteid.
+            Rakendus kasutab SQLite andmebaasi ja on ehitatud C# keeles, kasutades Entity Framework Core'i.
+            <h2>Funktsionaalsus</h2>
+            <ol>
+                <li>Funktsionaalsus</li>
+                <ul>
+                    <li>Kuva olemasolevad kategooriad.</li>
+                    <li>Lisa, muuda kategooriaid.</li>
+                </ul>
+                <li>Toodete haldus</li>
+                <ul>
+                    <li>Toodete haldus</li>
+                    <li>Lisa, muuda tooteid, mis on seotud konkreetse kategooriaga.</li>
+                </ul>
+                <li>Andmete salvestamine</li>
+                <ul>
+                    <li>Salvestab muudatused andmebaasi, kasutades "Save"-nuppu.</li>
+                </ul>
+            </ol>
+            <h2>Kasutatud tehnoloogiad</h2>
+            <ul>
+                <li>Keeled: C#</li>
+                <li>Andmebaas: SQLite</li>
+                <li>ORM: Entity Framework Core (EF Core)</li>
+                <li>Kasutajaliides: Windows Forms</li>
+            </ul>
+            <h2>Kuidas projekti käivitada</h2>
+            <ol>
+                <li>Eeltingimused</li>
+                <ul>
+                    <li>Installi Visual Studio (koos .NET Frameworki ja Windows Forms App tugi).</li>
+                    <li>Veendu, et SQLite on saadaval.</li>
+                </ul>
+                <li>Projektifaili avamine</li>
+                <ul>
+                    <li>Ava <i>.sln</i> fail Visual Studios.</li>
+                </ul>
+                <li>Rakenduse käivitamine</li>
+                <ul>
+                    <li>Vajuta <i>F5</i> või vali menüüst "Start".</li>
+                    <li>Rakendus loob andmebaasi ja täidab selle algandmetega, kui see on esmakordselt käivitatud.</li>
+                </ul>
+
+            </ol>
+            <h2>Rakenduse kasutamine</h2>
+            <ol>
+                <li>Ava rakendus.</li>
+                <li>Kuva kategooriad vasakpoolses tabelis.</li>
+                <li>Vali kategooria, et näha seotud tooteid parempoolses tabelis.</li>
+                <li>Tee vajalikud muudatused ja salvesta, vajutades "Save"-nuppu.</li>
+            </ol>
+            <h2>Andmebaasi ülesehitus</h2>
+            <h3>Tabel: Categories</h3>
+            <ul>
+                <li><i>Id:</i> Unikaalne ID (int)</li>
+                <li><i>Name:</i> Kategooria nimi (string)</li>
+            </ul>
+            <h3>Tabel: Products</h3>
+            <ul>
+                <li><i>Id:</i> Unikaalne ID (int)</li>
+                <li><i>Name:</i> Toote nimi (string)</li>
+            </ul>
+            <h3>ERD diagramm</h3>
+            <div class="mxgraph" style="max-width:100%;border:1px solid transparent;"
+                data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; agent=\&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36\&quot; version=\&quot;25.0.3\&quot;&gt;\n  &lt;diagram name=\&quot;Leht-1\&quot; id=\&quot;2HrpfXjOCL5BXDFn-U6u\&quot;&gt;\n    &lt;mxGraphModel dx=\&quot;1434\&quot; dy=\&quot;738\&quot; grid=\&quot;1\&quot; gridSize=\&quot;10\&quot; guides=\&quot;1\&quot; tooltips=\&quot;1\&quot; connect=\&quot;1\&quot; arrows=\&quot;1\&quot; fold=\&quot;1\&quot; page=\&quot;1\&quot; pageScale=\&quot;1\&quot; pageWidth=\&quot;827\&quot; pageHeight=\&quot;1169\&quot; math=\&quot;0\&quot; shadow=\&quot;0\&quot;&gt;\n      &lt;root&gt;\n        &lt;mxCell id=\&quot;0\&quot; /&gt;\n        &lt;mxCell id=\&quot;1\&quot; parent=\&quot;0\&quot; /&gt;\n        &lt;mxCell id=\&quot;HhYwdBiPRdFbxCQgBpXm-7\&quot; value=\&quot;Product\&quot; style=\&quot;swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;330\&quot; y=\&quot;70\&quot; width=\&quot;140\&quot; height=\&quot;104\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HhYwdBiPRdFbxCQgBpXm-8\&quot; value=\&quot;ID (PK)\&quot; style=\&quot;text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;HhYwdBiPRdFbxCQgBpXm-7\&quot;&gt;\n          &lt;mxGeometry y=\&quot;26\&quot; width=\&quot;140\&quot; height=\&quot;26\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HhYwdBiPRdFbxCQgBpXm-9\&quot; value=\&quot;Name\&quot; style=\&quot;text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;HhYwdBiPRdFbxCQgBpXm-7\&quot;&gt;\n          &lt;mxGeometry y=\&quot;52\&quot; width=\&quot;140\&quot; height=\&quot;26\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HhYwdBiPRdFbxCQgBpXm-10\&quot; value=\&quot;CategoryId (FK)\&quot; style=\&quot;text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;HhYwdBiPRdFbxCQgBpXm-7\&quot;&gt;\n          &lt;mxGeometry y=\&quot;78\&quot; width=\&quot;140\&quot; height=\&quot;26\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HhYwdBiPRdFbxCQgBpXm-11\&quot; value=\&quot;Category\&quot; style=\&quot;swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;50\&quot; y=\&quot;83\&quot; width=\&quot;140\&quot; height=\&quot;78\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HhYwdBiPRdFbxCQgBpXm-12\&quot; value=\&quot;ID (PK)\&quot; style=\&quot;text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;HhYwdBiPRdFbxCQgBpXm-11\&quot;&gt;\n          &lt;mxGeometry y=\&quot;26\&quot; width=\&quot;140\&quot; height=\&quot;26\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HhYwdBiPRdFbxCQgBpXm-13\&quot; value=\&quot;Name\&quot; style=\&quot;text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;HhYwdBiPRdFbxCQgBpXm-11\&quot;&gt;\n          &lt;mxGeometry y=\&quot;52\&quot; width=\&quot;140\&quot; height=\&quot;26\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HhYwdBiPRdFbxCQgBpXm-17\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERmany;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.007;entryY=0.038;entryDx=0;entryDy=0;entryPerimeter=0;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;HhYwdBiPRdFbxCQgBpXm-12\&quot; target=\&quot;HhYwdBiPRdFbxCQgBpXm-9\&quot;&gt;\n          &lt;mxGeometry width=\&quot;100\&quot; height=\&quot;100\&quot; relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;210\&quot; y=\&quot;183\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;310\&quot; y=\&quot;83\&quot; as=\&quot;targetPoint\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n      &lt;/root&gt;\n    &lt;/mxGraphModel&gt;\n  &lt;/diagram&gt;\n&lt;/mxfile&gt;\n&quot;}">
+            </div>
+            <script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+
+            <br>
+            <br>
+            <button class="floating"
+                onclick="window.open('https://github.com/corvert/GetStartedWinForm', '_blank');">Github</button>
+            <button onclick="javascript:window.history.back();" class="floating">Tagasi</button> <br>
+            <br>
+            <br>
+        </div>
+        <div class="column right">
+
+        </div>
+    </div>
+    <footer>
+        Orvet Priimägi - TARge24
+    </footer>
+
+</body>
+
+</html>
