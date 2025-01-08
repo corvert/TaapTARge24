@@ -2,58 +2,159 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UML-diagrammid</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="pildid/icon.jpeg" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test-driven development</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="icon" href="../../pildid/icon.jpeg" type="image/x-icon">
 </head>
 
 <body>
-    <header>
-        <h1> pealkiri</h1>
-    </header>
-    <div class="row">
-        <div class="column left">vasak</div>
-        <div class="column middle">
-
-            kesk
-
-            <div class="floating">
-                <button onclick="topFunction()" id="myBtn" title="Go to top">Algusesse</button>
-                <button onclick="javascript:window.history.back();" id="backBtn">Tagasi</button>
-                <br>
-            </div>
-        </div>
-        <div class="column right">
-            parem
-        </div>
+  <header>
+    <h1>Test-driven development</h1>
+  </header>
+  <div class="row">
+    <div class="column left">
+      <nav>
+        <button class="floating" onclick="window.location.href='behavior-driven.html'">Behavior-driven
+          development</button>
+        <button class="floating" onclick="window.location.href='design-driven.html'">Design-driven development</button>
+        <button class="floating" onclick="window.location.href='domain-driven.html'">Domain-driven design</button>
+        <button class="floating" onclick="window.location.href='secure.html'">Secure by design</button>
+        <button class="floating" onclick="window.location.href='test-driven.html'">Test-driven development</button>
+        <button class="floating" onclick="window.location.href='acceptance.html'">Acceptance test-driven
+          development</button>
+        <button class="floating" onclick="window.location.href='continuous.html'">Continuous test-driven
+          development</button>
+        <button class="floating" onclick="window.location.href='specification.html'">Specification by example</button>
+        <button class="floating" onclick="window.location.href='data-driven.html'">Data-driven development</button>
+        <button class="floating" onclick="window.location.href='data-oriented.html'">Data-oriented design</button>
+      </nav>
     </div>
-    <footer>
-        Orvet Priimägi - TARge24
-    </footer>
+    <div class="column middle">
 
-    <script>
-        // Get the button
-        let mybutton = document.getElementById("myBtn");
-        
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function() {scrollFunction()};
-        
-        function scrollFunction() {
-          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-          } else {
-            mybutton.style.display = "none";
-          }
-        }
-        
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-          document.body.scrollTop = 0;
-          document.documentElement.scrollTop = 0;
-        }
-        </script>
+      <h2>Test-driven development</h2>
+      <p>Mis on testipõhine arendus (TDD)?
+        Test-driven development (TDD) on kodeerimismeetod, mille puhul kirjutate esmalt testi ja see ebaõnnestub,
+        seejärel
+        kirjutate arendustesti läbimiseks koodi ja puhastate koodi. Seda protsessi taaskasutati ühe uue funktsiooni või
+        muudatuse jaoks. Teiste meetodite puhul, mille puhul kirjutate kõigepealt kas kogu koodi või kõik testid,
+        ühendab TDD ja kirjutab testid ja koodi kokku üheks.
+        <br>
+        Test-Driven Development (TDD) on tarkvaraarenduse meetod, mille puhul keskendutakse testide kirjutamisele enne
+        funktsiooni tegeliku koodi kirjutamist. See lähenemine kasutab lühikesi arendustsükleid, mis kvaliteedi ja
+        korrektsuse tagamiseks korduvad.
+      </p>
+      <p>
+        Tavaliselt järgitakse järgmist toimingute jada:
+      <figure>
+        <img src="../agiilne/picture/Test-Driven-Dev.png" alt="">
+        <figcaption style="text-align: left;">
+          Tavaliselt järgitakse järgmist toimingute jada:
+
+          <li>Käivitage kõik testjuhtumid ja veenduge, et uus testjuhtum ebaõnnestub.</li>
+          <li>Punane - looge testjuhtum ja muutke see ebaõnnestumiseks, käivitage testjuhtumid</li>
+          <li>Roheline - tehke testjuhtum mis tahes viisil.</li>
+          <li>Refactor - muutke koodi duplikaadi/liigsuse eemaldamiseks. Refaktori kood - seda tehakse koodi
+            dubleerimise eemaldamiseks.</li>
+          <li>Korrake ülalnimetatud samme ikka ja jälle</li>
+
+        </figcaption>
+      </figure>
+      </p>
+      <br>
+      <table>
+        <tr>
+          <th colspan="2">Test-driven development</th>
+        </tr>
+        <tr>
+          <th>Eelised</th>
+          <th>Puudused</th>
+        </tr>
+        <tr>
+          <td>
+            <ul>
+              <li>Test annab funktsioonide kohta pidevat tagasisidet.</li>
+              <li>Disaini kvaliteet tõuseb, mis aitab veelgi paremini hooldada.</li>
+              <li>Testipõhine arendus toimib turvavõrguna vigade vastu.</li>
+              <li>TDD tagab, et teie rakendus vastab tegelikult selle jaoks määratletud nõuetele.</li>
+              <li>TDD-del on väga lühike arendustsükkel.</li>
+
+            </ul>
+          </td>
+
+          <td>
+            <ul>
+
+              <li>Suurenenud koodimaht : TDD kasutamine tähendab testjuhtumite jaoks lisakoodi kirjutamist, mis võib
+                muuta üldise koodibaasi suuremaks ja struktureerimata.</li>
+              <li>Testide vale turvalisus : testide läbimine paneb arendajad arvama, et kood on turvalisem ainult
+                eeldusel.</li>
+              <li>Hoolduskulud : paljude testide ajakohasena hoidmine võib olla keeruline teabe säilitamine ja see on ka
+                aeganõudev protsess.</li>
+              <li>Aeganõudvad testimisprotsessid : testide kirjutamine ja säilitamine võib võtta kaua aega.</li>
+              <li>Testimiskeskkonna seadistamine : TDD peab olema korralik testimiskeskkond, milles ta pingutab koodide
+                ja andmete seadistamiseks ja hooldamiseks.</li>
+
+            </ul>
+          </td>
+        </tr>
+      </table>
+      <br>
+
+      <p><a href="https://site.mockito.org/" target="_blank">Mockito (Java)</a>
+
+        Mockito on ideaalne tööriist Java testides mock-objektide loomiseks ja väliste sõltuvuste simuleerimiseks. See
+        võimaldab määrata mock-objektide käitumist, kontrollida, kas ja kuidas neid kutsuti, ning eraldada kood
+        elegantselt fokuseeritud testimiseks. Erinevalt teistest mock-raamistikest pakub Mockito kasutajasõbralikku
+        API-d, mis meenutab päris koodi kirjutamist, muutes selle kasutamise lihtsaks ka algajatele.
+        <br>
+        Peamised omadused: mock-ide ja stub-ide loomine, interaktsioonide kontrollimine, argumentide matcherid, sujuv
+        API.
+        <br>
+        Miks see on üks parimaid TDD tööriistu: lihtne kasutada, intuitiivne API, meenutab päris koodi kirjutamist ning
+        võimaldab ka algajatel tõhusalt mock'e luua.
+      </p>
+      <br>
+      <p>Kasutatud kirjandus: <br>
+        <a href="https://www.geeksforgeeks.org/test-driven-development-tdd/?ref=header_outind"
+          target="_blank">https://www.geeksforgeeks.org/test-driven-development-tdd/?ref=header_outind</a>
+      </p>
+
+      <div class="floating">
+        <button onclick="javascript:window.history.back();" id="backBtn">Tagasi</button>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Algusesse</button>
+      </div>
+    </div>
+    <div class="column right">
+
+    </div>
+  </div>
+  <footer>
+    Orvet Priimägi - TARge24
+  </footer>
+
+  <script>
+    // Get the button
+    let mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
 </body>
 
 </html>

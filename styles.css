@@ -50,8 +50,6 @@ img {
 
 
 p {
- 
- 
   text-align: left;
   text-align: justify;
   text-justify: inter-word;
@@ -92,8 +90,9 @@ button:active{
   bottom: 20px;
   z-index: 9999;
   display: flex; /* Lisa flexbox */
-  justify-content: space-between; /* Aseta nupud vasakule ja paremale */
+  justify-content: center; /* Aseta nupud vasakule ja paremale */
   width: 100%; 
+  gap: 20px;
 }
 
 #myBtn {
@@ -120,7 +119,6 @@ footer {
   text-align: center;
   color:  rgb(13, 238, 107);
   border-radius: 25px;
-  
 
 }
 
