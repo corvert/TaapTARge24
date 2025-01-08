@@ -2,58 +2,156 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UML-diagrammid</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="pildid/icon.jpeg" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceptance test-driven development</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="icon" href="../../pildid/icon.jpeg" type="image/x-icon">
 </head>
 
 <body>
-    <header>
-        <h1> pealkiri</h1>
-    </header>
-    <div class="row">
-        <div class="column left">vasak</div>
-        <div class="column middle">
-
-            kesk
-
-            <div class="floating">
-                <button onclick="topFunction()" id="myBtn" title="Go to top">Algusesse</button>
-                <button onclick="javascript:window.history.back();" id="backBtn">Tagasi</button>
-                <br>
-            </div>
-        </div>
-        <div class="column right">
-            parem
-        </div>
+  <header>
+    <h1>Acceptance test-driven development</h1>
+  </header>
+  <div class="row">
+    <div class="column left">
+      <nav>
+        <button class="floating" onclick="window.location.href='behavior-driven.html'">Behavior-driven
+          development</button>
+        <button class="floating" onclick="window.location.href='design-driven.html'">Design-driven development</button>
+        <button class="floating" onclick="window.location.href='domain-driven.html'">Domain-driven design</button>
+        <button class="floating" onclick="window.location.href='secure.html'">Secure by design</button>
+        <button class="floating" onclick="window.location.href='test-driven.html'">Test-driven development</button>
+        <button class="floating" onclick="window.location.href='acceptance.html'">Acceptance test-driven
+          development</button>
+        <button class="floating" onclick="window.location.href='continuous.html'">Continuous test-driven
+          development</button>
+        <button class="floating" onclick="window.location.href='specification.html'">Specification by example</button>
+        <button class="floating" onclick="window.location.href='data-driven.html'">Data-driven development</button>
+        <button class="floating" onclick="window.location.href='data-oriented.html'">Data-oriented design</button>
+      </nav>
     </div>
-    <footer>
-        Orvet Priimägi - TARge24
-    </footer>
+    <div class="column middle">
 
-    <script>
-        // Get the button
-        let mybutton = document.getElementById("myBtn");
-        
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function() {scrollFunction()};
-        
-        function scrollFunction() {
-          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-          } else {
-            mybutton.style.display = "none";
-          }
-        }
-        
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-          document.body.scrollTop = 0;
-          document.documentElement.scrollTop = 0;
-        }
-        </script>
+      <h2>Acceptance Test Driven development (ATDD) in Software Engineering</h2>
+
+      <p>
+        Acceptance Test-Driven Design (ATDD) on meetod, mis kaasab rakenduste loomisse kasutajate või klientide
+        tagasisidet. Automaatseid teste luuakse juba arendusprotsessi alguses, kui osapooled määratlevad
+        aktseptantsteste, võimaldades seeläbi luua toote, mis vastab täielikult kasutajate ootustele funktsionaalsuse
+        osas. See meetod soodustab lihtsust, koostööd ja tagasisidet kogu protsessi jooksul, pakkudes tihedamat
+        vastavust toote ja kliendi ootuste vahel.</p>
+      <ul>
+        <li>ATDD (Acceptance Test-Driven Development) on arendustehnika, mis seab rõhuasetuse lõppkasutajatele või
+          klientidele, tehes aktseptantstestidest arenduse aluse. See tähendab, et keskendutakse süsteemi tegelikult
+          vajaliku funktsionaalsuse/käitumise pakkumisele. Selle metoodika puhul kirjutatakse aktseptantstest kasutaja
+          vaatenurgast ning testjuhtumid luuakse juba enne koodi kirjutamise alustamist.</li>
+        <li>
+          Mis on Acceptance Test-Driven Development (ATDD)?
+          ATDD (Acceptance Test-Driven Development) on arendustehnika, mis seab rõhuasetuse lõppkasutajatele või
+          klientidele, tehes aktseptantstestidest arenduse aluse. See tähendab, et keskendutakse süsteemi tegelikult
+          vajaliku funktsionaalsuse/käitumise pakkumisele. Selle metoodika puhul kirjutatakse aktseptantstest kasutaja
+          vaatenurgast ning testjuhtumid luuakse juba enne koodi kirjutamise alustamist.
+
+          ATDD laiendab TDD-d (Test Driven Development), mis rõhutab arendajate, testijate ja äripoolte koostööd ning
+          järgib testide-esikohal lähenemist. Samuti on ATDD väga sarnane BDD-le (Behavior Driven Development), kuid
+          nende vahel on väike erinevus: BDD keskendub süsteemi käitumisele, samas kui ATDD keskendub kliendi tegelikele
+          nõuetele.</li>
+        <li>Mõned ATDD-s kasutatavad tööriistad on TestNG, Spectacular, FitNesse, EasyB, Concordian, Thucydides jne.
+        </li>
+      </ul>
+      <p>ATDD (Acceptance Test-Driven Development) tsüklis on neli etappi: arutelu, täpsustamine, arendus ja
+        demonstreerimine. Vaatame neid ükshaaval.
+      <ol>
+        <li>Arutelu (Discuss) - Kasutajaloo määratlemine (mida klient toote lõppversioonilt ootab).</li>
+        <li>Täpsustamine (Distill) - Aktseptantstestide kriteeriumid ja automatiseerimine (erinevate stsenaariumide ja
+          süsteemi käitumise arvestamine nende käigus).</li>
+        <li>Arendus (Develop) - Rakendamine (funktsionaalsuse arendamine Test First Development ehk TFD lähenemisviisi
+          järgides, kuni testid on edukad/õnnestuvad).</li>
+        <li>Demonstreerimine (Demo) - Prototüüpmudel (demonstreerimine äripoolele ja iteratsioonidega jätkamine).</li>
+      </ol>
+      </p>
+      <br>
+      <figure>
+        <img src="picture/ATDD.png" alt="ATTD">
+        <figcaption>Acceptance test-driven development</figcaption>
+      </figure>
+      <br>
+      <table>
+        <tr>
+          <th colspan="2">Acceptance test-driven development</th>
+        </tr>
+        <tr>
+          <th>Eelised</th>
+          <th>Puudused</th>
+        </tr>
+        <tr>
+          <td>
+            <ul>
+              <li>Annab nõuete kohta parema selgituse.</li>
+              <li>Probleemide/probleemide kiirem lahendamine.</li>
+              <li>Parandab koostööd meeskonnaüleste liikmete vahel.</li>
+              <li>Rohkem tähelepanu klientide vajadustele.</li>
+              <li>Toimib kogu arendusprotsessi juhisena.</li>
+              <li>Lihtsam hallata.</li>
+
+            </ul>
+          </td>
+
+          <td>
+            <ul>
+              <li>Aeganõudev: Aktseptantstestide määratlemine ja automatiseerimine võtab alguses palju aega.</li>
+              <li>Eeltöö vajadus: Suurem ettevalmistus enne arendust.</li>
+              <li>Kõrgem alginvesteering: Tööriistade ja koolituste kulud.</li>
+              <li>Muutuvaid nõudeid on keeruline hallata: Testid võivad muutuvate nõudmistega ajapikku vananeda.</li>
+              <li>Meeskonna küpsus: Edukaks ATDD rakendamiseks on vajalik hea koostöö meeskonnas.</li>
+              <li>Sobimatus väiksemates projektides: Väikeste projektide puhul võib ATDD olla liialdatud.</li>
+              <li>Tööriistade sõltuvus: Automatiseerimise tööriistade ühilduvuse probleemid.</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+      <br>
+      <p><a href="https://cucumber.io/">Cucumber</a> on laialdaselt kasutatav tööriist käitumispõhise arenduse (BDD) ja
+        ATDD jaoks. See võimaldab huvipooltel kirjutada aktseptantskriteeriume inimkeeles arusaadavas formaadis, mida
+        nimetatakse Gherkiniks. Cucumber automatiseerib need aktseptantskriteeriumid testidena, mida saab rakenduse
+        vastu käivitada. Cucumber toetab mitmeid programmeerimiskeeli, sealhulgas Java, Ruby ja JavaScript.</p>
+
+      <div class="floating">
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Algusesse</button>
+        <button onclick="javascript:window.history.back();" id="backBtn">Tagasi</button>
+        <br>
+      </div>
+    </div>
+    <div class="column right">
+
+    </div>
+  </div>
+  <footer>
+    Orvet Priimägi - TARge24
+  </footer>
+
+  <script>
+    // Get the button
+    let mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
 </body>
 
 </html>
