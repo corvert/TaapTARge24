@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Behavior-driven development</title>
+    <title>Behavior-Driven development</title>
     <link rel="stylesheet" href="../../styles.css">
-    <link rel="icon" href="pildid/icon.jpeg" type="image/x-icon">
+    <link rel="icon" href="../../pildid/icon.jpeg" type="image/x-icon">
 </head>
 
 <body>
     <header>
-        <h1>Behavior-driven development</h1>
+        <h1>Behavior-Driven development</h1>
     </header>
     <div class="row">
         <div class="column left"></div>
@@ -145,10 +145,11 @@
                 href="https://www.geeksforgeeks.org/behavioral-driven-development-bdd-in-software-engineering/">https://www.geeksforgeeks.org/behavioral-driven-development-bdd-in-software-engineering/</a>
             <br>
         </p>
+        <div class="floating">
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Algusesse</button>
+            <button onclick="javascript:window.history.back();" id="backBtn">Tagasi</button>
             <br>
-            <button onclick="javascript:window.history.back();" class="floating">Tagasi</button> <br>
-            <br>
-            <br>
+        </div>
         </div>
         <div class="column right">
 
@@ -157,6 +158,28 @@
     <footer>
         Orvet Priimägi - TARge24
     </footer>
+
+    <script>
+        // Get the button
+        let mybutton = document.getElementById("myBtn");
+        
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+        
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+        </script>
 
 </body>
 

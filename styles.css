@@ -1,5 +1,7 @@
 body {
   background-color: lightblue;
+  font-size: 16px;
+  
 }
 
 h1 {
@@ -48,8 +50,8 @@ img {
 
 
 p {
-  font-family: verdana;
-  font-size: 14px;
+ 
+ 
   text-align: left;
   text-align: justify;
   text-justify: inter-word;
@@ -89,6 +91,15 @@ button:active{
   position: sticky;
   bottom: 20px;
   z-index: 9999;
+ 
+}
+
+#myBtn {
+  margin-left: 0; /* Aseta vasakule */
+}
+
+#backBtn {
+  margin-right: 0; /* Aseta paremale */
 }
 
 header {
@@ -186,3 +197,4 @@ figcaption {
   padding: 2px;
   text-align: center;
 }
+
