@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Behavior-driven development</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" href="pildid/icon.jpeg" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <h1>Behavior-driven development</h1>
+    </header>
+    <div class="row">
+        <div class="column left"></div>
+        <div class="column middle">
+            <h2>Behavior-driven development</h2>
+
+            <p>Käitumisel põhinev arendus (ingl. behavior-driven development, lühendatult BDD) on tarkvaraarenduse
+                meetod, mis on välja arenenud testimisel põhinevast arendusest. Käitumisel põhinev arendus
+                kombineerib testimisel põhineva arenduse üldiseid tehnikaid ja põhimõtted. Selle eesmärk on pakkuda
+                arendustiimile ja juhtivtiimile jagatud tööriista tarkvara arendamisel.
+                <br>
+                Käitumisel põhineva arenduse osana kasutatakse tavalise lause konstruktsiooni, mis väljendab käitumist
+                või tulemust.
+            </p>
+            <h2>BDD põhimõtted</h2>
+            <p>Käitumisel põhinev testimine kasutab käitumise väljendamiseks poolformaalset vormingut, mis on võetud
+                kasutusloost (ingl user story). BDD eeldab, et analüütikud ja arendajad teevad koostööd. Nende ülesanne
+                on kirjutada käitumisel põhinevad laused vastavasse dokumenti.</p>
+            <h3>
+                Struktuur
+            </h3>
+
+            <p>
+                <b>Pealkiri: Omadus peaks olema selge ja kõigile arusaadav.</b>
+                <br>
+                <b>Sündmustik</b>
+                <br>
+                &ensp; Lühike, sissejuhatav osa.
+            <ul>
+                <li>Kes on loo põhitegelane (klient, kasutaja, administraator jne)?</li>
+                <li>Mida ta tahab teha?</li>
+                <li>Miks ta seda teha tahab?</li>
+            </ul>
+            <b>Stsenaarium</b>
+            <br>
+            &ensp; Kirjeldus stsenaariumist.
+            <ul>
+                <li>Vajaliku konditsiooni spetsifikatsioon stsenaariumi alguses.</li>
+                <li>Stsenaariumi algatav tegevus.</li>
+                <li>Oodatav tulemus.</li>
+            </ul>
+            </p>
+            <br>
+
+            <figure>
+                <img src="../agiilne/picture/BDD.png" alt="">
+                <figcaption>Behavior-driven development</figcaption>
+            </figure>
+
+            <br>
+
+            <table>
+                <tr>
+                    <th>Eelised</th>
+                    <th>Puudused</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Täiustatud koostöö : BDD edendab koostööd ettevõtete sidusrühmade, arendajate ja
+                                testijate vahel, kasutades nõuete kirjeldamiseks ühist keelt. See soodustab
+                                meeskonnaliikmete paremat mõistmist ja ühtlustumist.</li>
+                            <li>Selgemad nõuded : stsenaariumide kirjutamine lihtsas keeles, kasutades Gherkini
+                                süntaksit, aitab selgitada nõudeid ja ootusi. See vähendab ebaselgust ja tagab, et
+                                kõigil on ühine arusaam soovitud käitumisest.
+
+                            </li>
+                            <li>Keskendu kasutaja käitumisele : BDD rõhutab süsteemi käitumist kasutaja vaatenurgast.
+                                Keskendudes kasutajate lugudele ja stsenaariumidele, tagab BDD, et arendustegevused on
+                                vastavuses kasutajate vajaduste ja prioriteetidega.</li>
+                            <li>Probleemide varajane tuvastamine : BDD julgustab enne juurutamist teste kirjutama,
+                                võimaldades meeskondadel tuvastada võimalikud probleemid arendusprotsessi varajases
+                                staadiumis. See toob kaasa kiiremad tagasisideahelad ja vähendab hilisemate defektide
+                                parandamise kulusid.</li>
+                            <li>Automatiseeritud testimine : BDD stsenaariume saab automatiseerida selliste tööriistade
+                                nagu Cucumber või SpecFlow abil. Automatiseeritud testid annavad kiiret ja
+                                usaldusväärset tagasisidet rakenduse käitumise kohta, võimaldades meeskondadel
+                                regressioone kiiresti tuvastada ja tagada pideva kvaliteedi.</li>
+                            <li>Täiustatud dokumentatsioon : BDD stsenaariumid toimivad käivitatava dokumentatsioonina
+                                süsteemi käitumise kohta. See dokumentatsioon on ajakohane, kuna teste tehakse
+                                regulaarselt, pakkudes tarkvara elavat spetsifikatsiooni.</li>
+                            <li>Parem koodikvaliteet : BDD julgustab kirjutama testitavat ja modulaarset koodi, mis
+                                järgib stsenaariumides kirjeldatud käitumist. See toob kaasa paremini disainitud
+                                tarkvara, millel on vähem defekte ja lihtsam hooldus.</li>
+
+                        </ul>
+                    </td>
+
+                    <td>
+                        <ul>
+                            <li>Esialgne õppimiskõver: BDD kasutuselevõtt nõuab meeskondadelt uute raamistike,
+                                tööriistade ja metoodikate õppimist, mis võib algselt aeglustada arendusprotsessi, kui
+                                meeskonnaliikmed tutvuvad uue lähenemisviisiga.</li>
+                            <li>Aeganõudev protsess: funktsioonifailide kirjutamine, stsenaariumide määratlemine ja
+                                sammude määratluste säilitamine võib olla aeganõudev, eriti suurte ja keeruliste
+                                projektide puhul, mis võib põhjustada viivitusi tarnimisel.</li>
+                            <li>Sõltuvus sidusrühmade kaasamisest: BDD tugineb suurel määral koostööle sidusrühmade,
+                                sealhulgas ärianalüütikute, arendajate, testijate ja tooteomanike vahel. Sidusrühmade
+                                aktiivse osaluse puudumine võib takistada BDD tõhusust.</li>
+                            <li>Raskused keerulistes stsenaariumides: BDD suudab suurepäraselt tabada käitumist lihtsate
+                                stsenaariumide jaoks, kuid võib olla raskusi väga keeruliste stsenaariumide või
+                                äärmuslike juhtumitega, mis põhjustab testimise automatiseerimise ebaselgust või
+                                ebatõhusust.</li>
+                            <li>Üldised hoolduskulud: projekti arenedes võib olemasolevate funktsioonifailide ja sammude
+                                määratluste hooldamine ja värskendamine, et kajastada muudatusi nõuetes või
+                                funktsionaalsuses, muutuda keeruliseks ja ressursimahukaks.</li>
+                            <li>Potentsiaalne üleinseneritöö: ilma nõuetekohase juhendamise ja järelevalveta võivad
+                                meeskonnad oma BDD-teste üle projekteerida, lisades tarbetut keerukust ja vähendades
+                                pikas perspektiivis hooldatavust.</li>
+                            <li>Tööriistade piirangud: BDD tõhusus sõltub suuresti tugitööriistade ja raamistike
+                                saadavusest ja sobivusest. Piiratud tööriistavalikud või ühilduvusprobleemid
+                                olemasolevate süsteemidega võivad takistada kasutuselevõttu ja rakendamist.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <p><a href="https://cucumber.io/">Cucumber</a> on laialdaselt kasutatav BDD (käitumispõhise
+                arenduse) tööriist, mis toetab erinevaid programmeerimiskeeli nagu Ruby, Java, JavaScript ja teisi. See
+                võimaldab meeskondadel kirjutada täidetavaid spetsifikatsioone lihttekstina, kasutades Gherkini
+                süntaksit, ning automatiseerida neid sammudefinitsioonide abil.</p>
+
+            <br>
+            <p>
+            Kasutatud kirjandus:
+            <br>
+            <a
+                href="https://et.wikipedia.org/wiki/K%C3%A4itumisel_p%C3%B5hinev_arendus">https://et.wikipedia.org/wiki/K%C3%A4itumisel_p%C3%B5hinev_arendus</a>
+            <br>
+            <a
+                href="https://www.geeksforgeeks.org/behavioral-driven-development-bdd-in-software-engineering/">https://www.geeksforgeeks.org/behavioral-driven-development-bdd-in-software-engineering/</a>
+            <br>
+        </p>
+            <br>
+            <button onclick="javascript:window.history.back();" class="floating">Tagasi</button> <br>
+            <br>
+            <br>
+        </div>
+        <div class="column right">
+
+        </div>
+    </div>
+    <footer>
+        Orvet Priimägi - TARge24
+    </footer>
+
+</body>
+
+</html>
