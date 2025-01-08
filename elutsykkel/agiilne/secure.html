@@ -2,58 +2,133 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UML-diagrammid</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="pildid/icon.jpeg" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure by design</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="icon" href="../../pildid/icon.jpeg" type="image/x-icon">
 </head>
 
 <body>
-    <header>
-        <h1> pealkiri</h1>
-    </header>
-    <div class="row">
-        <div class="column left">vasak</div>
-        <div class="column middle">
+  <header>
+    <h1>Secure by design</h1>
+  </header>
+  <div class="row">
+    <div class="column left"></div>
+    <div class="column middle">
+      <h2>Secure by design</h2>
 
-            kesk
+      <p>Secure by design on tarkvaratehnika kontseptsioon, mis tähendab, et tarkvara tooted ja võimalused on
+        loodud turvalisena algusest peale. See lähenemine erineb traditsioonilisest "turvalisus hiljem" meetodist, kus
+        turvalisus lisatakse alles hiljem. Turvalisus disainist alates on muutumas tarkvararengu standardiks, kus
+        turvalisus on arvestatud kõigil tasanditel, alates arhitektuuri disainist kuni testimiseni ja hoolduseni.</p>
+      <b>Põhimõtted:</b>
+      <ul>
 
-            <div class="floating">
-                <button onclick="topFunction()" id="myBtn" title="Go to top">Algusesse</button>
-                <button onclick="javascript:window.history.back();" id="backBtn">Tagasi</button>
-                <br>
-            </div>
-        </div>
-        <div class="column right">
-            parem
-        </div>
+        <li>Turvalisuse integreerimine kogu arendusprotsessi: Turvalisus on arvestatud kõigil arendusprotsessi
+          etappidel, mitte ainult lõpus.</li>
+        <li>Turvalisusest kui põhieeldusest: Turvalisus on käsitletud mitte ainult tehnilise funktsioonina, vaid ka
+          ärieesmärgina.</li>
+        <li>Turvalisuse testimine: Kasutatakse staatilist ja dünaamilist testimist, et leida ja parandada
+          turvalisusvigasid varakult.</li>
+        <li>Turvalisus vaikimisi: Tarkvara on turvaline vaikimisi, ilma lisakonfiguratsioonita.</li>
+      </ul>
+      <br>
+      <figure>
+        <img src="../agiilne/picture/Secure.png" alt="Secure by design">
+        <figcaption>Software development vs Secure by design development</figcaption>
+
+      </figure>
+<br>
+
+
+      <table>
+        <tr>
+          <th colspan="2">Secure by design</th>
+        </tr>
+        <tr>
+          <th>Eelised</th>
+          <th>Puudused</th>
+        </tr>
+        <tr>
+          <td>
+            <ul>
+
+              <li>Vähendab haavatavusi: Vigade parandamine algstaadiumis on oluliselt odavam kui hiljem.</li>
+              <li>Parandab stabiilsust: Turvalisus disainist alates tagab, et tarkvara on stabiilsem ja vähem häiretele
+                vastuvõtlik.</li>
+              <li>Lihtsustab kooskõla: Kergem on vastavus turvalisus- ja privaatsusnõuetele, mis vähendab bürokraatiat
+                ja karistusi.</li>
+              <li>Parandab mainet: Ettevõtted, mis prioriteetsevad turvalisust, on usaldusväärsed ja võidavad klientide
+                usalduse.</li>
+
+            </ul>
+          </td>
+
+          <td>
+            <ul>
+
+
+              <li>Kõrgemad arenduskulud: Turvalisus disainist alates võib tähendada kõrgemaid arenduskulusid, sest
+                turvalisuse integreerimine kõigisse arendusetappidesse võib olla aeganõudvam ja kulukam</li>
+              <li>Komplekssus: Turvalisusest kui põhieeldusest arvestamine võib tarkvaraprojekte komplekssemaks teha,
+                mis võib põhjustada arendusprotsessi aeglustumist</li>
+              <li>Vajadus spetsialistidele: Efektiivne turvalisus disainist alates nõuab spetsialistide oskusi, mis võib
+                olla kulukas ja võib piirata ettevõtete võimalusi</li>
+              <li>Regulatiivne koormus: Vastavus turvalisusstandarditele ja regulatsioonidele võib lisada bürokraatiat
+                ja kulutusi, eriti väiksematele ettevõtetele</li>
+              <li>Piiratud paindlikkus: Kui turvalisus on juba disaini osa, võib see piirata hilisemaid muudatusi või
+                uuendusi, sest need võivad rikkuda turvalisusskeem</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+      <br>
+      <p>
+        Kasutatud kirjandus:
+        <br>
+        <a href="https://en.wikipedia.org/wiki/Secure_by_design" target="_blank">https://en.wikipedia.org/wiki/Secure_by_design</a><br>
+        <a
+          href="https://www.ivanti.com/blog/secure-by-design-principles-are-more-important-than-ever" target="_blank">https://www.ivanti.com/blog/secure-by-design-principles-are-more-important-than-ever</a>
+        <a href="https://www.jit.io/resources/app-security/secure-design-principles" target="_blank">https://www.jit.io/resources/app-security/secure-design-principles</a>
+        </p>
+
+      <div class="floating">
+     
+        <button onclick="javascript:window.history.back();" id="backBtn">Tagasi</button>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Algusesse</button>
+        <br>
+      </div>
     </div>
-    <footer>
-        Orvet Priimägi - TARge24
-    </footer>
+    <div class="column right">
 
-    <script>
-        // Get the button
-        let mybutton = document.getElementById("myBtn");
-        
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function() {scrollFunction()};
-        
-        function scrollFunction() {
-          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-          } else {
-            mybutton.style.display = "none";
-          }
-        }
-        
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-          document.body.scrollTop = 0;
-          document.documentElement.scrollTop = 0;
-        }
-        </script>
+    </div>
+  </div>
+  <footer>
+    Orvet Priimägi - TARge24
+  </footer>
+
+  <script>
+    // Get the button
+    let mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
 </body>
 
 </html>

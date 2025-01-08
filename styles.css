@@ -91,15 +91,18 @@ button:active{
   position: sticky;
   bottom: 20px;
   z-index: 9999;
- 
+  display: flex; /* Lisa flexbox */
+  justify-content: space-between; /* Aseta nupud vasakule ja paremale */
+  width: 100%; 
 }
 
 #myBtn {
-  margin-left: 0; /* Aseta vasakule */
+  margin-right: 0;
 }
 
 #backBtn {
-  margin-right: 0; /* Aseta paremale */
+  /* Aseta paremale */
+  margin-left: 0;
 }
 
 header {
