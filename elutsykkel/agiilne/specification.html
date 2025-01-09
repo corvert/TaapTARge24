@@ -2,71 +2,147 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Specification by example</title>
-    <link rel="stylesheet" href="../../styles.css">
-    <link rel="icon" href="../../pildid/icon.jpeg" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Specification by Example</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="icon" href="../../pildid/icon.jpeg" type="image/x-icon">
 </head>
 
 <body>
-    <header>
-        <h1>Specification by example</h1>
-    </header>
-    <div class="row">
-      <div class="column left">
-        <nav>
-        <button class="floating" onclick="window.location.href='behavior-driven.html'">Behavior-driven development</button>
+  <header>
+    <h1>Specification by Example</h1>
+  </header>
+  <div class="row">
+    <div class="column left">
+      <nav>
+        <button class="floating" onclick="window.location.href='behavior-driven.html'">Behavior-driven
+          development</button>
         <button class="floating" onclick="window.location.href='design-driven.html'">Design-driven development</button>
         <button class="floating" onclick="window.location.href='domain-driven.html'">Domain-driven design</button>
         <button class="floating" onclick="window.location.href='secure.html'">Secure by design</button>
         <button class="floating" onclick="window.location.href='test-driven.html'">Test-driven development</button>
-        <button class="floating" onclick="window.location.href='acceptance.html'">Acceptance test-driven development</button>
-        <button class="floating" onclick="window.location.href='continuous.html'">Continuous test-driven development</button>
+        <button class="floating" onclick="window.location.href='acceptance.html'">Acceptance test-driven
+          development</button>
+        <button class="floating" onclick="window.location.href='continuous.html'">Continuous test-driven
+          development</button>
         <button class="floating" onclick="window.location.href='specification.html'">Specification by example</button>
         <button class="floating" onclick="window.location.href='data-driven.html'">Data-driven development</button>
         <button class="floating" onclick="window.location.href='data-oriented.html'">Data-oriented design</button>
-    </nav>
+      </nav>
     </div>
-        <div class="column middle">
+    <div class="column middle">
 
-            <h2>Specification by example</h2>
+      <h2>Specification by example</h2>
+      <p>Specification by Example on koostööline lähenemine nõuete ja testide defineerimiseks, mis põhineb realistlike
+        näidete kasutamisel abstraktsete lausete asemel. See on oluline osa edukast nõuete ja testimisstrateegiast
+        agiilsetes ja lean-protsessides nagu Scrum, Extreme Programming ja Kanban</p>
+      <p>Protsessi etapid:</p>
 
-            <div class="floating">
-                <button onclick="topFunction()" id="myBtn" title="Go to top">Algusesse</button>
-                <button onclick="javascript:window.history.back();" id="backBtn">Tagasi</button>
-                <br>
-            </div>
-        </div>
-        <div class="column right">
-            
-        </div>
+      <li>Nõuete defineerimine: Kasutada realistlikke näiteid, et selgitada nõudeid.</li>
+      <li>Koostöö: Kõik meeskonnaliikmed osalevad nõuete defineerimises.</li>
+      <li>Näidete kasutamine: Näited aitavad vältida kommunikatsiooniprobleeme ja tagavad ühise arusaama.</li>
+      <li>Automatiseeritud valideerimine: Näidete põhjal luuakse automatiseeritud teste.</li>
+
+
+
+      <br>
+
+      <figure>
+        <img src="picture/SbE.png" alt="Specification by example">
+        <figcaption>Specification by Example</figcaption>
+      </figure>
+      <br>
+      <table>
+        <tr>
+          <th colspan="2">Specification by example</th>
+        </tr>
+        <tr>
+          <th>Eelised</th>
+          <th>Puudused</th>
+        </tr>
+        <tr>
+          <td>
+            <ul>
+
+              <li>Kommunikatsiooni parandamine: Vähendab kommunikatsioonilisi vigu ja tagab ühise arusaama.</li>
+              <li>Elav dokumentatsioon: Dokumentatsioon on alati ajakohane ja vastab tegelikule olukorrale.</li>
+              <li>Efektiivne valideerimine: Näidete põhjal saab kiiresti valideerida, kas tarkvara vastab nõuetele.</li>
+              <li>Vähene ümbertöötamine: Vähendab ümbertöötamist, kuna nõuded on selgelt defineeritud.</li>
+
+            </ul>
+          </td>
+
+          <td>
+            <ul>
+              <li>Kõrge esialgne kulutus: Nõuab alguses rohkem aega ja ressursse, et luua kvaliteetsed näited.</li>
+              <li>Koostöö vajadus: Nõuab kõigi meeskonnaliikmete aktiivset osalemist.</li>
+              <li>Näidete kvaliteet: Kvaliteetsete näidete puudumisel võib tulemus olla ebaefektiivne.</li>
+
+            </ul>
+          </td>
+        </tr>
+      </table>
+      <br>
+      <p>
+        <a href="https://cucumber.io/">Cucumber</a> on üks populaarsemaid tööriistu, mis toetab Specification by Example
+        meetodit. See tööriist kasutab
+        Gherkin keelt, mis on lihtne ja loetav ka mitteprogrammeerijatele. Cucumber võimaldab luua automatiseeritud
+        teste, mis põhinevad näidetele kirjutatud spetsifikatsioonidel. See tööriist sobib mitme erineva arendusstiili
+        juures, sealhulgas Scrum, Kanban ja Extreme Programming
+      </p>
+      <br>
+
+      <p>Kasutatud kirjandus:
+        <br>
+        <a
+          href="https://djangostars.com/blog/ace-project-use-specification-by-example/">https://djangostars.com/blog/ace-project-use-specification-by-example/</a>
+        <a
+          href="https://blog.avenuecode.com/specification-by-example">https://blog.avenuecode.com/specification-by-example</a>
+        <br> <a
+          href="https://www.pmi-se.org/Kalendarium/Specification-by-Example_Stockholm_2017-11-30?l=en">https://www.pmi-se.org/Kalendarium/Specification-by-Example_Stockholm_2017-11-30?l=en</a>
+        <br> <a
+          href="https://www.avanscoperta.it/en/training/specification-by-example-workshop/">https://www.avanscoperta.it/en/training/specification-by-example-workshop/</a>
+      </p>
+      <br>
+
+
+
+      <div class="floating">
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Algusesse</button>
+        <button onclick="javascript:window.history.back();" id="backBtn">Tagasi</button>
+        <br>
+      </div>
     </div>
-    <footer>
-        Orvet Priimägi - TARge24
-    </footer>
+    <div class="column right">
 
-    <script>
-        // Get the button
-        let mybutton = document.getElementById("myBtn");
-        
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function() {scrollFunction()};
-        
-        function scrollFunction() {
-          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-          } else {
-            mybutton.style.display = "none";
-          }
-        }
-        
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-          document.body.scrollTop = 0;
-          document.documentElement.scrollTop = 0;
-        }
-        </script>
+    </div>
+  </div>
+  <footer>
+    Orvet Priimägi - TARge24
+  </footer>
+
+  <script>
+    // Get the button
+    let mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
 </body>
 
 </html>
