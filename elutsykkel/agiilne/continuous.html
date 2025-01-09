@@ -2,71 +2,150 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UML-diagrammid</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="pildid/icon.jpeg" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Continuous test-driven development</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="icon" href="../../pildid/icon.jpeg" type="image/x-icon">
 </head>
 
 <body>
-    <header>
-        <h1> pealkiri</h1>
-    </header>
-    <div class="row">
-      <div class="column left">
-        <nav>
-        <button class="floating" onclick="window.location.href='behavior-driven.html'">Behavior-driven development</button>
+  <header>
+    <h1>Continuous test-driven development</h1>
+
+  </header>
+  <div class="row">
+    <div class="column left">
+      <nav>
+        <button class="floating" onclick="window.location.href='behavior-driven.html'">Behavior-driven
+          development</button>
         <button class="floating" onclick="window.location.href='design-driven.html'">Design-driven development</button>
         <button class="floating" onclick="window.location.href='domain-driven.html'">Domain-driven design</button>
         <button class="floating" onclick="window.location.href='secure.html'">Secure by design</button>
         <button class="floating" onclick="window.location.href='test-driven.html'">Test-driven development</button>
-        <button class="floating" onclick="window.location.href='acceptance.html'">Acceptance test-driven development</button>
-        <button class="floating" onclick="window.location.href='continuous.html'">Continuous test-driven development</button>
+        <button class="floating" onclick="window.location.href='acceptance.html'">Acceptance test-driven
+          development</button>
+        <button class="floating" onclick="window.location.href='continuous.html'">Continuous test-driven
+          development</button>
         <button class="floating" onclick="window.location.href='specification.html'">Specification by example</button>
         <button class="floating" onclick="window.location.href='data-driven.html'">Data-driven development</button>
         <button class="floating" onclick="window.location.href='data-oriented.html'">Data-oriented design</button>
-    </nav>
+      </nav>
     </div>
-        <div class="column middle">
+    <div class="column middle">
 
-            kesk
+      <h2>Continuous test-driven development</h2>
+      <p>Continuous test-driven development ( CTDD ) on tarkvaraarenduse tava, mis laiendab <a href="test-driven.html">
+          test-driven development</a>
+        (TDD) taustal automaatse testimise abil, mida mõnikord nimetatakse ka pidevaks testimiseks.
+        <br>
+        CTDD-s kirjutab arendaja esmalt testi, kuid pole sunnitud teste käsitsi täitma. Teste käivitab automaatselt
+        taustal töötav pidev testimistööriist. See meetod võib potentsiaalselt vähendada testi käsitsi täitmisest
+        tulenevat ajaraiskamist, kuna arendaja ei pea testi alustama pärast tavapärase TDD-praktika iga etappi: pärast
+        (esialgu ebaõnnestunud) testi kirjutamist, pärast minimaalse koguse koodi loomist. testi läbimiseks ja pärast
+        koodi ümbertöötamist.
+      </p>
+      <br>  <figure>
+        <img src="picture/CTTD.png" alt="CTTA">
+        <figcaption>Test driven development & Continuous Integration</figcaption>
+      </figure>
+      <br>
+      <table>
+        <tr>
+          <th colspan="2">Continuous test-driven development</th>
+        </tr>
+        <tr>
+          <th>Eelised</th>
+          <th>Puudused</th>
+        </tr>
+        <tr>
+          <td>
+            <ul>
+              <li>Varajane vigade avastamine: Kiire ja tõhus koodimuudatuste testimine, mis aitab parandada tarkvara
+                kvaliteeti ja vältida kallite vigade hilisemat parandamist.</li>
+              <li>Kiirem funktsionaalsuse tarnimine: Muudatused integreeritakse kiiresti ühtsesse koodibaasi, mis
+                lühendab arendusaega ja võimaldab kiireid väljalaskeid.</li>
+              <li>Parem tiimikoostöö: CTDD soodustab meeskonnatööd, välistades konfliktid, mis võivad tekkida erinevate
+                koodiversioonide vahel.</li>
+              <li>Automatiseerimine: CTDD automatiseerib arendusprotsessi aspekte, nagu testimine ja ülevaated, mis
+                vähendab käsitsi tehtavaid vigu.</li>
+              <li>Parem koodikvaliteet: Pidev koodimuudatuste ja testide integreerimine parandab koodi stabiilsust ja
+                hooldatavust.</li>
 
-            <div class="floating">
-                <button onclick="topFunction()" id="myBtn" title="Go to top">Algusesse</button>
-                <button onclick="javascript:window.history.back();" id="backBtn">Tagasi</button>
-                <br>
-            </div>
-        </div>
-        <div class="column right">
-            parem
-        </div>
+
+            </ul>
+          </td>
+
+          <td>
+            <ul>
+
+              <li>Tehnilise infrastruktuuri loomine: CTDD nõuab versioonihaldussüsteemide, hostimisinfrastruktuuri ja
+                orkestreerimistehnoloogiate juurutamist ning täiendavate serverite ja testimiskeskkondade loomist.</li>
+              <li>Arendustiimide koolitamine: Testprotseduuride loomine ja jaotamine nõuab märkimisväärset tööd ning
+                need peavad olema pidevalt arendatavad, et hõlmata uusi funktsionaalsusi ja planeeritud koodimuudatusi.
+              </li>
+              <li>Keerukus kohanemisel: Koostesüsteemide ülesehitamine võib olla väga keerukas, muutes nende paindliku
+                kohandamise raskeks.
+              </li>
+
+            </ul>
+          </td>
+        </tr>
+      </table>
+    
+    
+
+      <br>
+      <p><a href="https://infinitest.github.io/" target="_blank">Infinitest</a> on Java pidev testimisprogramm ja see on
+        väärtuslik arendajatele, kes kasutavad üksuse testimise tööriista nimega JUnit. Pidev testimine on üksusetestide
+        pidev käivitamine, samal ajal kui arendajad teevad lähtekoodi muudatusi. Omamoodi nagu õigekirjakontroll, välja
+        arvatud see, et selle asemel, et otsida õigekirjavigu nagu tavaline õigekirjakontroll või süntaksivigu nagu
+        paljud IDE-d teevad, otsib Infinitest pidevalt loogikavigu ja tuvastab need kohe. See teeb seda, käivitades
+        optimeeritud üksusetestide komplekti iga kord, kui arendaja lähtekoodi muudab.</p>
+
+      <br>
+      <p>Kasutatud kirjandus: <br>
+        <a
+          href="https://en.wikipedia.org/wiki/Continuous_test-driven_development">https://en.wikipedia.org/wiki/Continuous_test-driven_development</a><br>
+        <a
+          href="https://www.devinterface.com/en/blog/test-driven-development-and-continuous-integration">https://www.devinterface.com/en/blog/test-driven-development-and-continuous-integration</a>
+      </p>
+
+      <div class="floating">
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Algusesse</button>
+        <button onclick="javascript:window.history.back();" id="backBtn">Tagasi</button>
+        <br>
+      </div>
     </div>
-    <footer>
-        Orvet Priimägi - TARge24
-    </footer>
+    <div class="column right">
 
-    <script>
-        // Get the button
-        let mybutton = document.getElementById("myBtn");
-        
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function() {scrollFunction()};
-        
-        function scrollFunction() {
-          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-          } else {
-            mybutton.style.display = "none";
-          }
-        }
-        
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-          document.body.scrollTop = 0;
-          document.documentElement.scrollTop = 0;
-        }
-        </script>
+    </div>
+  </div>
+  <footer>
+    Orvet Priimägi - TARge24
+  </footer>
+
+  <script>
+    // Get the button
+    let mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
 </body>
 
 </html>
