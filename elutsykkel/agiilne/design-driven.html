@@ -2,77 +2,174 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UML-diagrammid</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="pildid/icon.jpeg" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design-driven development</title>
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="icon" href="../../pildid/icon.jpeg" type="image/x-icon" />
 </head>
 
 <body>
-    <header>
-        <h1> pealkiri</h1>
-    </header>
-    <div class="row">
-      <div class="column left">
-        <nav>
-        <button class="floating" onclick="window.location.href='behavior-driven.html'">Behavior-driven development</button>
-        <button class="floating" onclick="window.location.href='design-driven.html'">Design-driven development</button>
-        <button class="floating" onclick="window.location.href='domain-driven.html'">Domain-driven design</button>
-        <button class="floating" onclick="window.location.href='secure.html'">Secure by design</button>
-        <button class="floating" onclick="window.location.href='test-driven.html'">Test-driven development</button>
-        <button class="floating" onclick="window.location.href='acceptance.html'">Acceptance test-driven development</button>
-        <button class="floating" onclick="window.location.href='continuous.html'">Continuous test-driven development</button>
-        <button class="floating" onclick="window.location.href='specification.html'">Specification by example</button>
-        <button class="floating" onclick="window.location.href='data-driven.html'">Data-driven development</button>
-        <button class="floating" onclick="window.location.href='data-oriented.html'">Data-oriented design</button>
-    </nav>
+  <header>
+    <h1>Design-driven development</h1>
+  </header>
+  <div class="row">
+    <div class="column left">
+      <nav>
+        <button class="floating" onclick="window.location.href='behavior-driven.html'">
+          Behavior-driven development
+        </button>
+        <button class="floating" onclick="window.location.href='design-driven.html'">
+          Design-driven development
+        </button>
+        <button class="floating" onclick="window.location.href='domain-driven.html'">
+          Domain-driven design
+        </button>
+        <button class="floating" onclick="window.location.href='secure.html'">
+          Secure by design
+        </button>
+        <button class="floating" onclick="window.location.href='test-driven.html'">
+          Test-driven development
+        </button>
+        <button class="floating" onclick="window.location.href='acceptance.html'">
+          Acceptance test-driven development
+        </button>
+        <button class="floating" onclick="window.location.href='continuous.html'">
+          Continuous test-driven development
+        </button>
+        <button class="floating" onclick="window.location.href='specification.html'">
+          Specification by example
+        </button>
+        <button class="floating" onclick="window.location.href='data-driven.html'">
+          Data-driven development
+        </button>
+        <button class="floating" onclick="window.location.href='data-oriented.html'">
+          Data-oriented design
+        </button>
+      </nav>
     </div>
-        <div class="column middle">
+    <div class="column middle">
+      <h2>Design-driven development</h2>
+      <p>
+        Disainipõhine arendus (Design-Driven Development, DDD) on lähenemine, kus disain ei ole pelgalt esteetiline
+        lisand, vaid juhib tarkvara loomise protsessi, keskendudes kasutajakogemusele ja funktsionaalsusele.
+      </p>
+      <p>Peamised mõtted: <br>
+        <li>Fookus kasutajakogemusele: Disainipõhine arendus seab kasutajakogemuse toote loomise keskmesse, mis aitab
+          vähendada vigade parandamist ja kiirendada turule jõudmist.</li>
+        <li>Tõeline vajaduste mõistmine: Keskendutakse kasutajate tegelikele vajadustele, mitte oletustele.</li>
+        <li>Väljakutsed: Esteetika ja funktsionaalsuse tasakaal, sujuv koostöö disainerite ja arendajate vahel, ulatuse
+          kontrollimine ning organisatsiooniliste silode ületamine.</li>
+        <li>Tööriistad: UXPin Merge tehnoloogia aitab vähendada disaini ja arenduse vahelisi lõhesid, luues realistlikke
+          prototüüpe, mis sarnanevad lõpptootega.</li>
 
-            kesk
+       
 
-            <div class="floating row">
-              <div class="column left">
-                <button onclick="topFunction()" id="myBtn" title="Go to top">Algusesse</button>
-              </div>
-              <div class="column middle" style="text-align: center; background-color: transparent;">
-                <button onclick="window.location.href='../../index.html'">Koju</button>
-              </div>
-              <div class="column right">
-                <button onclick="javascript:window.history.back();" id="backBtn">Tagasi</button>
-              </div>
-            </div>
+      </p>
+      <p>Design-driven development
+        tagab, et tooted vastavad kasutajate vajadustele ja on kergesti kasutatav. UXPin Merge aitab
+        seda protsessi lihtsustada, pakkudes tõhusaid tööriistu realistlike prototüüpide ja parema koostöö jaoks.</p>
+
+        <p>Protsess DDD arenduses:
+        <li>Kasutajauuringud: Kogutakse andmeid küsimustike, intervjuude ja kasutajateekondade kaardistamise abil, et mõista kasutajate vajadusi.</li>
+        <li>Nõuete kogumine: Koostatakse funktsioonide nimekiri, mis põhineb kasutajate vajadustel.</li>
+        <li>Disaini ja ideede faas: Kujundatakse navigeerimise ja kasutajaliidese elementide kavandid.</li>
+        <li>Prototüüpimine ja kasutajatestimine: Luua interaktiivsed prototüübid, saada kasutajate tagasisidet ja parandada kasutatavust.</li>
+        <li>Disaini üleandmine arendusele: Sujuv koostöö tagab, et lõpptoodang vastab disainile.</li>
+        <li>Korduv tagasiside: Kasutajatestimine ja A/B testimine aitavad teha täiendusi.</li>
+        <li>Turule toomine ja pidev arendamine: Pärast lansseerimist kogutakse pidevalt tagasisidet ja täiustatakse toodet.</li>
+      </p>
+      <br>
+      <figure>
+        <img src="picture/Design-driven.png" alt="">
+        <figcaption>Design-driven development </figcaption>
+      </figure>
+      <br>
+      <table>
+        <tr>
+          <th colspan="2">Test-driven development</th>
+        </tr>
+        <tr>
+          <th>Eelised</th>
+          <th>Puudused</th>
+        </tr>
+        <tr>
+          <td>
+       <li>Kasutajakeskne lähenemine: Parandab toodete funktsionaalsust ja kasutajakogemust.</li>
+       <li>Kiirem turule jõudmine: Selged nõuded ja parem koostöö vähendavad arendusaega.</li>
+       <li>Ressursisäästlikkus: Väldib ebavajalike funktsioonide loomist.</li>
+       <li>Parema kvaliteediga tooted: Iteratsioonide ja testimise abil täpsustatakse kasutajate vajadusi.</li>
+       <li>Tugevdab tiimide koostööd: Disaini ja arenduse integreerimine vähendab kommunikatsiooniprobleeme.</li>
+          </td>
+
+          <td>
+            <li>Suurem algne aja- ja ressursikulu: Uuringud ja testimine on ajamahukad.</li>
+            <li>Tasakaalu leidmise keerukus: Esteetika ja funktsionaalsuse ühitamine võib olla raske.</li>
+            <li>Koostööprobleemid: Halvasti korraldatud disaini-arenduse protsess aeglustab tööd.</li>
+            <li>Ulatuse kasv: Pidev tagasiside võib paisutada projekti ulatust.</li>
+            <li>Sõltuvus tööriistadest: Spetsiifiliste tööriistade kasutamine nõuab aega ja investeeringut.</li>
+
+          </td>
+        </tr>
+      </table>
+      <br>
+      <p><a href="https://www.figma.com/" target="_blank">Figma</a> lihtne tööriist prototüüpide ja interaktiivsete kujunduste loomiseks.</p>
+      
+
+      <p>Kasutatud kirjandus: <br>
+       <a href="https://www.uxpin.com/studio/blog/design-driven-development/" target="_blank">https://www.uxpin.com/studio/blog/design-driven-development/</a>
+    <br>
+       <a href="https://www.eleken.co/blog-posts/design-driven-development-in-saas" target="_blank">https://www.eleken.co/blog-posts/design-driven-development-in-saas</a>
+      </p>
+
+      <div class="floating row">
+        <div class="column left">
+          <button onclick="topFunction()" id="myBtn" title="Go to top">
+            Algusesse
+          </button>
+        </div>
+        <div class="column middle" style="text-align: center; background-color: transparent">
+          <button onclick="window.location.href='../../index.html'">
+            Koju
+          </button>
         </div>
         <div class="column right">
-            parem
+          <button onclick="javascript:window.history.back();" id="backBtn">
+            Tagasi
+          </button>
         </div>
+      </div>
     </div>
-    <footer>
-        Orvet Priimägi - TARge24
-    </footer>
+    <div class="column right"></div>
+  </div>
+  <footer>Orvet Priimägi - TARge24</footer>
 
-    <script>
-        // Get the button
-        let mybutton = document.getElementById("myBtn");
-        
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function() {scrollFunction()};
-        
-        function scrollFunction() {
-          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-          } else {
-            mybutton.style.display = "none";
-          }
-        }
-        
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-          document.body.scrollTop = 0;
-          document.documentElement.scrollTop = 0;
-        }
-        </script>
+  <script>
+    // Get the button
+    let mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+      scrollFunction();
+    };
+
+    function scrollFunction() {
+      if (
+        document.body.scrollTop > 20 ||
+        document.documentElement.scrollTop > 20
+      ) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
 </body>
 
 </html>
