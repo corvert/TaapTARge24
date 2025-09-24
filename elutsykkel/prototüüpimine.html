@@ -1,82 +1,215 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prototüüpimine</title>
+    <title>Prototüüpimine | Tarkvara Arendusprotsess</title>
+    <meta name="description" content="Prototüüpimismudel - tarkvara arendus läbi töötavate prototüüpide loomise">
     <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body style="background-color: rgb(205, 188, 62);">
-    <p>
-    <h1>Prototüüpimine</h1>
-    <h3>
-        Prototüüpimismudeli puhul luuakse töötav prototüüp enne tarkvara lõplikku arendamist. Prototüüp on süsteemi
-        lihtsustatud versioon, millel on piiratud funktsionaalsus ja töökindlus. Seda kasutatakse eelkõige siis, kui
-        kliendil puudub täpne ettekujutus tarkvara nõuetest. Prototüüp aitab klientidel ja arendajatel mõista vajadusi
-        ja täpsustada süsteemi nõudeid.
-    </h3>
-    <ul>
-        <li><b>1. Nõuete kogumine ja analüütik.</b> Kogutakse kliendi esialgsed vajadused ja eesmärgid.</li>
-        <li><b> 2. Kiire otsus.</b> Määratletakse prototüübi põhifunktsioonid ja plaanitakse teostus.</li>
-        <li> <b>3. Prototüübi valmistus.</b> Arendatakse lihtsustatud versioon põhifunktsioonidega.</li>
-        <li><b> 5. Hindamine või kasutaja hindamine.</b> Kasutajad testivad prototüüpi ja annavad tagasisidet.        </li>
-        <li><b>6. Prototüübi täiustamine</b> Parandatakse prototüüpi vastavalt kasutajate tagasisidele.</li>
-        <li><b>7. Valmista toode</b> Valmib lõplik süsteem, mis vastab kõigile nõuetele ja kvaliteedistandarditele.</li>
-    </ul>
-    <br>
-    <br>
-    <img src="../pildid/Prototyypimine.png" alt="Prototüüpimine">
-    </p>
-    <br>
-    <table>
-        <tr>
-            <th>Eelised</th>
-            <th>Puudused</th>
-        </tr>
-        <tr>
-            <td>
-                <ul>
-               <li>Vähendab vale kasutajanõuete riski</li>
-               <li>Sobib hästi, kui nõuded muutuvad või pole lõplikult kinnitatud
-                <li>Regulaarne nähtav protsess toetab juhtimist</li>
-                <li>Toetab varajast toote turundust</li>
-                <li>Vähendab hoolduskulusid</li>
-                <li>Vigade avastamine on võimalik varakult, kuna süsteem valmib etapiviisiliselt</li>
-               </li>
-                </ul>
-            </td>
-            <td>
-                <ul>
-                  <li>Ebastabiilne/halvasti teostatud prototüüp võib tihti muutuda lõplikuks tooteks.</li>
-                  <li>Nõuab ulatuslikku koostööd kliendiga.</li>
-                  <ul>
-                    <li>Tõstab kliendi kulusid.</li>
-                    <li>Vajab pühendunud klienti.</li>
-                    <li>Keeruline lõpetada, kui klient koostööst loobub.</li>
-                    <li>Võib olla liiga kliendispetsiifiline, mistõttu pole sobiv laiemale turule.</li>
-                  </ul>
-                  <li>Raske hinnata, kui kaua projekt kestab.</li>
-                  <li>Lihtne minna tagasi koodi muutma ilma korraliku nõuete analüüsi, disaini, kliendi hindamise ja tagasisideta.</li>
-                  <li>Prototüüpimise tööriistad on kallid.</li>
-                  <li>Prototüübi loomiseks on vaja spetsiaalseid tööriistu ja tehnikaid.</li>
-                  <li>Aeganõudev protsess.</li>
-                </ul>
-            </td>
-        </tr>
-    </table>
-    <br>
-    <a href="https://www.javatpoint.com/software-engineering-prototype-model">Kasutatud kirjandus</a>
-    <br>
-    <br>
+<body>
+    <header>
+        <div class="container">
+            <h1>🛠️ Prototüüpimine</h1>
+            <p style="font-size: 1.1rem; margin-top: 0.5rem; opacity: 0.9; color: #e2e8f0;">
+                Tarkvara arendus töötavate prototüüpide loomise kaudu
+            </p>
+        </div>
+    </header>
 
-    <button onclick="javascript:window.history.back();" class="floating">Tagasi</button>    <br>
+    <div class="container">
+        <div style="max-width: 900px; margin: 0 auto;">
+            
+            <!-- Navigation breadcrumb -->
+            <nav style="margin-bottom: 2rem; padding: 1rem; background: rgba(255,255,255,0.9); border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <a href="../index.html" style="color: #3498db;">🏠 Avaleht</a> 
+                <span style="color: #7f8c8d; margin: 0 0.5rem;">→</span>
+                <span style="color: #2c3e50; font-weight: 500;">Prototüüpimine</span>
+            </nav>
 
-    <br>
-    <br>
-    <br>
+            <!-- Main content -->
+            <main style="background: rgba(255,255,255,0.95); border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                
+                <div style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                    <h2 style="color: white; border: none; margin-bottom: 1rem;">🛠️ Prototüüpimine</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.6; margin: 0; color: #ede9fe;">
+                        Prototüüpimismudeli puhul luuakse töötav prototüüp enne tarkvara lõplikku arendamist. 
+                        Prototüüp on süsteemi lihtsustatud versioon piiratud funktsionaalsuse ja töökindlusega, 
+                        mis aitab klientidel ja arendajatel mõista vajadusi ja täpsustada süsteemi nõudeid.
+                    </p>
+                </div>
+
+                <h3>🔄 Prototüüpimisprotsess</h3>
+                <div style="display: grid; gap: 1rem; margin: 2rem 0;">
+                    <div style="display: flex; align-items: start; gap: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                        <span style="background: #3b82f6; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">1</span>
+                        <div>
+                            <h4 style="color: #3b82f6; margin-bottom: 0.5rem;">📋 Nõuete kogumine ja analüüs</h4>
+                            <p style="margin: 0; color: #2c3e50;">Kogutakse kliendi esialgsed vajadused ja eesmärgid.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: start; gap: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #10b981;">
+                        <span style="background: #10b981; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">2</span>
+                        <div>
+                            <h4 style="color: #10b981; margin-bottom: 0.5rem;">⚡ Kiire disain</h4>
+                            <p style="margin: 0; color: #2c3e50;">Määratletakse prototüübi põhifunktsioonid ja plaanitakse teostus.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: start; gap: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #f59e0b;">
+                        <span style="background: #f59e0b; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">3</span>
+                        <div>
+                            <h4 style="color: #f59e0b; margin-bottom: 0.5rem;">🔧 Prototüübi valmistamine</h4>
+                            <p style="margin: 0; color: #2c3e50;">Arendatakse lihtsustatud versioon põhifunktsioonidega.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: start; gap: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #ef4444;">
+                        <span style="background: #ef4444; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">4</span>
+                        <div>
+                            <h4 style="color: #ef4444; margin-bottom: 0.5rem;">👥 Kasutaja hindamine</h4>
+                            <p style="margin: 0; color: #2c3e50;">Kasutajad testivad prototüüpi ja annavad tagasisidet.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: start; gap: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #8b5cf6;">
+                        <span style="background: #8b5cf6; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">5</span>
+                        <div>
+                            <h4 style="color: #8b5cf6; margin-bottom: 0.5rem;">♻️ Prototüübi täiustamine</h4>
+                            <p style="margin: 0; color: #2c3e50;">Parandatakse prototüüpi vastavalt kasutajate tagasisidele.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: start; gap: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #059669;">
+                        <span style="background: #059669; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">6</span>
+                        <div>
+                            <h4 style="color: #059669; margin-bottom: 0.5rem;">✅ Lõpliku toote valmistamine</h4>
+                            <p style="margin: 0; color: #2c3e50;">Valmib lõplik süsteem, mis vastab kõigile nõuetele ja kvaliteedistandarditele.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <figure style="margin: 3rem 0; text-align: center;">
+                    <img src="../pildid/Prototyypimine.png" alt="Prototüüpimisprotsessi skeem" 
+                         style="width: 100%; max-width: 600px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <figcaption>Prototüüpimismudeli tsükliline protsess</figcaption>
+                </figure>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 3rem 0;">
+                    <div style="background: #d5f4e6; border: 1px solid #10b981; border-radius: 8px; padding: 1.5rem;">
+                        <h3 style="color: #10b981; border: none; margin-bottom: 1.5rem; text-align: center;">✅ Eelised</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #10b981;">•</span>
+                                Vähendab vale kasutajanõuete riski
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #10b981;">•</span>
+                                Sobib hästi muutuvate nõuetega
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #10b981;">•</span>
+                                Regulaarne nähtav protsess toetab juhtimist
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #10b981;">•</span>
+                                Toetab varajast toote turundust
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #10b981;">•</span>
+                                Vähendab hoolduskulusid
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #10b981;">•</span>
+                                Vigade varajane avastamine
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: #fdeaea; border: 1px solid #ef4444; border-radius: 8px; padding: 1.5rem;">
+                        <h3 style="color: #ef4444; border: none; margin-bottom: 1.5rem; text-align: center;">❌ Puudused</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+                                Prototüüp võib muutuda lõplikuks tooteks
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+                                Nõuab ulatuslikku koostööd kliendiga
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+                                Tõstab kliendi kulusid
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+                                Vajab pühendunud klienti
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+                                Raske hinnata projekti kestust
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+                                Prototüüpimise tööriistad on kallid
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+                                Aeganõudev protsess
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="background: #f5f3ff; border-left: 4px solid #8b5cf6; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0;">
+                    <h4 style="color: #8b5cf6; margin-bottom: 1rem;">💡 Millal kasutada?</h4>
+                    <p style="margin-bottom: 1rem;">
+                        Prototüüpimismudel sobib kõige paremini projektidele, kus:
+                    </p>
+                    <ul>
+                        <li>Kliendil puudub täpne ettekujutus nõuetest</li>
+                        <li>Vajatakse kasutajaliidese testimist</li>
+                        <li>Nõuded pole lõplikult kinnitatud</li>
+                        <li>Klient on kaasatud ja saadaval</li>
+                        <li>Uuenduslik või eksperimentaalne projekt</li>
+                        <li>Keeruline kasutajaliides vajab valideerimist</li>
+                    </ul>
+                </div>
+
+                <div style="background: #f0f4ff; border: 1px solid #8b5cf6; border-radius: 8px; padding: 1.5rem; margin: 2rem 0;">
+                    <h4 style="color: #8b5cf6; margin-bottom: 1rem;">📚 Lisalugemine</h4>
+                    <p style="margin-bottom: 1rem;">Lisainfo prototüüpimismudeli kohta:</p>
+                    <a href="https://www.javatpoint.com/software-engineering-prototype-model" 
+                       target="_blank" 
+                       style="color: #8b5cf6; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.5rem;">
+                        🔗 JavaTpoint - Prototype Model
+                        <span style="font-size: 0.8rem;">↗</span>
+                    </a>
+                </div>
+
+                <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 3rem; flex-wrap: wrap;">
+                    <button onclick="javascript:window.history.back();" 
+                            style="background: linear-gradient(45deg, #95a5a6, #7f8c8d); padding: 12px 24px; width: auto; min-width: 120px;">
+                        ← Tagasi
+                    </button>
+                    <button onclick="window.location.href='../index.html'" 
+                            style="background: linear-gradient(45deg, #3498db, #2980b9); padding: 12px 24px; width: auto; min-width: 120px;">
+                        🏠 Avalehele
+                    </button>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p style="margin: 0; color: #e2e8f0;">&copy; 2024 Orvet Priimägi - TARge24 | Prototüüpimine</p>
+        </div>
+    </footer>
+
 </body>
-<footer>Orvet Priimägi - TARge24</footer>
-
 </html>

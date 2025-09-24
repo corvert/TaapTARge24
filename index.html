@@ -1,97 +1,455 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarkvara Arendusprotsessi Portfoolio | Orvet Priimägi</title>
+    <meta
+      name="description"
+      content="Tarkvara arendusprotsessi ainemappe ja projekte - Orvet Priimägi TARge24"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="pildid/icon.jpeg" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minu Tarkvara Arendusprotsessi Ainemapp</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-
-
-<body>
+  <body>
     <header>
-    <h1>Tarkvara Arendusprotsessi tehtud tööde konspekt</h1>
-</header>
-    <br>
+      <div class="container">
+        <h1>Tarkvara Arendusprotsessi Portfoolio</h1>
+        <p style="font-size: 1.1rem; margin-top: 0.5rem; opacity: 0.9; color: #e2e8f0">
+          Terviklik ülevaade tarkvara arenduse metoodikate ja töövahendite õppetööst
+        </p>
+      </div>
+    </header>
 
-    <div class="row">
-        <div class="column left" style="width: 20%;">
+    <div class="container">
+      <div class="row">
+        <div class="column left">
+          <nav>
+            <h3
+              style="
+                color: #2c3e50;
+                margin-bottom: 1.5rem;
+                text-align: center;
+                border-bottom: 2px solid #3498db;
+                padding-bottom: 0.5rem;
+              "
+            >
+              📚 Navigatsioon
+            </h3>
 
-<nav>
-              
-                    <button class="floating" onclick="window.location.href='elutsykkel/waterfall.html'">Waterfall arendusmudel</button>
-                  
-                    <button class="floating" onclick="window.location.href='elutsykkel/inkrementaalne.html'">Inkrementaalne arendusmudel</button>
-                 
-                    <button class="floating" onclick="window.location.href='elutsykkel/Spiraalmudel.html'">Spiraalmudel arendusmudel</button>
-              
-                    <button class="floating" onclick="window.location.href='elutsykkel/prototüüpimine.html'">Prototüüpimine</button>
-               
-                    <button class="floating" onclick="window.location.href='casevahendid/main.html'">CASE-vahendid</button>
-                    
-                  
-                 
-                    <button class="floating" onclick="window.location.href='elutsykkel/agiilne.html'">Agiilne mudel</button>
-                   
-                    <button class="floating" onclick="window.location.href='elutsykkel/big-bang.html'">Big Bang mudel</button>
-                   
-                    <button class="floating" onclick="window.location.href='elutsykkel/Devops.html'">DevOps mudel</button>
-                    
-                    <button class="floating" onclick="window.location.href='elutsykkel/extreme-programming.html'">Extreme Programming mudel</button>
-                   
-                    <button class="floating" onclick="window.location.href='elutsykkel/V-Model.html'">V-Model</button>
-                 
-                   
-                    <button class="floating" onclick="window.location.href='btc/main.html'">Bitcoin kalkulaator</button>
-                   
-                  
-                    <button class="floating" onclick="window.location.href='uml-diagramm/main.html'">UML-diagrammid</button>
-                  
-                    <button class="floating" onclick="window.location.href='winWorms/winWord.html'">Windows Forms Rakendus</button>
-                
-                    <button class="floating" onclick="window.location.href='ProjectLibre/main.html'">Project Libre</button>
-                  
-                </nav>
-         
+            <div style="display: grid; gap: 0.5rem">
+              <h4
+                style="
+                  color: #6b7280;
+                  font-size: 0.9rem;
+                  margin: 1rem 0 0.5rem 0;
+                  text-transform: uppercase;
+                  letter-spacing: 0.05em;
+                "
+              >
+                Arendusmudelid
+              </h4>
+
+              <button class="floating" onclick="window.location.href='elutsykkel/waterfall.html'">
+                🌊 Waterfall mudel
+              </button>
+
+              <button class="floating" onclick="window.location.href='elutsykkel/agiilne.html'">
+                🔄 Agiilne mudel
+              </button>
+
+              <button
+                class="floating"
+                onclick="window.location.href='elutsykkel/inkrementaalne.html'"
+              >
+                📈 Inkrementaalne mudel
+              </button>
+
+              <button
+                class="floating"
+                onclick="window.location.href='elutsykkel/spiraalmudel.html'"
+              >
+                🌀 Spiraalmudel
+              </button>
+
+              <button
+                class="floating"
+                onclick="window.location.href='elutsykkel/prototüüpimine.html'"
+              >
+                🏗️ Prototüüpimine
+              </button>
+
+              <button class="floating" onclick="window.location.href='elutsykkel/big-bang.html'">
+                💥 Big Bang mudel
+              </button>
+
+              <button class="floating" onclick="window.location.href='elutsykkel/Devops.html'">
+                🔧 DevOps mudel
+              </button>
+
+              <button
+                class="floating"
+                onclick="window.location.href='elutsykkel/extreme-programming.html'"
+              >
+                ⚡ Extreme Programming
+              </button>
+
+              <button class="floating" onclick="window.location.href='elutsykkel/V-Model.html'">
+                📐 V-Model
+              </button>
+
+              <h4
+                style="
+                  color: #6b7280;
+                  font-size: 0.9rem;
+                  margin: 1.5rem 0 0.5rem 0;
+                  text-transform: uppercase;
+                  letter-spacing: 0.05em;
+                "
+              >
+                Töövahendid
+              </h4>
+
+              <button class="floating" onclick="window.location.href='casevahendid/main.html'">
+                🛠️ CASE-vahendid
+              </button>
+
+              <button class="floating" onclick="window.location.href='uml-diagramm/main.html'">
+                📊 UML-diagrammid
+              </button>
+
+              <h4
+                style="
+                  color: #6b7280;
+                  font-size: 0.9rem;
+                  margin: 1.5rem 0 0.5rem 0;
+                  text-transform: uppercase;
+                  letter-spacing: 0.05em;
+                "
+              >
+                Praktilised projektid
+              </h4>
+
+              <button class="floating" onclick="window.location.href='btc/main.html'">
+                ₿ Bitcoin kalkulaator
+              </button>
+
+              <button class="floating" onclick="window.location.href='winWorms/winWord.html'">
+                🖥️ Windows Forms rakendus
+              </button>
+
+              <button class="floating" onclick="window.location.href='ProjectLibre/main.html'">
+                📋 Project Libre
+              </button>
+            </div>
+          </nav>
         </div>
+
         <div class="column middle">
-         
-                    </ul>
-                    <br />
+          <!-- Welcome Section -->
+          <div
+            style="
+              background: linear-gradient(135deg, #3b82f6, #1e40af);
+              color: white;
+              border-radius: 12px;
+              padding: 2rem;
+              margin-bottom: 2rem;
+              text-align: center;
+            "
+          >
+            <h2 style="color: white; border: none; margin-bottom: 1rem; font-size: 2rem">
+              Tere tulemast!
+            </h2>
+            <p style="font-size: 1.1rem; margin: 0; color: #e2e8f0; line-height: 1.6">
+              Siit leiate põhjaliku ülevaate tarkvara arendusprotsessi erinevatest aspektidest,
+              alates klassikalistest arendusmudelitest kuni praktiliste rakenduste loomiseni.
+            </p>
+          </div>
 
-                    <h2 style="text-align: center;">Minust</h2>
-                    <table>
-                        <tr>
-                            <th>Nimi</th>
-                            <th>Mida teen</th>
-                            <th>Kust tulen</th>
-                            <th>Pilt</th>
-                        </tr>
-                        <tr>
-                            <td>Orvet Priimägi</td>
-                            <td>Õpilane</td>
-                            <td>Tamsalu</td>
-                            <td><img src="pildid/pilt.png" alt="pilt" style="width:150px;height:160px"></td>
-                        </tr>
-                        <tr>
-                            <td colspan="4" style="text-align: center;"><a href="https://corvert.github.io/TaapTARge24/"
-                                    target="_blank">Minu github link</a></td>
+          <!-- Profile Section -->
+          <div class="profile-card">
+            <div
+              style="display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center"
+            >
+              <div style="text-align: left">
+                <h2 style="color: #1f2937; border: none; margin-bottom: 0.5rem">Orvet Priimägi</h2>
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem">
+                  <span
+                    style="
+                      background: #3b82f6;
+                      color: white;
+                      padding: 0.25rem 0.75rem;
+                      border-radius: 9999px;
+                      font-size: 0.875rem;
+                      font-weight: 500;
+                    "
+                  >
+                    TARge24 Õpilane
+                  </span>
+                  <span style="color: #6b7280">📍 Tamsalu</span>
+                </div>
+                <p style="color: #4b5563; margin-bottom: 1.5rem; text-align: left">
+                  Tarkvara arenduse valdkonda süvenev õpilane, kes keskendub moodsa arendusprotsessi
+                  metoodikate ja töövahendite omandamisele.
+                </p>
+                <div style="text-align: left">
+                  <a
+                    href="https://github.com/corvert"
+                    target="_blank"
+                    style="
+                      display: inline-flex;
+                      align-items: center;
+                      gap: 0.5rem;
+                      padding: 0.75rem 1.5rem;
+                      background: linear-gradient(135deg, #3b82f6, #1e40af);
+                      color: white;
+                      text-decoration: none;
+                      border-radius: 8px;
+                      font-weight: 500;
+                      transition: all 0.3s ease;
+                    "
+                  >
+                    <span>🔗</span> GitHub Portfoolio
+                  </a>
+                </div>
+              </div>
+              <div>
+                <img
+                  src="pildid/pilt.png"
+                  alt="Orvet Priimägi profiilipilt"
+                  style="
+                    width: 120px;
+                    height: 140px;
+                    border-radius: 12px;
+                    object-fit: cover;
+                    border: 3px solid #3b82f6;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                  "
+                />
+              </div>
+            </div>
+          </div>
 
-                        </tr>
-                    </table>
-                    <br>
+          <!-- Content Overview -->
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+              gap: 1.5rem;
+              margin: 2rem 0;
+            "
+          >
+            <!-- Development Models Card -->
+            <div
+              style="
+                background: white;
+                border-radius: 12px;
+                padding: 1.5rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                border-top: 4px solid #3b82f6;
+              "
+            >
+              <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem">
+                <div style="background: #dbeafe; padding: 0.5rem; border-radius: 8px">
+                  <span style="font-size: 1.5rem">📋</span>
+                </div>
+                <h3 style="color: #1f2937; margin: 0; border: none">Arendusmudelid</h3>
+              </div>
+              <p style="color: #6b7280; margin-bottom: 1rem; font-size: 0.9rem; text-align: left">
+                Põhjalik käsitlus erinevatest tarkvara arenduse metodoloogiatest ja nende
+                praktilistest rakendustest.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 0.5rem">
+                <span
+                  style="
+                    background: #f3f4f6;
+                    color: #374151;
+                    padding: 0.25rem 0.5rem;
+                    border-radius: 4px;
+                    font-size: 0.8rem;
+                  "
+                  >Waterfall</span
+                >
+                <span
+                  style="
+                    background: #f3f4f6;
+                    color: #374151;
+                    padding: 0.25rem 0.5rem;
+                    border-radius: 4px;
+                    font-size: 0.8rem;
+                  "
+                  >Agile</span
+                >
+                <span
+                  style="
+                    background: #f3f4f6;
+                    color: #374151;
+                    padding: 0.25rem 0.5rem;
+                    border-radius: 4px;
+                    font-size: 0.8rem;
+                  "
+                  >DevOps</span
+                >
+                <span
+                  style="
+                    background: #f3f4f6;
+                    color: #374151;
+                    padding: 0.25rem 0.5rem;
+                    border-radius: 4px;
+                    font-size: 0.8rem;
+                  "
+                  >Spiral</span
+                >
+              </div>
+            </div>
 
-             
+            <!-- Tools Card -->
+            <div
+              style="
+                background: white;
+                border-radius: 12px;
+                padding: 1.5rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                border-top: 4px solid #10b981;
+              "
+            >
+              <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem">
+                <div style="background: #d1fae5; padding: 0.5rem; border-radius: 8px">
+                  <span style="font-size: 1.5rem">🛠️</span>
+                </div>
+                <h3 style="color: #1f2937; margin: 0; border: none">Töövahendid</h3>
+              </div>
+              <p style="color: #6b7280; margin-bottom: 1rem; font-size: 0.9rem; text-align: left">
+                CASE-vahendite ja modelleerimisvahendite tutvustus ning nende kasutamine praktikas.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 0.5rem">
+                <span
+                  style="
+                    background: #f3f4f6;
+                    color: #374151;
+                    padding: 0.25rem 0.5rem;
+                    border-radius: 4px;
+                    font-size: 0.8rem;
+                  "
+                  >UML</span
+                >
+                <span
+                  style="
+                    background: #f3f4f6;
+                    color: #374151;
+                    padding: 0.25rem 0.5rem;
+                    border-radius: 4px;
+                    font-size: 0.8rem;
+                  "
+                  >ER-diagrammid</span
+                >
+                <span
+                  style="
+                    background: #f3f4f6;
+                    color: #374151;
+                    padding: 0.25rem 0.5rem;
+                    border-radius: 4px;
+                    font-size: 0.8rem;
+                  "
+                  >Project Libre</span
+                >
+              </div>
+            </div>
+
+            <!-- Projects Card -->
+            <div
+              style="
+                background: white;
+                border-radius: 12px;
+                padding: 1.5rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                border-top: 4px solid #f59e0b;
+              "
+            >
+              <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem">
+                <div style="background: #fef3c7; padding: 0.5rem; border-radius: 8px">
+                  <span style="font-size: 1.5rem">💻</span>
+                </div>
+                <h3 style="color: #1f2937; margin: 0; border: none">Praktilised projektid</h3>
+              </div>
+              <p style="color: #6b7280; margin-bottom: 1rem; font-size: 0.9rem; text-align: left">
+                Rakenduste arendamise näited ja praktilised lahendused erinevates tehnoloogiates.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 0.5rem">
+                <span
+                  style="
+                    background: #f3f4f6;
+                    color: #374151;
+                    padding: 0.25rem 0.5rem;
+                    border-radius: 4px;
+                    font-size: 0.8rem;
+                  "
+                  >Bitcoin kalkulaator</span
+                >
+                <span
+                  style="
+                    background: #f3f4f6;
+                    color: #374151;
+                    padding: 0.25rem 0.5rem;
+                    border-radius: 4px;
+                    font-size: 0.8rem;
+                  "
+                  >Windows Forms</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Stats -->
+          <div
+            style="
+              background: white;
+              border-radius: 12px;
+              padding: 2rem;
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+              margin-top: 2rem;
+            "
+          >
+            <h3 style="text-align: center; color: #1f2937; margin-bottom: 2rem; border: none">
+              📊 Portfoolio statistika
+            </h3>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 1rem;
+                text-align: center;
+              "
+            >
+              <div>
+                <div style="font-size: 2rem; font-weight: bold; color: #3b82f6">9+</div>
+                <div style="font-size: 0.9rem; color: #6b7280">Arendusmudelit</div>
+              </div>
+              <div>
+                <div style="font-size: 2rem; font-weight: bold; color: #10b981">5+</div>
+                <div style="font-size: 0.9rem; color: #6b7280">Töövahend</div>
+              </div>
+              <div>
+                <div style="font-size: 2rem; font-weight: bold; color: #f59e0b">3+</div>
+                <div style="font-size: 0.9rem; color: #6b7280">Praktiline projekt</div>
+              </div>
+              <div>
+                <div style="font-size: 2rem; font-weight: bold; color: #ef4444">2024</div>
+                <div style="font-size: 0.9rem; color: #6b7280">Loomise aasta</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="column right" >
-          
-        </div>
+      </div>
     </div>
+
     <footer>
-
-        Orvet Priimägi - TARge24
-
+      <div class="container">
+        <p style="margin: 0; color: #e2e8f0">
+          &copy; 2024 Orvet Priimägi - TARge24 | Tarkvara Arendusprotsessi Portfoolio
+        </p>
+      </div>
     </footer>
-
-</body>
+  </body>
+</html>

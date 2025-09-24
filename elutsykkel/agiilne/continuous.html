@@ -1,157 +1,311 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Continuous test-driven development</title>
-  <link rel="stylesheet" href="../../styles.css">
-  <link rel="icon" href="../../pildid/icon.jpeg" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuous Test-Driven Development (CTDD) | Tarkvara Arendusprotsess</title>
+    <meta name="description" content="CTDD - pidev testimine taustal, mis laiendab TDD-d automaatse testimise abil">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" href="../../pildid/icon.jpeg" type="image/x-icon">
 </head>
 
 <body>
-  <header>
-    <h1>Continuous test-driven development</h1>
-
-  </header>
-  <div class="row">
-    <div class="column left">
-      <nav>
-        <button class="floating" onclick="window.location.href='behavior-driven.html'">Behavior-driven
-          development</button>
-        <button class="floating" onclick="window.location.href='design-driven.html'">Design-driven development</button>
-        <button class="floating" onclick="window.location.href='domain-driven.html'">Domain-driven design</button>
-        <button class="floating" onclick="window.location.href='secure.html'">Secure by design</button>
-        <button class="floating" onclick="window.location.href='test-driven.html'">Test-driven development</button>
-        <button class="floating" onclick="window.location.href='acceptance.html'">Acceptance test-driven
-          development</button>
-        <button class="floating" onclick="window.location.href='continuous.html'">Continuous test-driven
-          development</button>
-        <button class="floating" onclick="window.location.href='specification.html'">Specification by example</button>
-        <button class="floating" onclick="window.location.href='data-driven.html'">Data-driven development</button>
-        <button class="floating" onclick="window.location.href='data-oriented.html'">Data-oriented design</button>
-      </nav>
-    </div>
-    <div class="column middle">
-
-      <h2>Continuous test-driven development</h2>
-      <p>Continuous test-driven development ( CTDD ) on tarkvaraarenduse tava, mis laiendab <a href="test-driven.html">
-          test-driven development</a>
-        (TDD) taustal automaatse testimise abil, mida mõnikord nimetatakse ka pidevaks testimiseks.
-        <br>
-        CTDD-s kirjutab arendaja esmalt testi, kuid pole sunnitud teste käsitsi täitma. Teste käivitab automaatselt
-        taustal töötav pidev testimistööriist. See meetod võib potentsiaalselt vähendada testi käsitsi täitmisest
-        tulenevat ajaraiskamist, kuna arendaja ei pea testi alustama pärast tavapärase TDD-praktika iga etappi: pärast
-        (esialgu ebaõnnestunud) testi kirjutamist, pärast minimaalse koguse koodi loomist. testi läbimiseks ja pärast
-        koodi ümbertöötamist.
-      </p>
-      <br>  <figure>
-        <img src="picture/CTTD.png" alt="CTTA">
-        <figcaption>Test driven development & Continuous Integration</figcaption>
-      </figure>
-      <br>
-      <table>
-        <tr>
-          <th colspan="2">Continuous test-driven development</th>
-        </tr>
-        <tr>
-          <th>Eelised</th>
-          <th>Puudused</th>
-        </tr>
-        <tr>
-          <td>
-            <ul>
-              <li>Varajane vigade avastamine: Kiire ja tõhus koodimuudatuste testimine, mis aitab parandada tarkvara
-                kvaliteeti ja vältida kallite vigade hilisemat parandamist.</li>
-              <li>Kiirem funktsionaalsuse tarnimine: Muudatused integreeritakse kiiresti ühtsesse koodibaasi, mis
-                lühendab arendusaega ja võimaldab kiireid väljalaskeid.</li>
-              <li>Parem tiimikoostöö: CTDD soodustab meeskonnatööd, välistades konfliktid, mis võivad tekkida erinevate
-                koodiversioonide vahel.</li>
-              <li>Automatiseerimine: CTDD automatiseerib arendusprotsessi aspekte, nagu testimine ja ülevaated, mis
-                vähendab käsitsi tehtavaid vigu.</li>
-              <li>Parem koodikvaliteet: Pidev koodimuudatuste ja testide integreerimine parandab koodi stabiilsust ja
-                hooldatavust.</li>
-
-
-            </ul>
-          </td>
-
-          <td>
-            <ul>
-
-              <li>Tehnilise infrastruktuuri loomine: CTDD nõuab versioonihaldussüsteemide, hostimisinfrastruktuuri ja
-                orkestreerimistehnoloogiate juurutamist ning täiendavate serverite ja testimiskeskkondade loomist.</li>
-              <li>Arendustiimide koolitamine: Testprotseduuride loomine ja jaotamine nõuab märkimisväärset tööd ning
-                need peavad olema pidevalt arendatavad, et hõlmata uusi funktsionaalsusi ja planeeritud koodimuudatusi.
-              </li>
-              <li>Keerukus kohanemisel: Koostesüsteemide ülesehitamine võib olla väga keerukas, muutes nende paindliku
-                kohandamise raskeks.
-              </li>
-
-            </ul>
-          </td>
-        </tr>
-      </table>
-    
-    
-
-      <br>
-      <p><a href="https://infinitest.github.io/" target="_blank">Infinitest</a> on Java pidev testimisprogramm ja see on
-        väärtuslik arendajatele, kes kasutavad üksuse testimise tööriista nimega JUnit. Pidev testimine on üksusetestide
-        pidev käivitamine, samal ajal kui arendajad teevad lähtekoodi muudatusi. Omamoodi nagu õigekirjakontroll, välja
-        arvatud see, et selle asemel, et otsida õigekirjavigu nagu tavaline õigekirjakontroll või süntaksivigu nagu
-        paljud IDE-d teevad, otsib Infinitest pidevalt loogikavigu ja tuvastab need kohe. See teeb seda, käivitades
-        optimeeritud üksusetestide komplekti iga kord, kui arendaja lähtekoodi muudab.</p>
-
-      <br>
-      <p>Kasutatud kirjandus: <br>
-        <a
-          href="https://en.wikipedia.org/wiki/Continuous_test-driven_development" target="_blank">https://en.wikipedia.org/wiki/Continuous_test-driven_development</a><br>
-        <a
-          href="https://www.devinterface.com/en/blog/test-driven-development-and-continuous-integration" target="_blank">https://www.devinterface.com/en/blog/test-driven-development-and-continuous-integration</a>
-      </p>
-
-      <div class="floating row">
-        <div class="column left">
-          <button onclick="topFunction()" id="myBtn" title="Go to top">Algusesse</button>
+    <header>
+        <div class="container">
+            <h1>🔄 Continuous Test-Driven Development</h1>
+            <p style="font-size: 1.1rem; margin-top: 0.5rem; opacity: 0.9; color: #e2e8f0;">
+                Pidev testimine - TDD automatiseerimine taustal töötavate tööriistadega
+            </p>
         </div>
-        <div class="column middle" style="text-align: center; background-color: transparent;">
-          <button onclick="window.location.href='../../index.html'">Koju</button>
+    </header>
+
+    <div class="container">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            
+            <!-- Navigation breadcrumb -->
+            <nav style="margin-bottom: 2rem; padding: 1rem; background: rgba(255,255,255,0.9); border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <a href="../../index.html" style="color: #3498db;">🏠 Avaleht</a> 
+                <span style="color: #7f8c8d; margin: 0 0.5rem;">→</span>
+                <a href="../agiilne.html" style="color: #3498db;">Agiilne mudel</a>
+                <span style="color: #7f8c8d; margin: 0 0.5rem;">→</span>
+                <a href="../agiilneLisa.html" style="color: #3498db;">Agiilne lisainfo</a>
+                <span style="color: #7f8c8d; margin: 0 0.5rem;">→</span>
+                <span style="color: #2c3e50; font-weight: 500;">CTDD</span>
+            </nav>
+
+            <div style="display: grid; grid-template-columns: 300px 1fr; gap: 2rem;">
+                
+                <!-- Left sidebar navigation -->
+                <aside style="background: rgba(255,255,255,0.95); border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); height: fit-content; position: sticky; top: 2rem;">
+                    <h3 style="color: #84cc16; margin-bottom: 1.5rem; text-align: center;">🛠️ Agiilsed Lähenemisviisid</h3>
+                    <nav style="display: grid; gap: 0.5rem;">
+                        <button onclick="window.location.href='behavior-driven.html'" 
+                                style="background: linear-gradient(45deg, #3b82f6, #2563eb); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🧪 Behavior-driven Development
+                        </button>
+                        <button onclick="window.location.href='design-driven.html'" 
+                                style="background: linear-gradient(45deg, #8b5cf6, #7c3aed); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🎨 Design-driven Development
+                        </button>
+                        <button onclick="window.location.href='domain-driven.html'" 
+                                style="background: linear-gradient(45deg, #10b981, #059669); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🏗️ Domain-driven Design
+                        </button>
+                        <button onclick="window.location.href='secure.html'" 
+                                style="background: linear-gradient(45deg, #ef4444, #dc2626); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🔒 Secure by Design
+                        </button>
+                        <button onclick="window.location.href='test-driven.html'" 
+                                style="background: linear-gradient(45deg, #f59e0b, #d97706); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🧪 Test-driven Development
+                        </button>
+                        <button onclick="window.location.href='acceptance.html'" 
+                                style="background: linear-gradient(45deg, #06b6d4, #0891b2); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            ✅ Acceptance Test-driven Development
+                        </button>
+                        <button style="background: linear-gradient(45deg, #84cc16, #65a30d); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: default; font-size: 0.9rem; text-align: left; font-weight: bold;">
+                            🔄 Continuous Test-driven Development
+                        </button>
+                        <button onclick="window.location.href='specification.html'" 
+                                style="background: linear-gradient(45deg, #ec4899, #db2777); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            📋 Specification by Example
+                        </button>
+                        <button onclick="window.location.href='data-driven.html'" 
+                                style="background: linear-gradient(45deg, #6366f1, #4f46e5); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            📊 Data-driven Development
+                        </button>
+                        <button onclick="window.location.href='data-oriented.html'" 
+                                style="background: linear-gradient(45deg, #14b8a6, #0d9488); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🗂️ Data-oriented Design
+                        </button>
+                    </nav>
+                </aside>
+
+                <!-- Main content -->
+                <main style="background: rgba(255,255,255,0.95); border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    
+                    <div style="background: linear-gradient(135deg, #84cc16, #65a30d); color: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                        <h2 style="color: white; border: none; margin-bottom: 1rem;">🔄 CTDD (Continuous Test-Driven Development)</h2>
+                        <p style="font-size: 1.1rem; line-height: 1.6; margin: 0; color: #ecfccb;">
+                            Continuous Test-Driven Development on tarkvaraarenduse tava, mis laiendab Test-Driven Development 
+                            (TDD) taustal automaatse testimise abil, mida mõnikord nimetatakse ka pidevaks testimiseks.
+                        </p>
+                    </div>
+
+                    <h3>🎯 Põhimõte</h3>
+                    <div style="background: #f7fee7; border-left: 4px solid #84cc16; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0;">
+                        <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 1rem;">
+                            CTDD-s kirjutab arendaja esmalt testi, kuid <strong>pole sunnitud teste käsitsi täitma</strong>. 
+                            Teste käivitab automaatselt taustal töötav pidev testimistööriist.
+                        </p>
+                        <p style="font-size: 1.1rem; line-height: 1.7; margin: 0;">
+                            See meetod võib potentsiaalselt <strong>vähendada testi käsitsi täitmisest tulenevat ajaraiskamist</strong>, 
+                            kuna arendaja ei pea testi alustama pärast tavapärase TDD-praktika iga etappi.
+                        </p>
+                    </div>
+
+                    <h3>🔄 CTDD vs TDD</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0;">
+                        <div style="background: #fef3c7; border: 2px solid #f59e0b; border-radius: 8px; padding: 1.5rem; text-align: center;">
+                            <h4 style="color: #f59e0b; margin-bottom: 1rem;">🧪 Traditsiooniline TDD</h4>
+                            <div style="display: grid; gap: 0.8rem; text-align: left;">
+                                <div style="background: white; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #f59e0b;">
+                                    ✍️ Kirjuta test
+                                </div>
+                                <div style="background: white; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #f59e0b;">
+                                    ▶️ <strong>Käivita test käsitsi</strong>
+                                </div>
+                                <div style="background: white; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #f59e0b;">
+                                    💻 Kirjuta kood
+                                </div>
+                                <div style="background: white; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #f59e0b;">
+                                    ▶️ <strong>Käivita test käsitsi</strong>
+                                </div>
+                                <div style="background: white; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #f59e0b;">
+                                    🔄 Refaktoori
+                                </div>
+                                <div style="background: white; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #f59e0b;">
+                                    ▶️ <strong>Käivita test käsitsi</strong>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="background: #f7fee7; border: 2px solid #84cc16; border-radius: 8px; padding: 1.5rem; text-align: center;">
+                            <h4 style="color: #84cc16; margin-bottom: 1rem;">🔄 CTDD</h4>
+                            <div style="display: grid; gap: 0.8rem; text-align: left;">
+                                <div style="background: white; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #84cc16;">
+                                    ✍️ Kirjuta test
+                                </div>
+                                <div style="background: white; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #84cc16;">
+                                    🤖 <strong>Test käivitub automaatselt</strong>
+                                </div>
+                                <div style="background: white; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #84cc16;">
+                                    💻 Kirjuta kood
+                                </div>
+                                <div style="background: white; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #84cc16;">
+                                    🤖 <strong>Test käivitub automaatselt</strong>
+                                </div>
+                                <div style="background: white; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #84cc16;">
+                                    🔄 Refaktoori
+                                </div>
+                                <div style="background: white; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #84cc16;">
+                                    🤖 <strong>Test käivitub automaatselt</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <figure style="margin: 3rem 0; text-align: center;">
+                        <img src="picture/CTTD.png" alt="CTDD ja CI integratsioon" 
+                             style="width: 100%; max-width: 600px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        <figcaption style="margin-top: 1rem; font-style: italic; color: #6b7280; line-height: 1.5;">
+                            <strong>Test-driven Development & Continuous Integration:</strong> CTDD integreerib TDD pideva integratsiooni süsteemidega
+                        </figcaption>
+                    </figure>
+
+                    <h3>⚖️ Eelised ja puudused</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                        <div style="background: #f0fdf4; border: 1px solid #10b981; border-radius: 8px; padding: 1.5rem;">
+                            <h4 style="color: #10b981; margin-bottom: 1rem; text-align: center;">✅ Eelised</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #10b981; font-size: 0.9rem;">
+                                    🔍 <strong>Varajane vigade avastamine:</strong> Kiire ja tõhus koodimuudatuste testimine, mis parandab kvaliteeti
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #10b981; font-size: 0.9rem;">
+                                    ⚡ <strong>Kiirem funktsionaalsuse tarnimine:</strong> Muudatused integreeritakse kiiresti ühtsesse koodibaasi
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #10b981; font-size: 0.9rem;">
+                                    🤝 <strong>Parem tiimikoostöö:</strong> Välistab konfliktid erinevate koodiversioonide vahel
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #10b981; font-size: 0.9rem;">
+                                    🤖 <strong>Automatiseerimine:</strong> Vähendab käsitsi tehtavaid vigu ja arendusprotsessi kiirendab
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #10b981; font-size: 0.9rem;">
+                                    💎 <strong>Parem koodikvaliteet:</strong> Pidev integreerimine parandab koodi stabiilsust ja hooldatavust
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div style="background: #fef2f2; border: 1px solid #ef4444; border-radius: 8px; padding: 1.5rem;">
+                            <h4 style="color: #ef4444; margin-bottom: 1rem; text-align: center;">⚠️ Puudused</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #ef4444; font-size: 0.9rem;">
+                                    🏗️ <strong>Tehnilise infrastruktuuri loomine:</strong> Nõuab versioonihaldust, hostimist ja orkestreerimistehnoloogiaid
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #ef4444; font-size: 0.9rem;">
+                                    📚 <strong>Arendustiimide koolitamine:</strong> Testprotseduuride loomine nõuab märkimisväärset tööd
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #ef4444; font-size: 0.9rem;">
+                                    🧩 <strong>Keerukus kohanemisel:</strong> Koostesüsteemide ülesehitamine on keerukas ja raske kohandada
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #ef4444; font-size: 0.9rem;">
+                                    💰 <strong>Ressursside vajadus:</strong> Täiendavad serverid ja testimiskeskkondade loomine
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #ef4444; font-size: 0.9rem;">
+                                    🔄 <strong>Pidev hooldus:</strong> Testid peavad olema pidevalt arendatavad uute funktsioonide jaoks
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>🛠️ Peamine tööriist</h3>
+                    <div style="background: #f7fee7; border: 1px solid #84cc16; border-radius: 8px; padding: 1.5rem; margin: 2rem 0;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <div style="background: #84cc16; color: white; padding: 1rem; border-radius: 8px; font-size: 1.5rem;">♾️</div>
+                            <div>
+                                <h4 style="color: #84cc16; margin: 0; margin-bottom: 0.5rem;">Infinitest</h4>
+                                <p style="margin: 0; color: #6b7280;">Java pidev testimisprogramm</p>
+                            </div>
+                        </div>
+                        <p style="margin-bottom: 1rem;">
+                            <a href="https://infinitest.github.io/" target="_blank" style="color: #84cc16; text-decoration: none; font-weight: 500;">
+                                Infinitest ↗
+                            </a> 
+                            on Java pidev testimisprogramm ja see on väärtuslik arendajatele, kes kasutavad üksuse 
+                            testimise tööriista nimega <strong>JUnit</strong>.
+                        </p>
+                        <p style="margin-bottom: 1rem;">
+                            Pidev testimine on üksusetestide pidev käivitamine, samal ajal kui arendajad teevad 
+                            lähtekoodi muudatusi. <strong>Omamoodi nagu õigekirjakontroll</strong>, välja arvatud see, 
+                            et selle asemel, et otsida õigekirjavigu või süntaksivigu, otsib Infinitest pidevalt 
+                            <strong>loogikavigu</strong> ja tuvastab need kohe.
+                        </p>
+                        <p style="margin: 0;">
+                            See teeb seda, käivitades optimeeritud üksusetestide komplekti iga kord, kui arendaja 
+                            lähtekoodi muudab.
+                        </p>
+                    </div>
+
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.5rem; margin: 2rem 0;">
+                        <h4 style="color: #84cc16; margin-bottom: 1rem;">🔄 CTDD võtmekomponendid</h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div style="background: white; padding: 1rem; border-radius: 6px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🤖</div>
+                                <strong>Automaatne testimine</strong>
+                                <p style="font-size: 0.9rem; margin: 0.5rem 0 0; color: #6b7280;">Testid käivituvad taustal</p>
+                            </div>
+                            <div style="background: white; padding: 1rem; border-radius: 6px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">⚡</div>
+                                <strong>Kiire tagasiside</strong>
+                                <p style="font-size: 0.9rem; margin: 0.5rem 0 0; color: #6b7280;">Kohene tulemuste nägemine</p>
+                            </div>
+                            <div style="background: white; padding: 1rem; border-radius: 6px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🔄</div>
+                                <strong>Pidev integratsioon</strong>
+                                <p style="font-size: 0.9rem; margin: 0.5rem 0 0; color: #6b7280;">CI/CD süsteemidega</p>
+                            </div>
+                            <div style="background: white; padding: 1rem; border-radius: 6px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📊</div>
+                                <strong>Optimeeritud testid</strong>
+                                <p style="font-size: 0.9rem; margin: 0.5rem 0 0; color: #6b7280;">Ainult vajalikud testid</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: #f0f4ff; border: 1px solid #84cc16; border-radius: 8px; padding: 1.5rem; margin: 2rem 0;">
+                        <h4 style="color: #84cc16; margin-bottom: 1rem;">📚 Lisalugemine</h4>
+                        <div style="display: grid; gap: 0.5rem;">
+                            <a href="https://en.wikipedia.org/wiki/Continuous_test-driven_development" 
+                               target="_blank" 
+                               style="color: #84cc16; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+                                📖 Wikipedia - Continuous Test-driven Development
+                                <span style="font-size: 0.8rem;">↗</span>
+                            </a>
+                            <a href="https://www.devinterface.com/en/blog/test-driven-development-and-continuous-integration" 
+                               target="_blank" 
+                               style="color: #84cc16; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+                                📝 DevInterface - TDD ja Continuous Integration
+                                <span style="font-size: 0.8rem;">↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 3rem; flex-wrap: wrap;">
+                        <button onclick="window.scrollTo(0, 0);" 
+                                style="background: linear-gradient(45deg, #6b7280, #4b5563); padding: 12px 24px; width: auto; min-width: 120px;">
+                            ⬆️ Algusesse
+                        </button>
+                        <button onclick="javascript:window.history.back();" 
+                                style="background: linear-gradient(45deg, #95a5a6, #7f8c8d); padding: 12px 24px; width: auto; min-width: 120px;">
+                            ← Tagasi
+                        </button>
+                        <button onclick="window.location.href='../../index.html'" 
+                                style="background: linear-gradient(45deg, #3498db, #2980b9); padding: 12px 24px; width: auto; min-width: 120px;">
+                            🏠 Avalehele
+                        </button>
+                    </div>
+
+                </main>
+            </div>
         </div>
-        <div class="column right">
-          <button onclick="javascript:window.history.back();" id="backBtn">Tagasi</button>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p style="margin: 0; color: #e2e8f0;">&copy; 2024 Orvet Priimägi - TARge24 | Continuous Test-Driven Development</p>
         </div>
-      </div>
-    </div>
-    <div class="column right">
+    </footer>
 
-    </div>
-  </div>
-  <footer>
-    Orvet Priimägi - TARge24
-  </footer>
-
-  <script>
-    // Get the button
-    let mybutton = document.getElementById("myBtn");
-
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function () { scrollFunction() };
-
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
-      } else {
-        mybutton.style.display = "none";
-      }
-    }
-
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
-  </script>
 </body>
-
 </html>

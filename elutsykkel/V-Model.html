@@ -1,84 +1,270 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>V-Model</title>
+    <title>V-Mudel | Tarkvara Arendusprotsess</title>
+    <meta name="description" content="V-mudel - verifikatsiooni ja valideerimise põhimõttel töötav tarkvara arenduse mudel">
     <link rel="stylesheet" href="../styles.css">
 </head>
 
 <body>
-    <p>
-    <h1>V-mudel</h1>
-    V-mudel on tarkvara arendamise elutsükli (SDLC) mudel, mida nimetatakse ka Verifikatsiooni ja Valideerimise mudeliks. See on rangelt struktureeritud mudel, kus iga faasi täitmine toimub järjestikku – uus faas algab alles siis, kui eelmine on lõpetatud. V-mudel ühendab arenduse ja testimise tegevused omavahel paralleelselt, järgides V-kujulist ülesehitust, kus verifikatsioonifaasi tegevused on vasakul ja valideerimisfaasi omad paremal küljel, ühendatuna koodi kirjutamise faasiga.
-    <br>
-    <h3>V-mudeli faasid</h3>
-    <h4>Verifikatsioonifaasi (arenduse) etapid:</h4>
-    <ol type="1">
-        <li>Nõuete analüüs: Kliendi vajaduste ja süsteemi nõuete kogumine. Selles faasis koostatakse ka aktsepteerimistestid hilisemaks kasutamiseks.</li>
-        <li>Süsteemi disain: Valmistatakse süsteemi täielik tehniline ja riistvaraline disain.</li>
-        <li>Arhitektuuri disain: Määratletakse, kuidas tarkvara sisemiselt ja väliselt komponente ühendab. Seda nimetatakse ka kõrgtasemel disainiks (HLD).</li>
-        <li>Moodulite disain: Iga süsteemi mooduli detailne disain (madalatase disain ehk LLD) ning moodulite vahelise sobivuse testide loomine.</li>
-        <li>Koodifaasi: Eelmistes faasides loodud disaini ja spetsifikatsioonide põhjal tehakse koodiarendus.</li>
+    <header>
+        <div class="container">
+            <h1>📐 V-Mudel</h1>
+            <p style="font-size: 1.1rem; margin-top: 0.5rem; opacity: 0.9; color: #e2e8f0;">
+                Verifikatsiooni ja valideerimise põhimõttel töötav struktureeritud mudel
+            </p>
+        </div>
+    </header>
 
-    </ol>
-    <h3>
-        Valideerimisfaasi (testimise) etapid:
-    </h3>
-    <ol type="1">
-        <li>Üksuse testimine: Mooduli disainifaasis loodud testid kontrollivad iga mooduli tehnilist täpsust.</li>
-        <li>Integratsiooni testimine: Kontrollitakse, kas erinevad moodulid töötavad koos. Testid põhinevad arhitektuuri disainifaasil.</li>
-        <li>Süsteemi testimine: Testitakse süsteemi terviklikku funktsionaalsust ja jõudlust vastavalt süsteemi disainis määratletule.</li>
-        <li>Aktsepteerimistestimine: Nõuete analüüsis loodud testidega kontrollitakse, kas süsteem vastab kliendi nõudmistele ja töötab reaalses kasutuskeskkonnas.</li>
-    </ol>
+    <div class="container">
+        <div style="max-width: 900px; margin: 0 auto;">
+            
+            <!-- Navigation breadcrumb -->
+            <nav style="margin-bottom: 2rem; padding: 1rem; background: rgba(255,255,255,0.9); border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <a href="../index.html" style="color: #3498db;">🏠 Avaleht</a> 
+                <span style="color: #7f8c8d; margin: 0 0.5rem;">→</span>
+                <span style="color: #2c3e50; font-weight: 500;">V-mudel</span>
+            </nav>
 
+            <!-- Main content -->
+            <main style="background: rgba(255,255,255,0.95); border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                
+                <div style="background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                    <h2 style="color: white; border: none; margin-bottom: 1rem;">📐 V-Mudel</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.6; margin: 0; color: #dbeafe;">
+                        V-mudel on tarkvara arendamise elutsükli (SDLC) mudel, mida nimetatakse ka <strong>Verifikatsiooni 
+                        ja Valideerimise mudeliks</strong>. See on rangelt struktureeritud mudel, kus iga faasi täitmine 
+                        toimub järjestikku ja arenduse ning testimise tegevused kulgevad paralleelselt.
+                    </p>
+                </div>
 
-    <br>
-    <br>
-    <img src="../pildid/v-model.jpg" alt="V-mudel" style="width:650px; height:360px">
-    </p>
-    <br>
-    <table>
-        <tr>
-            <th>Eelised</th>
-            <th>Puudused</th>
-        </tr>
-        <tr>
-            <td>
-                <ul>
-              <li>See on lihtne ja hõlpsasti kasutatav mudel.</li>
-              <li>Testide planeerimist, testimist ja kavandamist saab teha isegi enne kodeerimist.</li>
-              <li>See on väga distsiplineeritud mudel, milles arendamine ja testimine toimub etappide kaupa.</li>
-<li>Defektid tuvastatakse esialgses etapis ise.</li>
-<li>Selle abil saab hõlpsasti lõpule viia väikese ja keskmise ulatusega arendusi.</li>
-                </ul>
-            </td>
+                <h3>🏗️ V-mudeli ülesehitus</h3>
+                <div style="background: #f0f4ff; border-left: 4px solid #3b82f6; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0;">
+                    <p style="font-size: 1.1rem; line-height: 1.7; margin: 0;">
+                        V-mudel järgib <strong>V-kujulist ülesehitust</strong>, kus verifikatsioonifaasi tegevused on 
+                        vasakul ja valideerimisfaasi omad paremal küljel, ühendatuna koodi kirjutamise faasiga. 
+                        Uus faas algab alles siis, kui eelmine on lõpetatud.
+                    </p>
+                </div>
 
-            <td>
-                <ul>
+                <figure style="margin: 3rem 0; text-align: center;">
+                    <img src="../pildid/v-model.jpg" alt="V-mudeli skeem" 
+                         style="width: 100%; max-width: 650px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <figcaption>V-mudeli verifikatsiooni ja valideerimise faasid</figcaption>
+                </figure>
 
-                    <li>See mudel ei sobi ühegi keeruka projekti jaoks.</li>
-                    <li>Jääb nii suur risk kui ka ebakindlus.</li>
-                    <li>See ei ole sobiv mudel käimasoleva projekti jaoks.</li>
-                    <li>See mudel ei sobi üldse projektile, mis on ebaselge ja mille nõudeid on muudetud.</li>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 3rem 0;">
+                    <div>
+                        <h3 style="color: #10b981; text-align: center; margin-bottom: 1.5rem;">🔍 Verifikatsioonifaas (Arendus)</h3>
+                        <div style="display: grid; gap: 1rem;">
+                            <div style="border-left: 4px solid #10b981; padding: 1rem; background: #f0fdf4; border-radius: 0 8px 8px 0;">
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                                    <span style="background: #10b981; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9rem;">1</span>
+                                    <h4 style="color: #10b981; margin: 0;">📋 Nõuete analüüs</h4>
+                                </div>
+                                <p style="margin: 0; font-size: 0.95rem; color: #2c3e50;">
+                                    Kliendi vajaduste ja süsteemi nõuete kogumine. Koostatakse aktsepteerimistestid.
+                                </p>
+                            </div>
 
-                </ul>
-            </td>
-        </tr>
-    </table>
-    <br>
-    <a href="https://www.geeksforgeeks.org/top-8-software-development-models-used-in-industry/#2-vmodel">Kasutatud kirjandus</a>
-    <br>
-    <br>
+                            <div style="border-left: 4px solid #10b981; padding: 1rem; background: #f0fdf4; border-radius: 0 8px 8px 0;">
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                                    <span style="background: #10b981; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9rem;">2</span>
+                                    <h4 style="color: #10b981; margin: 0;">🏛️ Süsteemi disain</h4>
+                                </div>
+                                <p style="margin: 0; font-size: 0.95rem; color: #2c3e50;">
+                                    Süsteemi täieliku tehnilise ja riistvaralise disaini valmistamine.
+                                </p>
+                            </div>
 
-    <button onclick="javascript:window.history.back();" class="floating">Tagasi</button>    <br>
+                            <div style="border-left: 4px solid #10b981; padding: 1rem; background: #f0fdf4; border-radius: 0 8px 8px 0;">
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                                    <span style="background: #10b981; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9rem;">3</span>
+                                    <h4 style="color: #10b981; margin: 0;">🏗️ Arhitektuuri disain</h4>
+                                </div>
+                                <p style="margin: 0; font-size: 0.95rem; color: #2c3e50;">
+                                    Kõrgtasemel disain (HLD) - tarkvara komponentide ühendamise määratlemine.
+                                </p>
+                            </div>
 
-    <br>
-    <br>
-    <br>
+                            <div style="border-left: 4px solid #10b981; padding: 1rem; background: #f0fdf4; border-radius: 0 8px 8px 0;">
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                                    <span style="background: #10b981; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9rem;">4</span>
+                                    <h4 style="color: #10b981; margin: 0;">🧩 Moodulite disain</h4>
+                                </div>
+                                <p style="margin: 0; font-size: 0.95rem; color: #2c3e50;">
+                                    Madalatasemel disain (LLD) - iga mooduli detailne disain ja testide loomine.
+                                </p>
+                            </div>
+
+                            <div style="border-left: 4px solid #f59e0b; padding: 1rem; background: #fffbeb; border-radius: 0 8px 8px 0;">
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                                    <span style="background: #f59e0b; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9rem;">5</span>
+                                    <h4 style="color: #f59e0b; margin: 0;">💻 Koodifaas</h4>
+                                </div>
+                                <p style="margin: 0; font-size: 0.95rem; color: #2c3e50;">
+                                    Eelmistes faasides loodud disaini ja spetsifikatsioonide põhjal koodiarendus.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 style="color: #ef4444; text-align: center; margin-bottom: 1.5rem;">✅ Valideerimisfaas (Testimine)</h3>
+                        <div style="display: grid; gap: 1rem;">
+                            <div style="border-left: 4px solid #ef4444; padding: 1rem; background: #fef2f2; border-radius: 0 8px 8px 0;">
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                                    <span style="background: #ef4444; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9rem;">1</span>
+                                    <h4 style="color: #ef4444; margin: 0;">🔬 Üksuse testimine</h4>
+                                </div>
+                                <p style="margin: 0; font-size: 0.95rem; color: #2c3e50;">
+                                    Iga mooduli tehnilist täpsust kontrollivad testid mooduli disainifaasi põhjal.
+                                </p>
+                            </div>
+
+                            <div style="border-left: 4px solid #ef4444; padding: 1rem; background: #fef2f2; border-radius: 0 8px 8px 0;">
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                                    <span style="background: #ef4444; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9rem;">2</span>
+                                    <h4 style="color: #ef4444; margin: 0;">🔗 Integratsiooni testimine</h4>
+                                </div>
+                                <p style="margin: 0; font-size: 0.95rem; color: #2c3e50;">
+                                    Kontroll, kas erinevad moodulid töötavad koos arhitektuuri disaini põhjal.
+                                </p>
+                            </div>
+
+                            <div style="border-left: 4px solid #ef4444; padding: 1rem; background: #fef2f2; border-radius: 0 8px 8px 0;">
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                                    <span style="background: #ef4444; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9rem;">3</span>
+                                    <h4 style="color: #ef4444; margin: 0;">🖥️ Süsteemi testimine</h4>
+                                </div>
+                                <p style="margin: 0; font-size: 0.95rem; color: #2c3e50;">
+                                    Süsteemi tervikliku funktsionaalsuse ja jõudluse testimine süsteemi disaini alusel.
+                                </p>
+                            </div>
+
+                            <div style="border-left: 4px solid #ef4444; padding: 1rem; background: #fef2f2; border-radius: 0 8px 8px 0;">
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                                    <span style="background: #ef4444; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9rem;">4</span>
+                                    <h4 style="color: #ef4444; margin: 0;">✅ Aktsepteerimistestimine</h4>
+                                </div>
+                                <p style="margin: 0; font-size: 0.95rem; color: #2c3e50;">
+                                    Kontroll, kas süsteem vastab kliendi nõudmistele ja töötab reaalses keskkonnas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 3rem 0;">
+                    <div style="background: #d5f4e6; border: 1px solid #10b981; border-radius: 8px; padding: 1.5rem;">
+                        <h3 style="color: #10b981; border: none; margin-bottom: 1.5rem; text-align: center;">✅ Eelised</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #10b981;">•</span>
+                                Lihtne ja hõlpsalt kasutatav mudel
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #10b981;">•</span>
+                                Testide planeerimine enne kodeerimist
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #10b981;">•</span>
+                                Väga distsiplineeritud mudel
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #10b981;">•</span>
+                                Defektid tuvastatakse varajases etapis
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #10b981;">•</span>
+                                Sobib väikeste ja keskmiste projektide jaoks
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #10b981;">•</span>
+                                Selge struktuursus ja järjestus
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: #fdeaea; border: 1px solid #ef4444; border-radius: 8px; padding: 1.5rem;">
+                        <h3 style="color: #ef4444; border: none; margin-bottom: 1.5rem; text-align: center;">❌ Puudused</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+                                Ei sobi keerukate projektide jaoks
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+                                Suur risk ja ebakindlus
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+                                Ei sobi käimasolevate projektide jaoks
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+                                Ei sobi ebaselgete nõuetega projektidele
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+                                Ei luba nõuete muutmist
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+                                Jäik ja vähe paindlik
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="background: #f0f4ff; border-left: 4px solid #3b82f6; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0;">
+                    <h4 style="color: #3b82f6; margin-bottom: 1rem;">💡 Millal kasutada?</h4>
+                    <p style="margin-bottom: 1rem;">
+                        V-mudel sobib kõige paremini projektidele, kus:
+                    </p>
+                    <ul>
+                        <li>Nõuded on selged ja stabiilsed</li>
+                        <li>Tehnika on tuntud ja töökindel</li>
+                        <li>Projekt on väike kuni keskmine</li>
+                        <li>Kliendil on selged ootused</li>
+                        <li>Kvaliteedi kontroll on kriitiline</li>
+                    </ul>
+                </div>
+
+                <div style="background: #f0f4ff; border: 1px solid #3b82f6; border-radius: 8px; padding: 1.5rem; margin: 2rem 0;">
+                    <h4 style="color: #3b82f6; margin-bottom: 1rem;">📚 Lisalugemine</h4>
+                    <p style="margin-bottom: 1rem;">Lisainfo V-mudeli kohta:</p>
+                    <a href="https://www.geeksforgeeks.org/top-8-software-development-models-used-in-industry/#2-vmodel" 
+                       target="_blank" 
+                       style="color: #3b82f6; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.5rem;">
+                        🔗 GeeksforGeeks - V-Model Overview
+                        <span style="font-size: 0.8rem;">↗</span>
+                    </a>
+                </div>
+
+                <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 3rem; flex-wrap: wrap;">
+                    <button onclick="javascript:window.history.back();" 
+                            style="background: linear-gradient(45deg, #95a5a6, #7f8c8d); padding: 12px 24px; width: auto; min-width: 120px;">
+                        ← Tagasi
+                    </button>
+                    <button onclick="window.location.href='../index.html'" 
+                            style="background: linear-gradient(45deg, #3498db, #2980b9); padding: 12px 24px; width: auto; min-width: 120px;">
+                        🏠 Avalehele
+                    </button>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p style="margin: 0; color: #e2e8f0;">&copy; 2024 Orvet Priimägi - TARge24 | V-Mudel</p>
+        </div>
+    </footer>
+
 </body>
-<footer>Orvet Priimägi - TARge24</footer>
-
-
 </html>

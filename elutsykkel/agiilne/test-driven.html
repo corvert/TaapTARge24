@@ -1,168 +1,377 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test-driven development</title>
-  <link rel="stylesheet" href="../../styles.css">
-  <link rel="icon" href="../../pildid/icon.jpeg" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test-Driven Development | Tarkvara Arendusprotsess</title>
+    <meta name="description" content="Test-Driven Development (TDD) - testipõhine arendus kus testid kirjutatakse enne koodi">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" href="../../pildid/icon.jpeg" type="image/x-icon">
 </head>
 
 <body>
-  <header>
-    <h1>Test-driven development</h1>
-  </header>
-  <div class="row">
-    <div class="column left">
-      <nav>
-        <button class="floating" onclick="window.location.href='behavior-driven.html'">Behavior-driven
-          development</button>
-        <button class="floating" onclick="window.location.href='design-driven.html'">Design-driven development</button>
-        <button class="floating" onclick="window.location.href='domain-driven.html'">Domain-driven design</button>
-        <button class="floating" onclick="window.location.href='secure.html'">Secure by design</button>
-        <button class="floating" onclick="window.location.href='test-driven.html'">Test-driven development</button>
-        <button class="floating" onclick="window.location.href='acceptance.html'">Acceptance test-driven
-          development</button>
-        <button class="floating" onclick="window.location.href='continuous.html'">Continuous test-driven
-          development</button>
-        <button class="floating" onclick="window.location.href='specification.html'">Specification by example</button>
-        <button class="floating" onclick="window.location.href='data-driven.html'">Data-driven development</button>
-        <button class="floating" onclick="window.location.href='data-oriented.html'">Data-oriented design</button>
-      </nav>
-    </div>
-    <div class="column middle">
-
-      <h2>Test-driven development</h2>
-      <p>Mis on testipõhine arendus (TDD)?
-        Test-driven development (TDD) on kodeerimismeetod, mille puhul kirjutate esmalt testi ja see ebaõnnestub,
-        seejärel
-        kirjutate arendustesti läbimiseks koodi ja puhastate koodi. Seda protsessi taaskasutati ühe uue funktsiooni või
-        muudatuse jaoks. Teiste meetodite puhul, mille puhul kirjutate kõigepealt kas kogu koodi või kõik testid,
-        ühendab TDD ja kirjutab testid ja koodi kokku üheks.
-        <br>
-        Test-Driven Development (TDD) on tarkvaraarenduse meetod, mille puhul keskendutakse testide kirjutamisele enne
-        funktsiooni tegeliku koodi kirjutamist. See lähenemine kasutab lühikesi arendustsükleid, mis kvaliteedi ja
-        korrektsuse tagamiseks korduvad.
-      </p>
-      <p>
-        Tavaliselt järgitakse järgmist toimingute jada:
-      <figure>
-        <img src="../agiilne/picture/Test-Driven-Dev.png" alt="">
-        <figcaption style="text-align: left;">
-          Tavaliselt järgitakse järgmist toimingute jada:
-
-          <li>Käivitage kõik testjuhtumid ja veenduge, et uus testjuhtum ebaõnnestub.</li>
-          <li>Punane - looge testjuhtum ja muutke see ebaõnnestumiseks, käivitage testjuhtumid</li>
-          <li>Roheline - tehke testjuhtum mis tahes viisil.</li>
-          <li>Refactor - muutke koodi duplikaadi/liigsuse eemaldamiseks. Refaktori kood - seda tehakse koodi
-            dubleerimise eemaldamiseks.</li>
-          <li>Korrake ülalnimetatud samme ikka ja jälle</li>
-
-        </figcaption>
-      </figure>
-      </p>
-      <br>
-      <table>
-        <tr>
-          <th colspan="2">Test-driven development</th>
-        </tr>
-        <tr>
-          <th>Eelised</th>
-          <th>Puudused</th>
-        </tr>
-        <tr>
-          <td>
-            <ul>
-              <li>Test annab funktsioonide kohta pidevat tagasisidet.</li>
-              <li>Disaini kvaliteet tõuseb, mis aitab veelgi paremini hooldada.</li>
-              <li>Testipõhine arendus toimib turvavõrguna vigade vastu.</li>
-              <li>TDD tagab, et teie rakendus vastab tegelikult selle jaoks määratletud nõuetele.</li>
-              <li>TDD-del on väga lühike arendustsükkel.</li>
-
-            </ul>
-          </td>
-
-          <td>
-            <ul>
-
-              <li>Suurenenud koodimaht : TDD kasutamine tähendab testjuhtumite jaoks lisakoodi kirjutamist, mis võib
-                muuta üldise koodibaasi suuremaks ja struktureerimata.</li>
-              <li>Testide vale turvalisus : testide läbimine paneb arendajad arvama, et kood on turvalisem ainult
-                eeldusel.</li>
-              <li>Hoolduskulud : paljude testide ajakohasena hoidmine võib olla keeruline teabe säilitamine ja see on ka
-                aeganõudev protsess.</li>
-              <li>Aeganõudvad testimisprotsessid : testide kirjutamine ja säilitamine võib võtta kaua aega.</li>
-              <li>Testimiskeskkonna seadistamine : TDD peab olema korralik testimiskeskkond, milles ta pingutab koodide
-                ja andmete seadistamiseks ja hooldamiseks.</li>
-
-            </ul>
-          </td>
-        </tr>
-      </table>
-      <br>
-      <br>
-
-      <p><a href="https://site.mockito.org/" target="_blank">Mockito (Java)</a>
-
-        Mockito on ideaalne tööriist Java testides mock-objektide loomiseks ja väliste sõltuvuste simuleerimiseks. See
-        võimaldab määrata mock-objektide käitumist, kontrollida, kas ja kuidas neid kutsuti, ning eraldada kood
-        elegantselt fokuseeritud testimiseks. Erinevalt teistest mock-raamistikest pakub Mockito kasutajasõbralikku
-        API-d, mis meenutab päris koodi kirjutamist, muutes selle kasutamise lihtsaks ka algajatele.
-        <br>
-        Peamised omadused: mock-ide ja stub-ide loomine, interaktsioonide kontrollimine, argumentide matcherid, sujuv
-        API.
-        <br>
-        Miks see on üks parimaid TDD tööriistu: lihtne kasutada, intuitiivne API, meenutab päris koodi kirjutamist ning
-        võimaldab ka algajatel tõhusalt mock'e luua.
-      </p>
-      <br>
-      <p>Kasutatud kirjandus: <br>
-        <a href="https://www.geeksforgeeks.org/test-driven-development-tdd/?ref=header_outind"
-          target="_blank">https://www.geeksforgeeks.org/test-driven-development-tdd/?ref=header_outind</a>
-      </p>
-
-      <div class="floating row">
-        <div class="column left">
-          <button onclick="topFunction()" id="myBtn" title="Go to top">Algusesse</button>
+    <header>
+        <div class="container">
+            <h1>🧪 Test-Driven Development</h1>
+            <p style="font-size: 1.1rem; margin-top: 0.5rem; opacity: 0.9; color: #e2e8f0;">
+                Testipõhine arendus - kvaliteetse koodi loomine testide juhtimisel
+            </p>
         </div>
-        <div class="column middle" style="text-align: center; background-color: transparent;">
-          <button onclick="window.location.href='../../index.html'">Koju</button>
+    </header>
+
+    <div class="container">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            
+            <!-- Navigation breadcrumb -->
+            <nav style="margin-bottom: 2rem; padding: 1rem; background: rgba(255,255,255,0.9); border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <a href="../../index.html" style="color: #3498db;">🏠 Avaleht</a> 
+                <span style="color: #7f8c8d; margin: 0 0.5rem;">→</span>
+                <a href="../agiilne.html" style="color: #3498db;">Agiilne mudel</a>
+                <span style="color: #7f8c8d; margin: 0 0.5rem;">→</span>
+                <a href="../agiilneLisa.html" style="color: #3498db;">Agiilne lisainfo</a>
+                <span style="color: #7f8c8d; margin: 0 0.5rem;">→</span>
+                <span style="color: #2c3e50; font-weight: 500;">Test-Driven Development</span>
+            </nav>
+
+            <div style="display: grid; grid-template-columns: 300px 1fr; gap: 2rem;">
+                
+                <!-- Left sidebar navigation -->
+                <aside style="background: rgba(255,255,255,0.95); border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); height: fit-content; position: sticky; top: 2rem;">
+                    <h3 style="color: #f59e0b; margin-bottom: 1.5rem; text-align: center;">🛠️ Agiilsed Lähenemisviisid</h3>
+                    <nav style="display: grid; gap: 0.5rem;">
+                        <button onclick="window.location.href='behavior-driven.html'" 
+                                style="background: linear-gradient(45deg, #3b82f6, #2563eb); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🧪 Behavior-driven Development
+                        </button>
+                        <button onclick="window.location.href='design-driven.html'" 
+                                style="background: linear-gradient(45deg, #8b5cf6, #7c3aed); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🎨 Design-driven Development
+                        </button>
+                        <button onclick="window.location.href='domain-driven.html'" 
+                                style="background: linear-gradient(45deg, #10b981, #059669); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🏗️ Domain-driven Design
+                        </button>
+                        <button onclick="window.location.href='secure.html'" 
+                                style="background: linear-gradient(45deg, #ef4444, #dc2626); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🔒 Secure by Design
+                        </button>
+                        <button style="background: linear-gradient(45deg, #f59e0b, #d97706); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: default; font-size: 0.9rem; text-align: left; font-weight: bold;">
+                            🧪 Test-driven Development
+                        </button>
+                        <button onclick="window.location.href='acceptance.html'" 
+                                style="background: linear-gradient(45deg, #06b6d4, #0891b2); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            ✅ Acceptance Test-driven Development
+                        </button>
+                        <button onclick="window.location.href='continuous.html'" 
+                                style="background: linear-gradient(45deg, #84cc16, #65a30d); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🔄 Continuous Test-driven Development
+                        </button>
+                        <button onclick="window.location.href='specification.html'" 
+                                style="background: linear-gradient(45deg, #ec4899, #db2777); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            📋 Specification by Example
+                        </button>
+                        <button onclick="window.location.href='data-driven.html'" 
+                                style="background: linear-gradient(45deg, #6366f1, #4f46e5); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            📊 Data-driven Development
+                        </button>
+                        <button onclick="window.location.href='data-oriented.html'" 
+                                style="background: linear-gradient(45deg, #14b8a6, #0d9488); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🗂️ Data-oriented Design
+                        </button>
+                    </nav>
+                </aside>
+
+                <!-- Main content -->
+                <main style="background: rgba(255,255,255,0.95); border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    
+                    <div style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                        <h2 style="color: white; border: none; margin-bottom: 1rem;">🧪 Test-Driven Development (TDD)</h2>
+                        <p style="font-size: 1.1rem; line-height: 1.6; margin: 0; color: #fef3c7;">
+                            Test-Driven Development on kodeerimismeetod, mille puhul kirjutatakse esmalt testid ja 
+                            seejärel kood nende testide läbimiseks. See tagab kvaliteetse ja usaldusväärse koodi.
+                        </p>
+                    </div>
+
+                    <h3>🔄 TDD Red-Green-Refactor tsükkel</h3>
+                    <div style="display: grid; gap: 1rem; margin: 2rem 0;">
+                        <div style="display: grid; grid-template-columns: 60px 1fr; gap: 1rem; align-items: center; background: #fef2f2; padding: 1rem; border-radius: 8px;">
+                            <div style="background: #ef4444; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin: 0 auto;">🔴</div>
+                            <div>
+                                <h4 style="color: #ef4444; margin: 0 0 0.5rem 0;">Red - Ebaõnnestuvad testid</h4>
+                                <p style="margin: 0; color: #2c3e50; font-size: 0.9rem;">Kirjuta test uue funktsionaalsuse jaoks, käivita testid ja vaata, et uus test ebaõnnestub</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 60px 1fr; gap: 1rem; align-items: center; background: #f0fdf4; padding: 1rem; border-radius: 8px;">
+                            <div style="background: #10b981; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin: 0 auto;">🟢</div>
+                            <div>
+                                <h4 style="color: #10b981; margin: 0 0 0.5rem 0;">Green - Tööv kood</h4>
+                                <p style="margin: 0; color: #2c3e50; font-size: 0.9rem;">Kirjuta lihtsaim kood, mis teeb testi läbivaks. Fookus on testi läbimisele, mitte elegantseile</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 60px 1fr; gap: 1rem; align-items: center; background: #f0f9ff; padding: 1rem; border-radius: 8px;">
+                            <div style="background: #06b6d4; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin: 0 auto;">🔄</div>
+                            <div>
+                                <h4 style="color: #06b6d4; margin: 0 0 0.5rem 0;">Refactor - Koodi täiustamine</h4>
+                                <p style="margin: 0; color: #2c3e50; font-size: 0.9rem;">Paranda koodi kvaliteeti, eemalda duplikaadid ja lihtsusta struktuuri, testid peavad jääma rohelisteks</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 60px 1fr; gap: 1rem; align-items: center; background: #fef3c7; padding: 1rem; border-radius: 8px;">
+                            <div style="background: #f59e0b; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin: 0 auto;">🔁</div>
+                            <div>
+                                <h4 style="color: #f59e0b; margin: 0 0 0.5rem 0;">Repeat - Korda tsüklit</h4>
+                                <p style="margin: 0; color: #2c3e50; font-size: 0.9rem;">Korda ülalöeldud samme iga uue funktsiooni või muudatuse jaoks, ehitades süsteemi iteratiivselt</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <figure style="margin: 3rem 0; text-align: center;">
+                        <img src="picture/Test-Driven-Dev.png" alt="TDD Red-Green-Refactor tsükkel" 
+                             style="width: 100%; max-width: 600px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        <figcaption style="margin-top: 1rem; font-style: italic; color: #6b7280; line-height: 1.5;">
+                            <strong>TDD tsükkel:</strong> Red-Green-Refactor - pidev kvaliteedi tagamine
+                        </figcaption>
+                    </figure>
+
+                    <h3>🎯 TDD põhipõhimõtted</h3>
+                    <div style="display: grid; gap: 1.5rem; margin: 2rem 0;">
+                        <div style="background: #fef3c7; border-left: 4px solid #f59e0b; padding: 1.5rem; border-radius: 0 8px 8px 0;">
+                            <h4 style="color: #f59e0b; margin-bottom: 1rem;">📝 Testid esimesed</h4>
+                            <p style="margin: 0; color: #2c3e50;">
+                                Kirjuta alati test enne koodi kirjutamist. See sunnib mõtlema funktsionaalsuse 
+                                nõuetele ja API-le enne implementatsiooni.
+                            </p>
+                        </div>
+                        
+                        <div style="background: #f0fdf4; border-left: 4px solid #10b981; padding: 1.5rem; border-radius: 0 8px 8px 0;">
+                            <h4 style="color: #10b981; margin-bottom: 1rem;">⚡ Lühikesed tsüklid</h4>
+                            <p style="margin: 0; color: #2c3e50;">
+                                Hoia Red-Green-Refactor tsüklid lühikesed - tavaliselt mõned minutid. 
+                                See tagab kiire tagasiside ja vähendab vigu.
+                            </p>
+                        </div>
+                        
+                        <div style="background: #f0f9ff; border-left: 4px solid #06b6d4; padding: 1.5rem; border-radius: 0 8px 8px 0;">
+                            <h4 style="color: #06b6d4; margin-bottom: 1rem;">🎯 Ainult vajalik kood</h4>
+                            <p style="margin: 0; color: #2c3e50;">
+                                Kirjuta ainult piisavalt koodi, et testid läbi viia. Väldi üle-inseneerimist 
+                                ja hoidu YAGNI (You Aren't Gonna Need It) põhimõttest.
+                            </p>
+                        </div>
+                        
+                        <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: 1.5rem; border-radius: 0 8px 8px 0;">
+                            <h4 style="color: #ef4444; margin-bottom: 1rem;">🔄 Pidev refaktoreerimine</h4>
+                            <p style="margin: 0; color: #2c3e50;">
+                                Paranda koodi kvaliteeti pidevalt refaktoreerimise sammuga. 
+                                Testid tagavad, et muudatused ei riku olemasolevat funktsionaalsust.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3>⚖️ Eelised ja väljakutsed</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                        <div style="background: #f0fdf4; border: 1px solid #10b981; border-radius: 8px; padding: 1.5rem;">
+                            <h4 style="color: #10b981; margin-bottom: 1rem; text-align: center;">✅ Eelised</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #10b981; font-size: 0.9rem;">
+                                    📊 <strong>Pidev tagasiside:</strong> Testid annavad kohe märku vigadest ja probleemidest
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #10b981; font-size: 0.9rem;">
+                                    🏗️ <strong>Parema disain:</strong> Testide kirjutamine sunnib mõtlema API-le ja struktuurile
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #10b981; font-size: 0.9rem;">
+                                    🛡️ <strong>Turvavõrk:</strong> Testid kaitsevad regressioone ja vigade taastulemist
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #10b981; font-size: 0.9rem;">
+                                    ✅ <strong>Nõuetele vastavus:</strong> Tagab, et rakendus vastab määratletud nõuetele
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #10b981; font-size: 0.9rem;">
+                                    ⚡ <strong>Lühike tsükkel:</strong> Kiire arendus ja kohene tagasiside
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div style="background: #fef2f2; border: 1px solid #ef4444; border-radius: 8px; padding: 1.5rem;">
+                            <h4 style="color: #ef4444; margin-bottom: 1rem; text-align: center;">⚠️ Väljakutsed</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #ef4444; font-size: 0.9rem;">
+                                    📈 <strong>Suurenenud koodimaht:</strong> Testjuhtumite kood suurendab üldist koodibaasi
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #ef4444; font-size: 0.9rem;">
+                                    🛡️ <strong>Vale turvalisus:</strong> Läbivad testid võivad anda ekslikku turvatunnet
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #ef4444; font-size: 0.9rem;">
+                                    💰 <strong>Hoolduskulud:</strong> Paljude testide ajakohasena hoidmine on keeruline
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #ef4444; font-size: 0.9rem;">
+                                    ⏰ <strong>Aeganõudvus:</strong> Testide kirjutamine ja säilitamine võtab aega
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #ef4444; font-size: 0.9rem;">
+                                    🛠️ <strong>Keskkonna seadistus:</strong> Nõuab korralikku testimiskeskkonda
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>🛠️ TDD tööriistad</h3>
+                    <div style="background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 1.5rem; margin: 2rem 0;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <div style="background: #f59e0b; color: white; padding: 1rem; border-radius: 8px; font-size: 1.5rem;">☕</div>
+                            <div>
+                                <h4 style="color: #f59e0b; margin: 0; margin-bottom: 0.5rem;">Mockito (Java)</h4>
+                                <p style="margin: 0; color: #6b7280;">Ideaalne tööriist Java testides mock-objektide loomiseks</p>
+                            </div>
+                        </div>
+                        <p style="margin-bottom: 1rem;">
+                            <a href="https://site.mockito.org/" target="_blank" style="color: #f59e0b; text-decoration: none; font-weight: 500;">
+                                Mockito ↗
+                            </a> 
+                            võimaldab määrata mock-objektide käitumist, kontrollida, kas ja kuidas neid kutsuti, 
+                            ning eraldada kood elegantselt fokuseeritud testimiseks.
+                        </p>
+                        
+                        <div style="background: white; padding: 1rem; border-radius: 6px; margin-top: 1rem;">
+                            <h5 style="color: #f59e0b; margin-bottom: 0.5rem;">Peamised omadused:</h5>
+                            <div style="display: grid; gap: 0.5rem; font-size: 0.9rem; color: #2c3e50;">
+                                <div>🎭 Mock-ide ja stub-ide loomine</div>
+                                <div>🔍 Interaktsioonide kontrollimine</div>
+                                <div>⚙️ Argumentide matcherid</div>
+                                <div>🌊 Sujuv API disain</div>
+                                <div>📝 Intuitiivne süntaks</div>
+                            </div>
+                        </div>
+                        
+                        <div style="background: #fbbf24; color: white; padding: 1rem; border-radius: 6px; margin-top: 1rem;">
+                            <h5 style="margin-bottom: 0.5rem; color: white;">🏆 Miks Mockito on üks parimaid TDD tööriistu:</h5>
+                            <div style="display: grid; gap: 0.3rem; font-size: 0.9rem;">
+                                <div>✨ Lihtne kasutada ja intuitiivne API</div>
+                                <div>💻 Meenutab päris koodi kirjutamist</div>
+                                <div>🚀 Võimaldab ka algajatel tõhusalt mock'e luua</div>
+                                <div>🔧 Tugev ökosüsteem ja dokumentatsioon</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>🧪 Täiendavad TDD tööriistad</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+                        <div style="background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 1.5rem;">
+                            <h4 style="color: #f59e0b; margin-bottom: 1rem;">☕ JUnit (Java)</h4>
+                            <p style="margin: 0; color: #2c3e50; font-size: 0.9rem;">
+                                De facto standard Java ühiktestide jaoks, lihtne annotation-põhine API
+                            </p>
+                        </div>
+                        
+                        <div style="background: #f0f9ff; border: 1px solid #06b6d4; border-radius: 8px; padding: 1.5rem;">
+                            <h4 style="color: #06b6d4; margin-bottom: 1rem;">🧪 Jest (JavaScript)</h4>
+                            <p style="margin: 0; color: #2c3e50; font-size: 0.9rem;">
+                                Facebook'i loodud JavaScripti testimise raamistik snapshot testimisega
+                            </p>
+                        </div>
+                        
+                        <div style="background: #fef2f2; border: 1px solid #ef4444; border-radius: 8px; padding: 1.5rem;">
+                            <h4 style="color: #ef4444; margin-bottom: 1rem;">🐍 pytest (Python)</h4>
+                            <p style="margin: 0; color: #2c3e50; font-size: 0.9rem;">
+                                Võimas ja lihtne Python testimise framework fixture'ite ja plugin'itega
+                            </p>
+                        </div>
+                        
+                        <div style="background: #f0fdf4; border: 1px solid #10b981; border-radius: 8px; padding: 1.5rem;">
+                            <h4 style="color: #10b981; margin-bottom: 1rem;">💎 RSpec (Ruby)</h4>
+                            <p style="margin: 0; color: #2c3e50; font-size: 0.9rem;">
+                                Behavior-driven development Ruby jaoks, loetav ja väljendusrikas süntaks
+                            </p>
+                        </div>
+                        
+                        <div style="background: #f5f3ff; border: 1px solid #8b5cf6; border-radius: 8px; padding: 1.5rem;">
+                            <h4 style="color: #8b5cf6; margin-bottom: 1rem;">⚡ MSTest (.NET)</h4>
+                            <p style="margin: 0; color: #2c3e50; font-size: 0.9rem;">
+                                Microsofti ametlik .NET testimise framework Visual Studio integratsiooniga
+                            </p>
+                        </div>
+                        
+                        <div style="background: #ecfdf5; border: 1px solid #059669; border-radius: 8px; padding: 1.5rem;">
+                            <h4 style="color: #059669; margin-bottom: 1rem;">🚀 NUnit (.NET)</h4>
+                            <p style="margin: 0; color: #2c3e50; font-size: 0.9rem;">
+                                Populaarne .NET testimise framework attribute-põhise konfiguratsiooniga
+                            </p>
+                        </div>
+                    </div>
+
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.5rem; margin: 2rem 0;">
+                        <h4 style="color: #f59e0b; margin-bottom: 1rem;">🎯 TDD võtmeväärtused</h4>
+                        <p style="margin-bottom: 1rem; text-align: center; color: #6b7280;">
+                            Test-Driven Development tagab kvaliteetse, usaldusväärse ja hästi struktureeritud koodi.
+                        </p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div style="background: white; padding: 1rem; border-radius: 6px; text-align: center;">
+                                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🛡️</div>
+                                <strong>Vigade ennetamine</strong>
+                                <p style="font-size: 0.9rem; margin: 0.5rem 0 0; color: #6b7280;">Probleemid avastatakse kiiresti</p>
+                            </div>
+                            <div style="background: white; padding: 1rem; border-radius: 6px; text-align: center;">
+                                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🏗️</div>
+                                <strong>Parem disain</strong>
+                                <p style="font-size: 0.9rem; margin: 0.5rem 0 0; color: #6b7280;">API ja struktuur läbi mõeldud</p>
+                            </div>
+                            <div style="background: white; padding: 1rem; border-radius: 6px; text-align: center;">
+                                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📈</div>
+                                <strong>Kvaliteedi tõus</strong>
+                                <p style="font-size: 0.9rem; margin: 0.5rem 0 0; color: #6b7280;">Kõrge koodikatetus</p>
+                            </div>
+                            <div style="background: white; padding: 1rem; border-radius: 6px; text-align: center;">
+                                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🔄</div>
+                                <strong>Refaktoreerimine</strong>
+                                <p style="font-size: 0.9rem; margin: 0.5rem 0 0; color: #6b7280;">Turvaline koodi täiustamine</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: #f0f4ff; border: 1px solid #f59e0b; border-radius: 8px; padding: 1.5rem; margin: 2rem 0;">
+                        <h4 style="color: #f59e0b; margin-bottom: 1rem;">📚 Lisalugemine</h4>
+                        <div style="display: grid; gap: 0.5rem;">
+                            <a href="https://www.geeksforgeeks.org/test-driven-development-tdd/?ref=header_outind" 
+                               target="_blank" 
+                               style="color: #f59e0b; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+                                📖 GeeksforGeeks - Test-Driven Development
+                                <span style="font-size: 0.8rem;">↗</span>
+                            </a>
+                            <a href="https://martinfowler.com/bliki/TestDrivenDevelopment.html" 
+                               target="_blank" 
+                               style="color: #f59e0b; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+                                📝 Martin Fowler - Test-Driven Development
+                                <span style="font-size: 0.8rem;">↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 3rem; flex-wrap: wrap;">
+                        <button onclick="window.scrollTo(0, 0);" 
+                                style="background: linear-gradient(45deg, #6b7280, #4b5563); padding: 12px 24px; width: auto; min-width: 120px;">
+                            ⬆️ Algusesse
+                        </button>
+                        <button onclick="javascript:window.history.back();" 
+                                style="background: linear-gradient(45deg, #95a5a6, #7f8c8d); padding: 12px 24px; width: auto; min-width: 120px;">
+                            ← Tagasi
+                        </button>
+                        <button onclick="window.location.href='../../index.html'" 
+                                style="background: linear-gradient(45deg, #3498db, #2980b9); padding: 12px 24px; width: auto; min-width: 120px;">
+                            🏠 Avalehele
+                        </button>
+                    </div>
+
+                </main>
+            </div>
         </div>
-        <div class="column right">
-          <button onclick="javascript:window.history.back();" id="backBtn">Tagasi</button>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p style="margin: 0; color: #e2e8f0;">&copy; 2024 Orvet Priimägi - TARge24 | Test-Driven Development</p>
         </div>
-      </div>
-    </div>
-    <div class="column right">
+    </footer>
 
-    </div>
-  </div>
-  <footer>
-    Orvet Priimägi - TARge24
-  </footer>
-
-  <script>
-    // Get the button
-    let mybutton = document.getElementById("myBtn");
-
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function () { scrollFunction() };
-
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
-      } else {
-        mybutton.style.display = "none";
-      }
-    }
-
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
-  </script>
 </body>
-
 </html>

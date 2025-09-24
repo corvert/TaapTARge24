@@ -1,167 +1,380 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Domain-Driven Design</title>
+    <title>Domain-Driven Design | Tarkvara Arendusprotsess</title>
+    <meta name="description" content="Domain-Driven Design (DDD) - valdkonnapõhine lähenemine tarkvara kujundamisele ja arendamisele">
     <link rel="stylesheet" href="../../styles.css">
     <link rel="icon" href="../../pildid/icon.jpeg" type="image/x-icon">
 </head>
 
 <body>
     <header>
-        <h1>Domain-Driven Design</h1>
+        <div class="container">
+            <h1>🏗️ Domain-Driven Design</h1>
+            <p style="font-size: 1.1rem; margin-top: 0.5rem; opacity: 0.9; color: #e2e8f0;">
+                Valdkonnapõhine disain - tarkvarasüsteemi arendus domeeniekspertide käitumise alusel
+            </p>
+        </div>
     </header>
-    <div class="row">
-        <div class="column left">
-            <nav>
-            <button class="floating" onclick="window.location.href='behavior-driven.html'">Behavior-driven development</button>
-            <button class="floating" onclick="window.location.href='design-driven.html'">Design-driven development</button>
-            <button class="floating" onclick="window.location.href='domain-driven.html'">Domain-driven design</button>
-            <button class="floating" onclick="window.location.href='secure.html'">Secure by design</button>
-            <button class="floating" onclick="window.location.href='test-driven.html'">Test-driven development</button>
-            <button class="floating" onclick="window.location.href='acceptance.html'">Acceptance test-driven development</button>
-            <button class="floating" onclick="window.location.href='continuous.html'">Continuous test-driven development</button>
-            <button class="floating" onclick="window.location.href='specification.html'">Specification by example</button>
-            <button class="floating" onclick="window.location.href='data-driven.html'">Data-driven development</button>
-            <button class="floating" onclick="window.location.href='data-oriented.html'">Data-oriented design</button>
-        </nav>
-        </div>
-        <div class="column middle">
 
-            <h2>Domain-Driven Design</h2>
-            <p>Domain-Driven Design (DDD) on meetod, mis seab prioriteediks konkreetse probleemvaldkonna mõistmise ja
-                modelleerimise, kus tarkvarasüsteem toimib. See rõhutab vajadust tiheda koostöö järele
-                domeeniekspertidega, et saada põhjalik arusaam domeeni üksikasjadest ja keerukusest. DDD pakub
-                põhimõtteid, mustreid ja tavasid, mis aitavad arendajatel oma tarkvarakujunduses domeenikontseptsioone
-                täpselt tabada ja esitada.
-            </p>
-            <ol>
-                <li>Domain</li>
-                <ul>
-                    <li>See viitab konkreetsele teemavaldkonnale või probleemile, mida tarkvarasüsteem püüab lahendada.
-                    </li>
-                    <li>Näiteks pangarakenduses hõlmab domeen selliseid mõisteid nagu kontod, tehingud, kliendid ja
-                        asjakohased pangaeeskirjad.</li>
-                </ul>
-                <li>Driven </li>
-                <ul>
-                    <li>"Driven" tähendab, et tarkvarasüsteemi kujundust mõjutavad domeeni omadused ja vajadused.</li>
-                    <li>See näitab, et disainivalikud põhinevad valdkonna kindlal mõistmisel, mitte ainult tehnilistel
-                        aspektidel või rakenduse üksikasjadel.</li>
-                </ul>
-                <li>Disain</li>
-                <ul>
-                    <li>“Disain” on tarkvarasüsteemi plaani või kavandi koostamise protsess.</li>
-                    <li>See hõlmab seda, kuidas erinevad komponendid interakteeruvad ja kuidas süsteem vastab oma
-                        funktsionaalsetele ja mittefunktsionaalsetele nõuetele.</li>
-                </ul>
-            </ol>
-            <br>
+    <div class="container">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            
+            <!-- Navigation breadcrumb -->
+            <nav style="margin-bottom: 2rem; padding: 1rem; background: rgba(255,255,255,0.9); border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <a href="../../index.html" style="color: #3498db;">🏠 Avaleht</a> 
+                <span style="color: #7f8c8d; margin: 0 0.5rem;">→</span>
+                <a href="../agiilne.html" style="color: #3498db;">Agiilne mudel</a>
+                <span style="color: #7f8c8d; margin: 0 0.5rem;">→</span>
+                <a href="../agiilneLisa.html" style="color: #3498db;">Agiilne lisainfo</a>
+                <span style="color: #7f8c8d; margin: 0 0.5rem;">→</span>
+                <span style="color: #2c3e50; font-weight: 500;">Domain-Driven Design</span>
+            </nav>
 
-            <figure>
-                <img src="../agiilne/picture/Domain-Driven-Design.png" alt="Domain-Driven Design">
-                <figcaption>Domain-Driven Design</figcaption>
-            </figure>
-            <br>
+            <div style="display: grid; grid-template-columns: 300px 1fr; gap: 2rem;">
+                
+                <!-- Left sidebar navigation -->
+                <aside style="background: rgba(255,255,255,0.95); border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); height: fit-content; position: sticky; top: 2rem;">
+                    <h3 style="color: #10b981; margin-bottom: 1.5rem; text-align: center;">🛠️ Agiilsed Lähenemisviisid</h3>
+                    <nav style="display: grid; gap: 0.5rem;">
+                        <button onclick="window.location.href='behavior-driven.html'" 
+                                style="background: linear-gradient(45deg, #3b82f6, #2563eb); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🧪 Behavior-driven Development
+                        </button>
+                        <button onclick="window.location.href='design-driven.html'" 
+                                style="background: linear-gradient(45deg, #8b5cf6, #7c3aed); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🎨 Design-driven Development
+                        </button>
+                        <button style="background: linear-gradient(45deg, #10b981, #059669); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: default; font-size: 0.9rem; text-align: left; font-weight: bold;">
+                            🏗️ Domain-driven Design
+                        </button>
+                        <button onclick="window.location.href='secure.html'" 
+                                style="background: linear-gradient(45deg, #ef4444, #dc2626); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🔒 Secure by Design
+                        </button>
+                        <button onclick="window.location.href='test-driven.html'" 
+                                style="background: linear-gradient(45deg, #f59e0b, #d97706); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🧪 Test-driven Development
+                        </button>
+                        <button onclick="window.location.href='acceptance.html'" 
+                                style="background: linear-gradient(45deg, #06b6d4, #0891b2); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            ✅ Acceptance Test-driven Development
+                        </button>
+                        <button onclick="window.location.href='continuous.html'" 
+                                style="background: linear-gradient(45deg, #84cc16, #65a30d); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🔄 Continuous Test-driven Development
+                        </button>
+                        <button onclick="window.location.href='specification.html'" 
+                                style="background: linear-gradient(45deg, #ec4899, #db2777); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            📋 Specification by Example
+                        </button>
+                        <button onclick="window.location.href='data-driven.html'" 
+                                style="background: linear-gradient(45deg, #6366f1, #4f46e5); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            📊 Data-driven Development
+                        </button>
+                        <button onclick="window.location.href='data-oriented.html'" 
+                                style="background: linear-gradient(45deg, #14b8a6, #0d9488); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🗂️ Data-oriented Design
+                        </button>
+                    </nav>
+                </aside>
 
-            <table>
-                <tr>
-                    <th colspan="2">Domain-Driven Design</th>
-                </tr>
-                <tr>
-                    <th>Eelised</th>
-                    <th>Puudused</th>
-                </tr>
-                <tr>
-                    <td>
-                        <ul>
+                <!-- Main content -->
+                <main style="background: rgba(255,255,255,0.95); border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    
+                    <div style="background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                        <h2 style="color: white; border: none; margin-bottom: 1rem;">🏗️ Domain-Driven Design (DDD)</h2>
+                        <p style="font-size: 1.1rem; line-height: 1.6; margin: 0; color: #d1fae5;">
+                            Domain-Driven Design on meetod, mis seab prioriteediks konkreetse probleemvaldkonna 
+                            mõistmise ja modelleerimise, kus tarkvarasüsteem toimib. See rõhutab tiheda koostöö 
+                            vajadust domeeniekspertidega.
+                        </p>
+                    </div>
 
-                            <li>Edendab tõhusat suhtlust domeeniekspertide, arendajate ja sidusrühmade vahel, kasutades
-                                ühist keelt.</li>
-                            <li>Aitab meeskondadel seada prioriteediks rakenduse kõige väärtuslikumad valdkonnad, et
-                                saavutada ärieesmärgid.</li>
-                            <li>Julgustab kujundama, mis kohandub arenevate ärivajaduste ja turutingimustega.</li>
-                            <li>Säilitab selge vahe domeeniloogika, infrastruktuuri ja kasutajaliidese vahel.</li>
-                            <li>Toetab täpselt määratletud domeeniobjekte lihtsamaks ja täpsemaks testimiseks.</li>
+                    <h3>🔍 DDD komponendid</h3>
+                    <div style="display: grid; gap: 1.5rem; margin: 2rem 0;">
+                        <div style="background: #f0fdf4; border-left: 4px solid #10b981; padding: 1.5rem; border-radius: 0 8px 8px 0;">
+                            <h4 style="color: #10b981; margin-bottom: 1rem;">🌐 Domain (Valdkond)</h4>
+                            <p style="margin-bottom: 1rem; color: #2c3e50;">
+                                Viitab konkreetsele teemavaldkonnale või probleemile, mida tarkvarasüsteem 
+                                püüab lahendada.
+                            </p>
+                            <div style="background: white; padding: 1rem; border-radius: 6px;">
+                                <strong style="color: #10b981;">Näide:</strong> Pangarakenduses hõlmab domeen selliseid 
+                                mõisteid nagu kontod, tehingud, kliendid ja asjakohased pangaeeskirjad.
+                            </div>
+                        </div>
+                        
+                        <div style="background: #fef3c7; border-left: 4px solid #f59e0b; padding: 1.5rem; border-radius: 0 8px 8px 0;">
+                            <h4 style="color: #f59e0b; margin-bottom: 1rem;">🚗 Driven (Juhitud)</h4>
+                            <p style="margin-bottom: 1rem; color: #2c3e50;">
+                                "Driven" tähendab, et tarkvarasüsteemi kujundust mõjutavad domeeni omadused ja vajadused.
+                            </p>
+                            <div style="background: white; padding: 1rem; border-radius: 6px;">
+                                <strong style="color: #f59e0b;">Põhimõte:</strong> Disainivalikud põhinevad valdkonna 
+                                kindlal mõistmisel, mitte ainult tehnilistel aspektidel.
+                            </div>
+                        </div>
+                        
+                        <div style="background: #f0f9ff; border-left: 4px solid #06b6d4; padding: 1.5rem; border-radius: 0 8px 8px 0;">
+                            <h4 style="color: #06b6d4; margin-bottom: 1rem;">🎨 Design (Disain)</h4>
+                            <p style="margin-bottom: 1rem; color: #2c3e50;">
+                                Tarkvarasüsteemi plaani või kavandi koostamise protsess.
+                            </p>
+                            <div style="background: white; padding: 1rem; border-radius: 6px;">
+                                <strong style="color: #06b6d4;">Hõlmab:</strong> Kuidas erinevad komponendid interakteeruvad 
+                                ja kuidas süsteem vastab oma funktsionaalsetele ja mittefunktsionaalsetele nõuetele.
+                            </div>
+                        </div>
+                    </div>
 
-                        </ul>
-                    </td>
+                    <h3>🏛️ DDD arhitektuuri mustrid</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+                        <div style="background: #f0fdf4; border: 1px solid #10b981; border-radius: 8px; padding: 1.5rem;">
+                            <h4 style="color: #10b981; margin-bottom: 1rem;">🏢 Entity</h4>
+                            <p style="margin: 0; color: #2c3e50; font-size: 0.9rem;">
+                                Objektid, millel on ainulaadne identiteet ja elutsükkel. Näiteks klient, tellimus.
+                            </p>
+                        </div>
+                        
+                        <div style="background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 1.5rem;">
+                            <h4 style="color: #f59e0b; margin-bottom: 1rem;">💎 Value Object</h4>
+                            <p style="margin: 0; color: #2c3e50; font-size: 0.9rem;">
+                                Muutumatud objektid, mis tähistavad väärtusi. Näiteks raha, aadress, kuupäev.
+                            </p>
+                        </div>
+                        
+                        <div style="background: #f0f9ff; border: 1px solid #06b6d4; border-radius: 8px; padding: 1.5rem;">
+                            <h4 style="color: #06b6d4; margin-bottom: 1rem;">🎯 Aggregate</h4>
+                            <p style="margin: 0; color: #2c3e50; font-size: 0.9rem;">
+                                Seotud objektide grupp, mis toimib ühtse üksusena. Näiteks tellimus ja selle read.
+                            </p>
+                        </div>
+                        
+                        <div style="background: #fef2f2; border: 1px solid #ef4444; border-radius: 8px; padding: 1.5rem;">
+                            <h4 style="color: #ef4444; margin-bottom: 1rem;">🏭 Repository</h4>
+                            <p style="margin: 0; color: #2c3e50; font-size: 0.9rem;">
+                                Andmete salvestamise ja pärimise abstraktsioon. Varjab andmebaasi detailid.
+                            </p>
+                        </div>
+                        
+                        <div style="background: #f5f3ff; border: 1px solid #8b5cf6; border-radius: 8px; padding: 1.5rem;">
+                            <h4 style="color: #8b5cf6; margin-bottom: 1rem;">🔄 Domain Service</h4>
+                            <p style="margin: 0; color: #2c3e50; font-size: 0.9rem;">
+                                Äriteenused, mis ei kuulu konkreetse Entity või Value Object juurde.
+                            </p>
+                        </div>
+                        
+                        <div style="background: #ecfdf5; border: 1px solid #059669; border-radius: 8px; padding: 1.5rem;">
+                            <h4 style="color: #059669; margin-bottom: 1rem;">🗣️ Ubiquitous Language</h4>
+                            <p style="margin: 0; color: #2c3e50; font-size: 0.9rem;">
+                                Ühine keel, mida kasutavad nii domeeniekspert kui ka arendajad.
+                            </p>
+                        </div>
+                    </div>
 
-                    <td>
-                        <ul>
+                    <figure style="margin: 3rem 0; text-align: center;">
+                        <img src="picture/Domain-Driven-Design.png" alt="Domain-Driven Design arhitektuur" 
+                             style="width: 100%; max-width: 700px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        <figcaption style="margin-top: 1rem; font-style: italic; color: #6b7280; line-height: 1.5;">
+                            <strong>Domain-Driven Design:</strong> Valdkonnapõhine arhitektuur ja mustrid
+                        </figcaption>
+                    </figure>
 
-                            <li>DDD võib tekitada keerukust, eriti suurtes domeenides. Keeruliste ärivaldkondade täpne
-                                modelleerimine nõuab mitmetähenduslikkuse sügavat mõistmist ja hoolikat juhtimist.</li>
-                            <li>Keerulistes valdkondades võib erinevate mudelite ja piiratud kontekstide joondamine olla
-                                keeruline. Selge suhtlus ja koordineerimine on vastuolude vältimiseks hädavajalikud.
-                            </li>
-                            <li>DDD rakendamine võib nõuda uusi tehnoloogiaid ja raamistikke, mis raskendab
-                                integreerimist olemasolevate süsteemidega. Jõudluse ja mastaapsuse probleemide
-                                lahendamine on eduka kasutuselevõtu jaoks ülioluline.</li>
-                            <li>Meeskonnaliikmed võivad traditsiooniliste meetodite tundmise tõttu DDD-le vastu seista.
-                                Selle ületamiseks on vaja tõhusat suhtlust ja koolitust DDD eeliste kohta.</li>
-                        </ul>
-                    </td>
-                </tr>
-            </table>
-            <br>
-            <p><a href="https://jestjs.io/" target="_blank">Jest</a> on JavaScripti testimise raamistik, mille on loonud Facebook. See
-                pakub lihtsat ja intuitiivset testimise API-d, mis muudab JavaScripti koodi testide kirjutamise
-                lihtsaks. Jest pakub ka selliseid funktsioone nagu pilkamine ja hetktõmmiste testimine, mis aitavad teil
-                kirjutada tõhusamaid ja tõhusamaid teste.</p>
+                    <h3>🎯 DDD rakendamise sammud</h3>
+                    <div style="display: grid; gap: 1rem; margin: 2rem 0;">
+                        <div style="display: grid; grid-template-columns: 60px 1fr; gap: 1rem; align-items: center; background: #f0fdf4; padding: 1rem; border-radius: 8px;">
+                            <div style="background: #10b981; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin: 0 auto;">1</div>
+                            <div>
+                                <h4 style="color: #10b981; margin: 0 0 0.5rem 0;">🔍 Domeeni tundmaõppimine</h4>
+                                <p style="margin: 0; color: #2c3e50; font-size: 0.9rem;">Süvasukeldumine ärivaldkonda, ekspertidega suhtlemine</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 60px 1fr; gap: 1rem; align-items: center; background: #fef3c7; padding: 1rem; border-radius: 8px;">
+                            <div style="background: #f59e0b; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin: 0 auto;">2</div>
+                            <div>
+                                <h4 style="color: #f59e0b; margin: 0 0 0.5rem 0;">🗣️ Ühise keele loomine</h4>
+                                <p style="margin: 0; color: #2c3e50; font-size: 0.9rem;">Ubiquitous Language väljatöötamine kõigi osapoolte jaoks</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 60px 1fr; gap: 1rem; align-items: center; background: #f0f9ff; padding: 1rem; border-radius: 8px;">
+                            <div style="background: #06b6d4; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin: 0 auto;">3</div>
+                            <div>
+                                <h4 style="color: #06b6d4; margin: 0 0 0.5rem 0;">🗺️ Bounded Context määratlemine</h4>
+                                <p style="margin: 0; color: #2c3e50; font-size: 0.9rem;">Valdkonna piirkonnade ja kontekstide kindlakstegemine</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 60px 1fr; gap: 1rem; align-items: center; background: #fef2f2; padding: 1rem; border-radius: 8px;">
+                            <div style="background: #ef4444; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin: 0 auto;">4</div>
+                            <div>
+                                <h4 style="color: #ef4444; margin: 0 0 0.5rem 0;">🏗️ Domain Model kujundamine</h4>
+                                <p style="margin: 0; color: #2c3e50; font-size: 0.9rem;">Entities, Value Objects, Aggregates kavandamine</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 60px 1fr; gap: 1rem; align-items: center; background: #f5f3ff; padding: 1rem; border-radius: 8px;">
+                            <div style="background: #8b5cf6; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin: 0 auto;">5</div>
+                            <div>
+                                <h4 style="color: #8b5cf6; margin: 0 0 0.5rem 0;">⚙️ Tehnilise lahenduse realiseerimine</h4>
+                                <p style="margin: 0; color: #2c3e50; font-size: 0.9rem;">Repositories, Services, Domain Events rakendamine</p>
+                            </div>
+                        </div>
+                    </div>
 
-            <p>
-                Kasutatud kirjandus:
-                <br>
-                <a
-                    href="https://www.geeksforgeeks.org/domain-driven-design-ddd/?ref=header_outind" target="_blank">https://www.geeksforgeeks.org/domain-driven-design-ddd/?ref=header_outind</a>
-            </p>
+                    <h3>⚖️ Eelised ja väljakutsed</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                        <div style="background: #f0fdf4; border: 1px solid #10b981; border-radius: 8px; padding: 1.5rem;">
+                            <h4 style="color: #10b981; margin-bottom: 1rem; text-align: center;">✅ Eelised</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #10b981; font-size: 0.9rem;">
+                                    🗣️ <strong>Tõhus suhtlus:</strong> Edendab tõhusat suhtlust domeeniekspertide ja arendajate vahel
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #10b981; font-size: 0.9rem;">
+                                    🎯 <strong>Äriväärtuse fookus:</strong> Aitab seada prioriteediks kõige väärtuslikumad valdkonnad
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #10b981; font-size: 0.9rem;">
+                                    🔄 <strong>Kohanemisvõime:</strong> Julgustab kujundama, mis kohaneb arenevate ärivajaduste ja turutingimustega
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #10b981; font-size: 0.9rem;">
+                                    🏗️ <strong>Selge struktuur:</strong> Säilitab selge vahe domeeniloogika, infrastruktuuri ja kasutajaliidese vahel
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #10b981; font-size: 0.9rem;">
+                                    🧪 <strong>Testitud kvaliteet:</strong> Toetab täpselt määratletud domeeniobjekte testimiseks
+                                </li>
+                            </ul>
+                        </div>
 
+                        <div style="background: #fef2f2; border: 1px solid #ef4444; border-radius: 8px; padding: 1.5rem;">
+                            <h4 style="color: #ef4444; margin-bottom: 1rem; text-align: center;">⚠️ Väljakutsed</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #ef4444; font-size: 0.9rem;">
+                                    🧩 <strong>Keerukus:</strong> DDD võib tekitada keerukust, eriti suurtes domeenides
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #ef4444; font-size: 0.9rem;">
+                                    🔗 <strong>Integratsioon:</strong> Erinevate mudelite ja piiratud kontekstide joondamine on keeruline
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #ef4444; font-size: 0.9rem;">
+                                    🛠️ <strong>Tehnoloogia:</strong> Võib nõuda uusi tehnoloogiaid ja raamistikke
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #ef4444; font-size: 0.9rem;">
+                                    ⚡ <strong>Jõudlus:</strong> Jõudluse ja mastaapsuse probleemide lahendamine on ülioluline
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #ef4444; font-size: 0.9rem;">
+                                    👥 <strong>Meeskonna vastuvõtt:</strong> Traditsiooniliste meetodite tundmise tõttu võib tekkida vastuseis
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
-            <div class="floating row">
-                <div class="column left">
-                  <button onclick="topFunction()" id="myBtn" title="Go to top">Algusesse</button>
-                </div>
-                <div class="column middle" style="text-align: center; background-color: transparent;">
-                    <button onclick="window.location.href='../../index.html'">Koju</button>
-                </div>
-                <div class="column right">
-                  <button onclick="javascript:window.history.back();" id="backBtn">Tagasi</button>
-                </div>
-              </div>
-        </div>
-        <div class="column right">
+                    <h3>🛠️ DDD tööriistad</h3>
+                    <div style="background: #f0fdf4; border: 1px solid #10b981; border-radius: 8px; padding: 1.5rem; margin: 2rem 0;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <div style="background: #10b981; color: white; padding: 1rem; border-radius: 8px; font-size: 1.5rem;">🧪</div>
+                            <div>
+                                <h4 style="color: #10b981; margin: 0; margin-bottom: 0.5rem;">Jest (JavaScript)</h4>
+                                <p style="margin: 0; color: #6b7280;">JavaScripti testimise raamistik, mille on loonud Facebook</p>
+                            </div>
+                        </div>
+                        <p style="margin-bottom: 1rem;">
+                            <a href="https://jestjs.io/" target="_blank" style="color: #10b981; text-decoration: none; font-weight: 500;">
+                                Jest ↗
+                            </a> 
+                            pakub lihtsat ja intuitiivset testimise API-d, mis muudab JavaScripti koodi testide 
+                            kirjutamise lihtsaks. Jest pakub ka selliseid funktsioone nagu pilkamine ja 
+                            hetktõmmiste testimine.
+                        </p>
+                        
+                        <div style="background: white; padding: 1rem; border-radius: 6px; margin-top: 1rem;">
+                            <h5 style="color: #10b981; margin-bottom: 0.5rem;">Teised DDD tööriistad:</h5>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.5rem; font-size: 0.9rem; color: #2c3e50;">
+                                <div>🏗️ EventStorming</div>
+                                <div>📐 Context Mapping</div>
+                                <div>🎯 Axon Framework</div>
+                                <div>🔄 Event Sourcing</div>
+                                <div>📊 Domain Storytelling</div>
+                                <div>🗂️ Bounded Context Canvas</div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.5rem; margin: 2rem 0;">
+                        <h4 style="color: #10b981; margin-bottom: 1rem;">🎯 DDD võtmeväärtused</h4>
+                        <p style="margin-bottom: 1rem; text-align: center; color: #6b7280;">
+                            Domain-Driven Design tagab, et tarkvara vastab ärieesmärkidele ja on hooldatav.
+                        </p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div style="background: white; padding: 1rem; border-radius: 6px; text-align: center;">
+                                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🗣️</div>
+                                <strong>Ühine keel</strong>
+                                <p style="font-size: 0.9rem; margin: 0.5rem 0 0; color: #6b7280;">Kõik räägivad sama keelt</p>
+                            </div>
+                            <div style="background: white; padding: 1rem; border-radius: 6px; text-align: center;">
+                                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🎯</div>
+                                <strong>Ärifookus</strong>
+                                <p style="font-size: 0.9rem; margin: 0.5rem 0 0; color: #6b7280;">Lahendab tegelikke probleeme</p>
+                            </div>
+                            <div style="background: white; padding: 1rem; border-radius: 6px; text-align: center;">
+                                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🏗️</div>
+                                <strong>Modulariseeritus</strong>
+                                <p style="font-size: 0.9rem; margin: 0.5rem 0 0; color: #6b7280;">Selgelt eraldatud valdkonnad</p>
+                            </div>
+                            <div style="background: white; padding: 1rem; border-radius: 6px; text-align: center;">
+                                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🔄</div>
+                                <strong>Evolutsioon</strong>
+                                <p style="font-size: 0.9rem; margin: 0.5rem 0 0; color: #6b7280;">Kohaneb muutustega</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: #f0f4ff; border: 1px solid #10b981; border-radius: 8px; padding: 1.5rem; margin: 2rem 0;">
+                        <h4 style="color: #10b981; margin-bottom: 1rem;">📚 Lisalugemine</h4>
+                        <div style="display: grid; gap: 0.5rem;">
+                            <a href="https://www.geeksforgeeks.org/domain-driven-design-ddd/?ref=header_outind" 
+                               target="_blank" 
+                               style="color: #10b981; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+                                📖 GeeksforGeeks - Domain-Driven Design
+                                <span style="font-size: 0.8rem;">↗</span>
+                            </a>
+                            <a href="https://martinfowler.com/bliki/DomainDrivenDesign.html" 
+                               target="_blank" 
+                               style="color: #10b981; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+                                📝 Martin Fowler - Domain-Driven Design
+                                <span style="font-size: 0.8rem;">↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 3rem; flex-wrap: wrap;">
+                        <button onclick="window.scrollTo(0, 0);" 
+                                style="background: linear-gradient(45deg, #6b7280, #4b5563); padding: 12px 24px; width: auto; min-width: 120px;">
+                            ⬆️ Algusesse
+                        </button>
+                        <button onclick="javascript:window.history.back();" 
+                                style="background: linear-gradient(45deg, #95a5a6, #7f8c8d); padding: 12px 24px; width: auto; min-width: 120px;">
+                            ← Tagasi
+                        </button>
+                        <button onclick="window.location.href='../../index.html'" 
+                                style="background: linear-gradient(45deg, #3498db, #2980b9); padding: 12px 24px; width: auto; min-width: 120px;">
+                            🏠 Avalehele
+                        </button>
+                    </div>
+
+                </main>
+            </div>
         </div>
     </div>
+
     <footer>
-        Orvet Priimägi - TARge24
+        <div class="container">
+            <p style="margin: 0; color: #e2e8f0;">&copy; 2024 Orvet Priimägi - TARge24 | Domain-Driven Design</p>
+        </div>
     </footer>
 
-    <script>
-        // Get the button
-        let mybutton = document.getElementById("myBtn");
-
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function () { scrollFunction() };
-
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
-            }
-        }
-
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-    </script>
-
 </body>
-
 </html>

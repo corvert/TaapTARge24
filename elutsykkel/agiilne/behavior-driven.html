@@ -1,205 +1,283 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Behavior-Driven development</title>
+    <title>Behavior-Driven Development (BDD) | Tarkvara Arendusprotsess</title>
+    <meta name="description" content="BDD - käitumisel põhinev arendus, mis kombineerib TDD tehnikaid ja äriloogika selge väljendamist">
     <link rel="stylesheet" href="../../styles.css">
     <link rel="icon" href="../../pildid/icon.jpeg" type="image/x-icon">
 </head>
 
 <body>
     <header>
-        <h1>Behavior-Driven development</h1>
+        <div class="container">
+            <h1>🧪 Behavior-Driven Development</h1>
+            <p style="font-size: 1.1rem; margin-top: 0.5rem; opacity: 0.9; color: #e2e8f0;">
+                Käitumisel põhinev arendus - TDD evolutsioon ärikeele suunas
+            </p>
+        </div>
     </header>
-    <div class="row">
-        <div class="column left">
-            <nav>
-            <button class="floating" onclick="window.location.href='behavior-driven.html'">Behavior-driven development</button>
-            <button class="floating" onclick="window.location.href='design-driven.html'">Design-driven development</button>
-            <button class="floating" onclick="window.location.href='domain-driven.html'">Domain-driven design</button>
-            <button class="floating" onclick="window.location.href='secure.html'">Secure by design</button>
-            <button class="floating" onclick="window.location.href='test-driven.html'">Test-driven development</button>
-            <button class="floating" onclick="window.location.href='acceptance.html'">Acceptance test-driven development</button>
-            <button class="floating" onclick="window.location.href='continuous.html'">Continuous test-driven development</button>
-            <button class="floating" onclick="window.location.href='specification.html'">Specification by example</button>
-            <button class="floating" onclick="window.location.href='data-driven.html'">Data-driven development</button>
-            <button class="floating" onclick="window.location.href='data-oriented.html'">Data-oriented design</button>
-        </nav>
-        </div>
-        <div class="column middle">
-            <h2>Behavior-driven development</h2>
 
-            <p>Käitumisel põhinev arendus (ingl. behavior-driven development, lühendatult BDD) on tarkvaraarenduse
-                meetod, mis on välja arenenud testimisel põhinevast arendusest. Käitumisel põhinev arendus
-                kombineerib testimisel põhineva arenduse üldiseid tehnikaid ja põhimõtted. Selle eesmärk on pakkuda
-                arendustiimile ja juhtivtiimile jagatud tööriista tarkvara arendamisel.
-                <br>
-                Käitumisel põhineva arenduse osana kasutatakse tavalise lause konstruktsiooni, mis väljendab käitumist
-                või tulemust.
-            </p>
-            <h2>BDD põhimõtted</h2>
-            <p>Käitumisel põhinev testimine kasutab käitumise väljendamiseks poolformaalset vormingut, mis on võetud
-                kasutusloost (ingl user story). BDD eeldab, et analüütikud ja arendajad teevad koostööd. Nende ülesanne
-                on kirjutada käitumisel põhinevad laused vastavasse dokumenti.</p>
-            <h3>
-                Struktuur
-            </h3>
+    <div class="container">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            
+            <!-- Navigation breadcrumb -->
+            <nav style="margin-bottom: 2rem; padding: 1rem; background: rgba(255,255,255,0.9); border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <a href="../../index.html" style="color: #3498db;">🏠 Avaleht</a> 
+                <span style="color: #7f8c8d; margin: 0 0.5rem;">→</span>
+                <a href="../agiilne.html" style="color: #3498db;">Agiilne mudel</a>
+                <span style="color: #7f8c8d; margin: 0 0.5rem;">→</span>
+                <a href="../agiilneLisa.html" style="color: #3498db;">Agiilne lisainfo</a>
+                <span style="color: #7f8c8d; margin: 0 0.5rem;">→</span>
+                <span style="color: #2c3e50; font-weight: 500;">BDD</span>
+            </nav>
 
-            <p>
-                <b>Pealkiri: Omadus peaks olema selge ja kõigile arusaadav.</b>
-                <br>
-                <b>Sündmustik</b>
-                <br>
-                &ensp; Lühike, sissejuhatav osa.
-            <ul>
-                <li>Kes on loo põhitegelane (klient, kasutaja, administraator jne)?</li>
-                <li>Mida ta tahab teha?</li>
-                <li>Miks ta seda teha tahab?</li>
-            </ul>
-            <b>Stsenaarium</b>
-            <br>
-            &ensp; Kirjeldus stsenaariumist.
-            <ul>
-                <li>Vajaliku konditsiooni spetsifikatsioon stsenaariumi alguses.</li>
-                <li>Stsenaariumi algatav tegevus.</li>
-                <li>Oodatav tulemus.</li>
-            </ul>
-            </p>
-            <br>
+            <div style="display: grid; grid-template-columns: 300px 1fr; gap: 2rem;">
+                
+                <!-- Left sidebar navigation -->
+                <aside style="background: rgba(255,255,255,0.95); border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); height: fit-content; position: sticky; top: 2rem;">
+                    <h3 style="color: #3b82f6; margin-bottom: 1.5rem; text-align: center;">🛠️ Agiilsed Lähenemisviisid</h3>
+                    <nav style="display: grid; gap: 0.5rem;">
+                        <button style="background: linear-gradient(45deg, #3b82f6, #2563eb); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: default; font-size: 0.9rem; text-align: left; font-weight: bold;">
+                            🧪 Behavior-driven Development
+                        </button>
+                        <button onclick="window.location.href='design-driven.html'" 
+                                style="background: linear-gradient(45deg, #8b5cf6, #7c3aed); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🎨 Design-driven Development
+                        </button>
+                        <button onclick="window.location.href='domain-driven.html'" 
+                                style="background: linear-gradient(45deg, #10b981, #059669); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🏗️ Domain-driven Design
+                        </button>
+                        <button onclick="window.location.href='secure.html'" 
+                                style="background: linear-gradient(45deg, #ef4444, #dc2626); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🔒 Secure by Design
+                        </button>
+                        <button onclick="window.location.href='test-driven.html'" 
+                                style="background: linear-gradient(45deg, #f59e0b, #d97706); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🧪 Test-driven Development
+                        </button>
+                        <button onclick="window.location.href='acceptance.html'" 
+                                style="background: linear-gradient(45deg, #06b6d4, #0891b2); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            ✅ Acceptance Test-driven Development
+                        </button>
+                        <button onclick="window.location.href='continuous.html'" 
+                                style="background: linear-gradient(45deg, #84cc16, #65a30d); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🔄 Continuous Test-driven Development
+                        </button>
+                        <button onclick="window.location.href='specification.html'" 
+                                style="background: linear-gradient(45deg, #ec4899, #db2777); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            📋 Specification by Example
+                        </button>
+                        <button onclick="window.location.href='data-driven.html'" 
+                                style="background: linear-gradient(45deg, #6366f1, #4f46e5); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            📊 Data-driven Development
+                        </button>
+                        <button onclick="window.location.href='data-oriented.html'" 
+                                style="background: linear-gradient(45deg, #14b8a6, #0d9488); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🗂️ Data-oriented Design
+                        </button>
+                    </nav>
+                </aside>
 
-            <figure>
-                <img src="../agiilne/picture/BDD.png" alt="">
-                <figcaption>Behavior-driven development</figcaption>
-            </figure>
+                <!-- Main content -->
+                <main style="background: rgba(255,255,255,0.95); border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    
+                    <div style="background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                        <h2 style="color: white; border: none; margin-bottom: 1rem;">🧪 BDD (Behavior-Driven Development)</h2>
+                        <p style="font-size: 1.1rem; line-height: 1.6; margin: 0; color: #dbeafe;">
+                            Käitumisel põhinev arendus on tarkvaraarenduse meetod, mis on välja arenenud testimisel 
+                            põhinevast arendusest. BDD kombineerib TDD tehnikaid ja põhimõtted, pakkudes 
+                            arendustiimile ja juhtivtiimile jagatud tööriista tarkvara arendamisel.
+                        </p>
+                    </div>
 
-            <br>
+                    <h3>🎯 Põhimõte</h3>
+                    <div style="background: #eff6ff; border-left: 4px solid #3b82f6; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0;">
+                        <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 1rem;">
+                            Käitumisel põhineva arenduse osana kasutatakse <strong>tavalise lause konstruktsiooni</strong>, 
+                            mis väljendab käitumist või tulemust. BDD kasutab käitumise väljendamiseks poolformaalset 
+                            vormingut, mis on võetud kasutusloost (user story).
+                        </p>
+                        <p style="font-size: 1.1rem; line-height: 1.7; margin: 0;">
+                            BDD eeldab, et <strong>analüütikud ja arendajad teevad koostööd</strong>. Nende ülesanne 
+                            on kirjutada käitumisel põhinevad laused vastavasse dokumenti.
+                        </p>
+                    </div>
 
-            <table>
-                <tr>
-                    <th>Eelised</th>
-                    <th>Puudused</th>
-                </tr>
-                <tr>
-                    <td>
-                        <ul>
-                            <li>Täiustatud koostöö : BDD edendab koostööd ettevõtete sidusrühmade, arendajate ja
-                                testijate vahel, kasutades nõuete kirjeldamiseks ühist keelt. See soodustab
-                                meeskonnaliikmete paremat mõistmist ja ühtlustumist.</li>
-                            <li>Selgemad nõuded : stsenaariumide kirjutamine lihtsas keeles, kasutades Gherkini
-                                süntaksit, aitab selgitada nõudeid ja ootusi. See vähendab ebaselgust ja tagab, et
-                                kõigil on ühine arusaam soovitud käitumisest.
+                    <h3>📋 BDD Struktuur</h3>
+                    <div style="display: grid; gap: 1.5rem; margin: 2rem 0;">
+                        <div style="background: #eff6ff; border: 2px solid #3b82f6; border-radius: 8px; padding: 1.5rem;">
+                            <h4 style="color: #3b82f6; margin-bottom: 1rem;">📝 Pealkiri</h4>
+                            <p style="margin-bottom: 1rem; color: #2c3e50;">
+                                <strong>Omadus peaks olema selge ja kõigile arusaadav.</strong>
+                            </p>
+                        </div>
+                        
+                        <div style="background: #fef3c7; border: 2px solid #f59e0b; border-radius: 8px; padding: 1.5rem;">
+                            <h4 style="color: #f59e0b; margin-bottom: 1rem;">🎭 Sündmustik</h4>
+                            <p style="margin-bottom: 1rem; color: #2c3e50;">Lühike, sissejuhatav osa:</p>
+                            <ul style="color: #2c3e50; margin: 0;">
+                                <li>Kes on loo põhitegelane (klient, kasutaja, administraator jne)?</li>
+                                <li>Mida ta tahab teha?</li>
+                                <li>Miks ta seda teha tahab?</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: #f0fdf4; border: 2px solid #10b981; border-radius: 8px; padding: 1.5rem;">
+                            <h4 style="color: #10b981; margin-bottom: 1rem;">🎬 Stsenaarium</h4>
+                            <p style="margin-bottom: 1rem; color: #2c3e50;">Kirjeldus stsenaariumist:</p>
+                            <ul style="color: #2c3e50; margin: 0;">
+                                <li><strong>Given:</strong> Vajaliku konditsiooni spetsifikatsioon stsenaariumi alguses</li>
+                                <li><strong>When:</strong> Stsenaariumi algatav tegevus</li>
+                                <li><strong>Then:</strong> Oodatav tulemus</li>
+                            </ul>
+                        </div>
+                    </div>
 
-                            </li>
-                            <li>Keskendu kasutaja käitumisele : BDD rõhutab süsteemi käitumist kasutaja vaatenurgast.
-                                Keskendudes kasutajate lugudele ja stsenaariumidele, tagab BDD, et arendustegevused on
-                                vastavuses kasutajate vajaduste ja prioriteetidega.</li>
-                            <li>Probleemide varajane tuvastamine : BDD julgustab enne juurutamist teste kirjutama,
-                                võimaldades meeskondadel tuvastada võimalikud probleemid arendusprotsessi varajases
-                                staadiumis. See toob kaasa kiiremad tagasisideahelad ja vähendab hilisemate defektide
-                                parandamise kulusid.</li>
-                            <li>Automatiseeritud testimine : BDD stsenaariume saab automatiseerida selliste tööriistade
-                                nagu Cucumber või SpecFlow abil. Automatiseeritud testid annavad kiiret ja
-                                usaldusväärset tagasisidet rakenduse käitumise kohta, võimaldades meeskondadel
-                                regressioone kiiresti tuvastada ja tagada pideva kvaliteedi.</li>
-                            <li>Täiustatud dokumentatsioon : BDD stsenaariumid toimivad käivitatava dokumentatsioonina
-                                süsteemi käitumise kohta. See dokumentatsioon on ajakohane, kuna teste tehakse
-                                regulaarselt, pakkudes tarkvara elavat spetsifikatsiooni.</li>
-                            <li>Parem koodikvaliteet : BDD julgustab kirjutama testitavat ja modulaarset koodi, mis
-                                järgib stsenaariumides kirjeldatud käitumist. See toob kaasa paremini disainitud
-                                tarkvara, millel on vähem defekte ja lihtsam hooldus.</li>
+                    <figure style="margin: 3rem 0; text-align: center;">
+                        <img src="picture/BDD.png" alt="BDD protsess" 
+                             style="width: 100%; max-width: 600px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        <figcaption style="margin-top: 1rem; font-style: italic; color: #6b7280; line-height: 1.5;">
+                            <strong>BDD tsükkel:</strong> Käitumise spetsifikatsioon → Automatiseerimine → Arendus
+                        </figcaption>
+                    </figure>
 
-                        </ul>
-                    </td>
+                    <h3>⚖️ Eelised ja puudused</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                        <div style="background: #f0fdf4; border: 1px solid #10b981; border-radius: 8px; padding: 1.5rem;">
+                            <h4 style="color: #10b981; margin-bottom: 1rem; text-align: center;">✅ Eelised</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #10b981; font-size: 0.9rem;">
+                                    🤝 <strong>Täiustatud koostöö:</strong> BDD edendab koostööd ettevõtete sidusrühmade, arendajate ja testijate vahel
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #10b981; font-size: 0.9rem;">
+                                    📋 <strong>Selgemad nõuded:</strong> Gherkini süntaks aitab selgitada nõudeid ja ootusi
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #10b981; font-size: 0.9rem;">
+                                    👤 <strong>Kasutajakeskne:</strong> Rõhutab süsteemi käitumist kasutaja vaatenurgast
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #10b981; font-size: 0.9rem;">
+                                    🐛 <strong>Varajane tuvastamine:</strong> Probleemide kiire leidmine arendusprotsessis
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #10b981; font-size: 0.9rem;">
+                                    🔄 <strong>Automatiseeritud testimine:</strong> Cucumber ja SpecFlow toetus
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #10b981; font-size: 0.9rem;">
+                                    📚 <strong>Elav dokumentatsioon:</strong> Stsenaariumid toimivad käivitatava dokumentatsioonina
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #10b981; font-size: 0.9rem;">
+                                    💻 <strong>Parem koodikvaliteet:</strong> Testitav ja modulaarne kood
+                                </li>
+                            </ul>
+                        </div>
 
-                    <td>
-                        <ul>
-                            <li>Esialgne õppimiskõver: BDD kasutuselevõtt nõuab meeskondadelt uute raamistike,
-                                tööriistade ja metoodikate õppimist, mis võib algselt aeglustada arendusprotsessi, kui
-                                meeskonnaliikmed tutvuvad uue lähenemisviisiga.</li>
-                            <li>Aeganõudev protsess: funktsioonifailide kirjutamine, stsenaariumide määratlemine ja
-                                sammude määratluste säilitamine võib olla aeganõudev, eriti suurte ja keeruliste
-                                projektide puhul, mis võib põhjustada viivitusi tarnimisel.</li>
-                            <li>Sõltuvus sidusrühmade kaasamisest: BDD tugineb suurel määral koostööle sidusrühmade,
-                                sealhulgas ärianalüütikute, arendajate, testijate ja tooteomanike vahel. Sidusrühmade
-                                aktiivse osaluse puudumine võib takistada BDD tõhusust.</li>
-                            <li>Raskused keerulistes stsenaariumides: BDD suudab suurepäraselt tabada käitumist lihtsate
-                                stsenaariumide jaoks, kuid võib olla raskusi väga keeruliste stsenaariumide või
-                                äärmuslike juhtumitega, mis põhjustab testimise automatiseerimise ebaselgust või
-                                ebatõhusust.</li>
-                            <li>Üldised hoolduskulud: projekti arenedes võib olemasolevate funktsioonifailide ja sammude
-                                määratluste hooldamine ja värskendamine, et kajastada muudatusi nõuetes või
-                                funktsionaalsuses, muutuda keeruliseks ja ressursimahukaks.</li>
-                            <li>Potentsiaalne üleinseneritöö: ilma nõuetekohase juhendamise ja järelevalveta võivad
-                                meeskonnad oma BDD-teste üle projekteerida, lisades tarbetut keerukust ja vähendades
-                                pikas perspektiivis hooldatavust.</li>
-                            <li>Tööriistade piirangud: BDD tõhusus sõltub suuresti tugitööriistade ja raamistike
-                                saadavusest ja sobivusest. Piiratud tööriistavalikud või ühilduvusprobleemid
-                                olemasolevate süsteemidega võivad takistada kasutuselevõttu ja rakendamist.</li>
-                        </ul>
-                    </td>
-                </tr>
-            </table>
-            <br>
-            <p><a href="https://cucumber.io/" target="_blank">Cucumber</a> on laialdaselt kasutatav BDD (käitumispõhise
-                arenduse) tööriist, mis toetab erinevaid programmeerimiskeeli nagu Ruby, Java, JavaScript ja teisi. See
-                võimaldab meeskondadel kirjutada täidetavaid spetsifikatsioone lihttekstina, kasutades Gherkini
-                süntaksit, ning automatiseerida neid sammudefinitsioonide abil.</p>
+                        <div style="background: #fef2f2; border: 1px solid #ef4444; border-radius: 8px; padding: 1.5rem;">
+                            <h4 style="color: #ef4444; margin-bottom: 1rem; text-align: center;">⚠️ Puudused</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #ef4444; font-size: 0.9rem;">
+                                    📈 <strong>Õppimiskõver:</strong> Uute raamistike ja metoodikate õppimine
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #ef4444; font-size: 0.9rem;">
+                                    ⏰ <strong>Aeganõudev:</strong> Funktsioonifailide ja stsenaariumide kirjutamine
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #ef4444; font-size: 0.9rem;">
+                                    👥 <strong>Sõltuvus koostööst:</strong> Nõuab aktiivset osalust kõigilt osapoolilt
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #ef4444; font-size: 0.9rem;">
+                                    🧩 <strong>Keerulised stsenaariumid:</strong> Raskused äärmuslike juhtumitega
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #ef4444; font-size: 0.9rem;">
+                                    🔧 <strong>Hoolduskulud:</strong> Testide pidev värskendamine ja hooldamine
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #ef4444; font-size: 0.9rem;">
+                                    ⚙️ <strong>Üleinseneritöö:</strong> Risk liigse keerukuse tekitamiseks
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #ef4444; font-size: 0.9rem;">
+                                    🛠️ <strong>Tööriistade piirangud:</strong> Sõltuvus sobivate tööriistade saadavusest
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
-            <br>
-            <p>
-            Kasutatud kirjandus:
-            <br>
-            <a
-                href="https://et.wikipedia.org/wiki/K%C3%A4itumisel_p%C3%B5hinev_arendus" target="_blank">https://et.wikipedia.org/wiki/K%C3%A4itumisel_p%C3%B5hinev_arendus</a>
-            <br>
-            <a
-                href="https://www.geeksforgeeks.org/behavioral-driven-development-bdd-in-software-engineering/" target="_blank">https://www.geeksforgeeks.org/behavioral-driven-development-bdd-in-software-engineering/</a>
-            <br>
-        </p>
-        <div class="floating row">
-            <div class="column left">
-              <button onclick="topFunction()" id="myBtn" title="Go to top">Algusesse</button>
+                    <h3>🛠️ Peamine tööriist</h3>
+                    <div style="background: #eff6ff; border: 1px solid #3b82f6; border-radius: 8px; padding: 1.5rem; margin: 2rem 0;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <div style="background: #3b82f6; color: white; padding: 1rem; border-radius: 8px; font-size: 1.5rem;">🥒</div>
+                            <div>
+                                <h4 style="color: #3b82f6; margin: 0; margin-bottom: 0.5rem;">Cucumber</h4>
+                                <p style="margin: 0; color: #6b7280;">Laialdaselt kasutatav BDD tööriist</p>
+                            </div>
+                        </div>
+                        <p style="margin-bottom: 1rem;">
+                            <a href="https://cucumber.io/" target="_blank" style="color: #3b82f6; text-decoration: none; font-weight: 500;">
+                                Cucumber ↗
+                            </a> 
+                            on laialdaselt kasutatav BDD (käitumispõhise arenduse) tööriist, mis toetab erinevaid 
+                            programmeerimiskeeli nagu <strong>Ruby, Java, JavaScript</strong> ja teisi.
+                        </p>
+                        <p style="margin: 0;">
+                            See võimaldab meeskondadel kirjutada täidetavaid spetsifikatsioone lihttekstina, kasutades 
+                            <strong>Gherkini süntaksit</strong>, ning automatiseerida neid sammudefinitsioonide abil.
+                        </p>
+                    </div>
+
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.5rem; margin: 2rem 0;">
+                        <h4 style="color: #3b82f6; margin-bottom: 1rem;">📝 Gherkin süntaksi näide</h4>
+                        <div style="background: #1e293b; color: #e2e8f0; padding: 1rem; border-radius: 6px; font-family: 'Courier New', monospace; font-size: 0.9rem;">
+                            <div style="color: #8b5cf6;">Feature:</div> Kasutaja sisselogimine<br>
+                            <div style="color: #06b6d4;">Scenario:</div> Edukas sisselogimine<br>
+                            &nbsp;&nbsp;<div style="color: #10b981; display: inline;">Given</div> kasutaja on registreeritud süsteemis<br>
+                            &nbsp;&nbsp;<div style="color: #f59e0b; display: inline;">When</div> kasutaja sisestab õiged andmed<br>
+                            &nbsp;&nbsp;<div style="color: #ef4444; display: inline;">Then</div> kasutaja logitakse sisse
+                        </div>
+                    </div>
+
+                    <div style="background: #f0f4ff; border: 1px solid #3b82f6; border-radius: 8px; padding: 1.5rem; margin: 2rem 0;">
+                        <h4 style="color: #3b82f6; margin-bottom: 1rem;">📚 Lisalugemine</h4>
+                        <div style="display: grid; gap: 0.5rem;">
+                            <a href="https://et.wikipedia.org/wiki/K%C3%A4itumisel_p%C3%B5hinev_arendus" 
+                               target="_blank" 
+                               style="color: #3b82f6; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+                                📖 Wikipedia - Käitumisel põhinev arendus
+                                <span style="font-size: 0.8rem;">↗</span>
+                            </a>
+                            <a href="https://www.geeksforgeeks.org/behavioral-driven-development-bdd-in-software-engineering/" 
+                               target="_blank" 
+                               style="color: #3b82f6; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+                                📝 GeeksforGeeks - BDD Software Engineering
+                                <span style="font-size: 0.8rem;">↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 3rem; flex-wrap: wrap;">
+                        <button onclick="window.scrollTo(0, 0);" 
+                                style="background: linear-gradient(45deg, #6b7280, #4b5563); padding: 12px 24px; width: auto; min-width: 120px;">
+                            ⬆️ Algusesse
+                        </button>
+                        <button onclick="javascript:window.history.back();" 
+                                style="background: linear-gradient(45deg, #95a5a6, #7f8c8d); padding: 12px 24px; width: auto; min-width: 120px;">
+                            ← Tagasi
+                        </button>
+                        <button onclick="window.location.href='../../index.html'" 
+                                style="background: linear-gradient(45deg, #3498db, #2980b9); padding: 12px 24px; width: auto; min-width: 120px;">
+                            🏠 Avalehele
+                        </button>
+                    </div>
+
+                </main>
             </div>
-            <div class="column middle" style="text-align: center; background-color: transparent;">
-                <button onclick="window.location.href='../../index.html'">Koju</button>
-            </div>
-            <div class="column right">
-              <button onclick="javascript:window.history.back();" id="backBtn">Tagasi</button>
-            </div>
-          </div>
-        </div>
-        <div class="column right">
-
         </div>
     </div>
+
     <footer>
-        Orvet Priimägi - TARge24
+        <div class="container">
+            <p style="margin: 0; color: #e2e8f0;">&copy; 2024 Orvet Priimägi - TARge24 | Behavior-Driven Development</p>
+        </div>
     </footer>
 
-    <script>
-        // Get the button
-        let mybutton = document.getElementById("myBtn");
-        
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function() {scrollFunction()};
-        
-        function scrollFunction() {
-          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-          } else {
-            mybutton.style.display = "none";
-          }
-        }
-        
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-          document.body.scrollTop = 0;
-          document.documentElement.scrollTop = 0;
-        }
-        </script>
-
 </body>
-
 </html>

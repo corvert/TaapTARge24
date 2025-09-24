@@ -1,150 +1,675 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="et">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ERD diagramm</title>
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="icon" href="../pildid/icon.jpeg" type="image/x-icon">
+    <title>ERD Diagrammid | UML-diagrammid</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0d9488;
+            --primary-dark: #0f766e;
+            --primary-light: #ccfbf1;
+            --text-dark: #1f2937;
+            --text-medium: #4b5563;
+            --text-light: #6b7280;
+            --background: #ffffff;
+            --surface: #f8fafc;
+            --border: #e5e7eb;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --accent: #7c3aed;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #ccfbf1 0%, #99f6e4 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .breadcrumb a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--primary-color);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+
+        h1 {
+            font-size: 2.75rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-medium);
+            font-weight: 400;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section h3 {
+            color: var(--text-dark);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .section p {
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .usage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .usage-card {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .usage-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 5px 15px rgba(13, 148, 136, 0.1);
+        }
+
+        .usage-card h4 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .symbols-section {
+            background: linear-gradient(135deg, var(--surface), white);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-color);
+            margin: 2rem 0;
+        }
+
+        .symbols-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .symbol-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .symbol-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .symbol-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .symbols-image {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .symbols-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .relationships-table {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+            overflow-x: auto;
+        }
+
+        .relationships-table h3 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: var(--surface);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        td img {
+            max-height: 60px;
+            max-width: 200px;
+            object-fit: contain;
+        }
+
+        tr:hover {
+            background: var(--surface);
+        }
+
+        .keys-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+        }
+
+        .keys-section h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .keys-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .key-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .key-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .key-item h4 {
+            color: white;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .key-item p {
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+        }
+
+        .example-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .example-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        .example-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 3rem 0 2rem 0;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .references {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin: 2rem 0;
+        }
+
+        .references h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .references p {
+            margin-bottom: 0.5rem;
+        }
+
+        .references a {
+            color: var(--primary-color);
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .references a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-radius: 12px 12px 0 0;
+        }
+
+        ul, ol {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: var(--text-medium);
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .usage-grid,
+            .symbols-grid,
+            .keys-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .navigation {
+                flex-direction: column;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: 0.5rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
-    <header>
-        <h1>Entiteedi Suhete Diagrammid (ERD) <sup><a href="https://www.lucidchart.com/pages/er-diagrams"
-                    target="_blank" style="font-size: 15px; color: red;" >(1)</a></sup></h1>
-    </header>
-    <div class="row">
-        <div class="column left"></div>
-        <div class="column middle">
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="../index.html">Avaleht</a> → <a href="main.html">UML-diagrammid</a> → <span>ERD Diagrammid</span>
+        </nav>
 
-            <h2>Mis on ERD diagrammid?</h2>
-            <p>Olemisuhete diagrammid (ERD) ehk ER-mudelid näitavad andmebaaside loogilist struktuuri ja toovad esile
-                konkreetsete mõistete või olemite (st objektid, inimesed, kohad jne) omavahelised seosed antud
-                teemavaldkonnas.
-                Neid diagramme kasutatakse tavaliselt äriprotsesside demonstreerimiseks ja need on paljude rakenduste
-                lahutamatu
-                osa.</p>
+        <header>
+            <h1>Entiteedi Suhete Diagrammid (ERD)</h1>
+            <p class="subtitle">Andmebaaside loogilise struktuuri visualiseerimine</p>
+        </header>
 
+        <section class="section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
+                </svg>
+                Mis on ERD diagrammid?
+            </h2>
+            <p>Olemisuhete diagrammid (ERD) ehk ER-mudelid näitavad andmebaaside loogilist struktuuri ja toovad esile konkreetsete mõistete või olemite (st objektid, inimesed, kohad jne) omavahelised seosed antud teemavaldkonnas. Neid diagramme kasutatakse tavaliselt äriprotsesside demonstreerimiseks ja need on paljude rakenduste lahutamatu osa.</p>
+        </section>
 
-            <h2>ERD diagrammide kasutusalad</h2>
-            <ul>
-                <li>Andmebaasi kujundamine: ERD-d kasutatakse peamiselt relatsiooniliste andmebaaside modelleerimiseks,
-                    määratledes osalevad entiteedid ja nende suhted.</li>
-                <li>Andmebaasi tõrkeotsing: Need aitavad analüüsida olemasolevaid andmebaase, et tuvastada ja lahendada
-                    loogika
-                    või rakenduse probleeme.</li>
-                <li>Ärinformatsiooni süsteemid: ERD-d sujuvdavad protsesse, selgitades välja, kuidas entiteedid omavahel
-                    suhtlevad äritöövoogudes.</li>
-            </ul>
+        <section class="section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                ERD diagrammide kasutusalad
+            </h2>
 
-            <h2>ER mudelis kasutatavad sümbolid <sup><a href="https://www.geeksforgeeks.org/introduction-of-er-model/"
-                        target="_blank" style="font-size: 15px;">(2)</a></sup></h2>
-            ER mudelit kasutatakse süsteemi loogilise vaate modelleerimiseks andmeperspektiivist, mis koosneb
-            järgmistest
-            sümbolitest:
-            <ul>
-                <li>Ristkülikud: ristkülikud tähistavad üksusi ER-mudelis.</li>
-                <li>Ovaal: ovaalid esindavad ER-mudeli atribuute.</li>
-                <li>Romb: romb esindavad üksuste vahelisi suhteid.</li>
-                <li>Joon: jooned tähistavad olemite ja olemikomplektide atribuute, millel on muud suhtetüübid.</li>
-                <li>Topeltovaal: topeltovaalod esindavad mitme väärtusega atribuute.</li>
-                <li>Topeltristkülik: topeltristkülik tähistab nõrka olemit.</li>
+            <div class="usage-grid">
+                <div class="usage-card">
+                    <h4>Andmebaasi kujundamine</h4>
+                    <p>ERD-d kasutatakse peamiselt relatsiooniliste andmebaaside modelleerimiseks, määratledes osalevad entiteedid ja nende suhted.</p>
+                </div>
+
+                <div class="usage-card">
+                    <h4>Andmebaasi tõrkeotsing</h4>
+                    <p>Need aitavad analüüsida olemasolevaid andmebaase, et tuvastada ja lahendada loogika või rakenduse probleeme.</p>
+                </div>
+
+                <div class="usage-card">
+                    <h4>Ärinformatsiooni süsteemid</h4>
+                    <p>ERD-d sujuvdavad protsesse, selgitades välja, kuidas entiteedid omavahel suhtlevad äritöövoogudes.</p>
+                </div>
+
+                <div class="usage-card">
+                    <h4>Dokumenteerimine</h4>
+                    <p>Annavad selge visuaalse ülevaate andmestruktuuridest ja nende seostest süsteemi dokumenteerimiseks.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="symbols-section">
+            <h3>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
+                </svg>
+                ER mudelis kasutatavad sümbolid
+            </h3>
+            <p>ER mudelit kasutatakse süsteemi loogilise vaate modelleerimiseks andmeperspektiivist, mis koosneb järgmistest sümbolitest:</p>
+
+            <div class="symbols-grid">
+                <div class="symbol-card">
+                    <h4>Ristkülikud</h4>
+                    <p>Ristkülikud tähistavad üksusi ER-mudelis. Esindavad peamisi andmeobjekte või entiteete.</p>
+                </div>
+
+                <div class="symbol-card">
+                    <h4>Ovaalid</h4>
+                    <p>Ovaalid esindavad ER-mudeli atribuute. Näitavad entiteetide omadusi ja karakteristikuid.</p>
+                </div>
+
+                <div class="symbol-card">
+                    <h4>Rombid</h4>
+                    <p>Rombid esindavad üksuste vahelisi suhteid. Näitavad, kuidas erinevad entiteedid omavahel seotud on.</p>
+                </div>
+
+                <div class="symbol-card">
+                    <h4>Jooned</h4>
+                    <p>Jooned tähistavad olemite ja olemikomplektide atribuute, millel on muud suhtetüübid.</p>
+                </div>
+
+                <div class="symbol-card">
+                    <h4>Topeltovaalid</h4>
+                    <p>Topeltovaalid esindavad mitme väärtusega atribuute, mis võivad sisaldada mitut väärtust.</p>
+                </div>
+
+                <div class="symbol-card">
+                    <h4>Topeltristkülikud</h4>
+                    <p>Topeltristkülik tähistab nõrka olemit, mis sõltub teisest entiteedist oma eksistentsis.</p>
+                </div>
+            </div>
+
+            <div class="symbols-image">
                 <img src="er-symbolid.png" alt="ERD sümbolid">
-            </ul>
+            </div>
+        </div>
 
-            <h2 style="text-align: center;">ERD ühenduselemendid</h2>
+        <div class="relationships-table">
+            <h3>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                </svg>
+                ERD ühenduselemendid
+            </h3>
+            
             <table>
-                <tr>
-                    <th>Nimetus</th>
-                    <th>Pilt</th>
-                </tr>
-                <tr>
-                    <td>One-to-Many suhe</td>
-                    <td><img src="one-to-many.png" alt="One-to-Many" style="height: 60px; width: 200px;"></td>
-
-                <tr>
-                    <td>One-to-One suhe</td>
-                    <td><img src="one-to-one.png" alt="One-to-One" style="height: 60px; width: 200px;"></td>
-                </tr>
-                <tr>
-                    <td>Kohustulik suhe</td>
-                    <td><img src="mandatory.png" alt="Mandatory" style="height: 60px; width: 200px;"></td>
-                </tr>
-                <tr>
-                    <td>Vabatahlik suhe</td>
-                    <td><img src="optional.png" alt="Optional" style="height: 60px; width: 200px;"></td>
-                </tr>
-                <tr>
-                    <td>Many-to-Many suhe</td>
-                    <td><img src="many-to-many.png" alt="Many-to-Many" style="height: 60px; width: 200px;"></td>
-                </tr>
-                <tr>
-                    <td>Zero or One suhe</td>
-                    <td><img src="zero-or-one.png" alt="Zero or One" style="height: 60px; width: 200px;"></td>
-                </tr>
-                <tr>
-                    <td>Many suhe</td>
-                    <td><img src="many.png" alt="Many" style="height: 60px; width: 200px;"></td>
-                </tr>
-                <tr>
-                    <td>One suhe</td>
-                    <td><img src="one.png" alt="One" style="height: 60px; width: 200px;"></td>
-                </tr>
-                <tr>
-                    <td>One (and only one)</td>
-                    <td><img src="one-and-only-one.png" alt="One (and only one)" style="height: 60px; width: 200px;">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Zero or Many</td>
-                    <td><img src="Zero-or-many.png" alt="Zero or Many" style="height: 60px; width: 200px;"></td>
-                </tr>
-                <tr>
-                    <td>One or Many</td>
-                    <td><img src="one-or-many.png" alt="One or Many" style="height: 60px; width: 200px;"></td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Nimetus</th>
+                        <th>Visuaalne esitus</th>
+                        <th>Kirjeldus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>One-to-Many suhe</td>
+                        <td><img src="one-to-many.png" alt="One-to-Many"></td>
+                        <td>Üks entiteet võib olla seotud mitme teise entiteediga</td>
+                    </tr>
+                    <tr>
+                        <td>One-to-One suhe</td>
+                        <td><img src="one-to-one.png" alt="One-to-One"></td>
+                        <td>Üks entiteet on seotud täpselt ühe teise entiteediga</td>
+                    </tr>
+                    <tr>
+                        <td>Kohustulik suhe</td>
+                        <td><img src="mandatory.png" alt="Mandatory"></td>
+                        <td>Suhe peab alati eksisteerima</td>
+                    </tr>
+                    <tr>
+                        <td>Vabatahtlik suhe</td>
+                        <td><img src="optional.png" alt="Optional"></td>
+                        <td>Suhe võib eksisteerida, kuid ei pea</td>
+                    </tr>
+                    <tr>
+                        <td>Many-to-Many suhe</td>
+                        <td><img src="many-to-many.png" alt="Many-to-Many"></td>
+                        <td>Mitu entiteeti võib olla seotud mitme teise entiteediga</td>
+                    </tr>
+                    <tr>
+                        <td>Zero or One suhe</td>
+                        <td><img src="zero-or-one.png" alt="Zero or One"></td>
+                        <td>Entiteet võib olla seotud null või ühe teise entiteediga</td>
+                    </tr>
+                    <tr>
+                        <td>Many suhe</td>
+                        <td><img src="many.png" alt="Many"></td>
+                        <td>Entiteet võib olla seotud mitme teise entiteediga</td>
+                    </tr>
+                    <tr>
+                        <td>One suhe</td>
+                        <td><img src="one.png" alt="One"></td>
+                        <td>Entiteet on seotud täpselt ühe teise entiteediga</td>
+                    </tr>
+                    <tr>
+                        <td>One (and only one)</td>
+                        <td><img src="one-and-only-one.png" alt="One (and only one)"></td>
+                        <td>Entiteet peab olema seotud täpselt ühe ja ainult ühe entiteediga</td>
+                    </tr>
+                    <tr>
+                        <td>Zero or Many</td>
+                        <td><img src="Zero-or-many.png" alt="Zero or Many"></td>
+                        <td>Entiteet võib olla seotud null või mitme teise entiteediga</td>
+                    </tr>
+                    <tr>
+                        <td>One or Many</td>
+                        <td><img src="one-or-many.png" alt="One or Many"></td>
+                        <td>Entiteet peab olema seotud vähemalt ühe või mitme entiteediga</td>
+                    </tr>
+                </tbody>
             </table>
-            <h2>Võtmed <sup><a href="https://et.wikipedia.org/wiki/Andmebaas" target="_blank"
-                        style="font-size: 15px;">(3)</a></sup></h2>
-            <ul>
-                <li>Primaarvõti ehk esmasvõti (Primary Key): on kandidaatvõti, mis on valitud relatsiooni kirjeid
-                    unikaalselt
-                    identifitseerima</li>
-                <li>Välisvõti (Foreign Key): Atribuut, mis loob lingi kahe tabeli vahel.</li>
-                <li>Liitvõti (Composite Key): kui võti sisaldab mitu atribuuti, siis nimetatakse seda liitvõtmeks</li>
-                <li>Lihtvõti (Key): Üldine mõisted mis tahes atribuudile, mis suudab unikaalselt tuvastada entiteedi.
-                </li>
-
-            </ul>
-            <h2>Näide:</h2>
-            <img src="erd.png" alt="ERD näide">
-            <br>
-            Kasutatud kirjandus:
-            <br>
-            (1) <a href="https://www.lucidchart.com/pages/er-diagrams"
-                target="_blank">https://www.lucidchart.com/pages/er-diagrams/</a>
-            <br>
-            (2) <a href="https://www.geeksforgeeks.org/introduction-of-er-model/"
-                target="_blank">https://www.geeksforgeeks.org/introduction-of-er-model/</a>
-            <br>
-            (3) <a href="https://et.wikipedia.org/wiki/Andmebaas"
-                target="_blank">https://et.wikipedia.org/wiki/Andmebaas</a>
-            <br>
-            <br>
-            <button onclick="javascript:window.history.back();" class="floating">Tagasi</button> <br>
-            <br>
-            <br>
         </div>
-        <div class="column right">
 
+        <div class="keys-section">
+            <h3>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/>
+                </svg>
+                Võtmed andmebaasides
+            </h3>
+
+            <div class="keys-grid">
+                <div class="key-item">
+                    <h4>Primaarvõti (Primary Key)</h4>
+                    <p>Kandidaatvõti, mis on valitud relatsiooni kirjeid unikaalselt identifitseerima</p>
+                </div>
+
+                <div class="key-item">
+                    <h4>Välisvõti (Foreign Key)</h4>
+                    <p>Atribuut, mis loob lingi kahe tabeli vahel ja viitab teise tabeli primaarvõtmele</p>
+                </div>
+
+                <div class="key-item">
+                    <h4>Liitvõti (Composite Key)</h4>
+                    <p>Kui võti sisaldab mitu atribuuti, siis nimetatakse seda liitvõtmeks</p>
+                </div>
+
+                <div class="key-item">
+                    <h4>Lihtvõti (Simple Key)</h4>
+                    <p>Üldine mõiste mis tahes atribuudile, mis suudab unikaalselt tuvastada entiteedi</p>
+                </div>
+            </div>
         </div>
+
+        <div class="example-section">
+            <h3>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                </svg>
+                Praktilise näide
+            </h3>
+            <img src="erd.png" alt="ERD diagrammi näide">
+        </div>
+
+        <div class="references">
+            <h3>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                </svg>
+                Kasutatud kirjandus
+            </h3>
+            <p>(1) <a href="https://www.lucidchart.com/pages/er-diagrams">Lucidchart ER Diagrams Guide</a></p>
+            <p>(2) <a href="https://www.geeksforgeeks.org/introduction-of-er-model/">GeeksforGeeks ER Model Introduction</a></p>
+            <p>(3) <a href="https://et.wikipedia.org/wiki/Andmebaas">Eesti Wikipedia - Andmebaas</a></p>
+        </div>
+
+        <div class="navigation">
+            <button onclick="javascript:window.history.back();" class="btn btn-secondary">
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M15 19l-7-7 7-7"/>
+                </svg>
+                Tagasi
+            </button>
+            <a href="main.html" class="btn btn-primary">
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                </svg>
+                UML-diagrammid
+            </a>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Orvet Priimägi - TARge24</p>
+        </footer>
     </div>
-
-    <footer>
-        Orvet Priimägi - TARge24
-    </footer>
-
 </body>
-
 </html>

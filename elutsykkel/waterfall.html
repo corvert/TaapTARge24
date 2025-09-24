@@ -1,90 +1,189 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waterfall arendusmudel</title>
+    <title>Waterfall Arendusmudel | Tarkvara Arendusprotsess</title>
+    <meta name="description" content="Waterfall arendusmudeli põhjalik käsitlus - eelised, puudused ja praktiline rakendamine">
     <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body style="background-color: burlywood;">
-    <p>
-    <h1>Koskmudel</h1>
-    <h3>
-        Üks enimteatud ja vanim arendusmudel, mis on oma nimetuse saanud järjestikuse veekoskede analoogiast -
-        vesi langeb ühelt astmelt järgmisse ega pöördu tagasi.
-    </h3>
-    <ul>
-        <li><b>1. Nõuete määratlemine.</b> See etapp võib olla ka jaotatud kaheks - süsteemi analüüs (kõik see, mis
-            konkreetset tarkvara ümbritseb)
-            ja nõuete analüüs. Dokumenteeritakse süsteemi käitumine, jõudlus, liides jne</li>
-        <li><b> 2. Süsteemi ja tarkvara kavandamine.</b> Keskendub põhilistele programmi omadustele nagu
-            andmestruktuurid, tarkvara arhitektuur,
-            liideste omadused ja protseduurilised ning algoritmilised detailid. Projekti kvaliteeti on võimalik hinnata.
-            Tulemus dokumenteeritakse.</li>
-        <li> <b>3. Teostus ja moodulite testimine.</b> Projektis kirjeldatud süsteem programmeeritakse moodulite ja
-            programmide kogumina ja need testitakse eraldi.
-            Mida detailsem on projekt, seda lihtsam ja mehhaanilisem saab olla teostuse etapp.</li>
-        <li><b> 4. Integratsioon ja süsteemi testimine.</b> - programmid ja moodulid integreeritakse ning testitakse
-            kogu süsteemi, peale testimist antakse toode
-            kliendile. Testimisel keskendutakse nii loogilistele detailidele kui ka sellele, kas süsteem oma
-            funktsionaalsuse osas nõudeid täidab (valideerimine).</li>
-        <li><b> 5. Kasutamine ja hooldus</b> - on tavaliselt kõige pikem faas. Süsteemi muudetakse, kui kasutajad
-            avastavad vigu, ümbrus ja töökeskkond muutuvad või
-            klient vajab uut funktsionaalsust. Faas kordab kõiki eelnevaid faase olemasoleva süsteemi muutmise raames.
-        </li>
-    </ul>
-    <br>
-    <br>
+<body>
+    <header>
+        <div class="container">
+            <h1>🌊 Waterfall Arendusmudel</h1>
+            <p style="font-size: 1.1rem; margin-top: 0.5rem; opacity: 0.9; color: #e2e8f0;">
+                Klassikaline järjestikune tarkvara arenduse metodoloogia
+            </p>
+        </div>
+    </header>
 
-    <img src="../pildid/Koskmudel.png" alt="Koskmudel" >
+    <div class="container">
+        <div style="max-width: 900px; margin: 0 auto;">
+            
+            <!-- Navigation breadcrumb -->
+            <nav style="margin-bottom: 2rem; padding: 1rem; background: rgba(255,255,255,0.9); border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <a href="../index.html" style="color: #3498db;">🏠 Avaleht</a> 
+                <span style="color: #7f8c8d; margin: 0 0.5rem;">→</span>
+                <span style="color: #2c3e50; font-weight: 500;">Waterfall mudel</span>
+            </nav>
 
-    </p>
-    <br>
-    <table>
-        <tr>
-            <th>Eelised</th>
-            <th>Puudused</th>
-        </tr>
-        <tr>
-            <td>
-                <ul>
-                    <li> Kergesti arusaadav ja kasutatav;</li>
-                    <li> Lihtne hallata tänu selle jäikusele - igast faasist on spetsiifiline ülevaade;</li>
-                    <li> Üks etapp lõpetatakse, enne kui alustatakse teisega;</li>
-                    <li> Töötab hästi väikeste projektidega, kus nõudmised on kindlalt paigas.</li>
-                    <li> Protsessi ja tulemused dokumentatsioon on korras.</li>
-                </ul>
-            </td>
-            <td>
-                <ul>
-                    <li> Hiline testimisperiood - muudatusi on raske ellu viia, kui testimise käigus selgub, et midagi
-                        on valesti;</li>
-                    <li> Tarkvara on kasutatav vaid arenduse lõpus, mitte varem;</li>
-                    <li> Kõrge riskitase ja teadmatus;</li>
-                    <li> Mudel ei sobi keeruliste projektide jaoks;</li>
-                    <li> Kehv mudel pikkade ja jätkuvate projektide jaoks;</li>
-                    <li> Ei sobi ka projektidele, kus nõuetel on suur risk muutuda;</li>
-                    <li> Projekti paindumatu jaotus faasideks;</li>
-                    <li> Klient näeb tulemust alles lõpus ja valesti mõistetud nõuded lõppevad katastroofiga.</li>
-                </ul>
-            </td>
-        </tr>
-    </table>
-    <br>
-    <a href="https://et.wikipedia.org/wiki/Koskmudel" target="_blank">Kasutatud kirjandus</a>
-    <br>
-    <br>
+            <!-- Main content -->
+            <main style="background: rgba(255,255,255,0.95); border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                
+                <div style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                    <h2 style="color: white; border: none; margin-bottom: 1rem;">Koskmudel (Waterfall)</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.6; margin: 0; color: #e2e8f0;">
+                        Üks enimteatud ja vanim arendusmudel, mis on oma nimetuse saanud järjestikuse veekoskede analoogiast - 
+                        vesi langeb ühelt astmelt järgmisse ega pöördu tagasi.
+                    </p>
+                </div>
 
-    <button onclick="javascript:window.history.back();" class="floating">Tagasi</button>    <br>
+                <h3>📋 Mudeli etapid</h3>
+                <div style="display: grid; gap: 1rem; margin: 2rem 0;">
+                    <div style="border-left: 4px solid #3498db; padding: 1rem; background: #f8f9fa; border-radius: 0 8px 8px 0;">
+                        <h4 style="color: #2c3e50; margin-bottom: 0.5rem;">1️⃣ Nõuete määratlemine</h4>
+                        <p>See etapp võib olla ka jaotatud kaheks - süsteemi analüüs (kõik see, mis konkreetsat tarkvara ümbritseb) 
+                        ja nõuete analüüs. Dokumenteeritakse süsteemi käitumine, jõudlus, liides jne.</p>
+                    </div>
+                    
+                    <div style="border-left: 4px solid #e74c3c; padding: 1rem; background: #f8f9fa; border-radius: 0 8px 8px 0;">
+                        <h4 style="color: #2c3e50; margin-bottom: 0.5rem;">2️⃣ Süsteemi ja tarkvara kavandamine</h4>
+                        <p>Keskendub põhilistele programmi omadustele nagu andmestruktuurid, tarkvara arhitektuur, 
+                        liideste omadused ja protseduurilised ning algoritmilised detailid. Projekti kvaliteeti on võimalik hinnata. 
+                        Tulemus dokumenteeritakse.</p>
+                    </div>
+                    
+                    <div style="border-left: 4px solid #f39c12; padding: 1rem; background: #f8f9fa; border-radius: 0 8px 8px 0;">
+                        <h4 style="color: #2c3e50; margin-bottom: 0.5rem;">3️⃣ Teostus ja moodulite testimine</h4>
+                        <p>Projektis kirjeldatud süsteem programmeeritakse moodulite ja programmide kogumina ja need testitakse eraldi. 
+                        Mida detailsem on projekt, seda lihtsam ja mehhaanilisem saab olla teostuse etapp.</p>
+                    </div>
+                    
+                    <div style="border-left: 4px solid #27ae60; padding: 1rem; background: #f8f9fa; border-radius: 0 8px 8px 0;">
+                        <h4 style="color: #2c3e50; margin-bottom: 0.5rem;">4️⃣ Integratsioon ja süsteemi testimine</h4>
+                        <p>Programmid ja moodulid integreeritakse ning testitakse kogu süsteemi, peale testimist antakse toode 
+                        kliendile. Testimisel keskendutakse nii loogilistele detailidele kui ka sellele, kas süsteem oma 
+                        funktsionaalsuse osas nõudeid täidab (valideerimine).</p>
+                    </div>
+                    
+                    <div style="border-left: 4px solid #9b59b6; padding: 1rem; background: #f8f9fa; border-radius: 0 8px 8px 0;">
+                        <h4 style="color: #2c3e50; margin-bottom: 0.5rem;">5️⃣ Kasutamine ja hooldus</h4>
+                        <p>On tavaliselt kõige pikem faas. Süsteemi muudetakse, kui kasutajad avastavad vigu, ümbrus ja töökeskkond 
+                        muutuvad või klient vajab uut funktsionaalsust. Faas kordab kõiki eelnevaid faase olemasoleva süsteemi 
+                        muutmise raames.</p>
+                    </div>
+                </div>
 
-<br>
-<br>
-<br>
+                <figure style="margin: 3rem 0;">
+                    <img src="../pildid/Koskmudel.png" alt="Waterfall mudeli skeem" style="width: 100%; max-width: 600px;">
+                    <figcaption>Waterfall mudeli etappide järjestus ja seosed</figcaption>
+                </figure>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 3rem 0;">
+                    <div style="background: #d5f4e6; border: 1px solid #27ae60; border-radius: 8px; padding: 1.5rem;">
+                        <h3 style="color: #27ae60; border: none; margin-bottom: 1.5rem; text-align: center;">✅ Eelised</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #27ae60;">•</span>
+                                Kergesti arusaadav ja kasutatav
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #27ae60;">•</span>
+                                Lihtne hallata tänu selle jäikusele - igast faasist on spetsiifiline ülevaade
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #27ae60;">•</span>
+                                Üks etapp lõpetatakse, enne kui alustatakse teisega
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #27ae60;">•</span>
+                                Töötab hästi väikeste projektidega, kus nõudmised on kindlalt paigas
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #27ae60;">•</span>
+                                Protsessi ja tulemuste dokumentatsioon on korras
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: #fdeaea; border: 1px solid #e74c3c; border-radius: 8px; padding: 1.5rem;">
+                        <h3 style="color: #e74c3c; border: none; margin-bottom: 1.5rem; text-align: center;">❌ Puudused</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #e74c3c;">•</span>
+                                Hiline testimisperiood - muudatusi on raske ellu viia
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #e74c3c;">•</span>
+                                Tarkvara on kasutatav vaid arenduse lõpus, mitte varem
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #e74c3c;">•</span>
+                                Kõrge riskitase ja teadmatus
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #e74c3c;">•</span>
+                                Mudel ei sobi keeruliste projektide jaoks
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #e74c3c;">•</span>
+                                Kehv mudel pikkade ja jätkuvate projektide jaoks
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #e74c3c;">•</span>
+                                Ei sobi projektidele, kus nõuetel on suur risk muutuda
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #e74c3c;">•</span>
+                                Klient näeb tulemust alles lõpus ja valesti mõistetud nõuded lõppevad katastroofiga
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="background: #f8f9fa; border-left: 4px solid #3498db; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0;">
+                    <h4 style="color: #3498db; margin-bottom: 1rem;">💡 Millal kasutada?</h4>
+                    <p style="margin-bottom: 1rem;">
+                        Waterfall mudel sobib kõige paremini projektidele, kus:
+                    </p>
+                    <ul>
+                        <li>Nõudmised on selgelt määratletud ja stabiilsed</li>
+                        <li>Tehnoloogia on hästi tuntud</li>
+                        <li>Projekt on suhteliselt lühike</li>
+                        <li>Ressursid on piiratud ja tuleb täpselt planeerida</li>
+                    </ul>
+                </div>
+
+                <div style="text-align: center; margin: 2rem 0;">
+                    <a href="https://et.wikipedia.org/wiki/Koskmudel" 
+                       target="_blank" 
+                       style="display: inline-block; padding: 8px 16px; background: #34495e; color: white; text-decoration: none; border-radius: 6px; font-size: 0.9rem;">
+                        📖 Kasutatud kirjandus - Wikipedia
+                    </a>
+                </div>
+
+                <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 3rem; flex-wrap: wrap;">
+                    <button onclick="javascript:window.history.back();" 
+                            style="background: linear-gradient(45deg, #95a5a6, #7f8c8d); padding: 12px 24px; width: auto; min-width: 120px;">
+                        ← Tagasi
+                    </button>
+                    <button onclick="window.location.href='../index.html'" 
+                            style="background: linear-gradient(45deg, #3498db, #2980b9); padding: 12px 24px; width: auto; min-width: 120px;">
+                        🏠 Avalehele
+                    </button>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p style="margin: 0; color: #e2e8f0;">&copy; 2024 Orvet Priimägi - TARge24 | Waterfall Arendusmudel</p>
+        </div>
+    </footer>
+
 </body>
-<footer>
-    Orvet Priimägi - TARge24
-</footer>
-
 </html>

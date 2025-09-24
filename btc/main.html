@@ -1,99 +1,716 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="et">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitcoin kalkulaator</title>
-    <link rel="stylesheet" href="../styles.css">
+    <title>Bitcoin Kalkulaator | Tarkvara Arendus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="icon" href="icon.png" type="image/png">
+    <style>
+        :root {
+            --primary-color: #f59e0b;
+            --primary-dark: #d97706;
+            --primary-light: #fef3c7;
+            --bitcoin-orange: #ff8c00;
+            --bitcoin-gold: #ffd700;
+            --text-dark: #1f2937;
+            --text-medium: #4b5563;
+            --text-light: #6b7280;
+            --background: #ffffff;
+            --surface: #f8fafc;
+            --border: #e5e7eb;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --accent: #3b82f6;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .breadcrumb a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--primary-color);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .bitcoin-logo {
+            width: 60px;
+            height: 60px;
+            background: var(--bitcoin-orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-medium);
+            font-weight: 400;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section h3 {
+            color: var(--text-dark);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .section p {
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .currencies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .currency-card {
+            background: var(--surface);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .currency-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.1);
+        }
+
+        .currency-code {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .currency-name {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 0.25rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card h4 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .usage-steps {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+        }
+
+        .usage-steps h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .step-number {
+            background: white;
+            color: var(--primary-color);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .step-card h4 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-card p {
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+        }
+
+        .examples-section {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--bitcoin-gold);
+            margin: 2rem 0;
+        }
+
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .example-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .example-value {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--bitcoin-orange);
+        }
+
+        .development-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+            margin: 2rem 0;
+        }
+
+        .files-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .file-card {
+            background: var(--surface);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+        }
+
+        .file-name {
+            font-family: 'Roboto', monospace;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .troubleshooting {
+            background: linear-gradient(135deg, #fef2f2, #fee2e2);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #fecaca;
+            margin: 2rem 0;
+        }
+
+        .troubleshooting h3 {
+            color: #dc2626;
+            margin-bottom: 1rem;
+        }
+
+        .resources {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .resource-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .resource-card a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .resource-card a:hover {
+            color: var(--primary-dark);
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 3rem 0 2rem 0;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        footer {
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-radius: 12px 12px 0 0;
+        }
+
+        ul, ol {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: var(--text-medium);
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+                flex-direction: column;
+            }
+
+            .currencies-grid,
+            .features-grid,
+            .steps-grid,
+            .examples-grid,
+            .files-grid,
+            .resources {
+                grid-template-columns: 1fr;
+            }
+
+            .navigation {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="../index.html">Avaleht</a> → <span>Bitcoin Kalkulaator</span>
+        </nav>
 
-    <h1>Bitcoin Kalkulaator</h1>
-    <h2> Ülevaade</h2>
-    Bitcoin Kalkulaator on rakendus, mis võimaldab kasutajal arvutada Bitcoin'i (BTC) väärtust erinevates valuutades,
-    kasutades reaalajas andmeid CoinDesk API-st. Rakendus toetab järgmisi valuutasid:
-    <ul>
-        <li> EUR (euro)</li>
-        <li> USD (USA dollar)</li>
-        <li> EEK (Eesti kroon, ümberarvestus euro alusel)</li>
-        <li> GBP (Suurbritannia nael)</li>
-        <li> JPY (Jaapani jeen)</li>
-    </ul>
-    Kasutaja saab sisestada BTC koguse ja soovitud valuuta, mille väärtus arvutatakse automaatselt.
+        <header>
+            <h1>
+                <div class="bitcoin-logo">₿</div>
+                Bitcoin Kalkulaator
+            </h1>
+            <p class="subtitle">Reaalajas krüptovaluuta kursi arvutamine ja teisendamine</p>
+        </header>
 
-    <h2>Nõuded</h2>
-    <ul>
-        <li> Internetiühendus reaalajas andmete toomiseks CoinDesk API-st.</li>
-    </ul>
+        <section class="section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                Ülevaade
+            </h2>
+            <p>Bitcoin Kalkulaator on rakendus, mis võimaldab kasutajal arvutada Bitcoin'i (BTC) väärtust erinevates valuutades, kasutades reaalajas andmeid CoinDesk API-st. Rakendus pakub täpset ja kiire valuutateisendust ning automaatset tulemuste salvestamist.</p>
+            
+            <h3>Toetatud valuutad</h3>
+            <div class="currencies-grid">
+                <div class="currency-card">
+                    <div class="currency-code">EUR</div>
+                    <div class="currency-name">Euro</div>
+                </div>
+                <div class="currency-card">
+                    <div class="currency-code">USD</div>
+                    <div class="currency-name">USA dollar</div>
+                </div>
+                <div class="currency-card">
+                    <div class="currency-code">EEK</div>
+                    <div class="currency-name">Eesti kroon</div>
+                </div>
+                <div class="currency-card">
+                    <div class="currency-code">GBP</div>
+                    <div class="currency-name">Suurbritannia nael</div>
+                </div>
+                <div class="currency-card">
+                    <div class="currency-code">JPY</div>
+                    <div class="currency-name">Jaapani jeen</div>
+                </div>
+            </div>
+        </section>
 
-    <h2>Paigaldamine</h2>
-    <ol type="1">
-        <li>Lae alla lähtekood või valmisrakenduse failid.</li>
-        <li> Ava lahendus Visual Studio's ja veendu, et kõik vajalikud sõltuvused on olemas.</li>
+        <section class="section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                Nõuded
+            </h2>
+            <ul>
+                <li><strong>Internetiühendus:</strong> Reaalajas andmete toomiseks CoinDesk API-st</li>
+                <li><strong>Operatsioonisüsteem:</strong> Windows 10 või uuem</li>
+                <li><strong>Framework:</strong> .NET Framework 4.7.2 või uuem</li>
+                <li><strong>Kettaruum:</strong> Vähemalt 50 MB vaba ruumi</li>
+            </ul>
+        </section>
 
-    </ol>
-    <h2>Kasutamine</h2>
-    <ol type="1">
-        <li> Ava rakendus.</li>
-        <li> Sisesta:</li>
-        <ul>
-            <li> Valuuta (nt EUR, USD, EEK, GBP, JPY).</li>
-            <li> BTC kogus, mida soovid teisendada.</li>
-        </ul>
-        <li> Vajuta nuppu Arvuta, et näha tulemust.</li>
-        <li> Tulemus kuvatakse ekraanil ja salvestatakse automaatselt faili WriteLines.txt, mis asub kaustas Dokumendid.
-        </li>
-    </ol>
-    <h3>Näited</h3>
-    <ul>
-        <li> 1 BTC = 34,000 EUR</li>
-        <li> 0.5 BTC = 17,000 USD</li>
-    </ul>
-    <h2>Funktsioonid</h2>
-    <ul>
-        <li> Reaalajas kursid: Kasutab CoinDesk API-t, et tuua kõige uuemad BTC kursid.</li>
-        <li> Faili salvestamine: Iga arvutus salvestatakse automaatselt faili, et tulemused oleks hiljem kättesaadavad.
-        </li>
-        <li> Erinevad valuutad: Toetab mitmeid valuutasid, sealhulgas ajaloolist Eesti krooni.</li>
-    </ul>
-    <h2>Rakenduse arendus</h2>
-    <h3> Failid</h3>
-    <ul>
-        <li> <i>Form1.cs:</i> Rakenduse põhilogika ja kasutajaliidese funktsionaalsus.</li>
-        <li> <i>BitcoinRates.cs</i>: Andmestruktuurid API vastuse deserialiseerimiseks.</li>
-    </ul>
-    <h3>Funktsioonid</h3>
-    <ul>
-        <li> <i> getRates():</i> Hangib CoinDesk API-st BTC kursid JSON-vormingus.</li>
-        <li>  Valuutade ümberarvestus: Toetab erinevaid arvutusvalemeid vastavalt kasutaja sisendile.</li>
-    </ul>
-    <h2> Probleemid ja nende lahendused</h2>
-    <h3> Tüüpilised vead:</h3>
-    <ol>
-        <li>Viga API päringu tegemisel: Kontrolli, kas internetiühendus on korras.</li>
-        <li> Vale sisend BTC koguse või valuuta puhul: Rakendus kuvab veateate, kui sisestus ei ole korrektne.</li>
-    </ol>
+        <section class="section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"/>
+                </svg>
+                Paigaldamine
+            </h2>
+            <ol>
+                <li>Lae alla lähtekood või valmisrakenduse failid GitHub repositooriumist</li>
+                <li>Ava lahendus Visual Studio's</li>
+                <li>Veendu, et kõik vajalikud sõltuvused on olemas</li>
+                <li>Kompileeri ja käivita rakendus</li>
+            </ol>
+        </section>
 
-    <br>
-    <a href="Bitcoin_Calculator.docx">Nõuete dokument </a>
-    <br>
-    <a href="diagramm.drawio.html">Flowchart</a>
-    <br>
-    <a href="https://github.com/corvert/BitcoinCalculator" target="_blank">Github repo</a>
+        <div class="usage-steps">
+            <h3>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+                Kasutamine
+            </h3>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h4>Ava rakendus</h4>
+                    <p>Käivita Bitcoin Kalkulaator rakendus oma arvutis</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h4>Sisesta andmed</h4>
+                    <p>Vali soovitud valuuta ja sisesta BTC kogus</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h4>Arvuta</h4>
+                    <p>Vajuta nuppu "Arvuta" tulemuse saamiseks</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h4>Vaata tulemust</h4>
+                    <p>Tulemus kuvatakse ekraanil ja salvestatakse automaatselt</p>
+                </div>
+            </div>
+        </div>
 
-    <br>
-    <br>
-    <button onclick="javascript:window.history.back();" class="floating">Tagasi</button> <br>
-    <br>
-    <br>
+        <div class="examples-section">
+            <h3>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                </svg>
+                Näited
+            </h3>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <div class="example-value">1 BTC = 34,000 EUR</div>
+                </div>
+                <div class="example-card">
+                    <div class="example-value">0.5 BTC = 17,000 USD</div>
+                </div>
+                <div class="example-card">
+                    <div class="example-value">0.1 BTC = 3,400 EUR</div>
+                </div>
+                <div class="example-card">
+                    <div class="example-value">2 BTC = 68,000 USD</div>
+                </div>
+            </div>
+        </div>
 
+        <section class="section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 011-1h1a2 2 0 100-4H7a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/>
+                </svg>
+                Funktsioonid
+            </h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4>Reaalajas kursid</h4>
+                    <p>Kasutab CoinDesk API-t, et tuua kõige uuemad BTC kursid</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Automaatne salvestamine</h4>
+                    <p>Iga arvutus salvestatakse automaatselt faili WriteLines.txt</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Mitmekesised valuutad</h4>
+                    <p>Toetab 5 erinevat valuutat, sealhulgas ajaloolist Eesti krooni</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Kasutajasõbralik</h4>
+                    <p>Lihtne ja intuitiivne kasutajaliides</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="development-section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                </svg>
+                Rakenduse arendus
+            </h2>
+            
+            <h3>Failid</h3>
+            <div class="files-grid">
+                <div class="file-card">
+                    <div class="file-name">Form1.cs</div>
+                    <p>Rakenduse põhilogika ja kasutajaliidese funktsionaalsus</p>
+                </div>
+                <div class="file-card">
+                    <div class="file-name">BitcoinRates.cs</div>
+                    <p>Andmestruktuurid API vastuse deserialiseerimiseks</p>
+                </div>
+            </div>
+
+            <h3>Peamised funktsioonid</h3>
+            <ul>
+                <li><strong>getRates():</strong> Hangib CoinDesk API-st BTC kursid JSON-vormingus</li>
+                <li><strong>Valuutade ümberarvestus:</strong> Toetab erinevaid arvutusvalemeid vastavalt kasutaja sisendile</li>
+                <li><strong>Faili kirjutamine:</strong> Salvestab tulemused struktureeritud vormingus</li>
+                <li><strong>Vea käsitlemine:</strong> Kontrollib API vastuseid ja kasutaja sisendeid</li>
+            </ul>
+        </div>
+
+        <div class="troubleshooting">
+            <h3>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                </svg>
+                Probleemid ja nende lahendused
+            </h3>
+            <h4>Tüüpilised vead:</h4>
+            <ol>
+                <li><strong>Viga API päringu tegemisel:</strong> Kontrolli, kas internetiühendus on korras ja API teenus on kättesaadav</li>
+                <li><strong>Vale sisend:</strong> Rakendus kuvab veateate, kui BTC kogus või valuuta sisestus ei ole korrektne</li>
+                <li><strong>Faili salvestamise viga:</strong> Veendu, et Dokumendid kaust on kirjutatav</li>
+            </ol>
+        </div>
+
+        <section class="section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                </svg>
+                Ressursid
+            </h2>
+            <div class="resources">
+                <div class="resource-card">
+                    <a href="Bitcoin_Calculator.docx">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                            <path fill-rule="evenodd" d="M4 5a2 2 0 012-2v1a2 2 0 002 2h8a2 2 0 002-2V3a2 2 0 012 2v6h-3V8a1 1 0 10-2 0v3H7V8a1 1 0 10-2 0v3H4V5z"/>
+                        </svg>
+                        Nõuete dokument
+                    </a>
+                </div>
+                <div class="resource-card">
+                    <a href="diagramm.drawio.html">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M3 3h18v18H3zM8 17l3-3 3 3m0-8l-3 3-3-3"/>
+                        </svg>
+                        Flowchart
+                    </a>
+                </div>
+                <div class="resource-card">
+                    <a href="https://github.com/corvert/BitcoinCalculator" target="_blank">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        GitHub repositoorium
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="navigation">
+            <button onclick="javascript:window.history.back();" class="btn btn-secondary">
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M15 19l-7-7 7-7"/>
+                </svg>
+                Tagasi
+            </button>
+            <a href="../index.html" class="btn btn-primary">
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                </svg>
+                Avaleht
+            </a>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Orvet Priimägi - TARge24</p>
+        </footer>
+    </div>
 </body>
-<footer>Orvet Priimägi - TARge24</footer>
-</body>
-
 </html>

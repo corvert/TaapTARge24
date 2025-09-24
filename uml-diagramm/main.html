@@ -1,179 +1,577 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="et">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UML-diagrammid</title>
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="icon" href="../pildid/icon.jpeg" type="image/x-icon">
+    <title>UML-diagrammid | Tarkvara Arendus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #7c3aed;
+            --primary-dark: #5b21b6;
+            --primary-light: #ede9fe;
+            --text-dark: #1f2937;
+            --text-medium: #4b5563;
+            --text-light: #6b7280;
+            --background: #ffffff;
+            --surface: #f8fafc;
+            --border: #e5e7eb;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --accent: #06b6d4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .breadcrumb a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--primary-color);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-medium);
+            font-weight: 400;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quick-nav {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .nav-item {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.2);
+        }
+
+        .nav-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+        }
+
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section h3 {
+            color: var(--text-dark);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .section p {
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .diagram-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .diagram-card {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .diagram-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.1);
+        }
+
+        .diagram-card h4 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .diagram-card h4 a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .diagram-card h4 a:hover {
+            text-decoration: underline;
+        }
+
+        .advanced-diagrams {
+            background: linear-gradient(135deg, var(--surface), white);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-color);
+            margin: 2rem 0;
+        }
+
+        .advanced-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .advanced-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .advanced-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .examples-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+        }
+
+        .examples-section h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .example-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .example-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .example-item a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .example-item a:hover {
+            text-decoration: underline;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 3rem 0 2rem 0;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .references {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin: 2rem 0;
+        }
+
+        .references h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .references p {
+            margin-bottom: 0.5rem;
+        }
+
+        .references a {
+            color: var(--primary-color);
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .references a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-radius: 12px 12px 0 0;
+        }
+
+        ol, ul {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            color: var(--text-medium);
+            line-height: 1.6;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .diagram-types {
+                grid-template-columns: 1fr;
+            }
+
+            .navigation {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
-
 <body>
-    <header>
-        <h1> UML-diagrammidest ja nende kasutusest </h1>
-    </header>
-    <div class="row">
-        <div class="column left"></div>
-        <div class="column middle">
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="../index.html">Avaleht</a> → <span>UML-diagrammid</span>
+        </nav>
 
-            <table style="border: 0cm;">
-                <td><a href="flowchart.html">Flowchart</a></td>
-                <td><a href="erd.html">ERD diagramm</a></td>
-            </table>
+        <header>
+            <h1>UML-diagrammid</h1>
+            <p class="subtitle">Unified Modeling Language - süsteemide ja tarkvara visualiseerimise graafiline keel</p>
+        </header>
 
-            <p>Unified Modeling Language (UML) on graafiline keel süsteemide ja tarkvara visualiseerimiseks, olles eriti
-                kasulik
-                dokumenteerimisel, planeerimisel, optimeerimisel ja arendamisel. UML-diagrammid jagunevad
-                struktuuridiagrammideks (näitavad süsteemi staatilisi seoseid) ja käitumisdiagrammideks (näitavad
-                süsteemi dünaamilist toimimist). </p>
+        <div class="quick-nav">
+            <div class="nav-grid">
+                <a href="flowchart.html" class="nav-item">Flowchart</a>
+                <a href="erd.html" class="nav-item">ERD Diagramm</a>
+            </div>
+        </div>
 
-            <h2>Peamised UML-diagrammid <sup><a
-                        href="https://www.tud.ttu.ee/im/Vladimir.Viies/materials/YLDINEkaust/Helena_materjalid/objektid/objekt01/osa07.html"
-                        target="_blank" style="font-size: 15px;">(1)</a> </sup></h2>
-            <p>
-            <ol>
-                <li><a href="https://drawio-app.com/blog/uml-use-case-diagrams-with-draw-io/"
-                        target="_blank">Kasutuslooskeem
-                        (Use case
-                        diagram)</a></li>
-                Kasutuslooskeeme kasutatakse süsteemi moodustavate tähtsaimate elementide ja protsesside määramiseks.
-                Primaarelemente nimetatakse "aktoriteks" ning protsesse "kasutuslugudeks". Kasutuslooskeem näitab,
-                millised
-                aktorid suhtlevad iga kasutususlooga.
-
-                <li><a href="https://drawio-app.com/blog/uml-class-diagrams-in-draw-io/" target="_blank">Klassiskeem
-                        (Class
-                        diagram):</a></li>
-                Klassiskeemi kasutatakse süsteemidisaini täpsustamiseks ja kasutuslooskeemi täiendamiseks. See jagab
-                kasutuslooskeemil määratud aktorid omavahel seotud klassideks. Klassidevahelised suhted võivad olla "on"
-                või
-                "omab" tüüpi. Klassid pakuvad funktsionaalsust klassi meetodite kaudu ning neil on atribuute, mis
-                kirjeldavad
-                klassi omadusi ja määratlevad selle üheselt.
-
-                <li>Objektiskeem (Object diagram):</li>
-                Objektskeem on teatud tüüpi klassiskeem. Objekt esitab klassi olekut teatud ajahetkel süsteemi töö
-                käigus.
-                Objektiskeem esitab süsteemi erinevate klasside olekuid ning nendevahelisi relatsioone või
-                assotsiatsioone
-                teatud ajahetkel.
-
-                <li><a href="https://drawio-app.com/blog/uml-state-diagrams-with-draw-io/" target="_blank">Olekuskeem
-                        (State
-                        Diagram):</a></li>
-                Olekuskeem kujutab süsteemi objektide erinevaid olekuid nende elutsükli jooksul. See näitab, kuidas
-                objektid
-                muudavad oma olekut vastavalt süsteemis toimuvatele sündmustele, ning kirjeldab üleminekuid algolekust
-                lõppolekusse süsteemi mõjutavate sündmuste alusel.
-
-                <li><a href="https://drawio-app.com/blog/create-uml-activity-diagrams-in-draw-io/"
-                        target="_blank">Tegevusskeem
-                        (Activity
-                        diagram):</a></li>
-                Protsesside kulgemist süsteemis kirjeldatakse tegevusskeemi abil. Sarnaselt olekuskeemile koosneb ka
-                tegevusskeem toimingutest, tegevustest, üleminekutest, alg- ja lõppolekust ning tõkisetingimustest
-
-                <li><a href="https://drawio-app.com/blog/create-uml-sequence-diagrams-in-draw-io/"
-                        target="_blank">Jadaskeem
-                        (Sequence
-                        diagram):</a> </li>
-                Jadaskeem esitab süsteemi objektide
-                omavahelist suhtlemist. Jadaskeemi oluliseks omaduseks on selle ajaline järjestus.
-                S.o. esitatakse samm-sammult täpne objektide vaheline interaktsioon. Erinevad
-                objektid jadaskeemil suhtlevad omavahel "sõnumite" edastamise kaudu.
-
-                <li><a href="https://drawio-app.com/blog/uml-communication-diagrams/" target="_blank">Koostööskeem
-                        (Collaboration diagram):</a></li>
-                Koostööskeem grupeerib erinevate objektide vahelise interaktsiooni. Interaktsioonid esitatakse
-                nummerdatuna, mis
-                lubab jälgida nende toimumise järjekorda. Koostööskeem lubab kindlaks teha kõikvõimalikud
-                interaktsioonid mis
-                igat objekti teistega seovad.
-
-                <li>Komponentskeem (Component diagram):</li>
-                Komponentskeemi abil kujutatakse kõrgtaseme osi, millest süsteem koosneb. See skeem esitab millised
-                komponendid
-                süsteemi moodustavad ning kuidas nad omavahel seotud on. Levitusskeem (Deployment diagram):
-                levitusskeemi abil
-                kujutatakse rakenduse käitusaegeseid elemente.
-
-                <li><a href="https://drawio-app.com/blog/uml-interaction-overview-diagrams-in-draw-io/"
-                        target="_blank">Interaktsioonide
-                        ülevaate diagrammid:</a></li>
-                Need UML-diagrammid on kombinatsioon tegevusskeemist ja järjestusskeemidest, kus iga üksiktegevus on
-                paigutatud
-                oma raamidesse, nii on lihtsam programmeerida.
-
-                <li><a href="https://drawio-app.com/blog/uml-communication-diagrams/" target="_blank">Side diagramm</a>
-                </li>
-                Varem nimetati neid koostöödiagrammideks. Need on sarnased juhtumidiagrammidele, kirjeldades edastatavat
-                teavet.
-                Objektidevahelise suhtluse visualiseerimiseks kasutatakse aga sagedamini järjestusskeeme, kuna need on
-                selgemad
-                ja rikkalikuma tähistusega.
-
-            </ol>
-            </p>
-
-            <h2>Täpsemad UML-diagrammid suuremate süsteemide jaoks <sup><a
-                        href="https://drawio-app.com/blog/uml-diagrams/" target="_blank"
-                        style="font-size: 15px;">(2)</a></sup></h2>
-            <ol>
-                <li>Ajastus diarammid - jälgivad objektide käitumist aja jooksul.</li>
-                <li>Objektidiagrammid - näitavad klassidiagrammide praktilist rakendust.</li>
-                <li>Komponentide diagrammid - kirjeldavad keeruliste süsteemide komponente ja liideseid.</li>
-                <li>Paigaldus diagrammid - näitavad tarkvara juurutamist mitmes süsteemis.</li>
-                <li>Pakendi diagrammid - illustreerivad süsteemi sõltuvusi suurte koodibaaside korral.</li>
-                <li>Komposiitstruktuuri diagrammid - esindavad klasside sisemist struktuuri.</li>
-                <li>Profiilidiagrammid - laiendavad UML-i kasutamiseks spetsiifilistes domeenides (nt tervishoid).</li>
-            </ol>
-
-            <h2>Näided <sup><a href="https://drawio-app.com/examples/" style="font-size: 15px;"
-                        target="_blank">(3)</a></sup>
+        <section class="section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M9 17H7v-7h2m4 0h2v7h-2m4-7h2a2 2 0 012 2v5a2 2 0 01-2 2h-2m-4-4h4"/>
+                </svg>
+                Ülevaade UML-diagrammidest
             </h2>
-            <ol>
-                <li><a href="https://drawio-app.com/bpmn/" target="_blank">BPMN ja BPMN 2.0</a></li>
-                <li><a href="https://drawio-app.com/erd/" target="_blank">ERD</a></li>
-                <li><a href="https://drawio-app.com/flowcharts/" target="_blank">Flowchart</a></li>
-                <li><a href="https://drawio-app.com/mind-maps/" target="_blank">Mind map</a></li>
-                <li><a href="https://drawio-app.com/network-diagrams/" target="_blank">Network diagrams</a></li>
-                <li><a href="https://drawio-app.com/org-charts/" target="_blank">Org charts</a></li>
-                <li><a href="https://drawio-app.com/sequence-diagrams/" target="_blank">Sequence diagrams</a></li>
+            <p>Unified Modeling Language (UML) on graafiline keel süsteemide ja tarkvara visualiseerimiseks, olles eriti kasulik dokumenteerimisel, planeerimisel, optimeerimisel ja arendamisel. UML-diagrammid jagunevad <strong>struktuuridiagrammideks</strong> (näitavad süsteemi staatilisi seoseid) ja <strong>käitumisdiagrammideks</strong> (näitavad süsteemi dünaamilist toimimist).</p>
+        </section>
 
+        <section class="section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
+                </svg>
+                Peamised UML-diagrammid
+            </h2>
 
+            <div class="diagram-types">
+                <div class="diagram-card">
+                    <h4><a href="https://drawio-app.com/blog/uml-use-case-diagrams-with-draw-io/">Kasutuslooskeem (Use Case Diagram)</a></h4>
+                    <p>Kasutuslooskeeme kasutatakse süsteemi moodustavate tähtsaimate elementide ja protsesside määramiseks. Primaarelemente nimetatakse "aktoriteks" ning protsesse "kasutuslugudeks".</p>
+                </div>
 
-            </ol>
-            <br>
-            Kasutatud kirjandus:
+                <div class="diagram-card">
+                    <h4><a href="https://drawio-app.com/blog/uml-class-diagrams-in-draw-io/">Klassiskeem (Class Diagram)</a></h4>
+                    <p>Klassiskeemi kasutatakse süsteemidisaini täpsustamiseks ja kasutuslooskeemi täiendamiseks. See jagab kasutuslooskeemil määratud aktorid omavahel seotud klassideks.</p>
+                </div>
 
-            <br>
-            (1) <a
-                href="https://www.tud.ttu.ee/im/Vladimir.Viies/materials/YLDINEkaust/Helena_materjalid/objektid/objekt01/osa07.html"
-                target="_blank">https://www.tud.ttu.ee/im/Vladimir.Viies/materials/YLDINEkaust/Helena_materjalid/objektid/objekt01/osa07.html</a>
-            <br>
-            (2) <a href="https://drawio-app.com/blog/uml-diagrams/"
-                target="_blank">https://drawio-app.com/blog/uml-diagrams/</a>
-            <br>
-            (3) <a href="https://drawio-app.com/examples/">https://drawio-app.com/examples/</a>
+                <div class="diagram-card">
+                    <h4>Objektiskeem (Object Diagram)</h4>
+                    <p>Objektskeem on teatud tüüpi klassiskeem. Objekt esitab klassi olekut teatud ajahetkel süsteemi töö käigus.</p>
+                </div>
 
-            <br>
+                <div class="diagram-card">
+                    <h4><a href="https://drawio-app.com/blog/uml-state-diagrams-with-draw-io/">Olekuskeem (State Diagram)</a></h4>
+                    <p>Olekuskeem kujutab süsteemi objektide erinevaid olekuid nende elutsükli jooksul ja näitab üleminekuid sündmuste alusel.</p>
+                </div>
 
-            <br>
-            <button onclick="javascript:window.history.back();" class="floating">Tagasi</button> <br>
+                <div class="diagram-card">
+                    <h4><a href="https://drawio-app.com/blog/create-uml-activity-diagrams-in-draw-io/">Tegevusskeem (Activity Diagram)</a></h4>
+                    <p>Protsesside kulgemist süsteemis kirjeldatakse tegevusskeemi abil. Koosneb toimingutest, tegevustest, üleminekutest ja tõkisetingimustest.</p>
+                </div>
 
-            <br>
-            <br>
-            <br>
+                <div class="diagram-card">
+                    <h4><a href="https://drawio-app.com/blog/create-uml-sequence-diagrams-in-draw-io/">Jadaskeem (Sequence Diagram)</a></h4>
+                    <p>Jadaskeem esitab süsteemi objektide omavahelist suhtlemist ajalises järjestuses. Esitatakse samm-sammult objektide vaheline interaktsioon.</p>
+                </div>
+
+                <div class="diagram-card">
+                    <h4><a href="https://drawio-app.com/blog/uml-communication-diagrams/">Koostööskeem (Collaboration Diagram)</a></h4>
+                    <p>Koostööskeem grupeerib erinevate objektide vahelise interaktsiooni. Interaktsioonid esitatakse nummerdatuna järjekorra jälgimiseks.</p>
+                </div>
+
+                <div class="diagram-card">
+                    <h4>Komponentskeem (Component Diagram)</h4>
+                    <p>Komponentskeemi abil kujutatakse kõrgtaseme osi, millest süsteem koosneb. Esitab komponendid ja nende omavahelised seosed.</p>
+                </div>
+
+                <div class="diagram-card">
+                    <h4><a href="https://drawio-app.com/blog/uml-interaction-overview-diagrams-in-draw-io/">Interaktsioonide ülevaate diagrammid</a></h4>
+                    <p>Need UML-diagrammid on kombinatsioon tegevusskeemist ja järjestusskeemidest, kus iga üksiktegevus on paigutatud oma raamidesse.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="advanced-diagrams">
+            <h3>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                Täpsemad UML-diagrammid suuremate süsteemide jaoks
+            </h3>
+            
+            <div class="advanced-list">
+                <div class="advanced-item">
+                    <h4>Ajastus diagrammid</h4>
+                    <p>Jälgivad objektide käitumist aja jooksul</p>
+                </div>
+                
+                <div class="advanced-item">
+                    <h4>Objektidiagrammid</h4>
+                    <p>Näitavad klassidiagrammide praktilist rakendust</p>
+                </div>
+                
+                <div class="advanced-item">
+                    <h4>Komponentide diagrammid</h4>
+                    <p>Kirjeldavad keeruliste süsteemide komponente ja liideseid</p>
+                </div>
+                
+                <div class="advanced-item">
+                    <h4>Paigaldus diagrammid</h4>
+                    <p>Näitavad tarkvara juurutamist mitmes süsteemis</p>
+                </div>
+                
+                <div class="advanced-item">
+                    <h4>Pakendi diagrammid</h4>
+                    <p>Illustreerivad süsteemi sõltuvusi suurte koodibaaside korral</p>
+                </div>
+                
+                <div class="advanced-item">
+                    <h4>Komposiitstruktuuri diagrammid</h4>
+                    <p>Esindavad klasside sisemist struktuuri</p>
+                </div>
+                
+                <div class="advanced-item">
+                    <h4>Profiilidiagrammid</h4>
+                    <p>Laiendavad UML-i kasutamiseks spetsiifilistes domeenides</p>
+                </div>
+            </div>
         </div>
-        <div class="column right">
 
+        <div class="examples-section">
+            <h3>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                </svg>
+                Praktilised näited
+            </h3>
+            
+            <div class="examples-grid">
+                <div class="example-item">
+                    <a href="https://drawio-app.com/bpmn/">BPMN ja BPMN 2.0</a>
+                </div>
+                
+                <div class="example-item">
+                    <a href="https://drawio-app.com/erd/">ERD</a>
+                </div>
+                
+                <div class="example-item">
+                    <a href="https://drawio-app.com/flowcharts/">Flowchart</a>
+                </div>
+                
+                <div class="example-item">
+                    <a href="https://drawio-app.com/mind-maps/">Mind Map</a>
+                </div>
+                
+                <div class="example-item">
+                    <a href="https://drawio-app.com/network-diagrams/">Network Diagrams</a>
+                </div>
+                
+                <div class="example-item">
+                    <a href="https://drawio-app.com/org-charts/">Org Charts</a>
+                </div>
+                
+                <div class="example-item">
+                    <a href="https://drawio-app.com/sequence-diagrams/">Sequence Diagrams</a>
+                </div>
+            </div>
         </div>
+
+        <div class="references">
+            <h3>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                </svg>
+                Kasutatud kirjandus
+            </h3>
+            <p>(1) <a href="https://www.tud.ttu.ee/im/Vladimir.Viies/materials/YLDINEkaust/Helena_materjalid/objektid/objekt01/osa07.html">TUT UML-diagrammide õppematerjal</a></p>
+            <p>(2) <a href="https://drawio-app.com/blog/uml-diagrams/">Draw.io UML Diagrams Guide</a></p>
+            <p>(3) <a href="https://drawio-app.com/examples/">Draw.io Examples Collection</a></p>
+        </div>
+
+        <div class="navigation">
+            <button onclick="javascript:window.history.back();" class="btn btn-secondary">
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M15 19l-7-7 7-7"/>
+                </svg>
+                Tagasi
+            </button>
+            <a href="../index.html" class="btn btn-primary">
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                </svg>
+                Avalehele
+            </a>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Orvet Priimägi - TARge24</p>
+        </footer>
     </div>
-    <footer>
-        Orvet Priimägi - TARge24
-    </footer>
-
 </body>
-
 </html>

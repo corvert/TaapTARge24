@@ -1,107 +1,689 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="et">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Windows Forms</title>
-    <link rel="stylesheet" href="../styles.css">
+    <title>Windows Forms Rakendus | Tarkvara Arendus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="icon" href="../pildid/icon.jpeg" type="image/x-icon">
+    <style>
+        :root {
+            --primary-color: #10b981;
+            --primary-dark: #059669;
+            --primary-light: #d1fae5;
+            --secondary-color: #047857;
+            --accent-color: #34d399;
+            --text-dark: #1f2937;
+            --text-medium: #4b5563;
+            --text-light: #6b7280;
+            --background: #ffffff;
+            --surface: #f8fafc;
+            --border: #e5e7eb;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --tech-blue: #3b82f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .breadcrumb a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--primary-color);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .windows-logo {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-medium);
+            font-weight: 400;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section h3 {
+            color: var(--text-dark);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 1.5rem 0 1rem 0;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+        }
+
+        .section p {
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .functionality-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .functionality-card {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .functionality-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .functionality-card h4 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tech-stack {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+        }
+
+        .tech-stack h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid white;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .tech-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tech-item strong {
+            color: white;
+        }
+
+        .tech-item span {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .steps-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+            margin: 2rem 0;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .step-card {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.1);
+        }
+
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            position: absolute;
+            top: -15px;
+            left: 1.5rem;
+        }
+
+        .step-card h4 {
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .database-section {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            margin: 2rem 0;
+        }
+
+        .database-tables {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .table-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .table-card h4 {
+            color: var(--tech-blue);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .field-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .field-list li {
+            background: var(--surface);
+            padding: 0.5rem;
+            margin: 0.25rem 0;
+            border-radius: 6px;
+            font-family: 'Roboto', monospace;
+            font-size: 0.9rem;
+        }
+
+        .field-list li strong {
+            color: var(--tech-blue);
+        }
+
+        .erd-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .erd-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            border-left: none;
+            padding-left: 0;
+        }
+
+        .diagram-viewer {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            min-height: 300px;
+        }
+
+        .resources {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .resource-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .resource-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+        }
+
+        .resource-btn.github {
+            background: var(--text-dark);
+        }
+
+        .resource-btn.github:hover {
+            background: #374151;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            margin: 3rem 0 2rem 0;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            border: 2px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-radius: 12px 12px 0 0;
+        }
+
+        ul, ol {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: var(--text-medium);
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .functionality-grid,
+            .tech-grid,
+            .steps-grid,
+            .database-tables {
+                grid-template-columns: 1fr;
+            }
+
+            .resources {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
-
 <body>
-    <header>
-        <h1>Windows Forms Rakendus - Kategooriate ja Toodete Halduse Süsteem</h1>
-    </header>
-    <div class="row">
-        <div class="column left"></div>
-        <div class="column middle">
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="../index.html">Avaleht</a> → <span>Windows Forms Rakendus</span>
+        </nav>
 
-            <h2>Ülevaade</h2>
-            See projekt on Windows Forms rakendus, mis võimaldab hallata kategooriaid ja nendele vastavaid tooteid.
-            Rakendus kasutab SQLite andmebaasi ja on ehitatud C# keeles, kasutades Entity Framework Core'i.
-            <h2>Funktsionaalsus</h2>
-            <ol>
-                <li>Funktsionaalsus</li>
-                <ul>
-                    <li>Kuva olemasolevad kategooriad.</li>
-                    <li>Lisa, muuda kategooriaid.</li>
-                </ul>
-                <li>Toodete haldus</li>
-                <ul>
-                    <li>Toodete haldus</li>
-                    <li>Lisa, muuda tooteid, mis on seotud konkreetse kategooriaga.</li>
-                </ul>
-                <li>Andmete salvestamine</li>
-                <ul>
-                    <li>Salvestab muudatused andmebaasi, kasutades "Save"-nuppu.</li>
-                </ul>
-            </ol>
-            <h2>Kasutatud tehnoloogiad</h2>
-            <ul>
-                <li>Keeled: C#</li>
-                <li>Andmebaas: SQLite</li>
-                <li>ORM: Entity Framework Core (EF Core)</li>
-                <li>Kasutajaliides: Windows Forms</li>
-            </ul>
-            <h2>Kuidas projekti käivitada</h2>
-            <ol>
-                <li>Eeltingimused</li>
-                <ul>
-                    <li>Installi Visual Studio (koos .NET Frameworki ja Windows Forms App tugi).</li>
-                    <li>Veendu, et SQLite on saadaval.</li>
-                </ul>
-                <li>Projektifaili avamine</li>
-                <ul>
-                    <li>Ava <i>.sln</i> fail Visual Studios.</li>
-                </ul>
-                <li>Rakenduse käivitamine</li>
-                <ul>
-                    <li>Vajuta <i>F5</i> või vali menüüst "Start".</li>
-                    <li>Rakendus loob andmebaasi ja täidab selle algandmetega, kui see on esmakordselt käivitatud.</li>
-                </ul>
+        <header>
+            <h1>
+                <div class="windows-logo">⊞</div>
+                Windows Forms Rakendus
+            </h1>
+            <p class="subtitle">Kategooriate ja Toodete Halduse Süsteem</p>
+        </header>
 
-            </ol>
-            <h2>Rakenduse kasutamine</h2>
-            <ol>
-                <li>Ava rakendus.</li>
-                <li>Kuva kategooriad vasakpoolses tabelis.</li>
-                <li>Vali kategooria, et näha seotud tooteid parempoolses tabelis.</li>
-                <li>Tee vajalikud muudatused ja salvesta, vajutades "Save"-nuppu.</li>
-            </ol>
-            <h2>Andmebaasi ülesehitus</h2>
-            <h3>Tabel: Categories</h3>
-            <ul>
-                <li><i>Id:</i> Unikaalne ID (int)</li>
-                <li><i>Name:</i> Kategooria nimi (string)</li>
-            </ul>
-            <h3>Tabel: Products</h3>
-            <ul>
-                <li><i>Id:</i> Unikaalne ID (int)</li>
-                <li><i>Name:</i> Toote nimi (string)</li>
-            </ul>
-            <h3>ERD diagramm</h3>
-            <div class="mxgraph" style="max-width:100%;border:1px solid transparent;"
-                data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; agent=\&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36\&quot; version=\&quot;25.0.3\&quot;&gt;\n  &lt;diagram name=\&quot;Leht-1\&quot; id=\&quot;2HrpfXjOCL5BXDFn-U6u\&quot;&gt;\n    &lt;mxGraphModel dx=\&quot;1434\&quot; dy=\&quot;738\&quot; grid=\&quot;1\&quot; gridSize=\&quot;10\&quot; guides=\&quot;1\&quot; tooltips=\&quot;1\&quot; connect=\&quot;1\&quot; arrows=\&quot;1\&quot; fold=\&quot;1\&quot; page=\&quot;1\&quot; pageScale=\&quot;1\&quot; pageWidth=\&quot;827\&quot; pageHeight=\&quot;1169\&quot; math=\&quot;0\&quot; shadow=\&quot;0\&quot;&gt;\n      &lt;root&gt;\n        &lt;mxCell id=\&quot;0\&quot; /&gt;\n        &lt;mxCell id=\&quot;1\&quot; parent=\&quot;0\&quot; /&gt;\n        &lt;mxCell id=\&quot;HhYwdBiPRdFbxCQgBpXm-7\&quot; value=\&quot;Product\&quot; style=\&quot;swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;330\&quot; y=\&quot;70\&quot; width=\&quot;140\&quot; height=\&quot;104\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HhYwdBiPRdFbxCQgBpXm-8\&quot; value=\&quot;ID (PK)\&quot; style=\&quot;text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;HhYwdBiPRdFbxCQgBpXm-7\&quot;&gt;\n          &lt;mxGeometry y=\&quot;26\&quot; width=\&quot;140\&quot; height=\&quot;26\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HhYwdBiPRdFbxCQgBpXm-9\&quot; value=\&quot;Name\&quot; style=\&quot;text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;HhYwdBiPRdFbxCQgBpXm-7\&quot;&gt;\n          &lt;mxGeometry y=\&quot;52\&quot; width=\&quot;140\&quot; height=\&quot;26\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HhYwdBiPRdFbxCQgBpXm-10\&quot; value=\&quot;CategoryId (FK)\&quot; style=\&quot;text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;HhYwdBiPRdFbxCQgBpXm-7\&quot;&gt;\n          &lt;mxGeometry y=\&quot;78\&quot; width=\&quot;140\&quot; height=\&quot;26\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HhYwdBiPRdFbxCQgBpXm-11\&quot; value=\&quot;Category\&quot; style=\&quot;swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;50\&quot; y=\&quot;83\&quot; width=\&quot;140\&quot; height=\&quot;78\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HhYwdBiPRdFbxCQgBpXm-12\&quot; value=\&quot;ID (PK)\&quot; style=\&quot;text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;HhYwdBiPRdFbxCQgBpXm-11\&quot;&gt;\n          &lt;mxGeometry y=\&quot;26\&quot; width=\&quot;140\&quot; height=\&quot;26\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HhYwdBiPRdFbxCQgBpXm-13\&quot; value=\&quot;Name\&quot; style=\&quot;text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;HhYwdBiPRdFbxCQgBpXm-11\&quot;&gt;\n          &lt;mxGeometry y=\&quot;52\&quot; width=\&quot;140\&quot; height=\&quot;26\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HhYwdBiPRdFbxCQgBpXm-17\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERmany;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.007;entryY=0.038;entryDx=0;entryDy=0;entryPerimeter=0;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;HhYwdBiPRdFbxCQgBpXm-12\&quot; target=\&quot;HhYwdBiPRdFbxCQgBpXm-9\&quot;&gt;\n          &lt;mxGeometry width=\&quot;100\&quot; height=\&quot;100\&quot; relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;210\&quot; y=\&quot;183\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;310\&quot; y=\&quot;83\&quot; as=\&quot;targetPoint\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n      &lt;/root&gt;\n    &lt;/mxGraphModel&gt;\n  &lt;/diagram&gt;\n&lt;/mxfile&gt;\n&quot;}">
+        <section class="section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                Ülevaade
+            </h2>
+            <p>See projekt on Windows Forms rakendus, mis võimaldab hallata kategooriaid ja nendele vastavaid tooteid. Rakendus kasutab SQLite andmebaasi ja on ehitatud C# keeles, kasutades Entity Framework Core'i andmebaasi operatsioonideks.</p>
+            <p>Rakendus pakub intuitiivset kasutajaliidest kategooriate ja toodete haldamiseks, võimaldades kasutajatel kiiresti ja tõhusalt hallata oma andmeid.</p>
+        </section>
+
+        <section class="section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 011-1h1a2 2 0 100-4H7a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/>
+                </svg>
+                Funktsioonaalsus
+            </h2>
+            <div class="functionality-grid">
+                <div class="functionality-card">
+                    <h4>
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                        </svg>
+                        Kategooriate haldus
+                    </h4>
+                    <ul>
+                        <li>Kuva olemasolevad kategooriad</li>
+                        <li>Lisa uusi kategooriaid</li>
+                        <li>Muuda olemasolevaid kategooriaid</li>
+                        <li>Kustuta mittevajalikud kategooriad</li>
+                    </ul>
+                </div>
+
+                <div class="functionality-card">
+                    <h4>
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                        </svg>
+                        Toodete haldus
+                    </h4>
+                    <ul>
+                        <li>Kuva kategooriaga seotud tooteid</li>
+                        <li>Lisa uusi tooteid konkreetsesse kategooriasse</li>
+                        <li>Muuda olemasolevate toodete andmeid</li>
+                        <li>Seo tooted õigete kategooriatega</li>
+                    </ul>
+                </div>
+
+                <div class="functionality-card">
+                    <h4>
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"/>
+                        </svg>
+                        Andmete salvestamine
+                    </h4>
+                    <ul>
+                        <li>Automaatne andmebaasi ühenduse haldus</li>
+                        <li>Muudatuste salvestamine "Save"-nupu abil</li>
+                        <li>Andmete terviklikkuse tagamine</li>
+                        <li>Veakäsitlus ja kasutaja teavitamine</li>
+                    </ul>
+                </div>
             </div>
-            <script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+        </section>
 
-            <br>
-            <br>
-            <button class="floating"
-                onclick="window.open('https://github.com/corvert/GetStartedWinForm', '_blank');">Github</button>
-            <button onclick="javascript:window.history.back();" class="floating">Tagasi</button> <br>
-            <br>
-            <br>
+        <div class="tech-stack">
+            <h3>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                </svg>
+                Kasutatud tehnoloogiad
+            </h3>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <strong>Keel:</strong>
+                    <span>C# (.NET Framework)</span>
+                </div>
+                <div class="tech-item">
+                    <strong>Andmebaas:</strong>
+                    <span>SQLite</span>
+                </div>
+                <div class="tech-item">
+                    <strong>ORM:</strong>
+                    <span>Entity Framework Core</span>
+                </div>
+                <div class="tech-item">
+                    <strong>UI Framework:</strong>
+                    <span>Windows Forms</span>
+                </div>
+            </div>
         </div>
-        <div class="column right">
 
+        <div class="steps-section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"/>
+                </svg>
+                Kuidas projekti käivitada
+            </h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h4>Eeltingimused</h4>
+                    <ul>
+                        <li>Installi Visual Studio koos .NET Framework tugi</li>
+                        <li>Veendu, et Windows Forms App komponent on installitud</li>
+                        <li>SQLite tugi on automaatselt kaasas</li>
+                    </ul>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h4>Projekti avamine</h4>
+                    <ul>
+                        <li>Ava <code>.sln</code> fail Visual Studio's</li>
+                        <li>Lase Visual Studiol laadida kõik sõltuvused</li>
+                        <li>Veendu, et kõik NuGet paketid on õigesti installitud</li>
+                    </ul>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h4>Rakenduse käivitamine</h4>
+                    <ul>
+                        <li>Vajuta <kbd>F5</kbd> või vali menüüst "Start"</li>
+                        <li>Rakendus loob andmebaasi automaatselt</li>
+                        <li>Esmakordsel käivitamisel täidetakse algandmed</li>
+                    </ul>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h4>Rakenduse kasutamine</h4>
+                    <ul>
+                        <li>Kuva kategooriad vasakpoolses tabelis</li>
+                        <li>Vali kategooria seotud toodete nägemiseks</li>
+                        <li>Tee vajalikud muudatused</li>
+                        <li>Salvesta muudatused "Save"-nupu abil</li>
+                    </ul>
+                </div>
+            </div>
         </div>
+
+        <div class="database-section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
+                </svg>
+                Andmebaasi ülesehitus
+            </h2>
+            <div class="database-tables">
+                <div class="table-card">
+                    <h4>
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a1 1 0 00-1-1H6a1 1 0 00-1 1v7a1 1 0 001 1h4"/>
+                        </svg>
+                        Tabel: Categories
+                    </h4>
+                    <ul class="field-list">
+                        <li><strong>Id:</strong> Unikaalne identifikaator (int, PK)</li>
+                        <li><strong>Name:</strong> Kategooria nimi (string)</li>
+                    </ul>
+                </div>
+
+                <div class="table-card">
+                    <h4>
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                        </svg>
+                        Tabel: Products
+                    </h4>
+                    <ul class="field-list">
+                        <li><strong>Id:</strong> Unikaalne identifikaator (int, PK)</li>
+                        <li><strong>Name:</strong> Toote nimi (string)</li>
+                        <li><strong>CategoryId:</strong> Viide kategooriale (int, FK)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="erd-section">
+            <h3>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+                </svg>
+                ERD Diagramm
+            </h3>
+            <div class="diagram-viewer">
+                <div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; agent=\&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36\&quot; version=\&quot;25.0.3\&quot;&gt;\n  &lt;diagram name=\&quot;Leht-1\&quot; id=\&quot;2HrpfXjOCL5BXDFn-U6u\&quot;&gt;\n    &lt;mxGraphModel dx=\&quot;1434\&quot; dy=\&quot;738\&quot; grid=\&quot;1\&quot; gridSize=\&quot;10\&quot; guides=\&quot;1\&quot; tooltips=\&quot;1\&quot; connect=\&quot;1\&quot; arrows=\&quot;1\&quot; fold=\&quot;1\&quot; page=\&quot;1\&quot; pageScale=\&quot;1\&quot; pageWidth=\&quot;827\&quot; pageHeight=\&quot;1169\&quot; math=\&quot;0\&quot; shadow=\&quot;0\&quot;&gt;\n      &lt;root&gt;\n        &lt;mxCell id=\&quot;0\&quot; /&gt;\n        &lt;mxCell id=\&quot;1\&quot; parent=\&quot;0\&quot; /&gt;\n        &lt;mxCell id=\&quot;HhYwdBiPRdFbxCQgBpXm-7\&quot; value=\&quot;Product\&quot; style=\&quot;swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;330\&quot; y=\&quot;70\&quot; width=\&quot;140\&quot; height=\&quot;104\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HhYwdBiPRdFbxCQgBpXm-8\&quot; value=\&quot;ID (PK)\&quot; style=\&quot;text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;HhYwdBiPRdFbxCQgBpXm-7\&quot;&gt;\n          &lt;mxGeometry y=\&quot;26\&quot; width=\&quot;140\&quot; height=\&quot;26\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HhYwdBiPRdFbxCQgBpXm-9\&quot; value=\&quot;Name\&quot; style=\&quot;text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;HhYwdBiPRdFbxCQgBpXm-7\&quot;&gt;\n          &lt;mxGeometry y=\&quot;52\&quot; width=\&quot;140\&quot; height=\&quot;26\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HhYwdBiPRdFbxCQgBpXm-10\&quot; value=\&quot;CategoryId (FK)\&quot; style=\&quot;text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;HhYwdBiPRdFbxCQgBpXm-7\&quot;&gt;\n          &lt;mxGeometry y=\&quot;78\&quot; width=\&quot;140\&quot; height=\&quot;26\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HhYwdBiPRdFbxCQgBpXm-11\&quot; value=\&quot;Category\&quot; style=\&quot;swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;50\&quot; y=\&quot;83\&quot; width=\&quot;140\&quot; height=\&quot;78\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HhYwdBiPRdFbxCQgBpXm-12\&quot; value=\&quot;ID (PK)\&quot; style=\&quot;text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;HhYwdBiPRdFbxCQgBpXm-11\&quot;&gt;\n          &lt;mxGeometry y=\&quot;26\&quot; width=\&quot;140\&quot; height=\&quot;26\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HhYwdBiPRdFbxCQgBpXm-13\&quot; value=\&quot;Name\&quot; style=\&quot;text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;HhYwdBiPRdFbxCQgBpXm-11\&quot;&gt;\n          &lt;mxGeometry y=\&quot;52\&quot; width=\&quot;140\&quot; height=\&quot;26\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;HhYwdBiPRdFbxCQgBpXm-17\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERmany;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.007;entryY=0.038;entryDx=0;entryDy=0;entryPerimeter=0;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;HhYwdBiPRdFbxCQgBpXm-12\&quot; target=\&quot;HhYwdBiPRdFbxCQgBpXm-9\&quot;&gt;\n          &lt;mxGeometry width=\&quot;100\&quot; height=\&quot;100\&quot; relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;210\&quot; y=\&quot;183\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;310\&quot; y=\&quot;83\&quot; as=\&quot;targetPoint\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n      &lt;/root&gt;\n    &lt;/mxGraphModel&gt;\n  &lt;/diagram&gt;\n&lt;/mxfile&gt;\n&quot;}"></div>
+                <script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+            </div>
+        </div>
+
+        <div class="resources">
+            <button onclick="window.open('https://github.com/corvert/GetStartedWinForm', '_blank');" class="resource-btn github">
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                GitHub Repositoorium
+            </button>
+        </div>
+
+        <div class="navigation">
+            <button onclick="javascript:window.history.back();" class="btn-back">
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M15 19l-7-7 7-7"/>
+                </svg>
+                Tagasi
+            </button>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Orvet Priimägi - TARge24</p>
+        </footer>
     </div>
-    <footer>
-        Orvet Priimägi - TARge24
-    </footer>
-
 </body>
-
 </html>

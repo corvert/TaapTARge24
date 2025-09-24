@@ -1,95 +1,237 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spiraalmudel</title>
+    <title>Spiraalmudel | Tarkvara Arendusprotsess</title>
+    <meta name="description" content="Spiraalmudel - riskipõhine tarkvara arendusmudel iteratiivsete tsüklitega">
     <link rel="stylesheet" href="../styles.css">
-
 </head>
 
-<body style="background-color: rgb(151, 139, 186);">
-    <p>
-    <h1>Spiraalmudel</h1>
-    <h3>
-        Spiraalmudel on riskipõhine mudel, mis tähendab, et keskendutakse riskide juhtimisele tarkvaraarenduse protsessi
-        mitme iteratsiooni kaudu. See koosneb järgmistest etappidest:
-    </h3>
-    <ul>
-        <li><b>1. Määratletud eesmärgid:</b> piraalmudeli esimeses etapis selgitame, mida projekti eesmärk on saavutada,
-            sealhulgas funktsionaalsed ja mittefunktsionaalsed nõuded.</li>
-        <li><b> 2. Riskianalüüs:</b> Riskianalüüsi faasis tehakse kindlaks ja hinnatakse projektiga seotud riske.</li>
-        <li> <b>3. Tehnika:</b> insenerifaasis töötatakse tarkvara välja eelmises iteratsioonis kogutud nõuete alusel.
-        </li>
-        <li><b> 4. Hindamine:</b> Hindamisfaasis hinnatakse tarkvara, et teha kindlaks, kas see vastab kliendi nõuetele
-            ja kas see on kvaliteetne.</li>
-        <li><b> 5. Planeerimine: </b> spiraali järgmine iteratsioon algab uue planeerimisfaasiga, mis põhineb hindamise
-            tulemustel. </li>
-    </ul>
-    <br>
-    <br>
-    <img src="../pildid/spiraal.jpg" alt="Koskmudel" >
-    </p>
-    <br>
-    <table>
-        <tr>
-            <th>Eelised</th>
-            <th>Puudused</th>
-        </tr>
-        <tr>
-            <td>
-                <ul>
-                    <li> Riskijuhtimine: paljude tundmatute riskidega projektid, mis tekivad arenduse edenedes, sellisel
-                        juhul on spiraalmudel tänu riskianalüüsile ja riskide käsitlemisele igas etapis parim
-                        arendusmudel, mida järgida.</li>
-                    <li> Hea suurte projektide jaoks: Spiraalmudelit on soovitatav kasutada suurtes ja keerukates
-                        projektides.</li>
-                    <li> Nõuete paindlikkus: seda mudelit kasutades saab hilisemas etapis nõuete muutmistaotlusi täpselt
-                        lisada.</li>
-                    <li> Kliendirahulolu: Kliendid näevad toote arengut tarkvaraarenduse varajases faasis ja seega
-                        harjuvad nad süsteemiga seda kasutades enne kogu toote valmimist.</li>
-                    <li> Iteratiivne ja järkjärguline lähenemine: Spiraalmudel pakub tarkvaraarendusele iteratiivset ja
-                        järkjärgulist lähenemist, võimaldades paindlikkust ja kohanemisvõimet reageerides muutuvatele
-                        nõuetele või ootamatutele sündmustele.</li>
-                    <li>Rõhk riskijuhtimisel: Spiraalmudel paneb suure rõhu riskijuhtimisele, mis aitab minimeerida
-                        ebakindluse ja riskide mõju tarkvara arendusprotsessile.</li>
-                    <li>Täiustatud suhtlus: spiraalmudel näeb ette regulaarseid hindamisi ja ülevaatusi, mis võivad
-                        parandada suhtlust kliendi ja arendusmeeskonna vahel.</li>
-                    <li>Täiustatud kvaliteet: spiraalmudel võimaldab tarkvara arendusprotsessi mitu korda itereerida,
-                        mille tulemuseks on tarkvara kvaliteedi ja töökindluse paranemine.</li>
-                </ul>
-            </td>
-            <td>
-                <ul>
-                    <li>Kompleksne: spiraalmudel on palju keerulisem kui teised SDLC mudelid.</li>
-                    <li>Kallis: Spiraalmudel ei sobi väikeste projektide jaoks, kuna see on kallis.</li>
-                    <li>Liiga suur usaldusväärsus riskianalüüsile: projekti edukas lõpuleviimine sõltub suurel määral
-                        riskianalüüsist. Ilma väga kogenud ekspertideta on selle mudeli abil projekti väljatöötamine
-                        ebaõnnestunud.</li>
-                    <li>Raskused aja juhtimisel: kuna projekti alguses ei ole etappide arv teada, on aja hindamine väga
-                        keeruline.</li>
-                    <li>Keerukus: Spiraalmudel võib olla keeruline, kuna see hõlmab tarkvaraarenduse protsessi mitut
-                        iteratsiooni.</li>
-                    <li>Aeganõudev: spiraalmudel võib olla aeganõudev, kuna see nõuab mitut hindamist ja ülevaatamist.
-                    </li>
-                    <li>Aeganõudev: spiraalmudel võib olla aeganõudev, kuna see nõuab mitut hindamist ja ülevaatamist.
-                    </li>
-                </ul>
-            </td>
-        </tr>
-    </table>
-    <br>
-    <a href="https://www.geeksforgeeks.org/software-engineering-spiral-model/">Kasutatud kirjandus</a>
-    <br>
-    <br>
+<body>
+    <header>
+        <div class="container">
+            <h1>🌀 Spiraalmudel</h1>
+            <p style="font-size: 1.1rem; margin-top: 0.5rem; opacity: 0.9; color: #e2e8f0;">
+                Riskipõhine arendusmudel iteratiivsete spiraaltsüklitega
+            </p>
+        </div>
+    </header>
 
-    <button onclick="javascript:window.history.back();" class="floating">Tagasi</button>    <br>
+    <div class="container">
+        <div style="max-width: 900px; margin: 0 auto;">
+            
+            <!-- Navigation breadcrumb -->
+            <nav style="margin-bottom: 2rem; padding: 1rem; background: rgba(255,255,255,0.9); border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <a href="../index.html" style="color: #3498db;">🏠 Avaleht</a> 
+                <span style="color: #7f8c8d; margin: 0 0.5rem;">→</span>
+                <span style="color: #2c3e50; font-weight: 500;">Spiraalmudel</span>
+            </nav>
 
-    <br>
-    <br>
-    <br>
+            <!-- Main content -->
+            <main style="background: rgba(255,255,255,0.95); border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                
+                <div style="background: linear-gradient(135deg, #6366f1, #4f46e5); color: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                    <h2 style="color: white; border: none; margin-bottom: 1rem;">🌀 Spiraalmudel</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.6; margin: 0; color: #e0e7ff;">
+                        Spiraalmudel on <strong>riskipõhine mudel</strong>, mis keskendub riskide juhtimisele 
+                        tarkvaraarenduse protsessi mitme iteratsiooni kaudu. See ühendab lineaarsete mudelite 
+                        süstemaatilise lähenemise prototypimise paindlikkusega.
+                    </p>
+                </div>
+
+                <h3>🔄 Spiraali etapid</h3>
+                <div style="display: grid; gap: 1.5rem; margin: 2rem 0;">
+                    <div style="display: flex; align-items: start; gap: 1rem; padding: 1.5rem; background: #eff6ff; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                        <span style="background: #3b82f6; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">1</span>
+                        <div>
+                            <h4 style="color: #3b82f6; margin-bottom: 0.5rem;">🎯 Eesmärkide määratlemine</h4>
+                            <p style="margin: 0; color: #2c3e50;">
+                                Selgitatakse projekti eesmärk, sealhulgas funktsionaalsed ja mittefunktsionaalsed nõuded. 
+                                Määratletakse ressursid, ajaplaan ja piirangud.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: start; gap: 1rem; padding: 1.5rem; background: #fef2f2; border-radius: 8px; border-left: 4px solid #ef4444;">
+                        <span style="background: #ef4444; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">2</span>
+                        <div>
+                            <h4 style="color: #ef4444; margin-bottom: 0.5rem;">⚠️ Riskianalüüs</h4>
+                            <p style="margin: 0; color: #2c3e50;">
+                                Tehakse kindlaks ja hinnatakse projektiga seotud riske. Analüüsitakse alternatiive 
+                                ja töötakse välja riskide vähendamise strateegiad.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: start; gap: 1rem; padding: 1.5rem; background: #f0fdf4; border-radius: 8px; border-left: 4px solid #10b981;">
+                        <span style="background: #10b981; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">3</span>
+                        <div>
+                            <h4 style="color: #10b981; margin-bottom: 0.5rem;">🔧 Arendus ja testimine</h4>
+                            <p style="margin: 0; color: #2c3e50;">
+                                Töötatakse tarkvara välja eelmises iteratsioonis kogutud nõuete alusel. 
+                                Luuakse prototüübid ja testitakse neid.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: start; gap: 1rem; padding: 1.5rem; background: #fffbeb; border-radius: 8px; border-left: 4px solid #f59e0b;">
+                        <span style="background: #f59e0b; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">4</span>
+                        <div>
+                            <h4 style="color: #f59e0b; margin-bottom: 0.5rem;">📊 Hindamine ja planeerimine</h4>
+                            <p style="margin: 0; color: #2c3e50;">
+                                Hinnatakse tarkvara, et teha kindlaks, kas see vastab kliendi nõuetele. 
+                                Planeeritakse järgmine spiraal põhinedes hindamise tulemustel.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <figure style="margin: 3rem 0; text-align: center;">
+                    <img src="../pildid/spiraal.jpg" alt="Spiraalmudeli skeem" 
+                         style="width: 100%; max-width: 600px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <figcaption>Spiraalmudeli iteratiivne tsükkel neljase etapiga</figcaption>
+                </figure>
+
+                <div style="background: #f5f3ff; border-left: 4px solid #6366f1; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0;">
+                    <h4 style="color: #6366f1; margin-bottom: 1rem;">🌟 Mudeli eripärad</h4>
+                    <div style="display: grid; gap: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <span style="font-size: 1.5rem;">🎯</span>
+                            <strong>Riskikeskne:</strong> Põhirõhk on riskide tuvastamisel ja maandamisel
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <span style="font-size: 1.5rem;">🔄</span>
+                            <strong>Iteratiivne:</strong> Korduvad spiraaltsüklid võimaldavad järkjärgulist täiustamist
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <span style="font-size: 1.5rem;">🛡️</span>
+                            <strong>Kvaliteedikeskne:</strong> Iga iteratsioon parandab toote kvaliteeti
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <span style="font-size: 1.5rem;">👥</span>
+                            <strong>Kliendikeskne:</strong> Regulaarne tagasiside ja kohandumine
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 3rem 0;">
+                    <div style="background: #d5f4e6; border: 1px solid #10b981; border-radius: 8px; padding: 1.5rem;">
+                        <h3 style="color: #10b981; border: none; margin-bottom: 1.5rem; text-align: center;">✅ Eelised</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #10b981;">•</span>
+                                Tõhus riskijuhtimine
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #10b981;">•</span>
+                                Hea suurte projektide jaoks
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #10b981;">•</span>
+                                Nõuete paindlikkus
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #10b981;">•</span>
+                                Kõrge kliendirahulolu
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #10b981;">•</span>
+                                Iteratiivne ja järkjärguline lähenemine
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #10b981;">•</span>
+                                Täiustatud suhtlus
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #10b981;">•</span>
+                                Kõrge tarkvara kvaliteet
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: #fdeaea; border: 1px solid #ef4444; border-radius: 8px; padding: 1.5rem;">
+                        <h3 style="color: #ef4444; border: none; margin-bottom: 1.5rem; text-align: center;">❌ Puudused</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+                                Keeruline mudel
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+                                Kallis väikeste projektide jaoks
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+                                Sõltub riskianalüüsi kvaliteedist
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+                                Raskused aja hindamisel
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+                                Nõuab kogenud eksperte
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+                                Aeganõudev protsess
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+                                Palju hindamisi ja ülevaatusi
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="background: #f0f4ff; border-left: 4px solid #6366f1; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0;">
+                    <h4 style="color: #6366f1; margin-bottom: 1rem;">💡 Millal kasutada?</h4>
+                    <p style="margin-bottom: 1rem;">
+                        Spiraalmudel sobib kõige paremini projektidele, kus:
+                    </p>
+                    <ul>
+                        <li>Projekt on suur ja keeruline</li>
+                        <li>Riskid on kõrged ja ebakindlad</li>
+                        <li>Nõuded võivad muutuda arenduse käigus</li>
+                        <li>Klient soovib näha toote arengut</li>
+                        <li>Kvaliteet on kriitilisem kui aeg</li>
+                        <li>Meeskonnal on riskianalüüsi kogemus</li>
+                    </ul>
+                </div>
+
+                <div style="background: #f0f4ff; border: 1px solid #6366f1; border-radius: 8px; padding: 1.5rem; margin: 2rem 0;">
+                    <h4 style="color: #6366f1; margin-bottom: 1rem;">📚 Lisalugemine</h4>
+                    <p style="margin-bottom: 1rem;">Lisainfo spiraalmudeli kohta:</p>
+                    <a href="https://www.geeksforgeeks.org/software-engineering-spiral-model/" 
+                       target="_blank" 
+                       style="color: #6366f1; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.5rem;">
+                        🔗 GeeksforGeeks - Spiral Model
+                        <span style="font-size: 0.8rem;">↗</span>
+                    </a>
+                </div>
+
+                <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 3rem; flex-wrap: wrap;">
+                    <button onclick="javascript:window.history.back();" 
+                            style="background: linear-gradient(45deg, #95a5a6, #7f8c8d); padding: 12px 24px; width: auto; min-width: 120px;">
+                        ← Tagasi
+                    </button>
+                    <button onclick="window.location.href='../index.html'" 
+                            style="background: linear-gradient(45deg, #3498db, #2980b9); padding: 12px 24px; width: auto; min-width: 120px;">
+                        🏠 Avalehele
+                    </button>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p style="margin: 0; color: #e2e8f0;">&copy; 2024 Orvet Priimägi - TARge24 | Spiraalmudel</p>
+        </div>
+    </footer>
+
 </body>
-<footer>Orvet Priimägi - TARge24</footer>
-
 </html>

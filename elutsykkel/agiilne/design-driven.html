@@ -1,173 +1,339 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Design-driven development</title>
-  <link rel="stylesheet" href="../../styles.css" />
-  <link rel="icon" href="../../pildid/icon.jpeg" type="image/x-icon" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design-Driven Development | Tarkvara Arendusprotsess</title>
+    <meta name="description" content="Design-Driven Development - disainipõhine lähenemine, kus disain juhib tarkvara loomise protsessi">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" href="../../pildid/icon.jpeg" type="image/x-icon">
 </head>
 
 <body>
-  <header>
-    <h1>Design-driven development</h1>
-  </header>
-  <div class="row">
-    <div class="column left">
-      <nav>
-        <button class="floating" onclick="window.location.href='behavior-driven.html'">
-          Behavior-driven development
-        </button>
-        <button class="floating" onclick="window.location.href='design-driven.html'">
-          Design-driven development
-        </button>
-        <button class="floating" onclick="window.location.href='domain-driven.html'">
-          Domain-driven design
-        </button>
-        <button class="floating" onclick="window.location.href='secure.html'">
-          Secure by design
-        </button>
-        <button class="floating" onclick="window.location.href='test-driven.html'">
-          Test-driven development
-        </button>
-        <button class="floating" onclick="window.location.href='acceptance.html'">
-          Acceptance test-driven development
-        </button>
-        <button class="floating" onclick="window.location.href='continuous.html'">
-          Continuous test-driven development
-        </button>
-        <button class="floating" onclick="window.location.href='specification.html'">
-          Specification by example
-        </button>
-        <button class="floating" onclick="window.location.href='data-driven.html'">
-          Data-driven development
-        </button>
-        <button class="floating" onclick="window.location.href='data-oriented.html'">
-          Data-oriented design
-        </button>
-      </nav>
+    <header>
+        <div class="container">
+            <h1>🎨 Design-Driven Development</h1>
+            <p style="font-size: 1.1rem; margin-top: 0.5rem; opacity: 0.9; color: #e2e8f0;">
+                Disainipõhine arendus - kasutajakogemus juhib arendusprotsessi
+            </p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            
+            <!-- Navigation breadcrumb -->
+            <nav style="margin-bottom: 2rem; padding: 1rem; background: rgba(255,255,255,0.9); border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <a href="../../index.html" style="color: #3498db;">🏠 Avaleht</a> 
+                <span style="color: #7f8c8d; margin: 0 0.5rem;">→</span>
+                <a href="../agiilne.html" style="color: #3498db;">Agiilne mudel</a>
+                <span style="color: #7f8c8d; margin: 0 0.5rem;">→</span>
+                <a href="../agiilneLisa.html" style="color: #3498db;">Agiilne lisainfo</a>
+                <span style="color: #7f8c8d; margin: 0 0.5rem;">→</span>
+                <span style="color: #2c3e50; font-weight: 500;">Design-Driven Development</span>
+            </nav>
+
+            <div style="display: grid; grid-template-columns: 300px 1fr; gap: 2rem;">
+                
+                <!-- Left sidebar navigation -->
+                <aside style="background: rgba(255,255,255,0.95); border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); height: fit-content; position: sticky; top: 2rem;">
+                    <h3 style="color: #8b5cf6; margin-bottom: 1.5rem; text-align: center;">🛠️ Agiilsed Lähenemisviisid</h3>
+                    <nav style="display: grid; gap: 0.5rem;">
+                        <button onclick="window.location.href='behavior-driven.html'" 
+                                style="background: linear-gradient(45deg, #3b82f6, #2563eb); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🧪 Behavior-driven Development
+                        </button>
+                        <button style="background: linear-gradient(45deg, #8b5cf6, #7c3aed); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: default; font-size: 0.9rem; text-align: left; font-weight: bold;">
+                            🎨 Design-driven Development
+                        </button>
+                        <button onclick="window.location.href='domain-driven.html'" 
+                                style="background: linear-gradient(45deg, #10b981, #059669); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🏗️ Domain-driven Design
+                        </button>
+                        <button onclick="window.location.href='secure.html'" 
+                                style="background: linear-gradient(45deg, #ef4444, #dc2626); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🔒 Secure by Design
+                        </button>
+                        <button onclick="window.location.href='test-driven.html'" 
+                                style="background: linear-gradient(45deg, #f59e0b, #d97706); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🧪 Test-driven Development
+                        </button>
+                        <button onclick="window.location.href='acceptance.html'" 
+                                style="background: linear-gradient(45deg, #06b6d4, #0891b2); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            ✅ Acceptance Test-driven Development
+                        </button>
+                        <button onclick="window.location.href='continuous.html'" 
+                                style="background: linear-gradient(45deg, #84cc16, #65a30d); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🔄 Continuous Test-driven Development
+                        </button>
+                        <button onclick="window.location.href='specification.html'" 
+                                style="background: linear-gradient(45deg, #ec4899, #db2777); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            📋 Specification by Example
+                        </button>
+                        <button onclick="window.location.href='data-driven.html'" 
+                                style="background: linear-gradient(45deg, #6366f1, #4f46e5); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            📊 Data-driven Development
+                        </button>
+                        <button onclick="window.location.href='data-oriented.html'" 
+                                style="background: linear-gradient(45deg, #14b8a6, #0d9488); color: white; border: none; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; text-align: left;">
+                            🗂️ Data-oriented Design
+                        </button>
+                    </nav>
+                </aside>
+
+                <!-- Main content -->
+                <main style="background: rgba(255,255,255,0.95); border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    
+                    <div style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                        <h2 style="color: white; border: none; margin-bottom: 1rem;">🎨 Design-Driven Development</h2>
+                        <p style="font-size: 1.1rem; line-height: 1.6; margin: 0; color: #ede9fe;">
+                            Disainipõhine arendus on lähenemine, kus disain ei ole pelgalt esteetiline lisand, 
+                            vaid juhib tarkvara loomise protsessi, keskendudes kasutajakogemusele ja funktsionaalsusele.
+                        </p>
+                    </div>
+
+                    <h3>🎯 Põhimõtted</h3>
+                    <div style="display: grid; gap: 1.5rem; margin: 2rem 0;">
+                        <div style="background: #f5f3ff; border-left: 4px solid #8b5cf6; padding: 1.5rem; border-radius: 0 8px 8px 0;">
+                            <h4 style="color: #8b5cf6; margin-bottom: 1rem;">👤 Fookus kasutajakogemusele</h4>
+                            <p style="margin: 0; color: #2c3e50;">
+                                Disainipõhine arendus seab kasutajakogemuse toote loomise keskmesse, mis aitab 
+                                vähendada vigade parandamist ja kiirendada turule jõudmist.
+                            </p>
+                        </div>
+                        
+                        <div style="background: #fef3c7; border-left: 4px solid #f59e0b; padding: 1.5rem; border-radius: 0 8px 8px 0;">
+                            <h4 style="color: #f59e0b; margin-bottom: 1rem;">🔍 Tõeline vajaduste mõistmine</h4>
+                            <p style="margin: 0; color: #2c3e50;">
+                                Keskendutakse kasutajate tegelikele vajadustele, mitte oletustele. 
+                                Põhjalik kasutajauuringute läbiviimine ja andmete analüüs.
+                            </p>
+                        </div>
+                        
+                        <div style="background: #f0fdf4; border-left: 4px solid #10b981; padding: 1.5rem; border-radius: 0 8px 8px 0;">
+                            <h4 style="color: #10b981; margin-bottom: 1rem;">⚖️ Esteetika ja funktsionaalsuse tasakaal</h4>
+                            <p style="margin: 0; color: #2c3e50;">
+                                Sujuv koostöö disainerite ja arendajate vahel, ulatuse kontrollimine 
+                                ning organisatsiooniliste silode ületamine.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3>🔄 DDD protsess</h3>
+                    <div style="display: grid; gap: 1rem; margin: 2rem 0;">
+                        <div style="display: grid; grid-template-columns: 60px 1fr; gap: 1rem; align-items: center; background: #f5f3ff; padding: 1rem; border-radius: 8px;">
+                            <div style="background: #8b5cf6; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin: 0 auto;">1</div>
+                            <div>
+                                <h4 style="color: #8b5cf6; margin: 0 0 0.5rem 0;">🔍 Kasutajauuringud</h4>
+                                <p style="margin: 0; color: #2c3e50; font-size: 0.9rem;">Kogutakse andmeid küsimustike, intervjuude ja kasutajateekondade kaardistamise abil</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 60px 1fr; gap: 1rem; align-items: center; background: #fef3c7; padding: 1rem; border-radius: 8px;">
+                            <div style="background: #f59e0b; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin: 0 auto;">2</div>
+                            <div>
+                                <h4 style="color: #f59e0b; margin: 0 0 0.5rem 0;">📋 Nõuete kogumine</h4>
+                                <p style="margin: 0; color: #2c3e50; font-size: 0.9rem;">Koostatakse funktsioonide nimekiri, mis põhineb kasutajate vajadustel</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 60px 1fr; gap: 1rem; align-items: center; background: #f0f9ff; padding: 1rem; border-radius: 8px;">
+                            <div style="background: #06b6d4; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin: 0 auto;">3</div>
+                            <div>
+                                <h4 style="color: #06b6d4; margin: 0 0 0.5rem 0;">🎨 Disaini ja ideede faas</h4>
+                                <p style="margin: 0; color: #2c3e50; font-size: 0.9rem;">Kujundatakse navigeerimise ja kasutajaliidese elementide kavandid</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 60px 1fr; gap: 1rem; align-items: center; background: #f0fdf4; padding: 1rem; border-radius: 8px;">
+                            <div style="background: #10b981; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin: 0 auto;">4</div>
+                            <div>
+                                <h4 style="color: #10b981; margin: 0 0 0.5rem 0;">🖼️ Prototüüpimine ja kasutajatestimine</h4>
+                                <p style="margin: 0; color: #2c3e50; font-size: 0.9rem;">Luuakse interaktiivsed prototüübid, kogutakse kasutajate tagasisidet</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 60px 1fr; gap: 1rem; align-items: center; background: #fef2f2; padding: 1rem; border-radius: 8px;">
+                            <div style="background: #ef4444; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin: 0 auto;">5</div>
+                            <div>
+                                <h4 style="color: #ef4444; margin: 0 0 0.5rem 0;">🤝 Disaini üleandmine arendusele</h4>
+                                <p style="margin: 0; color: #2c3e50; font-size: 0.9rem;">Sujuv koostöö tagab, et lõpptoodang vastab disainile</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 60px 1fr; gap: 1rem; align-items: center; background: #ecfdf5; padding: 1rem; border-radius: 8px;">
+                            <div style="background: #059669; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin: 0 auto;">6</div>
+                            <div>
+                                <h4 style="color: #059669; margin: 0 0 0.5rem 0;">🔄 Korduv tagasiside</h4>
+                                <p style="margin: 0; color: #2c3e50; font-size: 0.9rem;">Kasutajatestimine ja A/B testimine aitavad teha täiendusi</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 60px 1fr; gap: 1rem; align-items: center; background: #f8fafc; padding: 1rem; border-radius: 8px;">
+                            <div style="background: #64748b; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin: 0 auto;">7</div>
+                            <div>
+                                <h4 style="color: #64748b; margin: 0 0 0.5rem 0;">🚀 Turule toomine ja pidev arendamine</h4>
+                                <p style="margin: 0; color: #2c3e50; font-size: 0.9rem;">Pärast lansseerimist kogutakse pidevalt tagasisidet ja täiustatakse toodet</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <figure style="margin: 3rem 0; text-align: center;">
+                        <img src="picture/Design-driven.png" alt="Design-driven development protsess" 
+                             style="width: 100%; max-width: 600px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        <figcaption style="margin-top: 1rem; font-style: italic; color: #6b7280; line-height: 1.5;">
+                            <strong>Design-driven development:</strong> Kasutajakeskne arendusprotsess disaini juhtimisel
+                        </figcaption>
+                    </figure>
+
+                    <h3>⚖️ Eelised ja puudused</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                        <div style="background: #f0fdf4; border: 1px solid #10b981; border-radius: 8px; padding: 1.5rem;">
+                            <h4 style="color: #10b981; margin-bottom: 1rem; text-align: center;">✅ Eelised</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #10b981; font-size: 0.9rem;">
+                                    👤 <strong>Kasutajakeskne lähenemine:</strong> Parandab toodete funktsionaalsust ja kasutajakogemust
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #10b981; font-size: 0.9rem;">
+                                    ⚡ <strong>Kiirem turule jõudmine:</strong> Selged nõuded ja parem koostöö vähendavad arendusaega
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #10b981; font-size: 0.9rem;">
+                                    💰 <strong>Ressursisäästlikkus:</strong> Väldib ebavajalike funktsioonide loomist
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #10b981; font-size: 0.9rem;">
+                                    💎 <strong>Parema kvaliteediga tooted:</strong> Iteratsioonide ja testimise abil täpsustatakse vajadusi
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #10b981; font-size: 0.9rem;">
+                                    🤝 <strong>Tugevdab tiimide koostööd:</strong> Disaini ja arenduse integreerimine
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div style="background: #fef2f2; border: 1px solid #ef4444; border-radius: 8px; padding: 1.5rem;">
+                            <h4 style="color: #ef4444; margin-bottom: 1rem; text-align: center;">⚠️ Väljakutsed</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #ef4444; font-size: 0.9rem;">
+                                    ⏰ <strong>Suurem algne aja- ja ressursikulu:</strong> Uuringud ja testimine on ajamahukad
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #ef4444; font-size: 0.9rem;">
+                                    ⚖️ <strong>Tasakaalu leidmise keerukus:</strong> Esteetika ja funktsionaalsuse ühitamine
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #ef4444; font-size: 0.9rem;">
+                                    🤝 <strong>Koostööprobleemid:</strong> Halvasti korraldatud disaini-arenduse protsess
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #ef4444; font-size: 0.9rem;">
+                                    📈 <strong>Ulatuse kasv:</strong> Pidev tagasiside võib paisutada projekti ulatust
+                                </li>
+                                <li style="background: white; margin-bottom: 0.5rem; padding: 0.8rem; border-radius: 4px; border-left: 3px solid #ef4444; font-size: 0.9rem;">
+                                    🛠️ <strong>Sõltuvus tööriistadest:</strong> Spetsiifiliste tööriistade kasutamine nõuab investeeringut
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>🛠️ Peamised tööriistad</h3>
+                    <div style="background: #f5f3ff; border: 1px solid #8b5cf6; border-radius: 8px; padding: 1.5rem; margin: 2rem 0;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <div style="background: #8b5cf6; color: white; padding: 1rem; border-radius: 8px; font-size: 1.5rem;">🎨</div>
+                            <div>
+                                <h4 style="color: #8b5cf6; margin: 0; margin-bottom: 0.5rem;">Figma</h4>
+                                <p style="margin: 0; color: #6b7280;">Lihtne tööriist prototüüpide ja interaktiivsete kujunduste loomiseks</p>
+                            </div>
+                        </div>
+                        <p style="margin-bottom: 1rem;">
+                            <a href="https://www.figma.com/" target="_blank" style="color: #8b5cf6; text-decoration: none; font-weight: 500;">
+                                Figma ↗
+                            </a> 
+                            on tänapäeval üks populaarsemaid disainitööriistu, mis võimaldab luua interaktiivseid 
+                            prototüüpe ja teha reaalajas koostööd.
+                        </p>
+                        
+                        <div style="background: white; padding: 1rem; border-radius: 6px; margin-top: 1rem;">
+                            <h5 style="color: #8b5cf6; margin-bottom: 0.5rem;">Täiendavad tööriistad:</h5>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.5rem; font-size: 0.9rem; color: #2c3e50;">
+                                <div>🖼️ UXPin Merge</div>
+                                <div>📱 InVision</div>
+                                <div>🎭 Adobe XD</div>
+                                <div>⚡ Sketch</div>
+                                <div>📊 Miro/Mural</div>
+                                <div>🔬 Maze (testimine)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.5rem; margin: 2rem 0;">
+                        <h4 style="color: #8b5cf6; margin-bottom: 1rem;">🎯 DDD võtmeväärtused</h4>
+                        <p style="margin-bottom: 1rem; text-align: center; color: #6b7280;">
+                            Design-driven development tagab, et tooted vastavad kasutajate vajadustele ja on kergesti kasutatav.
+                        </p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div style="background: white; padding: 1rem; border-radius: 6px; text-align: center;">
+                                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">👥</div>
+                                <strong>Kasutajakesksus</strong>
+                                <p style="font-size: 0.9rem; margin: 0.5rem 0 0; color: #6b7280;">Kasutajate vajadused esiplaanil</p>
+                            </div>
+                            <div style="background: white; padding: 1rem; border-radius: 6px; text-align: center;">
+                                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🔄</div>
+                                <strong>Iteratiivne protsess</strong>
+                                <p style="font-size: 0.9rem; margin: 0.5rem 0 0; color: #6b7280;">Pidev täiustamine ja tagasiside</p>
+                            </div>
+                            <div style="background: white; padding: 1rem; border-radius: 6px; text-align: center;">
+                                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🤝</div>
+                                <strong>Koostöö</strong>
+                                <p style="font-size: 0.9rem; margin: 0.5rem 0 0; color: #6b7280;">Disainerid ja arendajad koos</p>
+                            </div>
+                            <div style="background: white; padding: 1rem; border-radius: 6px; text-align: center;">
+                                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📊</div>
+                                <strong>Andmepõhisus</strong>
+                                <p style="font-size: 0.9rem; margin: 0.5rem 0 0; color: #6b7280;">Otsused põhinevad andmetel</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: #f0f4ff; border: 1px solid #8b5cf6; border-radius: 8px; padding: 1.5rem; margin: 2rem 0;">
+                        <h4 style="color: #8b5cf6; margin-bottom: 1rem;">📚 Lisalugemine</h4>
+                        <div style="display: grid; gap: 0.5rem;">
+                            <a href="https://www.uxpin.com/studio/blog/design-driven-development/" 
+                               target="_blank" 
+                               style="color: #8b5cf6; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+                                📖 UXPin - Design-Driven Development
+                                <span style="font-size: 0.8rem;">↗</span>
+                            </a>
+                            <a href="https://www.eleken.co/blog-posts/design-driven-development-in-saas" 
+                               target="_blank" 
+                               style="color: #8b5cf6; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+                                📝 Eleken - Design-Driven Development in SaaS
+                                <span style="font-size: 0.8rem;">↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 3rem; flex-wrap: wrap;">
+                        <button onclick="window.scrollTo(0, 0);" 
+                                style="background: linear-gradient(45deg, #6b7280, #4b5563); padding: 12px 24px; width: auto; min-width: 120px;">
+                            ⬆️ Algusesse
+                        </button>
+                        <button onclick="javascript:window.history.back();" 
+                                style="background: linear-gradient(45deg, #95a5a6, #7f8c8d); padding: 12px 24px; width: auto; min-width: 120px;">
+                            ← Tagasi
+                        </button>
+                        <button onclick="window.location.href='../../index.html'" 
+                                style="background: linear-gradient(45deg, #3498db, #2980b9); padding: 12px 24px; width: auto; min-width: 120px;">
+                            🏠 Avalehele
+                        </button>
+                    </div>
+
+                </main>
+            </div>
+        </div>
     </div>
-    <div class="column middle">
-      <h2>Design-driven development</h2>
-      <p>
-        Disainipõhine arendus (Design-Driven Development, DDD) on lähenemine, kus disain ei ole pelgalt esteetiline
-        lisand, vaid juhib tarkvara loomise protsessi, keskendudes kasutajakogemusele ja funktsionaalsusele.
-      </p>
-      <p>Peamised mõtted: <br>
-        <li>Fookus kasutajakogemusele: Disainipõhine arendus seab kasutajakogemuse toote loomise keskmesse, mis aitab
-          vähendada vigade parandamist ja kiirendada turule jõudmist.</li>
-        <li>Tõeline vajaduste mõistmine: Keskendutakse kasutajate tegelikele vajadustele, mitte oletustele.</li>
-        <li>Väljakutsed: Esteetika ja funktsionaalsuse tasakaal, sujuv koostöö disainerite ja arendajate vahel, ulatuse
-          kontrollimine ning organisatsiooniliste silode ületamine.</li>
-        <li>Tööriistad: UXPin Merge tehnoloogia aitab vähendada disaini ja arenduse vahelisi lõhesid, luues realistlikke
-          prototüüpe, mis sarnanevad lõpptootega.</li>
 
-       
-
-      </p>
-      <p>Design-driven development
-        tagab, et tooted vastavad kasutajate vajadustele ja on kergesti kasutatav. UXPin Merge aitab
-        seda protsessi lihtsustada, pakkudes tõhusaid tööriistu realistlike prototüüpide ja parema koostöö jaoks.</p>
-
-        <p>Protsess DDD arenduses:
-        <li>Kasutajauuringud: Kogutakse andmeid küsimustike, intervjuude ja kasutajateekondade kaardistamise abil, et mõista kasutajate vajadusi.</li>
-        <li>Nõuete kogumine: Koostatakse funktsioonide nimekiri, mis põhineb kasutajate vajadustel.</li>
-        <li>Disaini ja ideede faas: Kujundatakse navigeerimise ja kasutajaliidese elementide kavandid.</li>
-        <li>Prototüüpimine ja kasutajatestimine: Luua interaktiivsed prototüübid, saada kasutajate tagasisidet ja parandada kasutatavust.</li>
-        <li>Disaini üleandmine arendusele: Sujuv koostöö tagab, et lõpptoodang vastab disainile.</li>
-        <li>Korduv tagasiside: Kasutajatestimine ja A/B testimine aitavad teha täiendusi.</li>
-        <li>Turule toomine ja pidev arendamine: Pärast lansseerimist kogutakse pidevalt tagasisidet ja täiustatakse toodet.</li>
-      </p>
-      <br>
-      <figure>
-        <img src="picture/Design-driven.png" alt="">
-        <figcaption>Design-driven development </figcaption>
-      </figure>
-      <br>
-      <table>
-        <tr>
-          <th colspan="2">Test-driven development</th>
-        </tr>
-        <tr>
-          <th>Eelised</th>
-          <th>Puudused</th>
-        </tr>
-        <tr>
-          <td>
-       <li>Kasutajakeskne lähenemine: Parandab toodete funktsionaalsust ja kasutajakogemust.</li>
-       <li>Kiirem turule jõudmine: Selged nõuded ja parem koostöö vähendavad arendusaega.</li>
-       <li>Ressursisäästlikkus: Väldib ebavajalike funktsioonide loomist.</li>
-       <li>Parema kvaliteediga tooted: Iteratsioonide ja testimise abil täpsustatakse kasutajate vajadusi.</li>
-       <li>Tugevdab tiimide koostööd: Disaini ja arenduse integreerimine vähendab kommunikatsiooniprobleeme.</li>
-          </td>
-
-          <td>
-            <li>Suurem algne aja- ja ressursikulu: Uuringud ja testimine on ajamahukad.</li>
-            <li>Tasakaalu leidmise keerukus: Esteetika ja funktsionaalsuse ühitamine võib olla raske.</li>
-            <li>Koostööprobleemid: Halvasti korraldatud disaini-arenduse protsess aeglustab tööd.</li>
-            <li>Ulatuse kasv: Pidev tagasiside võib paisutada projekti ulatust.</li>
-            <li>Sõltuvus tööriistadest: Spetsiifiliste tööriistade kasutamine nõuab aega ja investeeringut.</li>
-
-          </td>
-        </tr>
-      </table>
-      <br>
-      <p><a href="https://www.figma.com/" target="_blank">Figma</a> lihtne tööriist prototüüpide ja interaktiivsete kujunduste loomiseks.</p>
-      
-
-      <p>Kasutatud kirjandus: <br>
-       <a href="https://www.uxpin.com/studio/blog/design-driven-development/" target="_blank">https://www.uxpin.com/studio/blog/design-driven-development/</a>
-    <br>
-       <a href="https://www.eleken.co/blog-posts/design-driven-development-in-saas" target="_blank">https://www.eleken.co/blog-posts/design-driven-development-in-saas</a>
-      </p>
-
-      <div class="floating row">
-        <div class="column left">
-          <button onclick="topFunction()" id="myBtn" title="Go to top">
-            Algusesse
-          </button>
+    <footer>
+        <div class="container">
+            <p style="margin: 0; color: #e2e8f0;">&copy; 2024 Orvet Priimägi - TARge24 | Design-Driven Development</p>
         </div>
-        <div class="column middle" style="text-align: center; background-color: transparent">
-          <button onclick="window.location.href='../../index.html'">Koju</button>
-        </div>
-        <div class="column right">
-          <button onclick="javascript:window.history.back();" id="backBtn">
-            Tagasi
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="column right"></div>
-  </div>
-  <footer>Orvet Priimägi - TARge24</footer>
+    </footer>
 
-  <script>
-    // Get the button
-    let mybutton = document.getElementById("myBtn");
-
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function () {
-      scrollFunction();
-    };
-
-    function scrollFunction() {
-      if (
-        document.body.scrollTop > 20 ||
-        document.documentElement.scrollTop > 20
-      ) {
-        mybutton.style.display = "block";
-      } else {
-        mybutton.style.display = "none";
-      }
-    }
-
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
-  </script>
 </body>
-
 </html>

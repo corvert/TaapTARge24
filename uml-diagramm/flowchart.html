@@ -1,76 +1,477 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="et">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flowchart</title>
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="icon" href="../pildid/icon.jpeg" type="image/x-icon">
+    <title>Flowchart - Voodiagrammid | UML-diagrammid</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0891b2;
+            --primary-dark: #0e7490;
+            --primary-light: #cffafe;
+            --text-dark: #1f2937;
+            --text-medium: #4b5563;
+            --text-light: #6b7280;
+            --background: #ffffff;
+            --surface: #f8fafc;
+            --border: #e5e7eb;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --accent: #7c3aed;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #cffafe 0%, #a5f3fc 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .breadcrumb a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--primary-color);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+
+        h1 {
+            font-size: 2.75rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-medium);
+            font-weight: 400;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section h3 {
+            color: var(--text-dark);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .section p {
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .usage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .usage-card {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .usage-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 5px 15px rgba(8, 145, 178, 0.1);
+        }
+
+        .usage-card h4 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .elements-section {
+            background: linear-gradient(135deg, var(--surface), white);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-color);
+            margin: 2rem 0;
+        }
+
+        .elements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .element-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .element-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .element-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .element-card img {
+            max-width: 80px;
+            max-height: 60px;
+            margin: 1rem 0;
+            object-fit: contain;
+        }
+
+        .diagram-showcase {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+            margin: 2rem 0;
+        }
+
+        .diagram-showcase h3 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .diagram-container {
+            max-width: 100%;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 3rem 0 2rem 0;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .references {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin: 2rem 0;
+        }
+
+        .references h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .references p {
+            margin-bottom: 0.5rem;
+        }
+
+        .references a {
+            color: var(--primary-color);
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .references a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-radius: 12px 12px 0 0;
+        }
+
+        ul, ol {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: var(--text-medium);
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .usage-grid,
+            .elements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .navigation {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
-
 <body>
-    <header>
-        <h1>Flowchart e. Voodiagramm <sup><a href="https://drawio-app.com/flowcharts/" target="_blank"
-                    style="font-size: 15px; color: red;">(1)</a></sup></h1>
-    </header>
-    <div class="row">
-        <div class="column left"></div>
-        <div class="column middle">
-            <h2>Mis on Voodiagrammid?</h2>
-            <p>Voodiagrammid on visuaalsed esitlused protsessidest või töövoogudest. Need kasutavad standardiseeritud
-                sümboleid
-                erinevate tegevuste või sammude kujutamiseks protsessis, muutes need kasulikuks töövoogude analüüsimisel
-                ja
-                parandamisel.</p>
-            <h2>Voodiagrammide kasutusalad</h2>
-            <ul>
-                <li>Protsessi kaardistamine: Voodiagrammid aitavad visualiseerida protsessi samme, muutes lihtsamaks
-                    ebatõhususte ja parendamisvõimaluste tuvastamise.
-                </li>
-                <li>
-                    Otsustamine: Need aitavad välja tuua otsustuspunktid protsessides, selgitades teid, mida saab võtta
-                    erinevate tingimuste põhjal.
-                </li>
-            </ul>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="../index.html">Avaleht</a> → <a href="main.html">UML-diagrammid</a> → <span>Flowchart</span>
+        </nav>
 
-            <h2>Voodiagrammi põhielementideks on: <sup><a
-                        href="https://www.tud.ttu.ee/im/Vladimir.Viies/materials/YLDINEkaust/Helena_materjalid/objektid/objekt01/osa06.html"
-                        target="_blank" style="font-size: 15px;">(2)</a></sup></h2>
-            <ul>
-                <li>Ovaal: Esindab protsessi algust või lõppu. <img src="ovaal.gif" alt="Ovaal"></li>
-                <li>Ristkülik: Näitab protsessi sammu või tegevust. <img src="ristkülik.gif" alt="Ristkülik"></li>
-                <li>Romb: Esindab otsustuspunkti, mis viib erinevatesse suundadesse sõltuvalt jah/ei küsimustest. <img
-                        src="romb.gif" alt="Romb"></li>
-                <li>Nooleke: Näitab voogu ühe sammu juurest teise juurde.</li>
-            </ul>
+        <header>
+            <h1>Flowchart - Voodiagrammid</h1>
+            <p class="subtitle">Visuaalsed esitlused protsessidest ja töövoogudest</p>
+        </header>
 
-            <h3>Näide:</h3>
-            <div class="mxgraph" style="max-width:100%;border:1px solid transparent;"
-                data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; agent=\&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36\&quot; version=\&quot;24.9.3\&quot;&gt;\n  &lt;diagram id=\&quot;C5RBs43oDa-KdzZeNtuy\&quot; name=\&quot;Page-1\&quot;&gt;\n    &lt;mxGraphModel dx=\&quot;1434\&quot; dy=\&quot;738\&quot; grid=\&quot;1\&quot; gridSize=\&quot;10\&quot; guides=\&quot;1\&quot; tooltips=\&quot;1\&quot; connect=\&quot;1\&quot; arrows=\&quot;1\&quot; fold=\&quot;1\&quot; page=\&quot;1\&quot; pageScale=\&quot;1\&quot; pageWidth=\&quot;827\&quot; pageHeight=\&quot;1169\&quot; math=\&quot;0\&quot; shadow=\&quot;0\&quot;&gt;\n      &lt;root&gt;\n        &lt;mxCell id=\&quot;WIyWlLk6GJQsqaUBKTNV-0\&quot; /&gt;\n        &lt;mxCell id=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-0\&quot; /&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-2\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; source=\&quot;N2TpOjovdCxTWS9idGSR-0\&quot; target=\&quot;N2TpOjovdCxTWS9idGSR-1\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-0\&quot; value=\&quot;Start\&quot; style=\&quot;ellipse;whiteSpace=wrap;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;354\&quot; y=\&quot;20\&quot; width=\&quot;120\&quot; height=\&quot;80\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-4\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; source=\&quot;N2TpOjovdCxTWS9idGSR-1\&quot; target=\&quot;N2TpOjovdCxTWS9idGSR-3\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-5\&quot; value=\&quot;EI\&quot; style=\&quot;edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];\&quot; parent=\&quot;N2TpOjovdCxTWS9idGSR-4\&quot; vertex=\&quot;1\&quot; connectable=\&quot;0\&quot;&gt;\n          &lt;mxGeometry x=\&quot;-0.203\&quot; y=\&quot;3\&quot; relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint as=\&quot;offset\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-8\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; source=\&quot;N2TpOjovdCxTWS9idGSR-1\&quot; target=\&quot;N2TpOjovdCxTWS9idGSR-7\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-9\&quot; value=\&quot;JAH\&quot; style=\&quot;edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];\&quot; parent=\&quot;N2TpOjovdCxTWS9idGSR-8\&quot; vertex=\&quot;1\&quot; connectable=\&quot;0\&quot;&gt;\n          &lt;mxGeometry x=\&quot;-0.025\&quot; y=\&quot;3\&quot; relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint as=\&quot;offset\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-1\&quot; value=\&quot;Kas kasutaja on sisestanud konverteeritava Bitcoin koguse?\&quot; style=\&quot;rhombus;whiteSpace=wrap;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;299\&quot; y=\&quot;130\&quot; width=\&quot;230\&quot; height=\&quot;97\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-6\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; source=\&quot;N2TpOjovdCxTWS9idGSR-3\&quot; target=\&quot;N2TpOjovdCxTWS9idGSR-0\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-3\&quot; value=\&quot;Ütle kasutajale, et ta sisestaks arv väärtuse mida konventeerida valuutaks\&quot; style=\&quot;whiteSpace=wrap;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;600\&quot; y=\&quot;152\&quot; width=\&quot;135\&quot; height=\&quot;70\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-11\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; source=\&quot;N2TpOjovdCxTWS9idGSR-7\&quot; target=\&quot;N2TpOjovdCxTWS9idGSR-10\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-16\&quot; value=\&quot;EI\&quot; style=\&quot;edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];\&quot; parent=\&quot;N2TpOjovdCxTWS9idGSR-11\&quot; vertex=\&quot;1\&quot; connectable=\&quot;0\&quot;&gt;\n          &lt;mxGeometry x=\&quot;-0.1513\&quot; relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint as=\&quot;offset\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-15\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; source=\&quot;N2TpOjovdCxTWS9idGSR-7\&quot; target=\&quot;N2TpOjovdCxTWS9idGSR-14\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-17\&quot; value=\&quot;JAH\&quot; style=\&quot;edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];\&quot; parent=\&quot;N2TpOjovdCxTWS9idGSR-15\&quot; vertex=\&quot;1\&quot; connectable=\&quot;0\&quot;&gt;\n          &lt;mxGeometry x=\&quot;-0.0545\&quot; relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint as=\&quot;offset\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-7\&quot; value=\&quot;Kas kasutaja on sisestanud&amp;amp;nbsp;&amp;lt;div&amp;gt;valuuta&amp;amp;nbsp;&amp;lt;span style=&amp;quot;background-color: initial;&amp;quot;&amp;gt;millese bitcoin konvertida?&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;Sisesta EUR, USD, GBP,&amp;amp;nbsp;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;EEK või JPY&amp;lt;/div&amp;gt;\&quot; style=\&quot;rhombus;whiteSpace=wrap;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;290\&quot; y=\&quot;278\&quot; width=\&quot;250\&quot; height=\&quot;152\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-13\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; source=\&quot;N2TpOjovdCxTWS9idGSR-10\&quot; target=\&quot;N2TpOjovdCxTWS9idGSR-7\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-10\&quot; value=\&quot;Ütle kasutajale, et sisestaks&amp;amp;nbsp;&amp;lt;div&amp;gt;siht valuuta.&amp;amp;nbsp;&amp;lt;span style=&amp;quot;background-color: initial;&amp;quot;&amp;gt;Sisesta EUR, USD, GBP,&amp;amp;nbsp;&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;background-color: initial;&amp;quot;&amp;gt;EEK või JPY&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;\&quot; style=\&quot;whiteSpace=wrap;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;625\&quot; y=\&quot;308\&quot; width=\&quot;175\&quot; height=\&quot;92\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-19\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; source=\&quot;N2TpOjovdCxTWS9idGSR-14\&quot; target=\&quot;N2TpOjovdCxTWS9idGSR-18\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-14\&quot; value=\&quot;Esitab bitcoini API&amp;#39;le päringu bitcoini hetkeväärtuse saamiseks\&quot; style=\&quot;whiteSpace=wrap;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;330\&quot; y=\&quot;480\&quot; width=\&quot;170\&quot; height=\&quot;90\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-21\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; source=\&quot;N2TpOjovdCxTWS9idGSR-18\&quot; target=\&quot;N2TpOjovdCxTWS9idGSR-20\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-18\&quot; value=\&quot;Arvutab kasutaja sisendi põhjal tulemuse\&quot; style=\&quot;whiteSpace=wrap;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;355\&quot; y=\&quot;620\&quot; width=\&quot;120\&quot; height=\&quot;60\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-20\&quot; value=\&quot;Lõpp\&quot; style=\&quot;ellipse;whiteSpace=wrap;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;340\&quot; y=\&quot;720\&quot; width=\&quot;150\&quot; height=\&quot;50\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n      &lt;/root&gt;\n    &lt;/mxGraphModel&gt;\n  &lt;/diagram&gt;\n&lt;/mxfile&gt;\n&quot;}">
+        <section class="section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                Mis on voodiagrammid?
+            </h2>
+            <p>Voodiagrammid on visuaalsed esitlused protsessidest või töövoogudest. Need kasutavad standardiseeritud sümboleid erinevate tegevuste või sammude kujutamiseks protsessis, muutes need kasulikuks töövoogude analüüsimisel ja parandamisel.</p>
+        </section>
+
+        <section class="section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                Voodiagrammide kasutusalad
+            </h2>
+
+            <div class="usage-grid">
+                <div class="usage-card">
+                    <h4>Protsessi kaardistamine</h4>
+                    <p>Voodiagrammid aitavad visualiseerida protsessi samme, muutes lihtsamaks ebatõhususte ja parendamisvõimaluste tuvastamise.</p>
+                </div>
+
+                <div class="usage-card">
+                    <h4>Otsustamine</h4>
+                    <p>Need aitavad välja tuua otsustuspunktid protsessides, selgitades teid, mida saab võtta erinevate tingimuste põhjal.</p>
+                </div>
+
+                <div class="usage-card">
+                    <h4>Dokumenteerimine</h4>
+                    <p>Voodiagrammid annavad selge visuaalse ülevaate keerukatest protsessidest, mis on hõlpsasti mõistetav kõigile osapooltele.</p>
+                </div>
+
+                <div class="usage-card">
+                    <h4>Analüüs ja optimeerimine</h4>
+                    <p>Protsesside visualiseerimine aitab tuvastada kitsaskohti ja optimeerimise võimalusi töövoogudes.</p>
+                </div>
             </div>
-            <script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
-            <br>
-            Kasutatud kirjandus:
-            <br>
-            (1) <a href="https://drawio-app.com/flowcharts/">https://drawio-app.com/flowcharts/</a>
-            <br>
-            (2) <a
-                href="https://www.tud.ttu.ee/im/Vladimir.Viies/materials/YLDINEkaust/Helena_materjalid/objektid/objekt01/osa06.html">https://www.tud.ttu.ee/im/Vladimir.Viies/materials/YLDINEkaust/Helena_materjalid/objektid/objekt01/osa06.html</a>
-            <br>
-            <br>
-            <button onclick="javascript:window.history.back();" class="floating">Tagasi</button> <br>
-            <br>
-            <br>
-        </div>
-        <div class="column right">
+        </section>
 
+        <div class="elements-section">
+            <h3>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                </svg>
+                Voodiagrammi põhielemendid
+            </h3>
+
+            <div class="elements-grid">
+                <div class="element-card">
+                    <h4>Ovaal</h4>
+                    <img src="ovaal.gif" alt="Ovaal sümbol">
+                    <p>Esindab protsessi algust või lõppu. Märgib voo alg- ja lõpp-punkti.</p>
+                </div>
+
+                <div class="element-card">
+                    <h4>Ristkülik</h4>
+                    <img src="ristkülik.gif" alt="Ristkülik sümbol">
+                    <p>Näitab protsessi sammu või tegevust. Kujutab tegelikku toimingut või operatsiooni.</p>
+                </div>
+
+                <div class="element-card">
+                    <h4>Romb</h4>
+                    <img src="romb.gif" alt="Romb sümbol">
+                    <p>Esindab otsustuspunkti, mis viib erinevatesse suundadesse sõltuvalt jah/ei küsimustest.</p>
+                </div>
+
+                <div class="element-card">
+                    <h4>Nooleke</h4>
+                    <div style="padding: 20px;">
+                        <svg width="60" height="20" viewBox="0 0 60 20">
+                            <defs>
+                                <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+                                 refX="0" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#0891b2" />
+                                </marker>
+                            </defs>
+                            <line x1="0" y1="10" x2="50" y2="10" stroke="#0891b2" 
+                                  stroke-width="2" marker-end="url(#arrowhead)" />
+                        </svg>
+                    </div>
+                    <p>Näitab voogu ühe sammu juurest teise juurde. Määrab protsessi suuna.</p>
+                </div>
+            </div>
         </div>
+
+        <div class="diagram-showcase">
+            <h3>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
+                </svg>
+                Praktilise näite: Bitcoin kalkulaatori voodiagramm
+            </h3>
+            
+            <div class="diagram-container">
+                <div class="mxgraph" style="max-width:100%;border:1px solid transparent;"
+                    data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; agent=\&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36\&quot; version=\&quot;24.9.3\&quot;&gt;\n  &lt;diagram id=\&quot;C5RBs43oDa-KdzZeNtuy\&quot; name=\&quot;Page-1\&quot;&gt;\n    &lt;mxGraphModel dx=\&quot;1434\&quot; dy=\&quot;738\&quot; grid=\&quot;1\&quot; gridSize=\&quot;10\&quot; guides=\&quot;1\&quot; tooltips=\&quot;1\&quot; connect=\&quot;1\&quot; arrows=\&quot;1\&quot; fold=\&quot;1\&quot; page=\&quot;1\&quot; pageScale=\&quot;1\&quot; pageWidth=\&quot;827\&quot; pageHeight=\&quot;1169\&quot; math=\&quot;0\&quot; shadow=\&quot;0\&quot;&gt;\n      &lt;root&gt;\n        &lt;mxCell id=\&quot;WIyWlLk6GJQsqaUBKTNV-0\&quot; /&gt;\n        &lt;mxCell id=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-0\&quot; /&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-2\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; source=\&quot;N2TpOjovdCxTWS9idGSR-0\&quot; target=\&quot;N2TpOjovdCxTWS9idGSR-1\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-0\&quot; value=\&quot;Start\&quot; style=\&quot;ellipse;whiteSpace=wrap;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;354\&quot; y=\&quot;20\&quot; width=\&quot;120\&quot; height=\&quot;80\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-4\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; source=\&quot;N2TpOjovdCxTWS9idGSR-1\&quot; target=\&quot;N2TpOjovdCxTWS9idGSR-3\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-5\&quot; value=\&quot;EI\&quot; style=\&quot;edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];\&quot; parent=\&quot;N2TpOjovdCxTWS9idGSR-4\&quot; vertex=\&quot;1\&quot; connectable=\&quot;0\&quot;&gt;\n          &lt;mxGeometry x=\&quot;-0.203\&quot; y=\&quot;3\&quot; relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint as=\&quot;offset\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-8\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; source=\&quot;N2TpOjovdCxTWS9idGSR-1\&quot; target=\&quot;N2TpOjovdCxTWS9idGSR-7\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-9\&quot; value=\&quot;JAH\&quot; style=\&quot;edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];\&quot; parent=\&quot;N2TpOjovdCxTWS9idGSR-8\&quot; vertex=\&quot;1\&quot; connectable=\&quot;0\&quot;&gt;\n          &lt;mxGeometry x=\&quot;-0.025\&quot; y=\&quot;3\&quot; relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint as=\&quot;offset\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-1\&quot; value=\&quot;Kas kasutaja on sisestanud konverteeritava Bitcoin koguse?\&quot; style=\&quot;rhombus;whiteSpace=wrap;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;299\&quot; y=\&quot;130\&quot; width=\&quot;230\&quot; height=\&quot;97\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-6\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; source=\&quot;N2TpOjovdCxTWS9idGSR-3\&quot; target=\&quot;N2TpOjovdCxTWS9idGSR-0\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-3\&quot; value=\&quot;Ütle kasutajale, et ta sisestaks arv väärtuse mida konventeerida valuutaks\&quot; style=\&quot;whiteSpace=wrap;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;600\&quot; y=\&quot;152\&quot; width=\&quot;135\&quot; height=\&quot;70\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-11\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; source=\&quot;N2TpOjovdCxTWS9idGSR-7\&quot; target=\&quot;N2TpOjovdCxTWS9idGSR-10\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-16\&quot; value=\&quot;EI\&quot; style=\&quot;edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];\&quot; parent=\&quot;N2TpOjovdCxTWS9idGSR-11\&quot; vertex=\&quot;1\&quot; connectable=\&quot;0\&quot;&gt;\n          &lt;mxGeometry x=\&quot;-0.1513\&quot; relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint as=\&quot;offset\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-15\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; source=\&quot;N2TpOjovdCxTWS9idGSR-7\&quot; target=\&quot;N2TpOjovdCxTWS9idGSR-14\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-17\&quot; value=\&quot;JAH\&quot; style=\&quot;edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];\&quot; parent=\&quot;N2TpOjovdCxTWS9idGSR-15\&quot; vertex=\&quot;1\&quot; connectable=\&quot;0\&quot;&gt;\n          &lt;mxGeometry x=\&quot;-0.0545\&quot; relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint as=\&quot;offset\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-7\&quot; value=\&quot;Kas kasutaja on sisestanud&amp;amp;nbsp;&amp;lt;div&amp;gt;valuuta&amp;amp;nbsp;&amp;lt;span style=&amp;quot;background-color: initial;&amp;quot;&amp;gt;millese bitcoin konvertida?&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;Sisesta EUR, USD, GBP,&amp;amp;nbsp;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;EEK või JPY&amp;lt;/div&amp;gt;\&quot; style=\&quot;rhombus;whiteSpace=wrap;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;290\&quot; y=\&quot;278\&quot; width=\&quot;250\&quot; height=\&quot;152\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-13\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; source=\&quot;N2TpOjovdCxTWS9idGSR-10\&quot; target=\&quot;N2TpOjovdCxTWS9idGSR-7\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-10\&quot; value=\&quot;Ütle kasutajale, et sisestaks&amp;amp;nbsp;&amp;lt;div&amp;gt;siht valuuta.&amp;amp;nbsp;&amp;lt;span style=&amp;quot;background-color: initial;&amp;quot;&amp;gt;Sisesta EUR, USD, GBP,&amp;amp;nbsp;&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;background-color: initial;&amp;quot;&amp;gt;EEK või JPY&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;\&quot; style=\&quot;whiteSpace=wrap;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;625\&quot; y=\&quot;308\&quot; width=\&quot;175\&quot; height=\&quot;92\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-19\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; source=\&quot;N2TpOjovdCxTWS9idGSR-14\&quot; target=\&quot;N2TpOjovdCxTWS9idGSR-18\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-14\&quot; value=\&quot;Esitab bitcoini API&amp;#39;le päringu bitcoini hetkeväärtuse saamiseks\&quot; style=\&quot;whiteSpace=wrap;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;330\&quot; y=\&quot;480\&quot; width=\&quot;170\&quot; height=\&quot;90\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-21\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; source=\&quot;N2TpOjovdCxTWS9idGSR-18\&quot; target=\&quot;N2TpOjovdCxTWS9idGSR-20\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-18\&quot; value=\&quot;Arvutab kasutaja sisendi põhjal tulemuse\&quot; style=\&quot;whiteSpace=wrap;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;355\&quot; y=\&quot;620\&quot; width=\&quot;120\&quot; height=\&quot;60\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;N2TpOjovdCxTWS9idGSR-20\&quot; value=\&quot;Lõpp\&quot; style=\&quot;ellipse;whiteSpace=wrap;html=1;\&quot; parent=\&quot;WIyWlLk6GJQsqaUBKTNV-1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;340\&quot; y=\&quot;720\&quot; width=\&quot;150\&quot; height=\&quot;50\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n      &lt;/root&gt;\n    &lt;/mxGraphModel&gt;\n  &lt;/diagram&gt;\n&lt;/mxfile&gt;\n&quot;}">
+                </div>
+                <script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+            </div>
+        </div>
+
+        <div class="references">
+            <h3>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                </svg>
+                Kasutatud kirjandus
+            </h3>
+            <p>(1) <a href="https://drawio-app.com/flowcharts/">Draw.io Flowcharts Guide</a></p>
+            <p>(2) <a href="https://www.tud.ttu.ee/im/Vladimir.Viies/materials/YLDINEkaust/Helena_materjalid/objektid/objekt01/osa06.html">TUT Voodiagrammide õppematerjal</a></p>
+        </div>
+
+        <div class="navigation">
+            <button onclick="javascript:window.history.back();" class="btn btn-secondary">
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M15 19l-7-7 7-7"/>
+                </svg>
+                Tagasi
+            </button>
+            <a href="main.html" class="btn btn-primary">
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                </svg>
+                UML-diagrammid
+            </a>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Orvet Priimägi - TARge24</p>
+        </footer>
     </div>
-    <footer>
-        Orvet Priimägi - TARge24
-    </footer>
-
 </body>
-
 </html>

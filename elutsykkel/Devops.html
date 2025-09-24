@@ -1,93 +1,220 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevOps</title>
+    <title>DevOps Mudel | Tarkvara Arendusprotsess</title>
+    <meta name="description" content="DevOps - arenduse ja operatsioonide ühendamine, automatiseerimine ja pidev tarnimine">
     <link rel="stylesheet" href="../styles.css">
 </head>
 
 <body>
-    <p>
-    <h1>DevOps mudel</h1>
+    <header>
+        <div class="container">
+            <h1>🔄 DevOps Mudel</h1>
+            <p style="font-size: 1.1rem; margin-top: 0.5rem; opacity: 0.9; color: #e2e8f0;">
+                Arenduse ja operatsioonide ühendamine pidevaks tarkvara tarnimiseks
+            </p>
+        </div>
+    </header>
 
-    DevOps on tarkvaraarenduse metoodika, mis parandab arendajate ja operatsioonimeeskondade vahelist koostööd,
-    kasutades erinevaid automatiseerimistööriistu. Selle peamine eesmärk on kiirendada rakenduste ja teenuste tarnimist,
-    säilitades samal ajal kõrge kvaliteedi. Näiteks ettevõtted nagu Amazon ja Netflix on edukalt rakendanud DevOpsi, et
-    parandada kasutajakogemust.
+    <div class="container">
+        <div style="max-width: 900px; margin: 0 auto;">
+            
+            <!-- Navigation breadcrumb -->
+            <nav style="margin-bottom: 2rem; padding: 1rem; background: rgba(255,255,255,0.9); border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <a href="../index.html" style="color: #3498db;">🏠 Avaleht</a> 
+                <span style="color: #7f8c8d; margin: 0 0.5rem;">→</span>
+                <span style="color: #2c3e50; font-weight: 500;">DevOps mudel</span>
+            </nav>
 
-    <h3>DevOpsi eesmärk:</h3>
-    Kiirendada organisatsioonide rakenduste ja teenuste väljatöötamise tsüklit, pakkudes kiiremaid uuendusi ja paremat
-    kasutajakogemust. Näiteks Facebook kasutab DevOpsi, et pakkuda oma kasutajatele pidevaid rakenduseuuendusi (näiteks
-    iga kahe nädala järel).
+            <!-- Main content -->
+            <main style="background: rgba(255,255,255,0.95); border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                
+                <div style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                    <h2 style="color: white; border: none; margin-bottom: 1rem;">🔄 DevOps Mudel</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.6; margin: 0; color: #ede9fe;">
+                        DevOps on tarkvaraarenduse metoodika, mis parandab arendajate ja operatsioonimeeskondade 
+                        vahelist koostööd, kasutades erinevaid automatiseerimistööriistu kiiremaks ja kvaliteetsemaks 
+                        tarkvara tarnimiseks.
+                    </p>
+                </div>
 
-    <h3>Kuidas DevOps töötab?</h3>
-    DevOpsi tööprotsess jaguneb mitmeks etapiks, mida tuntakse DevOpsi elutsüklina. Peamised etapid on järgmised:
-    <ol type="1">
-        <li>Pidev arendus (Continuous Development):
-            Koodi versioonihaldus (nt Git või SVN) ja selle ehitamine/pakendamine käivitatavateks failideks (kasutades
-            tööriistu nagu Ant, Maven või Gradle), mis saadetakse testimiseks. </li>
-        <li>Pidev integreerimine (Continuous Integration):
-            Erinevate arendus- ja testimisetappide integreerimine, mis on automatiseerimisprotsessi keskpunkt.</li>
-        <li>Pidev juurutamine (Continuous Deployment):
-            Koodi ehitamine ja rakenduse või keskkonna konteineriseerimine ning selle serverisse laadimine. Siin on
-            võtmeprotsessid konfiguratsioonihaldus, virtualiseerimine ja konteineriseerimine.</li>
-        <li>Pidev testimine (Continuous Testing):
-            Automaatne testimine, kus vigu avastades teavitatakse arendajaid veateate kaudu. Kui testid õnnestuvad,
-            liigub rakendus järgmisele etapile.</li>
-        <li>Pidev monitoorimine (Continuous Monitoring):
-            Rakenduse pidev jälgimine vigade või krahhide suhtes ning kasutajate tagasiside kogumine. Saadud andmed
-            edastatakse arendajatele, et parandada rakendust.</li>
-    </ol>
+                <h3>🎯 DevOpsi eesmärk</h3>
+                <div style="background: #f0f4ff; border-left: 4px solid #8b5cf6; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0;">
+                    <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 1rem;">
+                        Kiirendada organisatsioonide rakenduste ja teenuste väljatöötamise tsüklit, pakkudes kiiremaid 
+                        uuendusi ja paremat kasutajakogemust.
+                    </p>
+                    <div style="background: white; padding: 1rem; border-radius: 6px; border: 1px solid #c7d2fe;">
+                        <strong>🏢 Näited:</strong>
+                        <ul style="margin: 0.5rem 0 0 1rem;">
+                            <li><strong>Amazon ja Netflix</strong> - edukalt rakendanud DevOpsi kasutajakogemuse parandamiseks</li>
+                            <li><strong>Facebook</strong> - kasutab DevOpsi pidevate rakenduseuuenduste jaoks (iga kahe nädala järel)</li>
+                        </ul>
+                    </div>
+                </div>
 
+                <h3>⚙️ DevOpsi elutsükkel</h3>
+                <p style="margin-bottom: 2rem; font-size: 1.1rem; color: #6b7280;">
+                    DevOpsi tööprotsess jaguneb viieks peamiseks etapiks:
+                </p>
 
-    <br>
-    <br>
-    <img src="../pildid/devops1.png" alt="DevOps mudel" style="width:750px; height:360px">
-    <br>
-    <img src="../pildid/devops2.png" alt="DevOps mudel" style="width:650px; height:340px">
-    </p>
-    <br>
-    <table>
-        <tr>
-            <th>Eelised</th>
-            <th>Puudused</th>
-        </tr>
-        <tr>
-            <td>
-                <ul>
-                    <li>Kiirem rakenduste arendus ja uuendamine.</li>
-                    <li>Automatiseerimine vähendab inimvigu.</li>
-                    <li>Parandab koostööd meeskondade vahel.</li>
+                <div style="display: grid; gap: 1.5rem; margin: 2rem 0;">
+                    <div style="border-left: 4px solid #10b981; padding: 1.5rem; background: #f0fdf4; border-radius: 0 8px 8px 0;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <span style="background: #10b981; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">1</span>
+                            <h4 style="color: #10b981; margin: 0;">🔧 Pidev arendus (Continuous Development)</h4>
+                        </div>
+                        <p style="margin: 0; color: #2c3e50;">
+                            Koodi versioonihaldus (Git, SVN) ja selle ehitamine/pakendamine käivitatavateks failideks 
+                            (Ant, Maven, Gradle), mis saadetakse testimiseks.
+                        </p>
+                    </div>
 
+                    <div style="border-left: 4px solid #3b82f6; padding: 1.5rem; background: #eff6ff; border-radius: 0 8px 8px 0;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <span style="background: #3b82f6; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">2</span>
+                            <h4 style="color: #3b82f6; margin: 0;">🔗 Pidev integreerimine (Continuous Integration)</h4>
+                        </div>
+                        <p style="margin: 0; color: #2c3e50;">
+                            Erinevate arendus- ja testimisetappide integreerimine, mis on automatiseerimisprotsessi keskpunkt.
+                        </p>
+                    </div>
 
-                </ul>
-            </td>
+                    <div style="border-left: 4px solid #f59e0b; padding: 1.5rem; background: #fffbeb; border-radius: 0 8px 8px 0;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <span style="background: #f59e0b; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">3</span>
+                            <h4 style="color: #f59e0b; margin: 0;">🚀 Pidev juurutamine (Continuous Deployment)</h4>
+                        </div>
+                        <p style="margin: 0; color: #2c3e50;">
+                            Koodi ehitamine, rakenduse konteineriseerimine ja serverisse laadimine. Võtmeprotsessid: 
+                            konfiguratsioonihaldus, virtualiseerimine ja konteineriseerimine.
+                        </p>
+                    </div>
 
-            <td>
-                <ul>
-                    <li>DevOpsi professionaalsed või ekspertide arendajad on vähem kättesaadavad.</li>
-                    <li>DevOpsiga arendamine on nii kallis.</li>
-                    <li>Uue DevOpsi tehnoloogia kasutuselevõtt tööstuses on lühikese aja jooksul raske hallata.</li>
-                    <li>DevOpsi teadmiste puudumine võib olla probleemiks automatiseerimisprojektide pideval
-                        integreerimisel.</li>
-                </ul>
-            </td>
-        </tr>
-    </table>
-    <br>
-    <a href="https://www.geeksforgeeks.org/how-devops-works/" target="_blank">Kasutatud kirjandus</a>
-    <br>
-    <br>
+                    <div style="border-left: 4px solid #ef4444; padding: 1.5rem; background: #fef2f2; border-radius: 0 8px 8px 0;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <span style="background: #ef4444; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">4</span>
+                            <h4 style="color: #ef4444; margin: 0;">🧪 Pidev testimine (Continuous Testing)</h4>
+                        </div>
+                        <p style="margin: 0; color: #2c3e50;">
+                            Automaatne testimine, kus vigu avastades teavitatakse arendajaid veateate kaudu. 
+                            Edukate testide korral liigub rakendus järgmisele etapile.
+                        </p>
+                    </div>
 
-    <button onclick="javascript:window.history.back();" class="floating">Tagasi</button> <br>
- <br>
+                    <div style="border-left: 4px solid #8b5cf6; padding: 1.5rem; background: #f5f3ff; border-radius: 0 8px 8px 0;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <span style="background: #8b5cf6; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">5</span>
+                            <h4 style="color: #8b5cf6; margin: 0;">📊 Pidev monitoorimine (Continuous Monitoring)</h4>
+                        </div>
+                        <p style="margin: 0; color: #2c3e50;">
+                            Rakenduse pidev jälgimine vigade või krahhide suhtes ning kasutajate tagasiside kogumine. 
+                            Saadud andmed edastatakse arendajatele paranduste tegemiseks.
+                        </p>
+                    </div>
+                </div>
 
-    <br>
-    <br>
-    <br>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 3rem 0;">
+                    <figure style="margin: 0; text-align: center;">
+                        <img src="../pildid/devops1.png" alt="DevOps elutsükkel" 
+                             style="width: 100%; max-width: 400px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        <figcaption style="margin-top: 0.5rem;">DevOps elutsükli skeem</figcaption>
+                    </figure>
+                    <figure style="margin: 0; text-align: center;">
+                        <img src="../pildid/devops2.png" alt="DevOps protsess" 
+                             style="width: 100%; max-width: 400px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        <figcaption style="margin-top: 0.5rem;">DevOps töövoog</figcaption>
+                    </figure>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 3rem 0;">
+                    <div style="background: #d5f4e6; border: 1px solid #10b981; border-radius: 8px; padding: 1.5rem;">
+                        <h3 style="color: #10b981; border: none; margin-bottom: 1.5rem; text-align: center;">✅ Eelised</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #10b981;">•</span>
+                                Kiirem rakenduste arendus ja uuendamine
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #10b981;">•</span>
+                                Automatiseerimine vähendab inimvigu
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #10b981;">•</span>
+                                Parandab koostööd meeskondade vahel
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #10b981;">•</span>
+                                Kõrgem tarkvara kvaliteet
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #10b981;">•</span>
+                                Pidev tagasiside ja parandused
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: #fdeaea; border: 1px solid #ef4444; border-radius: 8px; padding: 1.5rem;">
+                        <h3 style="color: #ef4444; border: none; margin-bottom: 1.5rem; text-align: center;">❌ Puudused</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+                                DevOps eksperdid on vähem kättesaadavad
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+                                DevOpsiga arendamine on kallis
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+                                Uue tehnoloogia kasutuselevõtt on keeruline
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+                                DevOps teadmiste puudumine võib olla probleemiks
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+                                Nõuab kultuurimuutust organisatsioonis
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="background: #f0f4ff; border: 1px solid #8b5cf6; border-radius: 8px; padding: 1.5rem; margin: 2rem 0;">
+                    <h4 style="color: #8b5cf6; margin-bottom: 1rem;">📚 Lisalugemine</h4>
+                    <p style="margin-bottom: 1rem;">Lisainfo DevOps mudeli kohta:</p>
+                    <a href="https://www.geeksforgeeks.org/how-devops-works/" 
+                       target="_blank" 
+                       style="color: #8b5cf6; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.5rem;">
+                        🔗 GeeksforGeeks - How DevOps Works
+                        <span style="font-size: 0.8rem;">↗</span>
+                    </a>
+                </div>
+
+                <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 3rem; flex-wrap: wrap;">
+                    <button onclick="javascript:window.history.back();" 
+                            style="background: linear-gradient(45deg, #95a5a6, #7f8c8d); padding: 12px 24px; width: auto; min-width: 120px;">
+                        ← Tagasi
+                    </button>
+                    <button onclick="window.location.href='../index.html'" 
+                            style="background: linear-gradient(45deg, #3498db, #2980b9); padding: 12px 24px; width: auto; min-width: 120px;">
+                        🏠 Avalehele
+                    </button>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p style="margin: 0; color: #e2e8f0;">&copy; 2024 Orvet Priimägi - TARge24 | DevOps Mudel</p>
+        </div>
+    </footer>
+
 </body>
-<footer>Orvet Priimägi - TARge24</footer>
-
 </html>
